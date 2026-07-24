@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { DM_Sans, Public_Sans } from "next/font/google";
+import ContactProvider from "@/components/ContactProvider";
 import "./globals.css";
 
 const heading = DM_Sans({
@@ -34,7 +35,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${heading.variable} ${body.variable}`}>
-      <body>{children}</body>
+      <body>
+        <ContactProvider>{children}</ContactProvider>
+      </body>
     </html>
   );
 }
