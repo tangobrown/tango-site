@@ -1,19 +1,16 @@
 import type { Metadata, Viewport } from "next";
-import { DM_Sans, Figtree } from "next/font/google";
+import { Atkinson_Hyperlegible } from "next/font/google";
 import ContactProvider from "@/components/ContactProvider";
 import "./globals.css";
 
-const heading = DM_Sans({
+// Atkinson Hyperlegible ships two weights (400 + 700). We load once and
+// point both --font-heading and --font-body at it so every element on
+// the page uses the same family. Headings render at 700, paragraph
+// copy at 400.
+const atkinson = Atkinson_Hyperlegible({
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
-  variable: "--font-heading",
-  display: "swap",
-});
-
-const body = Figtree({
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
-  variable: "--font-body",
+  weight: ["400", "700"],
+  variable: "--font-atkinson",
   display: "swap",
 });
 
@@ -34,7 +31,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${heading.variable} ${body.variable}`}>
+    <html lang="en" className={atkinson.variable}>
       <body>
         <ContactProvider>{children}</ContactProvider>
       </body>

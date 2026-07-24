@@ -23,7 +23,7 @@ export default function Services() {
           What I do
         </div>
         <h2
-          className="font-heading font-medium leading-[1.06] tracking-[-0.01em]"
+          className="font-heading font-bold leading-[1.06] tracking-[-0.01em]"
           style={{ fontSize: "clamp(28px,3.4vw,46px)", maxWidth: "16ch" }}
         >
           Four ways I help your business grow.
@@ -53,7 +53,7 @@ export default function Services() {
                 <div className="font-heading font-light text-xl text-[#a7ab98] mb-3.5">
                   {svc.num}
                 </div>
-                <h3 className="font-heading font-medium text-[32px] tracking-[-0.01em] text-white">
+                <h3 className="font-heading font-bold text-[32px] tracking-[-0.01em] text-white">
                   {svc.title}
                 </h3>
                 <p className={`mt-[18px] text-base leading-[1.68] font-light ${bodyColor}`}>

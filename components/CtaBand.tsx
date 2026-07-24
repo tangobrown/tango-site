@@ -17,7 +17,7 @@ export default function CtaBand() {
           Let&apos;s begin
         </div>
         <h2
-          className="font-heading font-medium leading-[1.05] tracking-[-0.01em] mx-auto"
+          className="font-heading font-bold leading-[1.05] tracking-[-0.01em] mx-auto"
           style={{ fontSize: "clamp(32px,4.2vw,58px)", maxWidth: "18ch" }}
         >
           Let&apos;s grow your business online.

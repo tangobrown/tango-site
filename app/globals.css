@@ -9,7 +9,8 @@
   body {
     background: #f5f1e8;
     color: #2a3327;
-    font-family: var(--font-body), sans-serif;
+    font-family: var(--font-atkinson), sans-serif;
+    font-weight: 400;
     -webkit-font-smoothing: antialiased;
   }
   ::selection {

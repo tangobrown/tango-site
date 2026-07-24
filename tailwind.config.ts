@@ -55,8 +55,8 @@ const config: Config = {
         linkHover: "#5a6b4d",
       },
       fontFamily: {
-        heading: ["var(--font-heading)", "sans-serif"],
-        body: ["var(--font-body)", "sans-serif"],
+        heading: ["var(--font-atkinson)", "sans-serif"],
+        body: ["var(--font-atkinson)", "sans-serif"],
       },
       maxWidth: {
         content: "1280px",
