@@ -86,20 +86,20 @@ export default function Hero() {
           </h2>
         </div>
         <div className="pt-1.5">
-          <p className="text-[18px] leading-[1.7] font-light text-heroMuted mb-[26px]">
+          <p className="text-[17px] leading-[1.7] font-light text-heroMuted mb-[26px]">
             I&apos;ve been doing this for over a decade, almost all of it for
             businesses across Devon and the South West. Usually it&apos;s the
             same story — a good business with a steady trade, and a website
             that isn&apos;t pulling its weight. Too slow, too old, or built by
             someone who stopped answering emails a long time ago.
           </p>
-          <p className="text-[17px] leading-[1.7] font-light text-heroMuted2 mb-[26px]">
+          <p className="text-[17px] leading-[1.7] font-light text-heroMuted mb-[26px]">
             The person you speak to first is the person who does the work.
             No account manager, no handover, nobody learning your business on
             your budget. Just me, from first sketch to launch… for as long
             afterwards as you want me.
           </p>
-          <p className="text-[17px] leading-[1.7] font-light italic text-heroMuted3">
+          <p className="text-[17px] leading-[1.7] font-light text-heroMuted">
             Think of me as your marketing and tech guy. An extension of your
             business, treating your success as my own.
           </p>
