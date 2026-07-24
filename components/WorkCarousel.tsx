@@ -43,7 +43,7 @@ export default function WorkCarousel() {
                 <article className="grid grid-cols-1 md:grid-cols-2 min-h-[440px] overflow-hidden">
                   {/* Image edge-to-edge on the left half */}
                   <div
-                    className="relative w-full bg-placeholderTile overflow-hidden"
+                    className="relative w-full bg-card-olive overflow-hidden"
                     style={{ minHeight: "320px" }}
                   >
                     {proj.imageSrc && (
