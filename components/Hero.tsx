@@ -39,7 +39,7 @@ export default function Hero() {
               fill
               sizes="(max-width: 1400px) 100vw, 1400px"
               priority
-              className="object-cover"
+              className="object-cover object-right-top"
             />
           </div>
           <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-10">
