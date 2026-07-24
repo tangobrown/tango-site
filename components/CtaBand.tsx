@@ -1,4 +1,5 @@
 import ContactTrigger from "./ContactTrigger";
+import ArrowRight from "./ArrowRight";
 
 /**
  * Full-width green band with a centered eyebrow, big heading and
@@ -27,7 +28,8 @@ export default function CtaBand() {
             ariaLabel="Start a project"
             className="inline-flex items-center gap-2.5 bg-cream text-forest px-[34px] py-4 text-[15px] font-semibold cursor-pointer hover:bg-white transition-colors"
           >
-            Start a project →
+            Start a project
+            <ArrowRight />
           </ContactTrigger>
         </div>
       </div>

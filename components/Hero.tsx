@@ -1,5 +1,6 @@
 import Image from "next/image";
 import ContactTrigger from "./ContactTrigger";
+import ArrowRight from "./ArrowRight";
 
 /**
  * Dark hero band (#252523) that houses the H1, hero photo, and
@@ -30,6 +31,7 @@ export default function Hero() {
           style={{ border: "1.5px solid rgba(245,241,232,.85)" }}
         >
           Start a project
+          <ArrowRight />
         </ContactTrigger>
       </div>
 

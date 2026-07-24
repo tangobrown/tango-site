@@ -1,5 +1,6 @@
 import Image from "next/image";
 import ContactTrigger from "./ContactTrigger";
+import ArrowRight from "./ArrowRight";
 
 /**
  * Sand-coloured band with a two-column layout: portrait placeholder
@@ -51,7 +52,8 @@ export default function About() {
             className="inline-flex items-center gap-2.5 text-forest text-[15px] font-semibold pb-[3px] cursor-pointer"
             style={{ borderBottom: "1.5px solid #26332a" }}
           >
-            Work with me →
+            Work with me
+            <ArrowRight />
           </ContactTrigger>
         </div>
       </div>

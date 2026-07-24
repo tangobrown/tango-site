@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import ArrowRight from "./ArrowRight";
 
 interface Props {
   isOpen: boolean;
@@ -213,7 +214,7 @@ export default function ContactPanel({ isOpen, onClose }: Props) {
             ].join(" ")}
           >
             {submitting ? "Sending…" : "Send message"}
-            <span aria-hidden="true">→</span>
+            <ArrowRight />
           </button>
           {note && (
             <p

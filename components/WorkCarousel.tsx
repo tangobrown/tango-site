@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { work } from "@/data/work";
+import ArrowRight from "./ArrowRight";
 
 /**
  * Stacking selected-work cards. As the user scrolls, each card sticks
@@ -78,7 +79,8 @@ export default function WorkCarousel() {
                           className="inline-flex items-center gap-2 text-forest text-[15px] font-semibold pb-[3px] hover:text-linkHover transition-colors"
                           style={{ borderBottom: "1.5px solid #26332a" }}
                         >
-                          Visit website →
+                          Visit website
+                          <ArrowRight />
                         </a>
                       ) : (
                         <span className="inline-flex items-center gap-2 text-muted-faint text-[15px] font-semibold pb-[3px]">
