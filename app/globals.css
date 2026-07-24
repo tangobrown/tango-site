@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    background: #f5f1e8;
+    color: #2a3327;
+    font-family: var(--font-body), sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  ::selection {
+    background: #2f4131;
+    color: #f5f1e8;
+  }
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+  a:hover {
+    color: #5a6b4d;
+  }
+}
+
+@layer utilities {
+  /* Content container — 1280px max, 48px side padding */
+  .container-tb {
+    width: 100%;
+    max-width: 1280px;
+    margin-inline: auto;
+    padding-inline: 48px;
+  }
+  /* Slightly wider variant for the hero photo band */
+  .container-hero {
+    width: 100%;
+    max-width: 1400px;
+    margin-inline: auto;
+    padding-inline: 48px;
+  }
+}

@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&amp;family=Public+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+<script src="./image-slot.js"></script>
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:'Public Sans',sans-serif;color:#2a3327;background:#f5f1e8;-webkit-font-smoothing:antialiased}
+  ::selection{background:#2f4131;color:#f5f1e8}
+  a{color:inherit;text-decoration:none}
+  a:hover{color:#5a6b4d}
+  image-slot{--is-bg:#e7e1d2;--is-border:transparent}
+  input,textarea{font-family:'Public Sans',sans-serif}
+  @keyframes tbFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(7px)}}
+</style>
+</helmet>
+
+<!-- ============ NAV ============ -->
+<div style="position:absolute;top:0;left:0;right:0;z-index:20">
+  <div style="max-width:1280px;margin:0 auto;padding:30px 48px;display:flex;align-items:center;justify-content:space-between;color:#f5f1e8">
+    <a href="#top" style="display:flex;align-items:center;gap:12px;font-family:'DM Sans',sans-serif;font-size:22px;font-weight:500;letter-spacing:.01em">
+      <span style="width:34px;height:34px;border:1.5px solid currentColor;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:13px;letter-spacing:0">TB</span>
+      Tango Brown
+    </a>
+    <div style="display:flex;align-items:center;gap:40px;font-size:15px;font-weight:500">
+      <a href="#services" style="opacity:.9">Services</a>
+      <a href="#work" style="opacity:.9">Work</a>
+      <a href="#about" style="opacity:.9">About</a>
+      <span onClick="{{ openContact }}" style="cursor:pointer;border:1.5px solid rgba(245,241,232,.55);border-radius:0;padding:10px 22px;font-size:14px">Get in touch</span>
+    </div>
+  </div>
+</div>
+
+<!-- ============ HERO ============ -->
+<div id="top" style="background:#252523;color:#f5f1e8;padding-top:118px">
+  <div style="max-width:1280px;margin:0 auto;padding:44px 48px 0">
+    <h1 style="font-family:'DM Sans',sans-serif;font-weight:500;font-size:clamp(34px,4.8vw,66px);line-height:1.06;letter-spacing:-.01em;color:#e0a94a;max-width:18ch">I've got your marketing &amp; technology covered.</h1>
+  </div>
+  <div style="max-width:1400px;margin:0 auto;padding:44px 48px 0">
+    <div style="position:relative;overflow:hidden">
+      <image-slot id="nat-hero" shape="rect" radius="0" placeholder="Hero photograph" style="width:100%;height:min(64vh,620px)"></image-slot>
+      <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:40px">
+        <p style="font-family:'DM Sans',sans-serif;font-weight:500;font-size:clamp(22px,2.6vw,34px);line-height:1.32;letter-spacing:-.01em;color:#fff;max-width:22ch;text-shadow:0 2px 24px rgba(0,0,0,.5)">Your website should be quietly working for you — bringing in the right people, day and night.</p>
+        <span onClick="{{ openContact }}" style="margin-top:34px;display:inline-flex;align-items:center;gap:10px;border:1.5px solid rgba(245,241,232,.85);color:#fff;padding:13px 30px;font-size:15px;font-weight:500;cursor:pointer">Start a project</span>
+      </div>
+      <div style="position:absolute;right:16px;bottom:14px;font-size:12px;color:rgba(255,255,255,.85);font-style:italic">Exeter, Devon</div>
+    </div>
+  </div>
+
+  <!-- ============ INTRO (two-column) ============ -->
+  <div style="max-width:1280px;margin:0 auto;padding:88px 48px 108px;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start">
+    <div>
+      <div style="font-size:13px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:#e0a94a;margin-bottom:26px">Tango Brown</div>
+      <h2 style="font-family:'DM Sans',sans-serif;font-weight:500;font-size:clamp(26px,3vw,42px);line-height:1.12;letter-spacing:-.01em;color:#f5f1e8;max-width:16ch">Helping UK businesses grow online, with the craft that delivers it.</h2>
+    </div>
+    <div style="padding-top:6px">
+      <p style="font-size:17px;line-height:1.7;font-weight:300;color:#d7d4c8;margin-bottom:26px">I build and look after websites for businesses across the South West — thoughtfully designed, honestly optimised and made to last, for years to come.</p>
+      <div style="font-size:16px;font-weight:600;color:#f5f1e8;margin-bottom:8px">One point of contact:</div>
+      <p style="font-size:16px;line-height:1.7;font-weight:300;color:#bdbbb0;margin-bottom:26px">The person you first speak to is the person who does the work. No agency layers, no handoffs — just clear thinking and craft from first sketch to launch and beyond.</p>
+      <p style="font-size:16px;line-height:1.7;font-weight:300;font-style:italic;color:#a9a79c">Tango Brown is the studio of Tim Brown, a freelance digital growth consultant based in Exeter, Devon.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ============ SERVICES (accordion) ============ -->
+<div id="services" style="border-top:1px solid #ddd6c7;scroll-margin-top:20px">
+  <div style="max-width:1280px;margin:0 auto;padding:96px 48px 40px">
+    <div style="font-size:13px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:#8a917c;margin-bottom:20px">What I do</div>
+    <h2 style="font-family:'DM Sans',sans-serif;font-weight:500;font-size:clamp(28px,3.4vw,46px);line-height:1.06;letter-spacing:-.01em;max-width:16ch">Four ways I help your business grow.</h2>
+  </div>
+  <div style="max-width:1280px;margin:0 auto;padding:48px 48px 104px;display:grid;grid-template-columns:1fr 1fr;gap:32px">
+    <sc-for list="{{ services }}" as="svc" hint-placeholder-count="4">
+      <div style="display:flex;flex-direction:column">
+        <image-slot id="{{ svc.slot }}" shape="rect" radius="0" placeholder="{{ svc.title }}" style="width:100%;height:260px"></image-slot>
+        <div style="background:{{ svc.bg }};color:#eef0e6;padding:44px 44px 40px;flex:1;display:flex;flex-direction:column">
+          <div style="font-family:'DM Sans',sans-serif;font-size:20px;color:#a7ab98;font-weight:300;margin-bottom:14px">{{ svc.num }}</div>
+          <h3 style="font-family:'DM Sans',sans-serif;font-weight:500;font-size:32px;letter-spacing:-.01em;color:#fff">{{ svc.title }}</h3>
+          <p style="margin-top:18px;font-size:16px;line-height:1.68;font-weight:300;color:{{ svc.body }}">{{ svc.desc }}</p>
+          <div style="margin-top:28px;display:flex;flex-direction:column">
+            <sc-for list="{{ svc.points }}" as="pt" hint-placeholder-count="3">
+              <div style="font-size:15px;line-height:1.5;font-weight:300;color:{{ svc.body }};padding:9px 0;border-top:1px solid rgba(255,255,255,.14)">{{ pt }}</div>
+            </sc-for>
+          </div>
+        </div>
+      </div>
+    </sc-for>
+  </div>
+</div>
+
+<!-- ============ ABOUT ============ -->
+<div id="about" style="background:#eae4d5;scroll-margin-top:0">
+  <div style="max-width:1280px;margin:0 auto;padding:112px 48px;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center">
+    <image-slot id="nat-about" shape="rect" radius="0" placeholder="Portrait of Tim" style="width:100%;height:600px"></image-slot>
+    <div>
+      <div style="font-size:13px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:#8a917c;margin-bottom:22px">About me</div>
+      <h2 style="font-family:'DM Sans',sans-serif;font-weight:500;font-size:clamp(28px,3.1vw,40px);line-height:1.08;letter-spacing:-.01em;margin-bottom:26px">Hi, I'm Tim Brown.</h2>
+      <p style="font-size:17px;line-height:1.7;color:#4c5145;font-weight:300;margin-bottom:20px">For over a decade I've helped businesses across the South West find their footing online. No agency layers, no jargon — just clear thinking and craft, delivered by the same person you first speak to.</p>
+      <p style="font-size:17px;line-height:1.7;color:#4c5145;font-weight:300;margin-bottom:34px">I care about work that lasts: sites that stay fast, rank well and keep earning their keep long after launch.</p>
+      <span onClick="{{ openContact }}" style="display:inline-flex;align-items:center;gap:10px;color:#26332a;border-bottom:1.5px solid #26332a;padding-bottom:3px;font-size:15px;font-weight:600;cursor:pointer">Work with me →</span>
+    </div>
+  </div>
+</div>
+
+<!-- ============ SELECTED WORK (carousel) ============ -->
+<div id="work" style="scroll-margin-top:0">
+  <div style="max-width:1280px;margin:0 auto;padding:112px 48px 40px;display:flex;align-items:flex-end;justify-content:space-between;gap:24px">
+    <div>
+      <div style="font-size:13px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:#8a917c;margin-bottom:20px">Selected work</div>
+      <h2 style="font-family:'DM Sans',sans-serif;font-weight:500;font-size:clamp(28px,3.4vw,46px);line-height:1.06;letter-spacing:-.01em;max-width:18ch">A few projects I'm proud of.</h2>
+    </div>
+    <div style="display:flex;gap:12px">
+      <span onClick="{{ prevSlide }}" style="width:52px;height:52px;border:1px solid #c3c1af;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;color:#3a4a34;cursor:pointer">←</span>
+      <span onClick="{{ nextSlide }}" style="width:52px;height:52px;border:1px solid #c3c1af;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;color:#3a4a34;cursor:pointer">→</span>
+    </div>
+  </div>
+  <div style="max-width:1280px;margin:0 auto;padding:48px 48px 120px">
+    <div style="position:relative;overflow:hidden">
+      <div style="{{ trackStyle }}">
+        <sc-for list="{{ work }}" as="proj" hint-placeholder-count="2">
+          <div style="flex:0 0 100%;box-sizing:border-box;position:relative">
+            <image-slot id="{{ proj.slot }}" shape="rect" radius="0" placeholder="{{ proj.name }}" style="width:100%;height:min(62vh,600px)"></image-slot>
+            <div style="position:absolute;left:0;bottom:0;max-width:640px;background:rgba(30,32,29,.82);color:#eef0e6;padding:44px 48px 40px">
+              <div style="font-size:12px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:#e0a94a;margin-bottom:18px">{{ proj.tag }}</div>
+              <p style="font-family:'DM Sans',sans-serif;font-weight:500;font-size:clamp(24px,2.4vw,32px);line-height:1.28;letter-spacing:-.01em;color:#fff">"{{ proj.desc }}"</p>
+              <div style="margin-top:26px;color:#e0a94a;font-size:16px;font-weight:600">{{ proj.name }}</div>
+              <div style="color:#bdbbb0;font-size:14px;font-weight:300">{{ proj.role }}</div>
+            </div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+    <div style="display:flex;gap:10px;margin-top:26px;justify-content:center">
+      <sc-for list="{{ work }}" as="proj" hint-placeholder-count="4">
+        <span onClick="{{ proj.goto }}" style="width:{{ proj.dotW }};height:4px;background:{{ proj.dotBg }};cursor:pointer;transition:all .3s ease"></span>
+      </sc-for>
+    </div>
+  </div>
+</div>
+
+<!-- ============ CTA ============ -->
+<div style="background:#26332a;color:#f5f1e8">
+  <div style="max-width:1080px;margin:0 auto;padding:136px 48px;text-align:center">
+    <div style="font-size:13px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:#96a086;margin-bottom:28px">Let's begin</div>
+    <h2 style="font-family:'DM Sans',sans-serif;font-weight:500;font-size:clamp(32px,4.2vw,58px);line-height:1.05;letter-spacing:-.01em;max-width:18ch;margin:0 auto">Let's grow your business online.</h2>
+    <div style="margin-top:44px">
+      <span onClick="{{ openContact }}" style="display:inline-flex;align-items:center;gap:10px;background:#f5f1e8;color:#26332a;border-radius:0;padding:16px 34px;font-size:15px;font-weight:600;cursor:pointer">Start a project →</span>
+    </div>
+  </div>
+</div>
+
+<!-- ============ FOOTER ============ -->
+<div style="background:#1e281f;color:#c8cebd">
+  <div style="max-width:1280px;margin:0 auto;padding:72px 48px 48px;display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:48px">
+    <div>
+      <div style="font-family:'DM Sans',sans-serif;font-size:22px;color:#f5f1e8;margin-bottom:18px">Tim Brown</div>
+      <div style="font-size:15px;line-height:1.9;font-weight:300">
+        <a href="mailto:tim@tangobrown.com">tim@tangobrown.com</a><br>
+        07594 404 388<br>
+        Exeter, Devon
+      </div>
+    </div>
+    <div style="font-size:15px;line-height:2.1;font-weight:300">
+      <div style="font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#7f886f;margin-bottom:12px">Site</div>
+      <a href="#about">About</a><br><a href="#work">Work</a><br><span onClick="{{ openContact }}" style="cursor:pointer">Contact</span>
+    </div>
+    <div style="font-size:15px;line-height:2.1;font-weight:300">
+      <div style="font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#7f886f;margin-bottom:12px">Services</div>
+      <a href="#services">Website Builds</a><br><a href="#services">Hosting</a><br><a href="#services">SEO</a><br><a href="#services">AI &amp; Automation</a>
+    </div>
+  </div>
+  <div style="max-width:1280px;margin:0 auto;padding:0 48px 40px;display:flex;justify-content:space-between;font-size:13px;color:#7f886f;border-top:1px solid #33402f;padding-top:24px">
+    <span>© 2026 Tango Brown — Tim Brown</span>
+    <span>Digital Growth Consultant</span>
+  </div>
+</div>
+
+<!-- ============ CONTACT SLIDE-OUT ============ -->
+<div onClick="{{ closeContact }}" style="{{ overlayStyle }}"></div>
+<div style="{{ panelStyle }}">
+  <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:36px">
+    <div style="font-size:13px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:#96a086">Get in touch</div>
+    <span onClick="{{ closeContact }}" style="width:40px;height:40px;border:1px solid #3a4a34;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;cursor:pointer;color:#eef0e6;font-size:18px">✕</span>
+  </div>
+  <h2 style="font-family:'DM Sans',sans-serif;font-weight:500;font-size:38px;line-height:1.08;letter-spacing:-.01em;color:#fff;margin-bottom:14px">Let's start something.</h2>
+  <p style="font-size:16px;line-height:1.65;font-weight:300;color:#bcc6b1;margin-bottom:34px">Tell me a little about your project and I'll be back in touch within a day.</p>
+  <div style="display:flex;flex-direction:column;gap:22px">
+    <div>
+      <label style="display:block;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#8fa082;margin-bottom:8px">Name</label>
+      <input type="text" style="width:100%;background:transparent;border:none;border-bottom:1.5px solid #3f5138;color:#fff;font-size:16px;padding:8px 0;outline:none">
+    </div>
+    <div>
+      <label style="display:block;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#8fa082;margin-bottom:8px">Email</label>
+      <input type="email" style="width:100%;background:transparent;border:none;border-bottom:1.5px solid #3f5138;color:#fff;font-size:16px;padding:8px 0;outline:none">
+    </div>
+    <div>
+      <label style="display:block;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#8fa082;margin-bottom:8px">About your project</label>
+      <textarea rows="4" style="width:100%;background:transparent;border:1.5px solid #3f5138;color:#fff;font-size:16px;padding:12px;outline:none;resize:none"></textarea>
+    </div>
+    <span style="display:inline-flex;align-items:center;justify-content:center;gap:10px;background:#f5f1e8;color:#26332a;border-radius:0;padding:16px;font-size:15px;font-weight:600;cursor:pointer;margin-top:6px">Send message →</span>
+  </div>
+  <div style="margin-top:40px;padding-top:28px;border-top:1px solid #33402f;font-size:15px;line-height:1.9;font-weight:300;color:#bcc6b1">
+    <a href="mailto:tim@tangobrown.com" style="color:#eef0e6">tim@tangobrown.com</a><br>
+    07594 404 388 · Exeter, Devon
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1280,&quot;height&quot;:900}}">
+class Component extends DCLogic {
+  state = { contact: false, openSvc: 0, slide: 0 };
+
+  maxSlide(){ return Math.max(0, this.baseWork().length - 1); }
+
+  baseServices(){
+    return [
+      { num: '01', slot: 'nat-svc-1', bg: '#2f4131', body: '#c7d1bc', title: 'Website Builds', desc: 'Fast, considered websites built to convert — designed and coded from scratch around your business, not a template. Everything is planned for how your customers actually behave.', points: ['Bespoke design & build', 'Copywriting support', 'Mobile-first & fast', 'Launch & handover'] },
+      { num: '02', slot: 'nat-svc-2', bg: '#33352f', body: '#c8c8bd', title: 'Website Hosting', desc: 'Reliable, secure hosting with updates, backups and a real person to call. Set it and forget it — your site simply stays online, fast and safe.', points: ['Daily backups', 'Security & updates', 'Uptime monitoring', 'Priority support'] },
+      { num: '03', slot: 'nat-svc-3', bg: '#33352f', body: '#c8c8bd', title: 'SEO', desc: 'Honest search optimisation that earns lasting rankings — no tricks, no lock-in, just steady visibility built on solid foundations and useful content.', points: ['Technical audit', 'Keyword strategy', 'On-page & content', 'Monthly reporting'] },
+      { num: '04', slot: 'nat-svc-4', bg: '#2f4131', body: '#c7d1bc', title: 'AI & Automation', desc: 'Quiet automations that take admin off your plate — from enquiry handling to reporting — so your time goes where it matters most.', points: ['Workflow automation', 'AI assistants', 'Integrations', 'Time-saving audits'] }
+    ];
+  }
+  baseWork(){
+    return [
+      { slot: 'nat-work-1', name: 'Devon Joinery', role: 'Website · SEO', tag: 'Selected project', desc: 'Tim just got it. The site feels like us, and the enquiries have more than doubled since launch.' },
+      { slot: 'nat-work-2', name: 'Project Two', role: 'Website · Hosting', tag: 'Selected project', desc: 'A calm rebuild that made a growing service business easy to find and easy to trust — faster and far less fuss.' },
+      { slot: 'nat-work-3', name: 'Project Three', role: 'Website · Automation', tag: 'Selected project', desc: 'The booking process that used to eat my week now takes a few taps. It quietly gave me hours back.' },
+      { slot: 'nat-work-4', name: 'Project Four', role: 'E-commerce · Hosting', tag: 'Selected project', desc: 'A slow, patchy store turned into a dependable little engine for our family business.' }
+    ];
+  }
+
+  toggleSvc(i){ this.setState(s => ({ openSvc: s.openSvc === i ? null : i })); }
+  openContact = () => this.setState({ contact: true });
+  closeContact = () => this.setState({ contact: false });
+  prevSlide = () => this.setState(s => ({ slide: s.slide <= 0 ? this.maxSlide() : s.slide - 1 }));
+  nextSlide = () => this.setState(s => ({ slide: s.slide >= this.maxSlide() ? 0 : s.slide + 1 }));
+
+  renderVals(){
+    const services = this.baseServices();
+
+    const slide = this.state.slide;
+    const trackStyle = {
+      display: 'flex',
+      transform: 'translateX(-' + (slide * 100) + '%)',
+      transition: 'transform .6s cubic-bezier(.4,0,.2,1)'
+    };
+    const work = this.baseWork().map((p, i) => ({
+      ...p,
+      goto: () => this.setState({ slide: i }),
+      dotW: slide === i ? '40px' : '20px',
+      dotBg: slide === i ? '#e0a94a' : 'rgba(90,107,77,.4)'
+    }));
+
+    const c = this.state.contact;
+    const overlayStyle = {
+      position: 'fixed', inset: 0, zIndex: 40, background: 'rgba(20,28,20,.5)',
+      opacity: c ? 1 : 0, pointerEvents: c ? 'auto' : 'none',
+      transition: 'opacity .35s ease'
+    };
+    const panelStyle = {
+      position: 'fixed', top: 0, right: 0, bottom: 0, zIndex: 41,
+      width: 'min(480px,100vw)', background: '#26332a', color: '#eef0e6',
+      padding: '40px 44px', overflowY: 'auto',
+      boxShadow: '-20px 0 60px rgba(0,0,0,.3)',
+      transform: c ? 'translateX(0)' : 'translateX(100%)',
+      transition: 'transform .45s cubic-bezier(.4,0,.2,1)'
+    };
+
+    return {
+      services, work, trackStyle, overlayStyle, panelStyle,
+      openContact: this.openContact, closeContact: this.closeContact,
+      prevSlide: this.prevSlide, nextSlide: this.nextSlide
+    };
+  }
+}
+</script>
+</body>
+</html>
