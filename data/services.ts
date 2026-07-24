@@ -44,9 +44,9 @@ export const services: Service[] = [
   },
   {
     num: "03",
-    title: "SEO",
+    title: "Lead Generation",
     description:
-      "Honest search optimisation that earns lasting rankings — no tricks, no lock-in, just steady visibility built on solid foundations and useful content.",
+      "Bringing in the right enquiries, not just more traffic. Honest search visibility and content that turns the right visitors into paying customers.",
     points: [
       "Technical audit",
       "Keyword strategy",
