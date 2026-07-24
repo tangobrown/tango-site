@@ -40,7 +40,7 @@ export default function WorkCarousel() {
                 className="sticky pb-6"
                 style={{ top: `${top}px` }}
               >
-                <article className="grid grid-cols-1 md:grid-cols-2 bg-card-olive text-heroText min-h-[440px] overflow-hidden">
+                <article className="grid grid-cols-1 md:grid-cols-2 min-h-[440px] overflow-hidden">
                   {/* Image edge-to-edge on the left half */}
                   <div
                     className="relative w-full bg-placeholderTile overflow-hidden"
@@ -56,18 +56,18 @@ export default function WorkCarousel() {
                       />
                     )}
                   </div>
-                  {/* Text on the dark card background */}
-                  <div className="flex flex-col p-10">
-                    <div className="text-[13px] font-semibold uppercase tracking-[0.18em] text-gold mb-4">
+                  {/* Text on a white background */}
+                  <div className="flex flex-col p-10 bg-white text-ink">
+                    <div className="text-[13px] font-semibold uppercase tracking-[0.18em] text-muted-faint mb-4">
                       {proj.role}
                     </div>
                     <h3
-                      className="font-heading font-normal text-white leading-[1.08] tracking-[-0.01em] mb-5"
+                      className="font-heading font-normal text-ink leading-[1.08] tracking-[-0.01em] mb-5"
                       style={{ fontSize: "clamp(24px,2.4vw,34px)" }}
                     >
                       {proj.name}
                     </h3>
-                    <p className="text-[17px] leading-[1.68] font-light text-heroMuted max-w-[46ch]">
+                    <p className="text-[17px] leading-[1.68] font-light text-muted max-w-[46ch]">
                       &ldquo;{proj.quote}&rdquo;
                     </p>
                     <div className="mt-auto pt-8">
@@ -76,14 +76,14 @@ export default function WorkCarousel() {
                           href={proj.url}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="inline-flex items-center gap-2 text-gold text-[15px] font-semibold pb-[3px] hover:text-heroText transition-colors"
-                          style={{ borderBottom: "1.5px solid #e0a94a" }}
+                          className="inline-flex items-center gap-2 text-forest text-[15px] font-semibold pb-[3px] hover:text-linkHover transition-colors"
+                          style={{ borderBottom: "1.5px solid #26332a" }}
                         >
                           Visit website
                           <ArrowRight />
                         </a>
                       ) : (
-                        <span className="inline-flex items-center gap-2 text-heroMuted3 text-[15px] font-semibold pb-[3px]">
+                        <span className="inline-flex items-center gap-2 text-muted-faint text-[15px] font-semibold pb-[3px]">
                           Coming soon
                         </span>
                       )}
