@@ -30,7 +30,7 @@ export default function About() {
             About me
           </div>
           <h2
-            className="font-heading font-bold leading-[1.08] tracking-[-0.01em] mb-[26px]"
+            className="font-heading font-semibold leading-[1.08] tracking-[-0.01em] mb-[26px]"
             style={{ fontSize: "clamp(28px,3.1vw,40px)" }}
           >
             Hi, I&apos;m Tim Brown.

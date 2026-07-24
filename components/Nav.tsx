@@ -13,7 +13,7 @@ export default function Nav() {
       <div className="container-tb py-[30px] flex items-center justify-between text-heroText">
         <Link
           href="#top"
-          className="flex items-center gap-3 font-heading font-bold text-[22px] tracking-[0.01em]"
+          className="flex items-center gap-3 font-heading font-semibold text-[22px] tracking-[0.01em]"
         >
           <span
             aria-hidden="true"

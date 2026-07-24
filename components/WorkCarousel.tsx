@@ -30,7 +30,7 @@ export default function WorkCarousel() {
             Selected work
           </div>
           <h2
-            className="font-heading font-bold leading-[1.06] tracking-[-0.01em]"
+            className="font-heading font-semibold leading-[1.06] tracking-[-0.01em]"
             style={{ fontSize: "clamp(28px,3.4vw,46px)", maxWidth: "18ch" }}
           >
             A few projects I&apos;m proud of.
@@ -92,7 +92,7 @@ export default function WorkCarousel() {
                     {proj.tag}
                   </div>
                   <p
-                    className="font-heading font-bold text-white leading-[1.28] tracking-[-0.01em]"
+                    className="font-heading font-semibold text-white leading-[1.28] tracking-[-0.01em]"
                     style={{ fontSize: "clamp(24px,2.4vw,32px)" }}
                   >
                     &ldquo;{proj.quote}&rdquo;

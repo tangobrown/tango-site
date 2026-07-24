@@ -19,7 +19,7 @@ export default function Hero() {
       {/* H1 */}
       <div className="container-tb pt-11">
         <h1
-          className="font-heading font-bold text-gold leading-[1.06] tracking-[-0.01em]"
+          className="font-heading font-semibold text-gold leading-[1.06] tracking-[-0.01em]"
           style={{ fontSize: "clamp(34px,4.8vw,66px)", maxWidth: "18ch" }}
         >
           I&apos;ve got your marketing &amp; technology covered.
@@ -44,7 +44,7 @@ export default function Hero() {
           </div>
           <div className="absolute inset-0 flex flex-col items-start justify-end text-left p-12">
             <p
-              className="font-heading font-bold text-white leading-[1.32] tracking-[-0.01em]"
+              className="font-heading font-semibold text-white leading-[1.32] tracking-[-0.01em]"
               style={{
                 fontSize: "clamp(22px,2.6vw,34px)",
                 maxWidth: "22ch",
@@ -77,7 +77,7 @@ export default function Hero() {
             Tango Brown
           </div>
           <h2
-            className="font-heading font-bold text-heroText leading-[1.12] tracking-[-0.01em]"
+            className="font-heading font-semibold text-heroText leading-[1.12] tracking-[-0.01em]"
             style={{ fontSize: "clamp(26px,3vw,42px)", maxWidth: "16ch" }}
           >
             Helping UK businesses grow online, with the craft that delivers it.
