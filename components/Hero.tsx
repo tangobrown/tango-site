@@ -42,7 +42,7 @@ export default function Hero() {
               className="object-cover object-right-top"
             />
           </div>
-          <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-10">
+          <div className="absolute inset-0 flex flex-col items-start justify-end text-left p-12">
             <p
               className="font-heading font-medium text-white leading-[1.32] tracking-[-0.01em]"
               style={{
