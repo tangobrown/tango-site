@@ -14,7 +14,7 @@ export default function Footer() {
           <div className="font-heading text-[22px] text-cream mb-[18px]">
             Tim Brown
           </div>
-          <div className="text-[15px] leading-[1.9] font-light">
+          <div className="text-[16px] leading-[1.9] font-light">
             <a href="mailto:tim@tangobrown.com">tim@tangobrown.com</a>
             <br />
             07594 404 388
@@ -22,7 +22,7 @@ export default function Footer() {
             Exeter, Devon
           </div>
         </div>
-        <div className="text-[15px] leading-[2.1] font-light">
+        <div className="text-[16px] leading-[2.1] font-light">
           <div className="text-xs uppercase tracking-[0.14em] text-footer-faint mb-3">
             Site
           </div>
@@ -34,7 +34,7 @@ export default function Footer() {
             Contact
           </ContactTrigger>
         </div>
-        <div className="text-[15px] leading-[2.1] font-light">
+        <div className="text-[16px] leading-[2.1] font-light">
           <div className="text-xs uppercase tracking-[0.14em] text-footer-faint mb-3">
             Services
           </div>

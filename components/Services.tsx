@@ -116,7 +116,7 @@ export default function Services() {
                     {svc.title}
                   </h3>
                   <p
-                    className={`mt-[18px] text-base leading-[1.68] font-light ${bodyColor}`}
+                    className={`mt-[18px] text-[17px] leading-[1.68] font-light ${bodyColor}`}
                   >
                     {svc.description}
                   </p>
@@ -124,7 +124,7 @@ export default function Services() {
                     {svc.points.map((pt) => (
                       <div
                         key={pt}
-                        className={`text-[15px] leading-[1.5] font-light py-[9px] ${bodyColor}`}
+                        className={`text-[16px] leading-[1.5] font-light py-[9px] ${bodyColor}`}
                         style={{ borderTop: "1px solid rgba(255,255,255,.14)" }}
                       >
                         {pt}

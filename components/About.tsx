@@ -35,13 +35,13 @@ export default function About() {
           >
             Hi, I&apos;m Tim Brown.
           </h2>
-          <p className="text-[17px] leading-[1.7] font-light text-muted mb-5">
+          <p className="text-[18px] leading-[1.7] font-light text-muted mb-5">
             For over a decade I&apos;ve helped businesses across the South West
             find their footing online. No agency layers, no jargon — just
             clear thinking and craft, delivered by the same person you first
             speak to.
           </p>
-          <p className="text-[17px] leading-[1.7] font-light text-muted mb-[34px]">
+          <p className="text-[18px] leading-[1.7] font-light text-muted mb-[34px]">
             I care about work that lasts: sites that stay fast, rank well and
             keep earning their keep long after launch.
           </p>

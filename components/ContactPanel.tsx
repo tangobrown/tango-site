@@ -141,7 +141,7 @@ export default function ContactPanel({ isOpen, onClose }: Props) {
         <h2 className="font-heading font-normal text-[38px] leading-[1.08] tracking-[-0.01em] text-white mb-3.5">
           Let&apos;s start something.
         </h2>
-        <p className="text-base leading-[1.65] font-light text-[#bcc6b1] mb-9">
+        <p className="text-[17px] leading-[1.65] font-light text-[#bcc6b1] mb-9">
           Tell me a little about your project and I&apos;ll be back in touch
           within a day.
         </p>
@@ -229,7 +229,7 @@ export default function ContactPanel({ isOpen, onClose }: Props) {
           )}
         </form>
 
-        <div className="mt-10 pt-7 border-t border-footer-rule text-[15px] leading-[1.9] font-light text-[#bcc6b1]">
+        <div className="mt-10 pt-7 border-t border-footer-rule text-[16px] leading-[1.9] font-light text-[#bcc6b1]">
           <a href="mailto:tim@tangobrown.com" className="text-heroText">
             tim@tangobrown.com
           </a>
