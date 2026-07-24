@@ -1,29 +1,79 @@
 "use client";
 
 import Image from "next/image";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { work } from "@/data/work";
 
 /**
- * Full-width one-slide-per-view carousel of the four selected
- * projects. Each slide has a placeholder tile (or real image if
- * imageSrc is set) with an overlay card bottom-left containing
- * a gold eyebrow, quote (in DM Sans), name in gold and role in
- * muted grey.
+ * Full-viewport-width carousel with three projects visible at a time,
+ * scrolling by one card per arrow click. The track is a doubled list
+ * of the four projects so the loop feels continuous — once the index
+ * reaches projects.length we snap back to 0 without animation after
+ * the transition settles, mirroring the wrap-around behaviour used
+ * on other carousels in the codebase.
  *
- * Prev/next wrap around (from last back to first and vice versa).
- * A dot row below indicates the current slide; the active dot is
- * 40px wide and gold, others are 20px and muted sage.
+ * Header row (eyebrow + H2 + arrows) stays inside the 1280px content
+ * column; the carousel itself hugs 100% of the viewport and has no
+ * bottom padding so the CTA band underneath sits flush against it.
  */
 export default function WorkCarousel() {
-  const [slide, setSlide] = useState(0);
-  const max = work.length - 1;
+  const n = work.length;
+  const [index, setIndex] = useState(0);
+  const [animate, setAnimate] = useState(true);
+  const snapTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
-  const prev = () => setSlide((s) => (s <= 0 ? max : s - 1));
-  const next = () => setSlide((s) => (s >= max ? 0 : s + 1));
+  // Track holds two copies of the project list so the user can advance
+  // past the last real project into a seamless duplicate before we
+  // snap back to the equivalent index in the first copy.
+  const loop = [...work, ...work];
+  const step = 100 / 3; // percentage a single slide advances (3-visible)
+
+  const clearSnap = () => {
+    if (snapTimer.current) {
+      clearTimeout(snapTimer.current);
+      snapTimer.current = null;
+    }
+  };
+
+  const next = () => {
+    clearSnap();
+    setAnimate(true);
+    setIndex((cur) => {
+      const nxt = cur + 1;
+      snapTimer.current = setTimeout(() => {
+        setIndex((i) => (i >= n ? i - n : i));
+        setAnimate(false);
+        requestAnimationFrame(() =>
+          requestAnimationFrame(() => setAnimate(true))
+        );
+      }, 650);
+      return nxt;
+    });
+  };
+
+  const prev = () => {
+    clearSnap();
+    setIndex((cur) => {
+      if (cur <= 0) {
+        // Jump forward invisibly to the equivalent index in the duplicate copy…
+        setAnimate(false);
+        requestAnimationFrame(() =>
+          requestAnimationFrame(() => {
+            setAnimate(true);
+            // …then animate back a step.
+            setIndex(n - 1);
+          })
+        );
+        return n;
+      }
+      setAnimate(true);
+      return cur - 1;
+    });
+  };
 
   return (
     <section id="work" style={{ scrollMarginTop: "0px" }}>
+      {/* Header row inside the 1280 content column */}
       <div className="container-tb pt-28 pb-10 flex items-end justify-between gap-6 flex-wrap">
         <div>
           <div className="text-[13px] font-semibold uppercase tracking-[0.22em] text-muted-faint mb-5">
@@ -56,76 +106,59 @@ export default function WorkCarousel() {
         </div>
       </div>
 
-      <div className="container-tb pt-12 pb-[120px]">
-        <div className="relative overflow-hidden">
-          <div
-            className="flex"
-            style={{
-              transform: `translateX(-${slide * 100}%)`,
-              transition: "transform .6s cubic-bezier(.4,0,.2,1)",
-            }}
-          >
-            {work.map((proj) => (
+      {/* Full-viewport-width carousel; no side or bottom padding */}
+      <div className="mt-4 overflow-hidden">
+        <div
+          className="flex"
+          style={{
+            transform: `translateX(-${index * step}%)`,
+            transition: animate
+              ? "transform .65s cubic-bezier(.4,0,.2,1)"
+              : "none",
+          }}
+        >
+          {loop.map((proj, i) => (
+            <div
+              key={`${proj.name}-${i}`}
+              className="relative shrink-0 grow-0"
+              style={{ flexBasis: "33.3333%", maxWidth: "33.3333%" }}
+            >
               <div
-                key={proj.name}
-                className="relative box-border shrink-0 grow-0 basis-full"
+                className="relative w-full bg-placeholderTile overflow-hidden"
+                style={{ height: "min(60vh, 520px)" }}
               >
+                {proj.imageSrc && (
+                  <Image
+                    src={proj.imageSrc}
+                    alt={proj.name}
+                    fill
+                    sizes="33vw"
+                    className="object-cover"
+                  />
+                )}
                 <div
-                  className="relative w-full bg-placeholderTile overflow-hidden"
-                  style={{ height: "min(62vh, 600px)" }}
-                >
-                  {proj.imageSrc && (
-                    <Image
-                      src={proj.imageSrc}
-                      alt={proj.name}
-                      fill
-                      sizes="100vw"
-                      className="object-cover"
-                    />
-                  )}
-                </div>
-                <div
-                  className="absolute left-0 bottom-0 max-w-[640px] px-12 py-11 text-[#eef0e6]"
+                  className="absolute left-0 right-0 bottom-0 px-7 py-7 text-[#eef0e6]"
                   style={{ background: "rgba(30,32,29,.82)" }}
                 >
-                  <div className="text-xs font-semibold uppercase tracking-[0.18em] text-gold mb-[18px]">
+                  <div className="text-[11px] font-semibold uppercase tracking-[0.18em] text-gold mb-3.5">
                     {proj.tag}
                   </div>
                   <p
-                    className="font-heading font-normal text-white leading-[1.28] tracking-[-0.01em]"
-                    style={{ fontSize: "clamp(24px,2.4vw,32px)" }}
+                    className="font-heading font-normal text-white leading-[1.32] tracking-[-0.01em]"
+                    style={{ fontSize: "clamp(15px,1.3vw,20px)" }}
                   >
                     &ldquo;{proj.quote}&rdquo;
                   </p>
-                  <div className="mt-[26px] text-gold text-base font-semibold">
+                  <div className="mt-4 text-gold text-[15px] font-semibold">
                     {proj.name}
                   </div>
-                  <div className="text-heroMuted2 text-sm font-light">
+                  <div className="text-heroMuted2 text-[13px] font-light">
                     {proj.role}
                   </div>
                 </div>
               </div>
-            ))}
-          </div>
-        </div>
-
-        <div className="flex gap-2.5 mt-[26px] justify-center">
-          {work.map((proj, i) => {
-            const active = slide === i;
-            return (
-              <button
-                key={proj.name}
-                type="button"
-                onClick={() => setSlide(i)}
-                aria-label={`Go to project ${i + 1}`}
-                className="h-1 cursor-pointer transition-all duration-300"
-                style={{
-                  width: active ? "40px" : "20px",
-                  background: active ? "#e0a94a" : "rgba(90,107,77,.4)",
-                }}
-              />
-            );
-          })}
+            </div>
+          ))}
         </div>
       </div>
     </section>
