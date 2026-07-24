@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import { services } from "@/data/services";
 
@@ -77,7 +76,7 @@ export default function Services() {
     <section
       id="services"
       ref={sectionRef}
-      className="relative border-t border-rule"
+      className="relative border-t border-rule py-24"
       style={{
         height: `calc(100vh + ${scrollDistance}px)`,
         scrollMarginTop: "20px",
@@ -123,19 +122,7 @@ export default function Services() {
                   className="flex flex-col shrink-0"
                   style={{ width: `${CARD_WIDTH}px` }}
                 >
-                  {/* Image slot */}
-                  <div className="relative w-full h-[260px] overflow-hidden bg-placeholderTile">
-                    {svc.imageSrc && (
-                      <Image
-                        src={svc.imageSrc}
-                        alt={svc.title}
-                        fill
-                        sizes={`${CARD_WIDTH}px`}
-                        className="object-cover"
-                      />
-                    )}
-                  </div>
-                  {/* Panel */}
+                  {/* Panel (image slot removed) */}
                   <div
                     className={`${bg} flex-1 px-11 pt-11 pb-10 text-[#eef0e6] flex flex-col`}
                   >
