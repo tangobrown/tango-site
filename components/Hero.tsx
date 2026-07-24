@@ -16,14 +16,21 @@ export default function Hero() {
       id="top"
       className="bg-hero text-heroText pt-[118px] relative"
     >
-      {/* H1 */}
-      <div className="container-tb pt-11">
+      {/* H1 with the Start-a-project button aligned to its baseline on the right */}
+      <div className="container-tb pt-11 flex items-end justify-between gap-8 flex-wrap">
         <h1
           className="font-heading font-normal text-gold leading-[1.06] tracking-[-0.01em]"
           style={{ fontSize: "clamp(34px,4.8vw,66px)", maxWidth: "18ch" }}
         >
           I&apos;ve got your marketing &amp; technology covered.
         </h1>
+        <ContactTrigger
+          ariaLabel="Start a project"
+          className="inline-flex items-center gap-2.5 text-white text-[15px] font-medium px-[30px] py-[13px] cursor-pointer hover:bg-white/10 transition-colors shrink-0"
+          style={{ border: "1.5px solid rgba(245,241,232,.85)" }}
+        >
+          Start a project
+        </ContactTrigger>
       </div>
 
       {/* Photo band — 1400px column */}
@@ -53,13 +60,6 @@ export default function Hero() {
               Your website should be quietly working for you — bringing in the
               right people, day and night.
             </p>
-            <ContactTrigger
-              ariaLabel="Start a project"
-              className="mt-[34px] inline-flex items-center gap-2.5 text-white text-[15px] font-medium px-[30px] py-[13px] cursor-pointer hover:bg-white/10 transition-colors"
-              style={{ border: "1.5px solid rgba(245,241,232,.85)" }}
-            >
-              Start a project
-            </ContactTrigger>
           </div>
           <div
             className="absolute right-4 bottom-3.5 text-xs italic"
