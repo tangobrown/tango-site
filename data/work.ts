@@ -8,6 +8,7 @@ export interface Project {
   tag: string; // eyebrow line
   quote: string; // client quote inside the overlay card
   imageSrc?: string;
+  url?: string; // when set, the stack card renders a 'Visit website' link
 }
 
 export const work: Project[] = [
@@ -18,6 +19,7 @@ export const work: Project[] = [
     quote:
       "Tim just got it. The site feels like us, and the enquiries have more than doubled since launch.",
     imageSrc: "/devon-joinery.png",
+    url: "https://www.devonjoinery.co.uk",
   },
   {
     name: "Project Two",
