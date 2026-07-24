@@ -40,7 +40,6 @@ export default function Hero() {
               style={{
                 fontSize: "clamp(22px,2.6vw,34px)",
                 maxWidth: "22ch",
-                textShadow: "0 2px 24px rgba(0,0,0,.5)",
               }}
             >
               Your website should be quietly working for you — bringing in the
