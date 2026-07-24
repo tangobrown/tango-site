@@ -87,21 +87,21 @@ export default function Hero() {
         </div>
         <div className="pt-1.5">
           <p className="text-[18px] leading-[1.7] font-light text-heroMuted mb-[26px]">
-            I build and look after websites for businesses across the South
-            West — thoughtfully designed, honestly optimised and made to last,
-            for years to come.
+            I&apos;ve been doing this for over a decade, almost all of it for
+            businesses across Devon and the South West. Usually it&apos;s the
+            same story — a good business with a steady trade, and a website
+            that isn&apos;t pulling its weight. Too slow, too old, or built by
+            someone who stopped answering emails a long time ago.
           </p>
-          <div className="text-[17px] font-semibold text-heroText mb-2">
-            One point of contact:
-          </div>
           <p className="text-[17px] leading-[1.7] font-light text-heroMuted2 mb-[26px]">
-            The person you first speak to is the person who does the work. No
-            agency layers, no handoffs — just clear thinking and craft from
-            first sketch to launch and beyond.
+            The person you speak to first is the person who does the work.
+            No account manager, no handover, nobody learning your business on
+            your budget. Just me, from first sketch to launch… for as long
+            afterwards as you want me.
           </p>
           <p className="text-[17px] leading-[1.7] font-light italic text-heroMuted3">
-            Tango Brown is the studio of Tim Brown, a freelance digital growth
-            consultant based in Exeter, Devon.
+            Think of me as your marketing and tech guy. An extension of your
+            business, treating your success as my own.
           </p>
         </div>
       </div>
