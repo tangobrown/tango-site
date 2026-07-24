@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { DM_Sans, Public_Sans } from "next/font/google";
+import { DM_Sans, Figtree } from "next/font/google";
 import ContactProvider from "@/components/ContactProvider";
 import "./globals.css";
 
@@ -10,7 +10,7 @@ const heading = DM_Sans({
   display: "swap",
 });
 
-const body = Public_Sans({
+const body = Figtree({
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700"],
   variable: "--font-body",
