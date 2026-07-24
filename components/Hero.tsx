@@ -1,3 +1,4 @@
+import Image from "next/image";
 import ContactTrigger from "./ContactTrigger";
 
 /**
@@ -28,12 +29,19 @@ export default function Hero() {
       {/* Photo band — 1400px column */}
       <div className="container-hero pt-11">
         <div className="relative overflow-hidden">
-          {/* Placeholder tile until real hero photograph is dropped in */}
           <div
-            className="w-full bg-placeholderTile"
+            className="relative w-full"
             style={{ height: "min(64vh, 620px)" }}
-            aria-label="Hero photograph placeholder"
-          />
+          >
+            <Image
+              src="/hero.jpg"
+              alt="Tim Brown, sitting on a step in front of a graffiti wall"
+              fill
+              sizes="(max-width: 1400px) 100vw, 1400px"
+              priority
+              className="object-cover"
+            />
+          </div>
           <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-10">
             <p
               className="font-heading font-medium text-white leading-[1.32] tracking-[-0.01em]"
