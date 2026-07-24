@@ -1,3 +1,4 @@
+import Image from "next/image";
 import ContactTrigger from "./ContactTrigger";
 
 /**
@@ -13,10 +14,17 @@ export default function About() {
     <section id="about" className="bg-sand">
       <div className="container-tb py-28 grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
         <div
-          className="w-full bg-placeholderTile"
+          className="relative w-full bg-placeholderTile"
           style={{ height: "600px" }}
-          aria-label="Portrait of Tim placeholder"
-        />
+        >
+          <Image
+            src="/about-portrait.jpg"
+            alt="Tim Brown"
+            fill
+            sizes="(max-width: 768px) 100vw, 620px"
+            className="object-cover"
+          />
+        </div>
         <div>
           <div className="text-[13px] font-semibold uppercase tracking-[0.22em] text-muted-faint mb-[22px]">
             About me
