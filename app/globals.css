@@ -27,18 +27,30 @@
 }
 
 @layer utilities {
-  /* Content container — 1280px max, 48px side padding */
+  /* Content container — 1280px max. 15px side padding on mobile
+     (per handoff feedback), 48px on tablet + up. */
   .container-tb {
     width: 100%;
     max-width: 1280px;
     margin-inline: auto;
-    padding-inline: 48px;
+    padding-inline: 15px;
   }
-  /* Slightly wider variant for the hero photo band */
+  @media (min-width: 768px) {
+    .container-tb {
+      padding-inline: 48px;
+    }
+  }
+  /* Hero photo band — full-bleed on mobile so the image reaches
+     the edge of the screen. Standard 48px gutter above 768px. */
   .container-hero {
     width: 100%;
     max-width: 1400px;
     margin-inline: auto;
-    padding-inline: 48px;
+    padding-inline: 0;
+  }
+  @media (min-width: 768px) {
+    .container-hero {
+      padding-inline: 48px;
+    }
   }
 }

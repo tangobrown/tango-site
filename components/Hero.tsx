@@ -15,10 +15,10 @@ export default function Hero() {
   return (
     <section
       id="top"
-      className="bg-hero text-heroText pt-[118px] relative"
+      className="bg-hero text-heroText pt-[88px] md:pt-[118px] relative"
     >
       {/* H1 with the Start-a-project button aligned to its baseline on the right */}
-      <div className="container-tb pt-20 flex items-end justify-between gap-8 flex-wrap">
+      <div className="container-tb pt-10 md:pt-20 flex items-end justify-between gap-6 md:gap-8 flex-wrap">
         <h1
           className="font-heading font-normal text-gold leading-[1.06] tracking-[-0.01em]"
           style={{ fontSize: "clamp(34px,4.8vw,66px)", maxWidth: "18ch" }}
@@ -35,12 +35,12 @@ export default function Hero() {
         </ContactTrigger>
       </div>
 
-      {/* Photo band — 1400px column */}
-      <div className="container-hero pt-11">
+      {/* Photo band — 1400px column; full-bleed on mobile */}
+      <div className="container-hero pt-8 md:pt-11">
         <div className="relative overflow-hidden">
           <div
             className="relative w-full"
-            style={{ height: "min(64vh, 620px)" }}
+            style={{ height: "min(64vh, 620px)", minHeight: "320px" }}
           >
             <Image
               src="/hero.jpg"
@@ -51,7 +51,7 @@ export default function Hero() {
               className="object-cover object-right-top"
             />
           </div>
-          <div className="absolute inset-0 flex flex-col items-start justify-end text-left p-12">
+          <div className="absolute inset-0 flex flex-col items-start justify-end text-left p-6 md:p-12">
             <p
               className="font-heading font-normal text-white leading-[1.32] tracking-[-0.01em]"
               style={{
@@ -73,7 +73,7 @@ export default function Hero() {
       </div>
 
       {/* Intro two-column */}
-      <div className="container-tb pt-[88px] pb-[108px] grid grid-cols-1 md:grid-cols-2 gap-20 items-start">
+      <div className="container-tb pt-16 md:pt-[88px] pb-16 md:pb-[108px] grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-20 items-start">
         <div>
           <div className="text-[13px] font-semibold uppercase tracking-[0.2em] text-gold mb-[26px]">
             Tango Brown

@@ -10,10 +10,10 @@ import ContactTrigger from "./ContactTrigger";
 export default function Nav() {
   return (
     <div className="absolute top-0 left-0 right-0 z-20">
-      <div className="container-tb py-[30px] flex items-center justify-between text-heroText">
+      <div className="container-tb py-[22px] md:py-[30px] flex items-center justify-between text-heroText">
         <Link
           href="#top"
-          className="flex items-center gap-3 font-heading font-normal text-[22px] tracking-[0.01em]"
+          className="flex items-center gap-3 font-heading font-normal text-[19px] md:text-[22px] tracking-[0.01em]"
         >
           <span
             aria-hidden="true"
@@ -26,20 +26,21 @@ export default function Nav() {
         </Link>
         <nav
           aria-label="Primary"
-          className="flex items-center gap-10 text-[15px] font-medium"
+          className="flex items-center gap-4 md:gap-10 text-[15px] font-medium"
         >
-          <a href="#services" className="opacity-90 hover:opacity-100 transition-opacity">
+          {/* Middle links hidden on mobile — the anchors are all a scroll away */}
+          <a href="#services" className="hidden md:inline opacity-90 hover:opacity-100 transition-opacity">
             Services
           </a>
-          <a href="#work" className="opacity-90 hover:opacity-100 transition-opacity">
+          <a href="#work" className="hidden md:inline opacity-90 hover:opacity-100 transition-opacity">
             Work
           </a>
-          <a href="#about" className="opacity-90 hover:opacity-100 transition-opacity">
+          <a href="#about" className="hidden md:inline opacity-90 hover:opacity-100 transition-opacity">
             About
           </a>
           <ContactTrigger
             ariaLabel="Open contact form"
-            className="cursor-pointer px-[22px] py-2.5 text-sm hover:bg-white/5 transition-colors"
+            className="cursor-pointer px-[16px] md:px-[22px] py-2 md:py-2.5 text-[13px] md:text-sm hover:bg-white/5 transition-colors"
             style={{ border: "1.5px solid rgba(245,241,232,.55)" }}
           >
             Get in touch

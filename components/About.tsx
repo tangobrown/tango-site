@@ -13,10 +13,9 @@ import ArrowRight from "./ArrowRight";
 export default function About() {
   return (
     <section id="about" className="bg-sand">
-      <div className="container-tb py-28 grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
+      <div className="container-tb py-16 md:py-28 grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-20 items-center">
         <div
-          className="relative w-full bg-placeholderTile"
-          style={{ height: "600px" }}
+          className="relative w-full bg-placeholderTile h-[420px] md:h-[600px]"
         >
           <Image
             src="/about-portrait.jpg"

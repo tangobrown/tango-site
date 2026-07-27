@@ -17,34 +17,37 @@ export default function WorkCarousel() {
   return (
     <section id="work" style={{ scrollMarginTop: "0px" }}>
       {/* Header row inside the 1280 content column */}
-      <div className="container-tb pt-28 pb-12">
+      <div className="container-tb pt-16 md:pt-28 pb-8 md:pb-12">
         <div className="text-[13px] font-semibold uppercase tracking-[0.22em] text-muted-faint mb-5">
           Selected work
         </div>
         <h2
           className="font-heading font-normal leading-[1.06] tracking-[-0.01em]"
-          style={{ fontSize: "clamp(28px,3.4vw,46px)", maxWidth: "18ch" }}
+          style={{ fontSize: "clamp(28px,7vw,46px)", maxWidth: "18ch" }}
         >
           A few projects I&apos;m proud of.
         </h2>
       </div>
 
       {/* Sticky stack */}
-      <div className="container-tb pb-[120px]">
+      <div className="container-tb pb-16 md:pb-[120px]">
         <div className="relative">
           {work.map((proj, i) => {
-            const top = 32 + i * 16;
+            // Small offset per card so the previous card's top edge peeks
+            // above the next as they stack. On mobile the sticky pin has
+            // less breathing room, so we start slightly lower.
+            const top = 16 + i * 12;
             return (
               <div
                 key={proj.name}
                 className="sticky pb-6"
                 style={{ top: `${top}px` }}
               >
-                <article className="grid grid-cols-1 md:grid-cols-2 min-h-[440px] overflow-hidden border border-rule">
+                <article className="grid grid-cols-1 md:grid-cols-2 md:min-h-[440px] overflow-hidden border border-rule bg-white">
                   {/* Image edge-to-edge on the left half */}
                   <div
-                    className="relative w-full bg-card-olive overflow-hidden"
-                    style={{ minHeight: "320px" }}
+                    className="relative w-full bg-card-olive overflow-hidden h-[240px] md:h-auto"
+                    style={{ minHeight: "240px" }}
                   >
                     {proj.imageSrc && (
                       <Image
@@ -64,7 +67,7 @@ export default function WorkCarousel() {
                     )}
                   </div>
                   {/* Text on a white background */}
-                  <div className="flex flex-col p-10 bg-white text-ink">
+                  <div className="flex flex-col p-6 md:p-10 bg-white text-ink">
                     <div className="text-[13px] font-semibold uppercase tracking-[0.18em] text-muted-faint mb-4">
                       {proj.role}
                     </div>

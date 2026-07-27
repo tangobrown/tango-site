@@ -9,7 +9,7 @@ import ContactTrigger from "./ContactTrigger";
 export default function Footer() {
   return (
     <footer className="bg-footer text-footer-text">
-      <div className="container-tb pt-[72px] pb-12 grid grid-cols-1 md:grid-cols-[1.4fr_1fr_1fr] gap-12">
+      <div className="container-tb pt-14 md:pt-[72px] pb-10 md:pb-12 grid grid-cols-1 md:grid-cols-[1.4fr_1fr_1fr] gap-10 md:gap-12">
         <div>
           <div className="font-heading text-[22px] text-cream mb-[18px]">
             Tim Brown

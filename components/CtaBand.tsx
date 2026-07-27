@@ -11,7 +11,7 @@ export default function CtaBand() {
   return (
     <section className="bg-forest text-heroText">
       <div
-        className="mx-auto text-center px-12 py-[136px]"
+        className="mx-auto text-center px-6 md:px-12 py-20 md:py-[136px]"
         style={{ maxWidth: "1080px" }}
       >
         <div className="text-[13px] font-semibold uppercase tracking-[0.22em] text-forestLabel mb-7">
