@@ -53,21 +53,11 @@ export default function Hero() {
           </div>
           <div className="absolute inset-0 flex flex-col items-start justify-end text-left p-6 md:p-12">
             <p
-              className="font-heading font-normal text-white leading-[1.32] tracking-[-0.01em]"
-              style={{
-                fontSize: "clamp(22px,2.6vw,34px)",
-                maxWidth: "22ch",
-              }}
+              className="text-[15px] md:text-[16px] font-light"
+              style={{ color: "rgba(255,255,255,.9)" }}
             >
-              Your website should be quietly working for you — bringing in the
-              right people, day and night.
+              Tim Brown (based in Exeter, Devon)
             </p>
-          </div>
-          <div
-            className="absolute right-4 bottom-3.5 text-xs italic"
-            style={{ color: "rgba(255,255,255,.85)" }}
-          >
-            Exeter, Devon
           </div>
         </div>
       </div>
