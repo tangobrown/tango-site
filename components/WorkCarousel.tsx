@@ -52,11 +52,14 @@ export default function WorkCarousel() {
                         alt={proj.name}
                         fill
                         // Ask Next to serve a larger variant than the raw
-                        // display size so retina + object-cover crop stays
-                        // crisp; the 3200x2000 source can back it easily.
+                        // display size so retina renders stay crisp; the
+                        // 3200x2000 source can back it easily.
                         sizes="(max-width: 768px) 100vw, 1200px"
                         quality={90}
-                        className="object-cover object-left-top"
+                        // Contain (not cover) so the full browser mockup
+                        // is visible; anchored top-left so the leftover
+                        // space falls to the bottom-right.
+                        className="object-contain object-left-top"
                       />
                     )}
                   </div>
