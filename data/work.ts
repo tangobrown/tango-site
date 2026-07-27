@@ -31,11 +31,13 @@ export const work: Project[] = [
     url: "https://pim-pam.net",
   },
   {
-    name: "Project Three",
-    role: "Website · Automation",
+    name: "The Old Fashioned Cocktail Co.",
+    role: "Website · Branding",
     tag: "Selected project",
     quote:
-      "The booking process that used to eat my week now takes a few taps. It quietly gave me hours back.",
+      "Tim captured our style perfectly — moody, cinematic, and now our booking calendar barely takes a day off.",
+    imageSrc: "/old-fashioned.jpg",
+    url: "https://theoldfashionedcocktailco.com",
   },
   {
     name: "Project Four",
