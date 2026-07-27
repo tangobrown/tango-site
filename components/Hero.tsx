@@ -18,7 +18,7 @@ export default function Hero() {
       className="bg-hero text-heroText pt-[118px] relative"
     >
       {/* H1 with the Start-a-project button aligned to its baseline on the right */}
-      <div className="container-tb pt-11 flex items-end justify-between gap-8 flex-wrap">
+      <div className="container-tb pt-20 flex items-end justify-between gap-8 flex-wrap">
         <h1
           className="font-heading font-normal text-gold leading-[1.06] tracking-[-0.01em]"
           style={{ fontSize: "clamp(34px,4.8vw,66px)", maxWidth: "18ch" }}
