@@ -22,11 +22,13 @@ export const work: Project[] = [
     url: "https://www.devonjoinery.co.uk",
   },
   {
-    name: "Project Two",
-    role: "Website · Hosting",
-    tag: "Selected project",
+    name: "PIM-PAM",
+    role: "Website · Branding",
+    tag: "World Bank Group",
     quote:
-      "A calm rebuild that made a growing service business easy to find and easy to trust — faster and far less fuss.",
+      "Complex public-sector policy made easy to navigate — a site our global audience actually engages with.",
+    imageSrc: "/pim-pam.jpg",
+    url: "https://pim-pam.net",
   },
   {
     name: "Project Three",
