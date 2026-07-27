@@ -48,4 +48,13 @@ export const work: Project[] = [
     imageSrc: "/vowles.jpg",
     url: "https://vowlescarpentry.co.uk",
   },
+  {
+    name: "Country Benchmarking Dashboard",
+    role: "Web App · Data Visualisation",
+    tag: "World Bank Group",
+    quote:
+      "Global climate governance indicators for 182 countries, made explorable in a click — the kind of interface policymakers actually use.",
+    imageSrc: "/cbd.jpg",
+    url: "https://cbd.pim-pam.net",
+  },
 ];
