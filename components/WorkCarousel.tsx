@@ -56,10 +56,10 @@ export default function WorkCarousel() {
                         // 3200x2000 source can back it easily.
                         sizes="(max-width: 768px) 100vw, 1200px"
                         quality={90}
-                        // Contain (not cover) so the full browser mockup
-                        // is visible; anchored top-left so the leftover
-                        // space falls to the bottom-right.
-                        className="object-contain object-left-top"
+                        // Cover the card column edge-to-edge; anchor the
+                        // crop to top-left so browser chrome + heading
+                        // stay in view when the sides get cut off.
+                        className="object-cover object-left-top"
                       />
                     )}
                   </div>
