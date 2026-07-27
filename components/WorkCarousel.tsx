@@ -51,8 +51,12 @@ export default function WorkCarousel() {
                         src={proj.imageSrc}
                         alt={proj.name}
                         fill
-                        sizes="(max-width: 768px) 100vw, 620px"
-                        className="object-cover"
+                        // Ask Next to serve a larger variant than the raw
+                        // display size so retina + object-cover crop stays
+                        // crisp; the 3200x2000 source can back it easily.
+                        sizes="(max-width: 768px) 100vw, 1200px"
+                        quality={90}
+                        className="object-cover object-left-top"
                       />
                     )}
                   </div>
