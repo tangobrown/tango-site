@@ -40,10 +40,12 @@ export const work: Project[] = [
     url: "https://theoldfashionedcocktailco.com",
   },
   {
-    name: "Project Four",
-    role: "E-commerce · Hosting",
+    name: "Vowles Carpentry",
+    role: "Website · Lead Generation",
     tag: "Selected project",
     quote:
-      "A slow, patchy store turned into a dependable little engine for our family business.",
+      "Tim gave the business a proper front door. The phone rings more, and the enquiries are exactly the jobs I want to be taking.",
+    imageSrc: "/vowles.jpg",
+    url: "https://vowlescarpentry.co.uk",
   },
 ];
