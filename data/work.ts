@@ -18,7 +18,7 @@ export const work: Project[] = [
     tag: "Selected project",
     quote:
       "Tim just got it. The site feels like us, and the enquiries have more than doubled since launch.",
-    imageSrc: "/devon-joinery.png",
+    imageSrc: "/devon-joinery.jpg",
     url: "https://www.devonjoinery.co.uk",
   },
   {
