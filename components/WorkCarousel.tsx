@@ -25,7 +25,7 @@ export default function WorkCarousel() {
           className="font-heading font-normal leading-[1.06] tracking-[-0.01em]"
           style={{ fontSize: "clamp(28px,7vw,46px)", maxWidth: "18ch" }}
         >
-          A few projects I&apos;m proud of.
+          What have I been working on recently?
         </h2>
       </div>
 
