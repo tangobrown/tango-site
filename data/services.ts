@@ -31,7 +31,7 @@ export const services: Service[] = [
   },
   {
     num: "02",
-    title: "Website Hosting",
+    title: "Hosting & Support",
     description:
       "Reliable, secure hosting with updates, backups and a real person to call. Set it and forget it — your site simply stays online, fast and safe.",
     points: [
@@ -53,7 +53,7 @@ export const services: Service[] = [
       "On-page & content",
       "Monthly reporting",
     ],
-    palette: "olive",
+    palette: "green",
   },
   {
     num: "04",
@@ -66,6 +66,6 @@ export const services: Service[] = [
       "Integrations",
       "Time-saving audits",
     ],
-    palette: "green",
+    palette: "olive",
   },
 ];

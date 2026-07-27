@@ -40,7 +40,7 @@ export default function Footer() {
           </div>
           <a href="#services">Website Builds</a>
           <br />
-          <a href="#services">Hosting</a>
+          <a href="#services">Hosting & Support</a>
           <br />
           <a href="#services">Lead Generation</a>
           <br />
