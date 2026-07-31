@@ -15,10 +15,10 @@ export default function Hero() {
   return (
     <section
       id="top"
-      className="bg-hero text-heroText pt-[88px] md:pt-[118px] relative"
+      className="bg-hero text-heroText pt-[70px] md:pt-[92px] relative"
     >
-      {/* Near-full-bleed rounded hero image with H1 + button + caption overlaid */}
-      <div className="px-5 pt-6 md:pt-8">
+      {/* Rounded hero image (back to 1400px column) with H1 + button + caption overlaid */}
+      <div className="container-hero">
         <div className="relative overflow-hidden rounded-[20px]">
           <div
             className="relative w-full"
