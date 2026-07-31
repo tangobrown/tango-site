@@ -26,7 +26,7 @@ export default function About() {
           />
         </div>
         <div>
-          <div className="text-[13px] font-semibold uppercase tracking-[0.22em] text-muted-faint mb-[22px]">
+          <div className="font-playfair italic font-medium text-[18px] tracking-[-0.045em] text-muted-faint mb-[22px]">
             About me
           </div>
           <h2
