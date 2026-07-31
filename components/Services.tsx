@@ -35,7 +35,7 @@ function Card({ svc }: { svc: (typeof services)[number] }) {
     svc.palette === "green" ? "text-card-greenText" : "text-card-oliveText";
   return (
     <div
-      className={`${bg} flex-1 px-8 md:px-11 pt-11 pb-10 text-[#eef0e6] flex flex-col`}
+      className={`${bg} flex-1 px-8 md:px-11 pt-11 pb-10 text-[#eef0e6] flex flex-col rounded-br-[25px]`}
     >
       <div className="font-heading font-light text-xl text-[#a7ab98] mb-3.5">
         {svc.num}

@@ -43,7 +43,7 @@ export default function WorkCarousel() {
                 className="sticky pb-6"
                 style={{ top: `${top}px` }}
               >
-                <article className="grid grid-cols-1 md:grid-cols-2 md:min-h-[440px] overflow-hidden border border-rule bg-white">
+                <article className="grid grid-cols-1 md:grid-cols-2 md:min-h-[440px] overflow-hidden border border-rule bg-white rounded-br-[25px]">
                   {/* Image edge-to-edge on the left half */}
                   <div
                     className="relative w-full bg-card-olive overflow-hidden h-[240px] md:h-auto"
