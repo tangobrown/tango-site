@@ -43,7 +43,7 @@ export default function Hero() {
           </div>
           {/* Caption + H1 + Start-a-project button, stacked bottom-left */}
           <div className="absolute inset-0 flex flex-col items-start justify-end text-left p-6 md:p-12 gap-6 md:gap-8">
-            <div className="flex flex-col items-start gap-4 md:gap-5 max-w-[50%]">
+            <div className="flex flex-col items-start gap-4 md:gap-5 max-w-[80%] md:max-w-[50%]">
               <p className="text-[13px] font-bold uppercase tracking-[0.22em] text-gold">
                 Tim Brown (based in Exeter, Devon)
               </p>
