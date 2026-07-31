@@ -57,6 +57,7 @@ const config: Config = {
       fontFamily: {
         heading: ["var(--font-atkinson)", "sans-serif"],
         body: ["var(--font-atkinson)", "sans-serif"],
+        playfair: ["var(--font-playfair)", "Georgia", "serif"],
       },
       maxWidth: {
         content: "1280px",

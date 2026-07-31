@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Atkinson_Hyperlegible } from "next/font/google";
+import { Atkinson_Hyperlegible, Playfair_Display } from "next/font/google";
 import ContactProvider from "@/components/ContactProvider";
 import "./globals.css";
 
@@ -11,6 +11,17 @@ const atkinson = Atkinson_Hyperlegible({
   subsets: ["latin"],
   weight: ["400", "700"],
   variable: "--font-atkinson",
+  display: "swap",
+});
+
+// Playfair Display italic 500 — used exclusively for the "Tango." wordmark
+// per the logo handoff. Kept isolated to that one element via --font-playfair
+// so nothing else on the site accidentally picks up a serif.
+const playfair = Playfair_Display({
+  subsets: ["latin"],
+  weight: ["500"],
+  style: ["italic"],
+  variable: "--font-playfair",
   display: "swap",
 });
 
@@ -31,7 +42,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={atkinson.variable}>
+    <html lang="en" className={`${atkinson.variable} ${playfair.variable}`}>
       <body>
         <ContactProvider>{children}</ContactProvider>
       </body>

@@ -3,9 +3,10 @@ import ContactTrigger from "./ContactTrigger";
 
 /**
  * Absolutely positioned over the dark hero band. Transparent
- * background, all-cream text. Left: circular TB badge + wordmark
- * (both link to #top). Right: three anchor links + a bordered
- * 'Get in touch' trigger that opens the contact slide-out.
+ * background, all-cream text. Left: "Tango." wordmark logo
+ * (Playfair Display italic 500, gold full-stop per the handoff).
+ * Right: three anchor links + a bordered 'Get in touch' trigger
+ * that opens the contact slide-out.
  */
 export default function Nav() {
   return (
@@ -13,16 +14,10 @@ export default function Nav() {
       <div className="container-tb py-[22px] md:py-[30px] flex items-center justify-between text-heroText">
         <Link
           href="#top"
-          className="flex items-center gap-3 font-heading font-normal text-[19px] md:text-[22px] tracking-[0.01em]"
+          aria-label="Tango home"
+          className="font-playfair italic font-medium text-[28px] md:text-[34px] leading-none tracking-[-0.045em] whitespace-nowrap text-white"
         >
-          <span
-            aria-hidden="true"
-            className="w-[34px] h-[34px] rounded-full inline-flex items-center justify-center text-[13px] tracking-normal"
-            style={{ border: "1.5px solid currentColor" }}
-          >
-            TB
-          </span>
-          Tango Brown
+          Tango<span aria-hidden="true" className="text-gold">.</span>
         </Link>
         <nav
           aria-label="Primary"
