@@ -43,16 +43,13 @@ export default function Hero() {
           </div>
           {/* Caption + H1 + Start-a-project button, stacked bottom-left */}
           <div className="absolute inset-0 flex flex-col items-start justify-end text-left p-6 md:p-12 gap-6 md:gap-8">
-            <div className="flex flex-col items-start gap-3 md:gap-4">
-              <p
-                className="text-[13px] md:text-[14px] font-light"
-                style={{ color: "rgba(255,255,255,.85)" }}
-              >
+            <div className="flex flex-col items-start gap-4 md:gap-5 max-w-[50%]">
+              <p className="text-[13px] font-bold uppercase tracking-[0.22em] text-gold">
                 Tim Brown (based in Exeter, Devon)
               </p>
               <h1
-                className="font-heading font-normal text-gold leading-[1.06] tracking-[-0.01em]"
-                style={{ fontSize: "clamp(30px,4.6vw,62px)", maxWidth: "18ch" }}
+                className="font-heading font-normal text-white leading-[1.06] tracking-[-0.01em]"
+                style={{ fontSize: "clamp(30px,4.6vw,62px)" }}
               >
                 I&apos;ve got your marketing &amp; technology covered.
               </h1>
