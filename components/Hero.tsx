@@ -43,17 +43,12 @@ export default function Hero() {
           </div>
           {/* Caption + H1 + Start-a-project button, stacked bottom-left */}
           <div className="absolute inset-0 flex flex-col items-start justify-end text-left p-6 md:p-12 gap-6 md:gap-8">
-            <div className="flex flex-col items-start gap-4 md:gap-5 max-w-[80%] md:max-w-[50%]">
-              <p className="text-[17px] leading-[1.7] font-light text-gold">
-                Tim Brown - Digital Growth Consultant
-              </p>
-              <h1
-                className="font-heading font-normal text-white leading-[1.06] tracking-[-0.01em]"
-                style={{ fontSize: "clamp(30px,4.6vw,62px)" }}
-              >
-                I&apos;ve got your marketing &amp; technology covered.
-              </h1>
-            </div>
+            <h1
+              className="font-heading font-normal text-white leading-[1.06] tracking-[-0.01em] max-w-[600px]"
+              style={{ fontSize: "clamp(30px,4.6vw,62px)" }}
+            >
+              I&apos;ve got your marketing &amp; technology covered.
+            </h1>
             <ContactTrigger
               ariaLabel="Start a project"
               className="inline-flex items-center gap-2.5 text-white text-[15px] font-medium px-[30px] py-[13px] cursor-pointer hover:bg-white/10 transition-colors shrink-0"
