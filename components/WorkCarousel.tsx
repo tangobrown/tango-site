@@ -18,7 +18,7 @@ export default function WorkCarousel() {
     <section id="work" style={{ scrollMarginTop: "0px" }}>
       {/* Header row inside the 1280 content column */}
       <div className="container-tb pt-16 md:pt-28 pb-8 md:pb-12">
-        <div className="font-playfair italic font-medium text-[22px] tracking-[-0.045em] text-muted-faint mb-5">
+        <div className="font-instrument font-normal text-[22px] tracking-[-0.045em] text-muted-faint mb-5">
           Selected work
         </div>
         <h2
@@ -68,7 +68,7 @@ export default function WorkCarousel() {
                   </div>
                   {/* Text on a white background */}
                   <div className="flex flex-col p-6 md:p-10 bg-white text-ink">
-                    <div className="font-playfair italic font-medium text-[22px] tracking-[-0.045em] text-muted-faint mb-4">
+                    <div className="font-instrument font-normal text-[22px] tracking-[-0.045em] text-muted-faint mb-4">
                       {proj.role}
                     </div>
                     <h3

@@ -15,7 +15,7 @@ export default function Nav() {
         <Link
           href="#top"
           aria-label="Tango home"
-          className="font-playfair italic font-medium text-[28px] md:text-[34px] leading-none tracking-[-0.045em] whitespace-nowrap text-white"
+          className="font-instrument font-normal text-[28px] md:text-[34px] leading-none tracking-[-0.045em] whitespace-nowrap text-white"
         >
           Tango<span aria-hidden="true" className="text-gold">.</span>
         </Link>

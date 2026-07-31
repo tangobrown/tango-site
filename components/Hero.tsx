@@ -44,7 +44,7 @@ export default function Hero() {
           {/* Caption + H1 + Start-a-project button, stacked bottom-left */}
           <div className="absolute inset-0 flex flex-col items-start justify-end text-left p-6 md:p-12 gap-6 md:gap-8">
             <div className="flex flex-col items-start gap-4 md:gap-5 max-w-[80%] md:max-w-[50%]">
-              <p className="font-playfair italic font-medium text-[22px] tracking-[-0.045em] text-gold">
+              <p className="font-instrument font-normal text-[22px] tracking-[-0.045em] text-gold">
                 Tim Brown - Digital Growth Consultant
               </p>
               <h1
@@ -69,7 +69,7 @@ export default function Hero() {
       {/* Intro two-column */}
       <div className="container-tb pt-16 md:pt-[88px] pb-16 md:pb-[108px] grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-20 items-start">
         <div>
-          <div className="font-playfair italic font-medium text-[22px] tracking-[-0.045em] text-gold mb-[26px]">
+          <div className="font-instrument font-normal text-[22px] tracking-[-0.045em] text-gold mb-[26px]">
             My mission
           </div>
           <h2

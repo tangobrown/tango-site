@@ -23,7 +23,7 @@ export default function Footer() {
           </div>
         </div>
         <div className="text-[16px] leading-[2.1] font-light">
-          <div className="font-playfair italic font-medium text-[22px] tracking-[-0.045em] text-footer-faint mb-3">
+          <div className="font-instrument font-normal text-[22px] tracking-[-0.045em] text-footer-faint mb-3">
             Site
           </div>
           <a href="#about">About</a>
@@ -35,7 +35,7 @@ export default function Footer() {
           </ContactTrigger>
         </div>
         <div className="text-[16px] leading-[2.1] font-light">
-          <div className="font-playfair italic font-medium text-[22px] tracking-[-0.045em] text-footer-faint mb-3">
+          <div className="font-instrument font-normal text-[22px] tracking-[-0.045em] text-footer-faint mb-3">
             Services
           </div>
           <a href="#services">Website Builds</a>
