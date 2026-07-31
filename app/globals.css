@@ -40,11 +40,12 @@
       padding-inline: 48px;
     }
   }
-  /* Hero photo band — full-bleed on mobile so the image reaches
-     the edge of the screen. Standard 48px gutter above 768px. */
+  /* Hero photo band + testimonials marquee — full-bleed on mobile so
+     content reaches the edge of the screen. Standard 48px gutter
+     above 768px. Sits ~220px wider than container-tb at desktop max. */
   .container-hero {
     width: 100%;
-    max-width: 1400px;
+    max-width: 1500px;
     margin-inline: auto;
     padding-inline: 0;
   }

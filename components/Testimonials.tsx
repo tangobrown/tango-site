@@ -55,7 +55,7 @@ export default function Testimonials() {
         </h2>
       </div>
 
-      <div className="container-tb">
+      <div className="container-hero">
         <div className="overflow-hidden marquee-mask">
           <div className="marquee-track marquee-left flex gap-5">
             {rowA.map((t, i) => (
