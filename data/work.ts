@@ -35,7 +35,7 @@ export const work: Project[] = [
     role: "Website · Branding",
     tag: "Selected project",
     quote:
-      "Tim captured our style perfectly — moody, cinematic, and now our booking calendar barely takes a day off.",
+      "A mobile cocktail bar competing in New York on atmosphere, not price. I gave The Old Fashioned Cocktail Co. a full prohibition-era identity, then built a site that sells the theater first and books the event second, with landing pages for weddings, corporate hire and parties.",
     imageSrc: "/old-fashioned.jpg",
     url: "https://theoldfashionedcocktailco.com",
   },
