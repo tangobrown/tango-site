@@ -44,7 +44,7 @@ export const work: Project[] = [
     role: "Website · Lead Generation",
     tag: "Selected project",
     quote:
-      "Tim gave the business a proper front door. The phone rings more, and the enquiries are exactly the jobs I want to be taking.",
+      "Paul Vowles is a skilled carpenter working across South Devon. I created his brand from scratch. Logo, marketing material and his website and wrote every word on it.\n\nEight service pages, a gallery and a three-step quote flow turn a one-man operation into something that reads as established and easy to trust.",
     imageSrc: "/vowles.jpg",
     url: "https://vowlescarpentry.co.uk",
   },
