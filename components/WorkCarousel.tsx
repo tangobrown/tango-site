@@ -78,7 +78,7 @@ export default function WorkCarousel() {
                       {proj.name}
                     </h3>
                     <p className="text-[17px] leading-[1.68] font-light text-muted max-w-[46ch]">
-                      &ldquo;{proj.quote}&rdquo;
+                      {proj.quote}
                     </p>
                     <div className="mt-auto pt-8">
                       {proj.url ? (
