@@ -26,7 +26,7 @@ export const work: Project[] = [
     role: "Website · Branding",
     tag: "World Bank Group",
     quote:
-      "Complex public-sector policy made easy to navigate — a site our global audience actually engages with.",
+      "PIM-PAM is a World Bank initiative bringing digital tools to public investment and asset management.\n\nI designed the brand from the ground up and built the website around it. A single entry point to multiple specialist tools, the InfraGov 2.0 framework and the Digital Academy, turning dense institutional material into something practitioners can navigate in minutes.",
     imageSrc: "/pim-pam.jpg",
     url: "https://pim-pam.net",
   },
