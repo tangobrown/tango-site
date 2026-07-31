@@ -53,7 +53,7 @@ export const work: Project[] = [
     role: "Web App · Data Visualisation",
     tag: "World Bank Group",
     quote:
-      "Global climate governance indicators for 182 countries, made explorable in a click — the kind of interface policymakers actually use.",
+      "The Country Benchmarking Dashboard is a World Bank tool for public financial management across Central Asia.\n\nI designed the brand and built the application, an interactive front end that makes World Bank and IMF datasets explorable, so ministries of finance can see how their country compares on the indicators.",
     imageSrc: "/cbd.jpg",
     url: "https://cbd.pim-pam.net",
   },
