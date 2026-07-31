@@ -19,7 +19,7 @@ export default function Hero() {
     >
       {/* Rounded hero image (back to 1400px column) with H1 + button + caption overlaid */}
       <div className="container-hero">
-        <div className="relative overflow-hidden rounded-br-[25px]">
+        <div className="relative overflow-hidden rounded-br-[35px]">
           <div
             className="relative w-full"
             style={{ height: "min(78vh, 760px)", minHeight: "520px" }}
