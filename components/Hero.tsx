@@ -17,47 +17,53 @@ export default function Hero() {
       id="top"
       className="bg-hero text-heroText pt-[88px] md:pt-[118px] relative"
     >
-      {/* H1 with the Start-a-project button aligned to its baseline on the right */}
-      <div className="container-tb pt-10 md:pt-20 flex items-end justify-between gap-6 md:gap-8 flex-wrap">
-        <h1
-          className="font-heading font-normal text-gold leading-[1.06] tracking-[-0.01em]"
-          style={{ fontSize: "clamp(34px,4.8vw,66px)", maxWidth: "18ch" }}
-        >
-          I&apos;ve got your marketing &amp; technology covered.
-        </h1>
-        <ContactTrigger
-          ariaLabel="Start a project"
-          className="inline-flex items-center gap-2.5 text-white text-[15px] font-medium px-[30px] py-[13px] cursor-pointer hover:bg-white/10 transition-colors shrink-0"
-          style={{ border: "1.5px solid rgba(245,241,232,.85)" }}
-        >
-          Start a project
-          <ArrowRight />
-        </ContactTrigger>
-      </div>
-
-      {/* Photo band — 1400px column; full-bleed on mobile */}
-      <div className="container-hero pt-8 md:pt-11">
-        <div className="relative overflow-hidden">
+      {/* Near-full-bleed rounded hero image with H1 + button + caption overlaid */}
+      <div className="px-5 pt-6 md:pt-8">
+        <div className="relative overflow-hidden rounded-[20px]">
           <div
             className="relative w-full"
-            style={{ height: "min(64vh, 620px)", minHeight: "320px" }}
+            style={{ height: "min(78vh, 760px)", minHeight: "520px" }}
           >
             <Image
               src="/hero.jpg"
               alt="Tim Brown, sitting on a step in front of a graffiti wall"
               fill
-              sizes="(max-width: 1400px) 100vw, 1400px"
+              sizes="100vw"
               priority
               className="object-cover object-right-top"
             />
+            {/* Bottom gradient scrim so the overlaid H1 + button stay legible over any image tones */}
+            <div
+              className="absolute inset-0 pointer-events-none"
+              style={{
+                background:
+                  "linear-gradient(to top, rgba(0,0,0,.6) 0%, rgba(0,0,0,.3) 32%, rgba(0,0,0,0) 62%)",
+              }}
+            />
           </div>
-          <div className="absolute inset-0 flex flex-col items-start justify-end text-left p-6 md:p-12">
-            <p
-              className="text-[15px] md:text-[16px] font-light"
-              style={{ color: "rgba(255,255,255,.9)" }}
+          {/* H1 + Start-a-project button, stacked bottom-left */}
+          <div className="absolute inset-0 flex flex-col items-start justify-end text-left p-6 md:p-12 gap-6 md:gap-8">
+            <h1
+              className="font-heading font-normal text-gold leading-[1.06] tracking-[-0.01em]"
+              style={{ fontSize: "clamp(30px,4.6vw,62px)", maxWidth: "18ch" }}
             >
-              Tim Brown (based in Exeter, Devon)
-            </p>
+              I&apos;ve got your marketing &amp; technology covered.
+            </h1>
+            <ContactTrigger
+              ariaLabel="Start a project"
+              className="inline-flex items-center gap-2.5 text-white text-[15px] font-medium px-[30px] py-[13px] cursor-pointer hover:bg-white/10 transition-colors shrink-0"
+              style={{ border: "1.5px solid rgba(245,241,232,.85)" }}
+            >
+              Start a project
+              <ArrowRight />
+            </ContactTrigger>
+          </div>
+          {/* Photo caption, tucked bottom-right so it doesn't clash with the H1 */}
+          <div
+            className="absolute right-4 bottom-3.5 md:right-6 md:bottom-4 text-[12px] md:text-[13px] font-light"
+            style={{ color: "rgba(255,255,255,.85)" }}
+          >
+            Tim Brown (based in Exeter, Devon)
           </div>
         </div>
       </div>
