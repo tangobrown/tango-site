@@ -122,7 +122,7 @@ export default function Services() {
         style={{ scrollMarginTop: "20px" }}
       >
         <div className="container-tb mb-10">
-          <div className="font-instrument font-normal text-[22px] tracking-[-0.045em] text-muted-faint mb-5">
+          <div className="font-instrument font-normal text-[22px] text-muted-faint mb-5">
             What I do
           </div>
           <h2
@@ -156,7 +156,7 @@ export default function Services() {
     >
       <div className="sticky top-0 h-screen flex flex-col justify-center overflow-hidden">
         <div className="container-tb mb-10">
-          <div className="font-instrument font-normal text-[22px] tracking-[-0.045em] text-muted-faint mb-5">
+          <div className="font-instrument font-normal text-[22px] text-muted-faint mb-5">
             What I do
           </div>
           <h2

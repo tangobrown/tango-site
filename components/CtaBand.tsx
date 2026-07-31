@@ -14,7 +14,7 @@ export default function CtaBand() {
         className="mx-auto text-center px-6 md:px-12 py-20 md:py-[136px]"
         style={{ maxWidth: "1080px" }}
       >
-        <div className="font-instrument font-normal text-[22px] tracking-[-0.045em] text-forestLabel mb-7">
+        <div className="font-instrument font-normal text-[22px] text-forestLabel mb-7">
           Let&apos;s begin
         </div>
         <h2

@@ -44,7 +44,7 @@ export default function Testimonials() {
   return (
     <section className="border-t border-rule py-16 md:py-24">
       <div className="container-tb mb-10 md:mb-14">
-        <div className="font-instrument font-normal text-[22px] tracking-[-0.045em] text-muted-faint mb-5">
+        <div className="font-instrument font-normal text-[22px] text-muted-faint mb-5">
           Testimonials
         </div>
         <h2
