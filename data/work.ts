@@ -17,7 +17,7 @@ export const work: Project[] = [
     role: "Website · SEO",
     tag: "Selected project",
     quote:
-      "A 25-year-old Exeter joinery firm with exceptional work and nowhere to show it. I built a fast, image-led site with a page for every area of expertise, a full gallery, and a free-estimate form driving. I then took on ongoing SEO to grow their visibility across Devon.",
+      "A 25-year-old Exeter joinery firm with exceptional work and nowhere to show it.\n\nI built a fast, image-led site with a page for every area of expertise, a full gallery, and a free-estimate form driving. I then took on ongoing SEO to grow their visibility across Devon.",
     imageSrc: "/devon-joinery.jpg",
     url: "https://www.devonjoinery.co.uk",
   },

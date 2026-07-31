@@ -77,9 +77,16 @@ export default function WorkCarousel() {
                     >
                       {proj.name}
                     </h3>
-                    <p className="text-[17px] leading-[1.68] font-light text-muted max-w-[46ch]">
-                      {proj.quote}
-                    </p>
+                    <div className="max-w-[46ch] space-y-4">
+                      {proj.quote.split("\n\n").map((para, idx) => (
+                        <p
+                          key={idx}
+                          className="text-[17px] leading-[1.68] font-light text-muted"
+                        >
+                          {para}
+                        </p>
+                      ))}
+                    </div>
                     <div className="mt-auto pt-8">
                       {proj.url ? (
                         <a
