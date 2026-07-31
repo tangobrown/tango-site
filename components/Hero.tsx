@@ -15,7 +15,7 @@ export default function Hero() {
   return (
     <section
       id="top"
-      className="bg-hero text-heroText pt-[92px] md:pt-[116px] relative"
+      className="bg-hero text-heroText pt-[79px] md:pt-[103px] relative"
     >
       {/* Rounded hero image (back to 1400px column) with H1 + button + caption overlaid */}
       <div className="container-hero">
