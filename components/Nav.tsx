@@ -12,13 +12,19 @@ export default function Nav() {
   return (
     <div className="absolute top-0 left-0 right-0 z-20">
       <div className="container-tb py-[22px] md:py-[30px] flex items-center justify-between text-heroText">
-        <Link
-          href="#top"
-          aria-label="Tango home"
-          className="font-instrument font-normal text-[34px] md:text-[42px] leading-none whitespace-nowrap text-white"
-        >
-          Tango<span aria-hidden="true" className="text-gold">.</span>
-        </Link>
+        <div className="flex items-end gap-3 md:gap-4">
+          <Link
+            href="#top"
+            aria-label="Tango home"
+            className="font-instrument font-normal text-[34px] md:text-[42px] leading-none whitespace-nowrap text-white"
+          >
+            Tango<span aria-hidden="true" className="text-gold">.</span>
+          </Link>
+          <div className="font-instrument font-normal text-[11px] md:text-[13px] leading-[1.2] text-white/75 whitespace-nowrap pb-[3px] md:pb-[4px]">
+            <div>Freelance Digital</div>
+            <div>Growth Consultant</div>
+          </div>
+        </div>
         <nav
           aria-label="Primary"
           className="flex items-center gap-4 md:gap-10 text-[15px] font-medium"
