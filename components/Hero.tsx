@@ -41,14 +41,22 @@ export default function Hero() {
               }}
             />
           </div>
-          {/* H1 + Start-a-project button, stacked bottom-left */}
+          {/* Caption + H1 + Start-a-project button, stacked bottom-left */}
           <div className="absolute inset-0 flex flex-col items-start justify-end text-left p-6 md:p-12 gap-6 md:gap-8">
-            <h1
-              className="font-heading font-normal text-gold leading-[1.06] tracking-[-0.01em]"
-              style={{ fontSize: "clamp(30px,4.6vw,62px)", maxWidth: "18ch" }}
-            >
-              I&apos;ve got your marketing &amp; technology covered.
-            </h1>
+            <div className="flex flex-col items-start gap-3 md:gap-4">
+              <p
+                className="text-[13px] md:text-[14px] font-light"
+                style={{ color: "rgba(255,255,255,.85)" }}
+              >
+                Tim Brown (based in Exeter, Devon)
+              </p>
+              <h1
+                className="font-heading font-normal text-gold leading-[1.06] tracking-[-0.01em]"
+                style={{ fontSize: "clamp(30px,4.6vw,62px)", maxWidth: "18ch" }}
+              >
+                I&apos;ve got your marketing &amp; technology covered.
+              </h1>
+            </div>
             <ContactTrigger
               ariaLabel="Start a project"
               className="inline-flex items-center gap-2.5 text-white text-[15px] font-medium px-[30px] py-[13px] cursor-pointer hover:bg-white/10 transition-colors shrink-0"
@@ -57,13 +65,6 @@ export default function Hero() {
               Start a project
               <ArrowRight />
             </ContactTrigger>
-          </div>
-          {/* Photo caption, tucked bottom-right so it doesn't clash with the H1 */}
-          <div
-            className="absolute right-4 bottom-3.5 md:right-6 md:bottom-4 text-[12px] md:text-[13px] font-light"
-            style={{ color: "rgba(255,255,255,.85)" }}
-          >
-            Tim Brown (based in Exeter, Devon)
           </div>
         </div>
       </div>
