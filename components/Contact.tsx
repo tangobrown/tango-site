@@ -39,7 +39,7 @@ export default function Contact() {
         {/* Left */}
         <Reveal className="flex flex-col gap-7">
           <span className="font-mono text-[11px] uppercase tracking-[.2em] text-mint">
-            09 / Contact
+            08 / Contact
           </span>
           <h2 className="m-0 text-[clamp(40px,5.4vw,80px)] font-semibold leading-[.98] tracking-[-.04em] text-bone">
             Twenty minutes. No pitch.

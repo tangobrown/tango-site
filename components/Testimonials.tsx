@@ -58,7 +58,7 @@ export default function Testimonials() {
           as="span"
           className="font-mono text-[11px] uppercase tracking-[.2em] text-forest"
         >
-          08 / Testimonials
+          07 / Testimonials
         </Reveal>
         <Reveal
           as="h2"

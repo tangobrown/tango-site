@@ -56,7 +56,7 @@ export default function CaseCarousel() {
       <div className="mx-auto flex max-w-content flex-wrap items-end justify-between gap-10 px-6 md:px-10">
         <Reveal className="flex flex-col gap-[18px]">
           <span className="font-mono text-[11px] uppercase tracking-[.2em] text-forest">
-            04 / Case studies
+            03 / Case studies
           </span>
           <h2 className="m-0 text-[clamp(34px,4.2vw,60px)] font-semibold leading-[1.02] tracking-[-.035em]">
             Work, and what it did.

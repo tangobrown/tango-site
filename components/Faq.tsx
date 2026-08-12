@@ -15,7 +15,7 @@ export default function Faq() {
       <div className="mx-auto flex max-w-faq flex-col gap-12">
         <Reveal className="flex flex-col gap-[18px]">
           <span className="font-mono text-[11px] uppercase tracking-[.2em] text-forest">
-            07 / FAQ
+            06 / FAQ
           </span>
           <h2 className="m-0 text-[clamp(34px,4.2vw,60px)] font-semibold leading-[1.02] tracking-[-.035em]">
             The awkward questions.

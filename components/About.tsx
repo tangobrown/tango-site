@@ -23,7 +23,7 @@ export default function About() {
         {/* Copy */}
         <Reveal className="flex flex-col gap-[26px] pt-[6px]">
           <span className="font-mono text-[11px] uppercase tracking-[.2em] text-forest">
-            06 / Operator
+            05 / Operator
           </span>
           <h2 className="m-0 text-[clamp(34px,4vw,54px)] font-semibold leading-[1.03] tracking-[-.035em]">
             One person. That&apos;s the point.
