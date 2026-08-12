@@ -55,7 +55,7 @@ export default function Process() {
                 <h3 className="m-0 text-[22px] font-semibold tracking-[-.02em] text-white">
                   {step.title}
                 </h3>
-                <p className="m-0 text-[15px] leading-[1.6] text-[rgba(255,255,255,.72)]">
+                <p className="m-0 text-[17px] leading-[1.6] text-[rgba(255,255,255,.72)]">
                   {step.body}
                 </p>
               </Reveal>

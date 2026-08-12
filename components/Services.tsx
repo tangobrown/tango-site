@@ -42,7 +42,7 @@ export default function Services() {
               <h3 className="m-0 text-[30px] font-semibold leading-[1.05] tracking-[-.03em]">
                 {service.title}
               </h3>
-              <p className="m-0 flex-1 text-[15px] leading-[1.6] text-ink-3">{service.body}</p>
+              <p className="m-0 flex-1 text-[17px] leading-[1.6] text-ink-3">{service.body}</p>
               <div className="flex flex-col gap-[10px] border-t border-[rgba(14,17,18,.12)] pt-[22px]">
                 {service.bullets.map((bullet) => (
                   <span key={bullet} className="font-mono text-[12px] text-ink-2">
