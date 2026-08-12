@@ -18,6 +18,14 @@
     overflow-x: hidden;
   }
 
+  /* Paragraph / quote copy uses Public Sans; headings stay Archivo, and
+     mono labels keep their font-mono utility (class selector wins over
+     these element selectors). */
+  p,
+  blockquote {
+    font-family: var(--font-public), system-ui, sans-serif;
+  }
+
   ::selection {
     background: #0c6b57; /* forest */
     color: #f5f4f0; /* bone */

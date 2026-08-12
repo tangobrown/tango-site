@@ -1,12 +1,20 @@
 import type { Metadata, Viewport } from "next";
-import { Archivo, JetBrains_Mono } from "next/font/google";
+import { Archivo, JetBrains_Mono, Public_Sans } from "next/font/google";
 import "./globals.css";
 
-// Archivo — all headings and body copy.
+// Archivo — headings and display text.
 const archivo = Archivo({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
   variable: "--font-archivo",
+  display: "swap",
+});
+
+// Public Sans — paragraph / body copy.
+const publicSans = Public_Sans({
+  subsets: ["latin"],
+  weight: ["400", "500"],
+  variable: "--font-public",
   display: "swap",
 });
 
@@ -82,7 +90,7 @@ export default function RootLayout({
   return (
     <html
       lang="en-GB"
-      className={`${archivo.variable} ${jetbrainsMono.variable} scroll-smooth scroll-pt-24`}
+      className={`${archivo.variable} ${jetbrainsMono.variable} ${publicSans.variable} scroll-smooth scroll-pt-24`}
     >
       <body>
         <script

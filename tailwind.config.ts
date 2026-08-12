@@ -31,6 +31,7 @@ const config: Config = {
       },
       fontFamily: {
         sans: ["var(--font-archivo)", "system-ui", "sans-serif"],
+        body: ["var(--font-public)", "system-ui", "sans-serif"],
         mono: ["var(--font-mono)", "monospace"],
       },
       maxWidth: {
