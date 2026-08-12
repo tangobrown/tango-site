@@ -1,23 +1,35 @@
-import Nav from "@/components/Nav";
-import Hero from "@/components/Hero";
-import Services from "@/components/Services";
 import About from "@/components/About";
-import WorkCarousel from "@/components/WorkCarousel";
+import CaseCarousel from "@/components/CaseCarousel";
+import Comparison from "@/components/Comparison";
+import Contact from "@/components/Contact";
+import Difference from "@/components/Difference";
+import Faq from "@/components/Faq";
+import Hero from "@/components/Hero";
+import Process from "@/components/Process";
+import SectorTicker from "@/components/SectorTicker";
+import Services from "@/components/Services";
+import SiteFooter from "@/components/SiteFooter";
+import SiteHeader from "@/components/SiteHeader";
 import Testimonials from "@/components/Testimonials";
-import CtaBand from "@/components/CtaBand";
-import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
     <>
-      <Nav />
-      <Hero />
-      <Services />
-      <About />
-      <WorkCarousel />
-      <Testimonials />
-      <CtaBand />
-      <Footer />
+      <SiteHeader />
+      <main>
+        <Hero />
+        <SectorTicker />
+        <Services />
+        <Process />
+        <Difference />
+        <CaseCarousel />
+        <Comparison />
+        <About />
+        <Faq />
+        <Testimonials />
+        <Contact />
+      </main>
+      <SiteFooter />
     </>
   );
 }

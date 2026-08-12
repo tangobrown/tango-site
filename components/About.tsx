@@ -1,60 +1,54 @@
-import Image from "next/image";
-import ContactTrigger from "./ContactTrigger";
-import ArrowRight from "./ArrowRight";
+import Placeholder from "./Placeholder";
+import Reveal from "./Reveal";
 
-/**
- * Sand-coloured band with a two-column layout: portrait placeholder
- * on the left, eyebrow + heading + two paragraphs + "Work with me →"
- * underlined link on the right. The link opens the contact slide-out.
- *
- * Drop a real portrait into /public and reference it as the src on
- * an Image element inside the left column when it arrives.
- */
+const chips = ["Direct line, always", "Month to month", "You own everything"];
+
 export default function About() {
   return (
-    <section id="about" className="bg-sand">
-      <div className="container-tb py-16 md:py-28 grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-20 items-center">
-        <div
-          className="relative w-full bg-placeholderTile h-[420px] md:h-[600px]"
-        >
-          <Image
-            src="/about-portrait.jpg"
-            alt="Tim Brown"
-            fill
-            sizes="(max-width: 768px) 100vw, 620px"
-            className="object-cover"
-          />
-        </div>
-        <div>
-          <div className="font-instrument font-normal text-[22px] text-muted-faint mb-[22px]">
-            About me
+    <section
+      id="about"
+      className="border-b border-[rgba(14,17,18,.1)] px-6 py-[110px] md:px-10"
+    >
+      <div className="mx-auto grid max-w-content grid-cols-[repeat(auto-fit,minmax(280px,1fr))] items-start gap-14">
+        {/* Portrait — capped so it doesn't stretch when the grid collapses */}
+        <Reveal className="flex max-w-[420px] flex-col gap-4">
+          <div className="relative aspect-[4/5] w-full border border-[rgba(14,17,18,.12)] bg-white">
+            <Placeholder label="Portrait of Tim Brown" />
           </div>
-          <h2
-            className="font-heading font-normal leading-[1.08] tracking-[-0.01em] mb-[26px]"
-            style={{ fontSize: "clamp(28px,3.1vw,40px)" }}
-          >
-            Hi, I&apos;m Tim Brown.
+          <span className="font-mono text-[11px] uppercase tracking-[.14em] text-ink-4">
+            Founder & operator — Tango Digital
+          </span>
+        </Reveal>
+
+        {/* Copy */}
+        <Reveal className="flex flex-col gap-[26px] pt-[6px]">
+          <span className="font-mono text-[11px] uppercase tracking-[.2em] text-forest">
+            06 / Operator
+          </span>
+          <h2 className="m-0 text-[clamp(34px,4vw,54px)] font-semibold leading-[1.03] tracking-[-.035em]">
+            One person. That&apos;s the point.
           </h2>
-          <p className="text-[18px] leading-[1.7] font-light text-muted mb-5">
-            For over a decade I&apos;ve helped businesses across the South West
-            find their footing online. No agency layers, no jargon — just
-            clear thinking and craft, delivered by the same person you first
-            speak to.
+          <p className="m-0 text-pretty text-[19px] leading-[1.55] text-ink-2">
+            Agencies sell you a team and give you a junior. I sell you me — the person who plans it,
+            builds it, and answers when you call. Fewer people means less cost, faster decisions, and
+            nobody to hide behind when something isn&apos;t working.
           </p>
-          <p className="text-[18px] leading-[1.7] font-light text-muted mb-[34px]">
-            I care about work that lasts: sites that stay fast, rank well and
-            keep earning their keep long after launch.
+          <p className="m-0 text-[16px] leading-[1.6] text-ink-3">
+            I use modern tooling and AI where it removes hours of grunt work, and judgement where it
+            doesn&apos;t. That&apos;s how a solo operator delivers what used to need six people — and
+            why the invoice looks nothing like an agency&apos;s.
           </p>
-          <ContactTrigger
-            as="span"
-            ariaLabel="Open contact form"
-            className="inline-flex items-center gap-2.5 text-forest text-[15px] font-semibold pb-[3px] cursor-pointer"
-            style={{ borderBottom: "1.5px solid #26332a" }}
-          >
-            Work with me
-            <ArrowRight />
-          </ContactTrigger>
-        </div>
+          <div className="flex flex-wrap gap-[10px] pt-2">
+            {chips.map((chip) => (
+              <span
+                key={chip}
+                className="border border-[rgba(14,17,18,.18)] px-[14px] py-[9px] font-mono text-[11px] uppercase tracking-[.1em] text-ink-2"
+              >
+                {chip}
+              </span>
+            ))}
+          </div>
+        </Reveal>
       </div>
     </section>
   );

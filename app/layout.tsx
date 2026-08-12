@@ -1,38 +1,77 @@
 import type { Metadata, Viewport } from "next";
-import { Atkinson_Hyperlegible, Instrument_Serif } from "next/font/google";
-import ContactProvider from "@/components/ContactProvider";
+import { Archivo, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 
-// Atkinson Hyperlegible ships two weights (400 + 700). We load once and
-// point both --font-heading and --font-body at it so every element on
-// the page uses the same family. Headings render at 700, paragraph
-// copy at 400.
-const atkinson = Atkinson_Hyperlegible({
+// Archivo — all headings and body copy.
+const archivo = Archivo({
   subsets: ["latin"],
-  weight: ["400", "700"],
-  variable: "--font-atkinson",
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-archivo",
   display: "swap",
 });
 
-// Instrument Serif — used for the "Tango." logo wordmark and every
-// eyebrow / small heading across the site. Regular (400), upright.
-const instrument = Instrument_Serif({
+// JetBrains Mono — every eyebrow, label, caption, price, ticker item,
+// nav link, arrow glyph and service bullet.
+const jetbrainsMono = JetBrains_Mono({
   subsets: ["latin"],
-  weight: ["400"],
-  style: ["normal"],
-  variable: "--font-instrument",
+  weight: ["400", "500"],
+  variable: "--font-mono",
   display: "swap",
 });
+
+const SITE_URL = "https://tangodigital.com";
 
 export const metadata: Metadata = {
-  title: "Tango Brown — Digital Growth Consultant",
+  metadataBase: new URL(SITE_URL),
+  title: "Tango Digital — Websites, lead generation & AI automation in Exeter",
   description:
-    "Freelance digital growth consultant based in Exeter, Devon. Website builds, hosting, SEO and AI automation for UK businesses.",
+    "Agency-grade websites, lead generation and AI automation for small businesses — built by one operator, without agency pricing. Book a free 20-minute call.",
+  keywords: [
+    "digital growth consultant",
+    "Exeter",
+    "web design",
+    "lead generation",
+    "AI automation",
+    "small business marketing",
+  ],
+  openGraph: {
+    title: "Tango Digital — Next-gen marketing for small business",
+    description:
+      "Websites, lead generation and AI automation, built by one operator. Skip the agency price tag.",
+    url: SITE_URL,
+    siteName: "Tango Digital",
+    locale: "en_GB",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Tango Digital — Next-gen marketing for small business",
+    description:
+      "Websites, lead generation and AI automation, built by one operator. Skip the agency price tag.",
+  },
 };
 
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
+};
+
+// LocalBusiness structured data for the Exeter practice. Address is a
+// placeholder until the client confirms.
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  name: "Tango Digital",
+  description:
+    "Freelance digital growth consultancy — websites, lead generation and AI automation for small businesses.",
+  areaServed: "United Kingdom",
+  founder: { "@type": "Person", name: "Tim Brown" },
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Exeter",
+    addressCountry: "GB",
+  },
+  url: SITE_URL,
 };
 
 export default function RootLayout({
@@ -41,9 +80,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${atkinson.variable} ${instrument.variable}`}>
+    <html
+      lang="en-GB"
+      className={`${archivo.variable} ${jetbrainsMono.variable} scroll-smooth scroll-pt-24`}
+    >
       <body>
-        <ContactProvider>{children}</ContactProvider>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+        {children}
       </body>
     </html>
   );

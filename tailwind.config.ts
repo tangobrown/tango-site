@@ -1,70 +1,80 @@
 import type { Config } from "tailwindcss";
 
+// Tokens are lifted verbatim from the Tango Digital handoff
+// (design_handoff_tango_digital_site/README.md → "Design tokens").
+// Where the handoff and the prototype HTML disagreed, the handoff wins.
 const config: Config = {
   content: [
     "./app/**/*.{ts,tsx}",
     "./components/**/*.{ts,tsx}",
-    "./data/**/*.{ts,tsx}",
+    "./content/**/*.{ts,tsx}",
   ],
   theme: {
     extend: {
       colors: {
-        // Nature palette — lifted from the handoff's Design Tokens section.
-        cream: "#f5f1e8",
-        ink: "#2a3327",
-        muted: {
-          DEFAULT: "#4c5145",
-          soft: "#5c6153",
-          faint: "#8a917c",
-          hair: "#ddd6c7",
+        bone: "#F5F4F0",
+        "bone-hover": "#FAFAF7",
+        ink: {
+          DEFAULT: "#0E1112",
+          2: "#3E4447",
+          3: "#5B6265",
+          4: "#8A9094",
         },
-        gold: "#e0a94a",
-        hero: "#252523",
-        heroText: "#f5f1e8",
-        heroMuted: "#d7d4c8",
-        heroMuted2: "#bdbbb0",
-        heroMuted3: "#a9a79c",
-        sand: "#eae4d5",
-        forest: "#26332a",
-        forestLabel: "#96a086",
-        footer: {
-          DEFAULT: "#1e281f",
-          text: "#c8cebd",
-          faint: "#7f886f",
-          rule: "#33402f",
+        forest: "#0C6B57",
+        mint: "#7FD9C1",
+        night: {
+          DEFAULT: "#0E1314",
+          deep: "#080D0E",
+          form: "#141A1A", // form card fill on the dark contact section
         },
-        // Service / dark card panels
-        card: {
-          green: "#2f4131",
-          olive: "#33352f",
-          greenText: "#c7d1bc",
-          oliveText: "#c8c8bd",
-        },
-        // Contact slide-out
-        panel: {
-          DEFAULT: "#26332a",
-          label: "#8fa082",
-          border: "#3f5138",
-          close: "#3a4a34",
-        },
-        placeholderTile: "#e7e1d2",
-        rule: {
-          DEFAULT: "#ddd6c7",
-          carousel: "#c3c1af",
-        },
-        linkHover: "#5a6b4d",
+        glass: "rgba(20,26,26,.42)",
       },
       fontFamily: {
-        heading: ["var(--font-atkinson)", "sans-serif"],
-        body: ["var(--font-atkinson)", "sans-serif"],
-        instrument: ["var(--font-instrument)", "Georgia", "serif"],
+        sans: ["var(--font-archivo)", "system-ui", "sans-serif"],
+        mono: ["var(--font-mono)", "monospace"],
       },
       maxWidth: {
-        content: "1280px",
-        hero: "1400px",
+        content: "1320px", // default section content width
+        comparison: "1100px",
+        faq: "980px",
       },
-      spacing: {
-        gutter: "48px",
+      borderRadius: {
+        // Radii are near-zero by design (handoff): buttons/cards 2px,
+        // the difference panel 22px, pills/circles fully round.
+        panel: "22px",
+      },
+      transitionTimingFunction: {
+        // The single motion curve used everywhere in the design.
+        fluid: "cubic-bezier(.16,1,.3,1)",
+      },
+      keyframes: {
+        ticker: {
+          from: { transform: "translateX(0)" },
+          to: { transform: "translateX(-50%)" },
+        },
+        "marquee-left": {
+          from: { transform: "translateX(0)" },
+          to: { transform: "translateX(-50%)" },
+        },
+        "marquee-right": {
+          from: { transform: "translateX(-50%)" },
+          to: { transform: "translateX(0)" },
+        },
+        "scrim-in": {
+          from: { opacity: "0" },
+          to: { opacity: "1" },
+        },
+        "panel-in": {
+          from: { transform: "translateX(100%)" },
+          to: { transform: "translateX(0)" },
+        },
+      },
+      animation: {
+        ticker: "ticker 38s linear infinite",
+        "marquee-left": "marquee-left 64s linear infinite",
+        "marquee-right": "marquee-right 64s linear infinite",
+        "scrim-in": "scrim-in .3s ease both",
+        "panel-in": "panel-in .5s cubic-bezier(.16,1,.3,1) both",
       },
     },
   },

@@ -1,97 +1,62 @@
-import Image from "next/image";
-import ContactTrigger from "./ContactTrigger";
-import ArrowRight from "./ArrowRight";
+import Placeholder from "./Placeholder";
+import Reveal from "./Reveal";
 
-/**
- * Dark hero band (#252523) that houses the H1, hero photo, and
- * the intro two-column block. Nav sits absolutely over the top,
- * so the section itself has enough top padding to clear it.
- *
- * The photo container uses the wider 1400px column while the H1
- * and intro use the standard 1280px column — that slight bleed
- * is intentional per the handoff.
- */
 export default function Hero() {
   return (
     <section
       id="top"
-      className="bg-hero text-heroText pt-[79px] md:pt-[103px] relative"
+      className="grid-overlay-dark relative border-b border-[rgba(245,244,240,.12)] bg-night px-6 pb-[90px] pt-[120px] md:px-10"
     >
-      {/* Rounded hero image (back to 1400px column) with H1 + button + caption overlaid */}
-      <div className="container-hero">
-        <div className="relative overflow-hidden rounded-br-[35px]">
-          <div
-            className="relative w-full"
-            style={{ height: "min(78vh, 760px)", minHeight: "520px" }}
-          >
-            <Image
-              src="/hero.jpg"
-              alt="Tim Brown, sitting on a step in front of a graffiti wall"
-              fill
-              sizes="100vw"
-              priority
-              className="object-cover object-right-top"
-            />
-            {/* Bottom gradient scrim so the overlaid H1 + button stay legible over any image tones */}
-            <div
-              className="absolute inset-0 pointer-events-none"
-              style={{
-                background:
-                  "linear-gradient(to top, rgba(0,0,0,.6) 0%, rgba(0,0,0,.3) 32%, rgba(0,0,0,0) 62%)",
-              }}
-            />
-          </div>
-          {/* Caption + H1 + Start-a-project button, stacked bottom-left */}
-          <div className="absolute inset-0 flex flex-col items-start justify-end text-left p-6 md:p-12 gap-6 md:gap-8">
-            <h1
-              className="font-heading font-normal text-white leading-[1.06] tracking-[-0.01em] max-w-[600px]"
-              style={{ fontSize: "clamp(30px,4.6vw,62px)" }}
-            >
-              I&apos;ve got your marketing &amp; technology covered.
-            </h1>
-            <ContactTrigger
-              ariaLabel="Start a project"
-              className="inline-flex items-center gap-2.5 text-white text-[15px] font-medium px-[30px] py-[13px] cursor-pointer hover:bg-white/10 transition-colors shrink-0"
-              style={{ border: "1.5px solid rgba(245,241,232,.85)" }}
-            >
-              Start a project
-              <ArrowRight />
-            </ContactTrigger>
-          </div>
-        </div>
-      </div>
+      <div className="mx-auto flex max-w-content flex-col gap-14">
+        {/* Byline */}
+        <Reveal className="flex items-center gap-[14px]">
+          <span className="relative h-[52px] w-[52px] flex-none overflow-hidden rounded-full border border-[rgba(245,244,240,.25)]">
+            <Placeholder label="Tim" tone="dark" />
+          </span>
+          <span className="font-mono text-[11px] uppercase tracking-[.2em] text-[rgba(245,244,240,.72)]">
+            Tim Brown — Digital Growth Consultant in Exeter
+          </span>
+        </Reveal>
 
-      {/* Intro two-column */}
-      <div className="container-tb pt-16 md:pt-[88px] pb-16 md:pb-[108px] grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-20 items-start">
-        <div>
-          <div className="font-instrument font-normal text-[22px] text-gold mb-[26px]">
-            My mission
-          </div>
-          <h2
-            className="font-heading font-normal text-heroText leading-[1.12] tracking-[-0.01em]"
-            style={{ fontSize: "clamp(26px,3vw,42px)", maxWidth: "16ch" }}
+        {/* Headline */}
+        <Reveal
+          as="h1"
+          className="m-0 max-w-[1150px] text-balance text-[clamp(40px,6.2vw,96px)] font-semibold leading-[.96] tracking-[-.045em] text-bone"
+        >
+          Beat the competition.
+          <br />
+          <span className="text-[rgba(245,244,240,.5)]">Skip the agency</span> price tag.
+        </Reveal>
+
+        {/* Lede + actions */}
+        <div className="grid grid-cols-1 items-end gap-10 md:grid-cols-[minmax(0,1.15fr)_minmax(0,1fr)] md:gap-16">
+          <Reveal
+            as="p"
+            className="m-0 max-w-[620px] text-pretty text-[20px] leading-[1.5] text-[rgba(245,244,240,.82)]"
           >
-            Helping UK businesses grow online, with the craft that delivers it.
-          </h2>
-        </div>
-        <div className="pt-1.5">
-          <p className="text-[17px] leading-[1.7] font-light text-heroMuted mb-[26px]">
-            I&apos;ve been doing this for over a decade, almost all of it for
-            businesses across Devon and the South West. Usually it&apos;s the
-            same story — a good business with a steady trade, and a website
-            that isn&apos;t pulling its weight. Too slow, too old, or built by
-            someone who stopped answering emails a long time ago.
-          </p>
-          <p className="text-[17px] leading-[1.7] font-light text-heroMuted mb-[26px]">
-            The person you speak to first is the person who does the work.
-            No account manager, no handover, nobody learning your business on
-            your budget. Just me, from first sketch to launch… for as long
-            afterwards as you want me.
-          </p>
-          <p className="text-[17px] leading-[1.7] font-light text-heroMuted">
-            Think of me as your marketing and tech guy. An extension of your
-            business, treating your success as my own.
-          </p>
+            Websites, lead generation, and AI automation — built by one operator who actually does
+            the work. No account managers, no retainer theatre, no 40-slide reports about nothing.
+          </Reveal>
+
+          <Reveal className="flex flex-col gap-5">
+            <div className="flex flex-wrap gap-3">
+              <a
+                href="#contact"
+                className="inline-flex items-center gap-[10px] rounded-[2px] bg-mint px-6 py-4 text-[15px] font-semibold text-night transition-colors hover:bg-bone"
+              >
+                Book a free 20-min call <span className="font-mono">→</span>
+              </a>
+              <a
+                href="#services"
+                className="inline-flex items-center rounded-[2px] border border-[rgba(245,244,240,.28)] px-6 py-4 text-[15px] font-medium text-bone transition-colors hover:border-bone"
+              >
+                See what I do
+              </a>
+            </div>
+            <p className="m-0 font-mono text-[11px] uppercase tracking-[.1em] text-[rgba(245,244,240,.55)]">
+              No pitch deck. No pressure. Straight answers.
+            </p>
+          </Reveal>
         </div>
       </div>
     </section>

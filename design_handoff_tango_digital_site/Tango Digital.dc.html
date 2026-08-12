@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script src="./image-slot.js"></script>
+<style>
+  html { scroll-behavior:smooth; scroll-padding-top:96px; }
+  body { margin:0; background:#F5F4F0; color:#0E1112; -webkit-font-smoothing:antialiased; }
+  * { box-sizing:border-box; }
+  a { color:#0C6B57; text-decoration:none; }
+  a:hover { color:#0E1112; }
+  ::selection { background:#0C6B57; color:#F5F4F0; }
+  @keyframes tdPulse { 0%,100%{opacity:.35} 50%{opacity:1} }
+  @keyframes tdFade { from{opacity:0} to{opacity:1} }
+  @keyframes tdSlideIn { from{transform:translateX(100%)} to{transform:translateX(0)} }
+  @keyframes tdMarqueeLeft { from{transform:translateX(0)} to{transform:translateX(-50%)} }
+  @keyframes tdMarqueeRight { from{transform:translateX(-50%)} to{transform:translateX(0)} }
+  @keyframes tdTicker { from{transform:translateX(0)} to{transform:translateX(-50%)} }
+</style>
+</helmet>
+
+<div style="font-family:Archivo,system-ui,sans-serif; background:#F5F4F0; min-height:100vh; overflow-x:hidden">
+
+  <header style="position:sticky; top:0; z-index:50; display:flex; align-items:center; justify-content:space-between; gap:24px; padding:18px 40px; background:rgba(245,244,240,.86); backdrop-filter:blur(14px); border-bottom:1px solid rgba(14,17,18,.1)">
+    <a href="#top" style="display:flex; align-items:baseline; gap:10px; color:#0E1112">
+      <span style="font-size:19px; font-weight:700; letter-spacing:-.02em">Tango Digital</span>
+      <span style="font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:.18em; color:#8A9094; text-transform:uppercase">est. solo</span>
+    </a>
+    <nav style="display:flex; align-items:center; gap:32px">
+      <a href="#services" style="font-family:'JetBrains Mono',monospace; font-size:13px; letter-spacing:.12em; text-transform:uppercase; color:#5B6265">Services</a>
+      <a href="#process" style="font-family:'JetBrains Mono',monospace; font-size:13px; letter-spacing:.12em; text-transform:uppercase; color:#5B6265">Process</a>
+      <a href="#work" style="font-family:'JetBrains Mono',monospace; font-size:13px; letter-spacing:.12em; text-transform:uppercase; color:#5B6265">Work</a>
+      <a href="#versus" style="font-family:'JetBrains Mono',monospace; font-size:13px; letter-spacing:.12em; text-transform:uppercase; color:#5B6265">Vs. Agency</a>
+      <a href="#about" style="font-family:'JetBrains Mono',monospace; font-size:13px; letter-spacing:.12em; text-transform:uppercase; color:#5B6265">About</a>
+      <a href="#faq" style="font-family:'JetBrains Mono',monospace; font-size:13px; letter-spacing:.12em; text-transform:uppercase; color:#5B6265">FAQ</a>
+      <a href="#contact" style="display:inline-flex; align-items:center; gap:10px; padding:11px 18px; background:#0C6B57; color:#F5F4F0; font-size:13px; font-weight:600; letter-spacing:-.01em; border-radius:2px" style-hover="background:#0E1112; color:#FFFFFF">Book a call <span style="font-family:'JetBrains Mono',monospace">→</span></a>
+    </nav>
+  </header>
+
+  <section id="top" style="position:relative; background:#0E1314; padding:120px 40px 90px; border-bottom:1px solid rgba(245,244,240,.12); background-image:linear-gradient(rgba(245,244,240,.055) 1px, transparent 1px), linear-gradient(90deg, rgba(245,244,240,.055) 1px, transparent 1px); background-size:100% 88px, 88px 100%">
+    <div style="max-width:1320px; margin:0 auto; display:flex; flex-direction:column; gap:56px">
+      <div data-reveal style="display:flex; align-items:center; gap:14px">
+        <span style="position:relative; width:52px; height:52px; flex:none; border-radius:50%; overflow:hidden; border:1px solid rgba(245,244,240,.25)"><image-slot id="hero-avatar" shape="circle" fit="cover" placeholder="Photo of Tim"></image-slot></span>
+        <span style="font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:.2em; text-transform:uppercase; color:rgba(245,244,240,.72)">Tim Brown — Digital Growth Consultant in Exeter</span>
+      </div>
+      <h1 data-reveal style="margin:0; font-size:clamp(40px,6.2vw,96px); line-height:.96; letter-spacing:-.045em; font-weight:600; color:#F5F4F0; text-wrap:balance; max-width:1150px">
+        Beat the competition.<br>
+        <span style="color:rgba(245,244,240,.5)">Skip the agency</span> price tag.
+      </h1>
+      <div style="display:grid; grid-template-columns:minmax(0,1.15fr) minmax(0,1fr); gap:64px; align-items:end">
+        <p data-reveal style="margin:0; font-size:20px; line-height:1.5; color:rgba(245,244,240,.82); max-width:620px; text-wrap:pretty">
+          Websites, lead generation, and AI automation — built by one operator who actually does the work. No account managers, no retainer theatre, no 40-slide reports about nothing.
+        </p>
+        <div data-reveal style="display:flex; flex-direction:column; gap:20px">
+          <div style="display:flex; flex-wrap:wrap; gap:12px">
+            <a href="#contact" style="display:inline-flex; align-items:center; gap:10px; padding:16px 24px; background:#7FD9C1; color:#0E1314; font-size:15px; font-weight:600; border-radius:2px" style-hover="background:#F5F4F0; color:#0E1314">Book a free 20-min call <span style="font-family:'JetBrains Mono',monospace">→</span></a>
+            <a href="#services" style="display:inline-flex; align-items:center; padding:16px 24px; border:1px solid rgba(245,244,240,.28); color:#F5F4F0; font-size:15px; font-weight:500; border-radius:2px" style-hover="border-color:#F5F4F0">See what I do</a>
+          </div>
+          <p style="margin:0; font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:.1em; color:rgba(245,244,240,.55); text-transform:uppercase">No pitch deck. No pressure. Straight answers.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div style="overflow:hidden; border-bottom:1px solid rgba(14,17,18,.1); padding:16px 0; background:#FFFFFF">
+    <div style="display:flex; width:max-content; gap:48px; animation:tdTicker 38s linear infinite">
+      <div style="display:flex; gap:48px; font-family:'JetBrains Mono',monospace; font-size:12px; letter-spacing:.16em; text-transform:uppercase; color:#8A9094">
+        <span>Trades &amp; home services</span><span style="color:#0C6B57">/</span>
+        <span>Clinics &amp; health practices</span><span style="color:#0C6B57">/</span>
+        <span>Legal &amp; finance</span><span style="color:#0C6B57">/</span>
+        <span>Hospitality &amp; food</span><span style="color:#0C6B57">/</span>
+        <span>E-commerce &amp; retail</span><span style="color:#0C6B57">/</span>
+      </div>
+      <div style="display:flex; gap:48px; font-family:'JetBrains Mono',monospace; font-size:12px; letter-spacing:.16em; text-transform:uppercase; color:#8A9094">
+        <span>Trades &amp; home services</span><span style="color:#0C6B57">/</span>
+        <span>Clinics &amp; health practices</span><span style="color:#0C6B57">/</span>
+        <span>Legal &amp; finance</span><span style="color:#0C6B57">/</span>
+        <span>Hospitality &amp; food</span><span style="color:#0C6B57">/</span>
+        <span>E-commerce &amp; retail</span><span style="color:#0C6B57">/</span>
+      </div>
+    </div>
+  </div>
+
+  <section id="services" style="padding:110px 40px; border-bottom:1px solid rgba(14,17,18,.1)">
+    <div style="max-width:1320px; margin:0 auto; display:flex; flex-direction:column; gap:64px">
+      <div data-reveal style="display:flex; justify-content:space-between; align-items:end; gap:40px; flex-wrap:wrap">
+        <div style="display:flex; flex-direction:column; gap:18px">
+          <span style="font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:.2em; text-transform:uppercase; color:#0C6B57">01 / Services</span>
+          <h2 style="margin:0; font-size:clamp(34px,4.2vw,60px); line-height:1.02; letter-spacing:-.035em; font-weight:600; max-width:760px">Three things, done properly.</h2>
+        </div>
+        <p style="margin:0; font-size:16px; line-height:1.55; color:#5B6265; max-width:360px">Take one or all three. They compound: a fast site feeds the lead engine, automation handles what the leads trigger.</p>
+      </div>
+      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:20px">
+        <div data-reveal style="display:flex; flex-direction:column; gap:26px; padding:38px 34px 34px; background:#FFFFFF; border:1px solid rgba(14,17,18,.12); min-height:420px" style-hover="background:#FAFAF7">
+          <div style="display:flex; justify-content:space-between; align-items:start">
+            <span style="font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:.16em; color:#8A9094">S/01</span>
+            <span style="font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:.1em; color:#0C6B57">from $2.5k</span>
+          </div>
+          <h3 style="margin:0; font-size:30px; letter-spacing:-.03em; font-weight:600; line-height:1.05">Websites</h3>
+          <p style="margin:0; font-size:15px; line-height:1.6; color:#5B6265; flex:1">Fast, sharp, built to convert — not a template with your logo dropped in. Sub-second loads, written copy, tracking wired from day one.</p>
+          <div style="display:flex; flex-direction:column; gap:10px; padding-top:22px; border-top:1px solid rgba(14,17,18,.12)">
+            <span style="font-family:'JetBrains Mono',monospace; font-size:12px; color:#3E4447">→ Design &amp; build</span>
+            <span style="font-family:'JetBrains Mono',monospace; font-size:12px; color:#3E4447">→ Conversion copy</span>
+            <span style="font-family:'JetBrains Mono',monospace; font-size:12px; color:#3E4447">→ Local SEO foundations</span>
+            <span style="font-family:'JetBrains Mono',monospace; font-size:12px; color:#3E4447">→ Analytics &amp; call tracking</span>
+          </div>
+        </div>
+        <div data-reveal style="display:flex; flex-direction:column; gap:26px; padding:38px 34px 34px; background:#FFFFFF; border:1px solid rgba(14,17,18,.12); min-height:420px" style-hover="background:#FAFAF7">
+          <div style="display:flex; justify-content:space-between; align-items:start">
+            <span style="font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:.16em; color:#8A9094">S/02</span>
+            <span style="font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:.1em; color:#0C6B57">from $900/mo</span>
+          </div>
+          <h3 style="margin:0; font-size:30px; letter-spacing:-.03em; font-weight:600; line-height:1.05">Lead generation</h3>
+          <p style="margin:0; font-size:15px; line-height:1.6; color:#5B6265; flex:1">Paid search, local visibility, and follow-up that doesn't leak. Measured in booked jobs and enquiries — not impressions.</p>
+          <div style="display:flex; flex-direction:column; gap:10px; padding-top:22px; border-top:1px solid rgba(14,17,18,.12)">
+            <span style="font-family:'JetBrains Mono',monospace; font-size:12px; color:#3E4447">→ Google &amp; Meta campaigns</span>
+            <span style="font-family:'JetBrains Mono',monospace; font-size:12px; color:#3E4447">→ Landing pages per offer</span>
+            <span style="font-family:'JetBrains Mono',monospace; font-size:12px; color:#3E4447">→ Google Business Profile</span>
+            <span style="font-family:'JetBrains Mono',monospace; font-size:12px; color:#3E4447">→ Lead scoring &amp; routing</span>
+          </div>
+        </div>
+        <div data-reveal style="display:flex; flex-direction:column; gap:26px; padding:38px 34px 34px; background:#FFFFFF; border:1px solid rgba(14,17,18,.12); min-height:420px" style-hover="background:#FAFAF7">
+          <div style="display:flex; justify-content:space-between; align-items:start">
+            <span style="font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:.16em; color:#8A9094">S/03</span>
+            <span style="font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:.1em; color:#0C6B57">from $1.5k</span>
+          </div>
+          <h3 style="margin:0; font-size:30px; letter-spacing:-.03em; font-weight:600; line-height:1.05">AI &amp; automation</h3>
+          <p style="margin:0; font-size:15px; line-height:1.6; color:#5B6265; flex:1">The unfair advantage small businesses aren't using yet. Answer every enquiry in seconds, chase every quote, kill the admin.</p>
+          <div style="display:flex; flex-direction:column; gap:10px; padding-top:22px; border-top:1px solid rgba(14,17,18,.12)">
+            <span style="font-family:'JetBrains Mono',monospace; font-size:12px; color:#3E4447">→ Instant enquiry response</span>
+            <span style="font-family:'JetBrains Mono',monospace; font-size:12px; color:#3E4447">→ Quote &amp; review follow-up</span>
+            <span style="font-family:'JetBrains Mono',monospace; font-size:12px; color:#3E4447">→ CRM &amp; booking workflows</span>
+            <span style="font-family:'JetBrains Mono',monospace; font-size:12px; color:#3E4447">→ Reporting on autopilot</span>
+          </div>
+        </div>
+      </div>
+      <p data-reveal style="margin:0; font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:.12em; text-transform:uppercase; color:#8A9094">Ranges, not quotes. Scope decides the number — you'll get it in writing before anything starts.</p>
+    </div>
+  </section>
+
+  <section id="process" style="padding:110px 40px; border-bottom:1px solid rgba(14,17,18,.1); background:#FFFFFF">
+    <div style="max-width:1320px; margin:0 auto; display:flex; flex-direction:column; gap:64px">
+      <div data-reveal style="display:flex; flex-direction:column; gap:18px">
+        <span style="font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:.2em; text-transform:uppercase; color:#0C6B57">02 / Process</span>
+        <h2 style="margin:0; font-size:clamp(34px,4.2vw,60px); line-height:1.02; letter-spacing:-.035em; font-weight:600">Four weeks, not four months.</h2>
+      </div>
+      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:40px">
+        <div data-reveal style="display:flex; flex-direction:column; gap:16px; padding-top:24px; border-top:2px solid #0C6B57">
+          <span style="font-family:'JetBrains Mono',monospace; font-size:12px; letter-spacing:.16em; color:#0C6B57">WEEK 01</span>
+          <h3 style="margin:0; font-size:22px; letter-spacing:-.02em; font-weight:600">Audit &amp; angle</h3>
+          <p style="margin:0; font-size:15px; line-height:1.6; color:#5B6265">I look at what your competitors are doing, where your enquiries actually come from, and what's leaking. You get a plan, free, before you commit.</p>
+        </div>
+        <div data-reveal style="display:flex; flex-direction:column; gap:16px; padding-top:24px; border-top:2px solid #0C6B57">
+          <span style="font-family:'JetBrains Mono',monospace; font-size:12px; letter-spacing:.16em; color:#8A9094">WEEK 02</span>
+          <h3 style="margin:0; font-size:22px; letter-spacing:-.02em; font-weight:600">Build</h3>
+          <p style="margin:0; font-size:15px; line-height:1.6; color:#5B6265">Site, landing pages, tracking, automations. One person building means no handoffs and no telephone game.</p>
+        </div>
+        <div data-reveal style="display:flex; flex-direction:column; gap:16px; padding-top:24px; border-top:2px solid #0C6B57">
+          <span style="font-family:'JetBrains Mono',monospace; font-size:12px; letter-spacing:.16em; color:#8A9094">WEEK 03</span>
+          <h3 style="margin:0; font-size:22px; letter-spacing:-.02em; font-weight:600">Switch on</h3>
+          <p style="margin:0; font-size:15px; line-height:1.6; color:#5B6265">Campaigns live, follow-up running, phone tracked. First leads land within days, not next quarter.</p>
+        </div>
+        <div data-reveal style="display:flex; flex-direction:column; gap:16px; padding-top:24px; border-top:2px solid #0C6B57">
+          <span style="font-family:'JetBrains Mono',monospace; font-size:12px; letter-spacing:.16em; color:#8A9094">WEEK 04+</span>
+          <h3 style="margin:0; font-size:22px; letter-spacing:-.02em; font-weight:600">Tune</h3>
+          <p style="margin:0; font-size:15px; line-height:1.6; color:#5B6265">Cut what doesn't pay, double what does. One page of numbers a month — the ones that affect your bank account.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="results" style="position:relative; padding:120px 40px; border-bottom:1px solid rgba(14,17,18,.1); overflow:hidden">
+    <div style="position:absolute; inset:0"><image-slot id="difference-bg" shape="rect" fit="cover" placeholder="Drop a wide landscape / workspace photo"></image-slot></div>
+    <div style="position:absolute; inset:0; background:linear-gradient(180deg, rgba(8,12,12,.55), rgba(8,12,12,.72)); pointer-events:none"></div>
+    <div style="position:relative; max-width:1320px; margin:0 auto">
+      <div style="display:flex; flex-wrap:wrap; align-items:flex-start; gap:clamp(36px,4vw,64px); padding:clamp(28px,4vw,64px); background:rgba(20,26,26,.42); backdrop-filter:blur(18px); border:1px solid rgba(255,255,255,.16); border-radius:22px">
+        <div data-reveal style="flex:1 1 300px; max-width:400px; display:flex; flex-direction:column; gap:26px">
+          <span style="font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:.2em; text-transform:uppercase; color:#7FD9C1">03 / Difference</span>
+          <h2 style="margin:0; font-size:clamp(38px,4.4vw,62px); line-height:1.02; letter-spacing:-.035em; font-weight:600; color:#FFFFFF">The Tango<br>difference</h2>
+          <p style="margin:0; font-size:16px; line-height:1.6; color:rgba(255,255,255,.78); max-width:420px; text-wrap:pretty">Marketing built the way software is built — measured, automated, and shipped fast. You get the tooling big brands pay agencies to operate, run by the person who set it up.</p>
+          <a href="#about" style="align-self:start; margin-top:6px; display:inline-flex; align-items:center; padding:13px 26px; background:#FFFFFF; color:#0E1112; font-size:14px; font-weight:600; border-radius:999px" style-hover="background:#7FD9C1">About me</a>
+        </div>
+        <div style="flex:3 1 560px; display:grid; grid-template-columns:repeat(auto-fit,minmax(190px,1fr)); gap:34px; align-content:start">
+          <div data-reveal style="display:flex; flex-direction:column; gap:22px; padding-left:0; ">
+            <div style="width:112px; height:88px"><image-slot id="diff-1" shape="rect" placeholder="Icon / line art"></image-slot></div>
+            <h3 style="margin:0; font-size:15px; font-weight:600; letter-spacing:.1em; text-transform:uppercase; color:#FFFFFF; line-height:1.35">Built, not outsourced</h3>
+            <p style="margin:0; font-size:14px; line-height:1.55; color:rgba(255,255,255,.72); max-width:280px">Every site, campaign and automation is made by one operator who answers your calls — no juniors learning on your budget.</p>
+          </div>
+          <div data-reveal style="display:flex; flex-direction:column; gap:22px; padding-left:34px; border-left:1px solid rgba(255,255,255,.22);">
+            <div style="width:112px; height:88px"><image-slot id="diff-2" shape="rect" placeholder="Icon / line art"></image-slot></div>
+            <h3 style="margin:0; font-size:15px; font-weight:600; letter-spacing:.1em; text-transform:uppercase; color:#FFFFFF; line-height:1.35">Tomorrow-ready</h3>
+            <p style="margin:0; font-size:14px; line-height:1.55; color:rgba(255,255,255,.72); max-width:280px">AI and automation wired in from day one, so your follow-up, quoting and reporting run while you are on the tools.</p>
+          </div>
+          <div data-reveal style="display:flex; flex-direction:column; gap:22px; padding-left:34px; border-left:1px solid rgba(255,255,255,.22);">
+            <div style="width:112px; height:88px"><image-slot id="diff-3" shape="rect" placeholder="Icon / line art"></image-slot></div>
+            <h3 style="margin:0; font-size:15px; font-weight:600; letter-spacing:.1em; text-transform:uppercase; color:#FFFFFF; line-height:1.35">You own everything</h3>
+            <p style="margin:0; font-size:14px; line-height:1.55; color:rgba(255,255,255,.72); max-width:280px">Your domain, ad accounts, data and automations stay in your name. Leave whenever you like and take the whole engine with you.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="work" style="padding:110px 0; border-bottom:1px solid rgba(14,17,18,.1); background:#FFFFFF; overflow:hidden">
+    <div style="max-width:1320px; margin:0 auto; padding:0 40px; display:flex; justify-content:space-between; align-items:end; gap:40px; flex-wrap:wrap">
+      <div data-reveal style="display:flex; flex-direction:column; gap:18px">
+        <span style="font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:.2em; text-transform:uppercase; color:#0C6B57">04 / Case studies</span>
+        <h2 style="margin:0; font-size:clamp(34px,4.2vw,60px); line-height:1.02; letter-spacing:-.035em; font-weight:600">Work, and what it did.</h2>
+      </div>
+      <div data-reveal style="display:flex; gap:10px">
+        <button onClick="{{ prev }}" aria-label="Previous" style="width:52px; height:52px; display:flex; align-items:center; justify-content:center; background:transparent; border:1px solid rgba(14,17,18,.24); border-radius:999px; cursor:pointer; font-family:'JetBrains Mono',monospace; font-size:16px; color:#0E1112" style-hover="border-color:#0C6B57; color:#0C6B57">←</button>
+        <button onClick="{{ next }}" aria-label="Next" style="width:52px; height:52px; display:flex; align-items:center; justify-content:center; background:transparent; border:1px solid rgba(14,17,18,.24); border-radius:999px; cursor:pointer; font-family:'JetBrains Mono',monospace; font-size:16px; color:#0E1112" style-hover="border-color:#0C6B57; color:#0C6B57">→</button>
+      </div>
+    </div>
+    <div style="margin-top:56px; overflow:hidden">
+      <div style="display:flex; gap:2%; transform:{{ trackShift }}; transition:transform .7s cubic-bezier(.16,1,.3,1); will-change:transform">
+          <button onClick="{{ cases.0.open }}" style="flex:0 0 36%; position:relative; aspect-ratio:4/3; padding:0; border:1px solid rgba(14,17,18,.12); background:#FFFFFF; cursor:pointer; overflow:hidden; text-align:left" style-hover="border-color:#0C6B57">
+            <image-slot id="case-0" shape="rect" fit="cover" placeholder="Drop project image"></image-slot>
+            <div style="position:absolute; inset:0; background:linear-gradient(180deg, rgba(8,12,12,0) 35%, rgba(8,12,12,.82) 100%); pointer-events:none"></div>
+            <div style="position:absolute; left:0; right:0; bottom:0; display:flex; flex-direction:column; gap:10px; padding:28px; pointer-events:none">
+              <span style="font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:#7FD9C1">{{ cases.0.tags }}</span>
+              <span style="font-size:24px; font-weight:600; letter-spacing:-.025em; color:#FFFFFF; line-height:1.15">{{ cases.0.title }}</span>
+            </div>
+          </button>
+          <button onClick="{{ cases.1.open }}" style="flex:0 0 36%; position:relative; aspect-ratio:4/3; padding:0; border:1px solid rgba(14,17,18,.12); background:#FFFFFF; cursor:pointer; overflow:hidden; text-align:left" style-hover="border-color:#0C6B57">
+            <image-slot id="case-1" shape="rect" fit="cover" placeholder="Drop project image"></image-slot>
+            <div style="position:absolute; inset:0; background:linear-gradient(180deg, rgba(8,12,12,0) 35%, rgba(8,12,12,.82) 100%); pointer-events:none"></div>
+            <div style="position:absolute; left:0; right:0; bottom:0; display:flex; flex-direction:column; gap:10px; padding:28px; pointer-events:none">
+              <span style="font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:#7FD9C1">{{ cases.1.tags }}</span>
+              <span style="font-size:24px; font-weight:600; letter-spacing:-.025em; color:#FFFFFF; line-height:1.15">{{ cases.1.title }}</span>
+            </div>
+          </button>
+          <button onClick="{{ cases.2.open }}" style="flex:0 0 36%; position:relative; aspect-ratio:4/3; padding:0; border:1px solid rgba(14,17,18,.12); background:#FFFFFF; cursor:pointer; overflow:hidden; text-align:left" style-hover="border-color:#0C6B57">
+            <image-slot id="case-2" shape="rect" fit="cover" placeholder="Drop project image"></image-slot>
+            <div style="position:absolute; inset:0; background:linear-gradient(180deg, rgba(8,12,12,0) 35%, rgba(8,12,12,.82) 100%); pointer-events:none"></div>
+            <div style="position:absolute; left:0; right:0; bottom:0; display:flex; flex-direction:column; gap:10px; padding:28px; pointer-events:none">
+              <span style="font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:#7FD9C1">{{ cases.2.tags }}</span>
+              <span style="font-size:24px; font-weight:600; letter-spacing:-.025em; color:#FFFFFF; line-height:1.15">{{ cases.2.title }}</span>
+            </div>
+          </button>
+          <button onClick="{{ cases.3.open }}" style="flex:0 0 36%; position:relative; aspect-ratio:4/3; padding:0; border:1px solid rgba(14,17,18,.12); background:#FFFFFF; cursor:pointer; overflow:hidden; text-align:left" style-hover="border-color:#0C6B57">
+            <image-slot id="case-3" shape="rect" fit="cover" placeholder="Drop project image"></image-slot>
+            <div style="position:absolute; inset:0; background:linear-gradient(180deg, rgba(8,12,12,0) 35%, rgba(8,12,12,.82) 100%); pointer-events:none"></div>
+            <div style="position:absolute; left:0; right:0; bottom:0; display:flex; flex-direction:column; gap:10px; padding:28px; pointer-events:none">
+              <span style="font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:#7FD9C1">{{ cases.3.tags }}</span>
+              <span style="font-size:24px; font-weight:600; letter-spacing:-.025em; color:#FFFFFF; line-height:1.15">{{ cases.3.title }}</span>
+            </div>
+          </button>
+      </div>
+    </div>
+    <p style="max-width:1320px; margin:32px auto 0; padding:0 40px; font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:.12em; text-transform:uppercase; color:#8A9094">Click any project to read what happened →</p>
+  </section>
+
+  <sc-if value="{{ detail }}">
+    <div onClick="{{ close }}" style="position:fixed; inset:0; z-index:80; background:rgba(8,12,12,.55); animation:tdFade .3s ease both"></div>
+    <aside style="position:fixed; top:0; right:0; bottom:0; z-index:90; width:min(620px,94vw); display:flex; flex-direction:column; background:#F5F4F0; border-left:1px solid rgba(14,17,18,.14); box-shadow:-30px 0 80px rgba(8,12,12,.28); animation:tdSlideIn .5s cubic-bezier(.16,1,.3,1) both; overflow-y:auto">
+      <div style="position:relative; width:100%; aspect-ratio:16/10; flex:none; background:#FFFFFF">
+        <image-slot id="{{ detail.slotId }}" shape="rect" fit="cover" placeholder="Drop project image"></image-slot>
+        <button onClick="{{ close }}" aria-label="Close" style="position:absolute; top:20px; right:20px; width:44px; height:44px; display:flex; align-items:center; justify-content:center; background:#F5F4F0; border:0; border-radius:999px; cursor:pointer; font-family:'JetBrains Mono',monospace; font-size:16px; color:#0E1112" style-hover="background:#0C6B57; color:#FFFFFF">✕</button>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:24px; padding:40px">
+        <span style="font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:#0C6B57">{{ detail.tags }}</span>
+        <h3 style="margin:0; font-size:clamp(28px,3.4vw,40px); line-height:1.05; letter-spacing:-.03em; font-weight:600">{{ detail.title }}</h3>
+        <div style="display:flex; flex-direction:column; gap:6px; padding:20px 0; border-top:1px solid rgba(14,17,18,.12); border-bottom:1px solid rgba(14,17,18,.12)">
+          <span style="font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:.16em; text-transform:uppercase; color:#8A9094">Sector</span>
+          <span style="font-size:15px; color:#0E1112">{{ detail.sector }}</span>
+        </div>
+        <div style="display:flex; flex-direction:column; gap:8px">
+          <span style="font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:.16em; text-transform:uppercase; color:#8A9094">The problem</span>
+          <p style="margin:0; font-size:16px; line-height:1.65; color:#3E4447; text-wrap:pretty">{{ detail.problem }}</p>
+        </div>
+        <div style="display:flex; flex-direction:column; gap:8px">
+          <span style="font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:.16em; text-transform:uppercase; color:#8A9094">What I did</span>
+          <p style="margin:0; font-size:16px; line-height:1.65; color:#3E4447; text-wrap:pretty">{{ detail.work }}</p>
+        </div>
+        <div style="display:flex; flex-direction:column; gap:8px">
+          <span style="font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:.16em; text-transform:uppercase; color:#8A9094">Outcome</span>
+          <p style="margin:0; font-size:16px; line-height:1.65; color:#3E4447; text-wrap:pretty">{{ detail.outcome }}</p>
+        </div>
+        <a href="#contact" onClick="{{ close }}" style="align-self:start; margin-top:8px; display:inline-flex; align-items:center; gap:10px; padding:15px 24px; background:#0C6B57; color:#FFFFFF; font-size:15px; font-weight:600; border-radius:2px" style-hover="background:#0E1112">Talk about something similar →</a>
+      </div>
+    </aside>
+  </sc-if>
+
+  <section id="versus" style="padding:110px 40px; border-bottom:1px solid rgba(14,17,18,.1); background:#FFFFFF">
+    <div style="max-width:1100px; margin:0 auto; display:flex; flex-direction:column; gap:56px">
+      <div data-reveal style="display:flex; flex-direction:column; gap:18px">
+        <span style="font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:.2em; text-transform:uppercase; color:#0C6B57">05 / Comparison</span>
+        <h2 style="margin:0; font-size:clamp(34px,4.2vw,60px); line-height:1.02; letter-spacing:-.035em; font-weight:600">Same work. Different bill.</h2>
+      </div>
+      <div data-reveal style="border:1px solid rgba(14,17,18,.12)">
+        <div style="display:grid; grid-template-columns:minmax(0,1.3fr) minmax(0,1fr) minmax(0,1fr); background:rgba(14,17,18,.035); border-bottom:1px solid rgba(14,17,18,.12)">
+          <span style="padding:18px 24px; font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:#8A9094">Item</span>
+          <span style="padding:18px 24px; font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:#8A9094">Typical agency</span>
+          <span style="padding:18px 24px; font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:#0C6B57">Tango Digital</span>
+        </div>
+        <sc-for list="{{ rows }}" as="row" hint-placeholder-count="6">
+          <div style="display:grid; grid-template-columns:minmax(0,1.3fr) minmax(0,1fr) minmax(0,1fr); border-bottom:1px solid rgba(14,17,18,.09)">
+            <span style="padding:22px 24px; font-size:15px; font-weight:500; color:#0E1112">{{ row.item }}</span>
+            <span style="padding:22px 24px; font-size:15px; color:#8A9094">{{ row.agency }}</span>
+            <span style="padding:22px 24px; font-size:15px; color:#0E1112">{{ row.us }}</span>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" style="padding:110px 40px; border-bottom:1px solid rgba(14,17,18,.1)">
+    <div style="max-width:1320px; margin:0 auto; display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:56px; align-items:start">
+      <div data-reveal style="display:flex; flex-direction:column; gap:16px; max-width:420px">
+        <div style="position:relative; width:100%; aspect-ratio:4/5; background:#FFFFFF; border:1px solid rgba(14,17,18,.12)">
+          <image-slot id="about-portrait" shape="rect" fit="cover" placeholder="Drop a portrait of yourself"></image-slot>
+        </div>
+        <span style="font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:#8A9094">Founder &amp; operator — Tango Digital</span>
+      </div>
+      <div data-reveal style="display:flex; flex-direction:column; gap:26px; padding-top:6px">
+        <span style="font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:.2em; text-transform:uppercase; color:#0C6B57">06 / Operator</span>
+        <h2 style="margin:0; font-size:clamp(34px,4vw,54px); line-height:1.03; letter-spacing:-.035em; font-weight:600">One person. That's the point.</h2>
+        <p style="margin:0; font-size:19px; line-height:1.55; color:#3E4447; text-wrap:pretty">Agencies sell you a team and give you a junior. I sell you me — the person who plans it, builds it, and answers when you call. Fewer people means less cost, faster decisions, and nobody to hide behind when something isn't working.</p>
+        <p style="margin:0; font-size:16px; line-height:1.6; color:#5B6265">I use modern tooling and AI where it removes hours of grunt work, and judgement where it doesn't. That's how a solo operator delivers what used to need six people — and why the invoice looks nothing like an agency's.</p>
+        <div style="display:flex; flex-wrap:wrap; gap:10px; padding-top:8px">
+          <span style="padding:9px 14px; border:1px solid rgba(14,17,18,.18); font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:.1em; text-transform:uppercase; color:#3E4447">Direct line, always</span>
+          <span style="padding:9px 14px; border:1px solid rgba(14,17,18,.18); font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:.1em; text-transform:uppercase; color:#3E4447">Month to month</span>
+          <span style="padding:9px 14px; border:1px solid rgba(14,17,18,.18); font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:.1em; text-transform:uppercase; color:#3E4447">You own everything</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq" style="padding:110px 40px; border-bottom:1px solid rgba(14,17,18,.1); background:#FFFFFF">
+    <div style="max-width:980px; margin:0 auto; display:flex; flex-direction:column; gap:48px">
+      <div data-reveal style="display:flex; flex-direction:column; gap:18px">
+        <span style="font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:.2em; text-transform:uppercase; color:#0C6B57">07 / FAQ</span>
+        <h2 style="margin:0; font-size:clamp(34px,4.2vw,60px); line-height:1.02; letter-spacing:-.035em; font-weight:600">The awkward questions.</h2>
+      </div>
+      <div data-reveal style="display:flex; flex-direction:column; border-top:1px solid rgba(14,17,18,.12)">
+        <sc-for list="{{ faqs }}" as="faq" hint-placeholder-count="5">
+          <div style="border-bottom:1px solid rgba(14,17,18,.12)">
+            <button onClick="{{ faq.toggle }}" style="width:100%; display:flex; align-items:center; justify-content:space-between; gap:24px; padding:26px 4px; background:transparent; border:0; cursor:pointer; text-align:left; font-family:Archivo,sans-serif; font-size:19px; font-weight:500; letter-spacing:-.02em; color:#0E1112" style-hover="color:#0C6B57">
+              {{ faq.q }}
+              <span style="font-family:'JetBrains Mono',monospace; font-size:18px; color:#0C6B57; flex:none">{{ faq.sign }}</span>
+            </button>
+            <sc-if value="{{ faq.open }}">
+              <p style="margin:0; padding:0 60px 28px 4px; font-size:16px; line-height:1.65; color:#5B6265; text-wrap:pretty">{{ faq.a }}</p>
+            </sc-if>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <section id="testimonials" style="padding:110px 0; border-top:1px solid rgba(14,17,18,.1); background:#F5F4F0; overflow:hidden">
+    <div style="max-width:1320px; margin:0 auto 56px; padding:0 40px; display:flex; flex-direction:column; gap:18px">
+      <span data-reveal style="font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:.2em; text-transform:uppercase; color:#0C6B57">08 / Testimonials</span>
+      <h2 data-reveal style="margin:0; font-size:clamp(34px,4.2vw,60px); line-height:1.02; letter-spacing:-.035em; font-weight:600">Owners, not marketers.</h2>
+    </div>
+    <div style="display:flex; flex-direction:column; gap:20px">
+      <div style="display:flex; width:max-content; gap:20px; animation:tdMarqueeRight 64s linear infinite">
+          <figure style="flex:0 0 auto; width:400px; display:flex; flex-direction:column; justify-content:space-between; gap:24px; margin:0; padding:32px; background:#FFFFFF; border:1px solid rgba(14,17,18,.12)">
+            <blockquote style="margin:0; font-size:17px; line-height:1.55; letter-spacing:-.01em; color:#0E1112; text-wrap:pretty">&ldquo;Answered his own phone. Rebuilt the site in three weeks. We've had more quote requests this quarter than all of last year.&rdquo;</blockquote>
+            <figcaption style="display:flex; flex-direction:column; gap:4px">
+              <span style="font-size:14px; font-weight:600; color:#0E1112">Dave Whitlock</span>
+              <span style="font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:.12em; text-transform:uppercase; color:#8A9094">Whitlock Roofing</span>
+            </figcaption>
+          </figure>
+          <figure style="flex:0 0 auto; width:400px; display:flex; flex-direction:column; justify-content:space-between; gap:24px; margin:0; padding:32px; background:#FFFFFF; border:1px solid rgba(14,17,18,.12)">
+            <blockquote style="margin:0; font-size:17px; line-height:1.55; letter-spacing:-.01em; color:#0E1112; text-wrap:pretty">&ldquo;Our last agency sent slides. This one sent leads. The difference is embarrassing, honestly.&rdquo;</blockquote>
+            <figcaption style="display:flex; flex-direction:column; gap:4px">
+              <span style="font-size:14px; font-weight:600; color:#0E1112">Priya Raman</span>
+              <span style="font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:.12em; text-transform:uppercase; color:#8A9094">Marlow Dental</span>
+            </figcaption>
+          </figure>
+          <figure style="flex:0 0 auto; width:400px; display:flex; flex-direction:column; justify-content:space-between; gap:24px; margin:0; padding:32px; background:#FFFFFF; border:1px solid rgba(14,17,18,.12)">
+            <blockquote style="margin:0; font-size:17px; line-height:1.55; letter-spacing:-.01em; color:#0E1112; text-wrap:pretty">&ldquo;The automated follow-up alone paid for the whole build. Nobody falls through the cracks now.&rdquo;</blockquote>
+            <figcaption style="display:flex; flex-direction:column; gap:4px">
+              <span style="font-size:14px; font-weight:600; color:#0E1112">Tom Beasley</span>
+              <span style="font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:.12em; text-transform:uppercase; color:#8A9094">Beasley Plumbing & Heating</span>
+            </figcaption>
+          </figure>
+          <figure style="flex:0 0 auto; width:400px; display:flex; flex-direction:column; justify-content:space-between; gap:24px; margin:0; padding:32px; background:#FFFFFF; border:1px solid rgba(14,17,18,.12)">
+            <blockquote style="margin:0; font-size:17px; line-height:1.55; letter-spacing:-.01em; color:#0E1112; text-wrap:pretty">&ldquo;I understood every invoice and every decision. That was new for us.&rdquo;</blockquote>
+            <figcaption style="display:flex; flex-direction:column; gap:4px">
+              <span style="font-size:14px; font-weight:600; color:#0E1112">Claire Hendry</span>
+              <span style="font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:.12em; text-transform:uppercase; color:#8A9094">Hendry & Croft</span>
+            </figcaption>
+          </figure>
+          <figure style="flex:0 0 auto; width:400px; display:flex; flex-direction:column; justify-content:space-between; gap:24px; margin:0; padding:32px; background:#FFFFFF; border:1px solid rgba(14,17,18,.12)">
+            <blockquote style="margin:0; font-size:17px; line-height:1.55; letter-spacing:-.01em; color:#0E1112; text-wrap:pretty">&ldquo;Answered his own phone. Rebuilt the site in three weeks. We've had more quote requests this quarter than all of last year.&rdquo;</blockquote>
+            <figcaption style="display:flex; flex-direction:column; gap:4px">
+              <span style="font-size:14px; font-weight:600; color:#0E1112">Dave Whitlock</span>
+              <span style="font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:.12em; text-transform:uppercase; color:#8A9094">Whitlock Roofing</span>
+            </figcaption>
+          </figure>
+          <figure style="flex:0 0 auto; width:400px; display:flex; flex-direction:column; justify-content:space-between; gap:24px; margin:0; padding:32px; background:#FFFFFF; border:1px solid rgba(14,17,18,.12)">
+            <blockquote style="margin:0; font-size:17px; line-height:1.55; letter-spacing:-.01em; color:#0E1112; text-wrap:pretty">&ldquo;Our last agency sent slides. This one sent leads. The difference is embarrassing, honestly.&rdquo;</blockquote>
+            <figcaption style="display:flex; flex-direction:column; gap:4px">
+              <span style="font-size:14px; font-weight:600; color:#0E1112">Priya Raman</span>
+              <span style="font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:.12em; text-transform:uppercase; color:#8A9094">Marlow Dental</span>
+            </figcaption>
+          </figure>
+          <figure style="flex:0 0 auto; width:400px; display:flex; flex-direction:column; justify-content:space-between; gap:24px; margin:0; padding:32px; background:#FFFFFF; border:1px solid rgba(14,17,18,.12)">
+            <blockquote style="margin:0; font-size:17px; line-height:1.55; letter-spacing:-.01em; color:#0E1112; text-wrap:pretty">&ldquo;The automated follow-up alone paid for the whole build. Nobody falls through the cracks now.&rdquo;</blockquote>
+            <figcaption style="display:flex; flex-direction:column; gap:4px">
+              <span style="font-size:14px; font-weight:600; color:#0E1112">Tom Beasley</span>
+              <span style="font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:.12em; text-transform:uppercase; color:#8A9094">Beasley Plumbing & Heating</span>
+            </figcaption>
+          </figure>
+          <figure style="flex:0 0 auto; width:400px; display:flex; flex-direction:column; justify-content:space-between; gap:24px; margin:0; padding:32px; background:#FFFFFF; border:1px solid rgba(14,17,18,.12)">
+            <blockquote style="margin:0; font-size:17px; line-height:1.55; letter-spacing:-.01em; color:#0E1112; text-wrap:pretty">&ldquo;I understood every invoice and every decision. That was new for us.&rdquo;</blockquote>
+            <figcaption style="display:flex; flex-direction:column; gap:4px">
+              <span style="font-size:14px; font-weight:600; color:#0E1112">Claire Hendry</span>
+              <span style="font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:.12em; text-transform:uppercase; color:#8A9094">Hendry & Croft</span>
+            </figcaption>
+          </figure>
+        </div>
+      <div style="display:flex; width:max-content; gap:20px; animation:tdMarqueeLeft 64s linear infinite">
+          <figure style="flex:0 0 auto; width:400px; display:flex; flex-direction:column; justify-content:space-between; gap:24px; margin:0; padding:32px; background:#FFFFFF; border:1px solid rgba(14,17,18,.12)">
+            <blockquote style="margin:0; font-size:17px; line-height:1.55; letter-spacing:-.01em; color:#0E1112; text-wrap:pretty">&ldquo;He told us not to spend money on two things we'd asked for. That's when I trusted him.&rdquo;</blockquote>
+            <figcaption style="display:flex; flex-direction:column; gap:4px">
+              <span style="font-size:14px; font-weight:600; color:#0E1112">Marcus Oyelowo</span>
+              <span style="font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:.12em; text-transform:uppercase; color:#8A9094">Ember Kitchen</span>
+            </figcaption>
+          </figure>
+          <figure style="flex:0 0 auto; width:400px; display:flex; flex-direction:column; justify-content:space-between; gap:24px; margin:0; padding:32px; background:#FFFFFF; border:1px solid rgba(14,17,18,.12)">
+            <blockquote style="margin:0; font-size:17px; line-height:1.55; letter-spacing:-.01em; color:#0E1112; text-wrap:pretty">&ldquo;Same work an agency quoted us four times for. Live in a month.&rdquo;</blockquote>
+            <figcaption style="display:flex; flex-direction:column; gap:4px">
+              <span style="font-size:14px; font-weight:600; color:#0E1112">Sarah Voss</span>
+              <span style="font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:.12em; text-transform:uppercase; color:#8A9094">Voss Interiors</span>
+            </figcaption>
+          </figure>
+          <figure style="flex:0 0 auto; width:400px; display:flex; flex-direction:column; justify-content:space-between; gap:24px; margin:0; padding:32px; background:#FFFFFF; border:1px solid rgba(14,17,18,.12)">
+            <blockquote style="margin:0; font-size:17px; line-height:1.55; letter-spacing:-.01em; color:#0E1112; text-wrap:pretty">&ldquo;The weekly report is one page and I actually read it.&rdquo;</blockquote>
+            <figcaption style="display:flex; flex-direction:column; gap:4px">
+              <span style="font-size:14px; font-weight:600; color:#0E1112">Gavin Doyle</span>
+              <span style="font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:.12em; text-transform:uppercase; color:#8A9094">Doyle Electrical</span>
+            </figcaption>
+          </figure>
+          <figure style="flex:0 0 auto; width:400px; display:flex; flex-direction:column; justify-content:space-between; gap:24px; margin:0; padding:32px; background:#FFFFFF; border:1px solid rgba(14,17,18,.12)">
+            <blockquote style="margin:0; font-size:17px; line-height:1.55; letter-spacing:-.01em; color:#0E1112; text-wrap:pretty">&ldquo;Enquiries get answered in under a minute, at 11pm, without me touching anything.&rdquo;</blockquote>
+            <figcaption style="display:flex; flex-direction:column; gap:4px">
+              <span style="font-size:14px; font-weight:600; color:#0E1112">Nadia Karim</span>
+              <span style="font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:.12em; text-transform:uppercase; color:#8A9094">Karim Aesthetics</span>
+            </figcaption>
+          </figure>
+          <figure style="flex:0 0 auto; width:400px; display:flex; flex-direction:column; justify-content:space-between; gap:24px; margin:0; padding:32px; background:#FFFFFF; border:1px solid rgba(14,17,18,.12)">
+            <blockquote style="margin:0; font-size:17px; line-height:1.55; letter-spacing:-.01em; color:#0E1112; text-wrap:pretty">&ldquo;He told us not to spend money on two things we'd asked for. That's when I trusted him.&rdquo;</blockquote>
+            <figcaption style="display:flex; flex-direction:column; gap:4px">
+              <span style="font-size:14px; font-weight:600; color:#0E1112">Marcus Oyelowo</span>
+              <span style="font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:.12em; text-transform:uppercase; color:#8A9094">Ember Kitchen</span>
+            </figcaption>
+          </figure>
+          <figure style="flex:0 0 auto; width:400px; display:flex; flex-direction:column; justify-content:space-between; gap:24px; margin:0; padding:32px; background:#FFFFFF; border:1px solid rgba(14,17,18,.12)">
+            <blockquote style="margin:0; font-size:17px; line-height:1.55; letter-spacing:-.01em; color:#0E1112; text-wrap:pretty">&ldquo;Same work an agency quoted us four times for. Live in a month.&rdquo;</blockquote>
+            <figcaption style="display:flex; flex-direction:column; gap:4px">
+              <span style="font-size:14px; font-weight:600; color:#0E1112">Sarah Voss</span>
+              <span style="font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:.12em; text-transform:uppercase; color:#8A9094">Voss Interiors</span>
+            </figcaption>
+          </figure>
+          <figure style="flex:0 0 auto; width:400px; display:flex; flex-direction:column; justify-content:space-between; gap:24px; margin:0; padding:32px; background:#FFFFFF; border:1px solid rgba(14,17,18,.12)">
+            <blockquote style="margin:0; font-size:17px; line-height:1.55; letter-spacing:-.01em; color:#0E1112; text-wrap:pretty">&ldquo;The weekly report is one page and I actually read it.&rdquo;</blockquote>
+            <figcaption style="display:flex; flex-direction:column; gap:4px">
+              <span style="font-size:14px; font-weight:600; color:#0E1112">Gavin Doyle</span>
+              <span style="font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:.12em; text-transform:uppercase; color:#8A9094">Doyle Electrical</span>
+            </figcaption>
+          </figure>
+          <figure style="flex:0 0 auto; width:400px; display:flex; flex-direction:column; justify-content:space-between; gap:24px; margin:0; padding:32px; background:#FFFFFF; border:1px solid rgba(14,17,18,.12)">
+            <blockquote style="margin:0; font-size:17px; line-height:1.55; letter-spacing:-.01em; color:#0E1112; text-wrap:pretty">&ldquo;Enquiries get answered in under a minute, at 11pm, without me touching anything.&rdquo;</blockquote>
+            <figcaption style="display:flex; flex-direction:column; gap:4px">
+              <span style="font-size:14px; font-weight:600; color:#0E1112">Nadia Karim</span>
+              <span style="font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:.12em; text-transform:uppercase; color:#8A9094">Karim Aesthetics</span>
+            </figcaption>
+          </figure>
+        </div>
+    </div>
+  </section>
+
+  <section id="contact" style="background:#0E1314; padding:120px 40px; background-image:linear-gradient(rgba(245,244,240,.055) 1px, transparent 1px), linear-gradient(90deg, rgba(245,244,240,.055) 1px, transparent 1px); background-size:100% 88px, 88px 100%">
+    <div style="max-width:1320px; margin:0 auto; display:grid; grid-template-columns:minmax(0,1fr) minmax(0,.85fr); gap:80px; align-items:start">
+      <div data-reveal style="display:flex; flex-direction:column; gap:28px">
+        <span style="font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:.2em; text-transform:uppercase; color:#7FD9C1">09 / Contact</span>
+        <h2 style="margin:0; font-size:clamp(40px,5.4vw,80px); line-height:.98; letter-spacing:-.04em; font-weight:600; color:#F5F4F0">Twenty minutes. No pitch.</h2>
+        <p style="margin:0; font-size:18px; line-height:1.55; color:rgba(245,244,240,.82); max-width:480px">Tell me what you sell and where the leads are meant to come from. If I can't help, I'll say so and point you somewhere that can.</p>
+        <div style="display:flex; flex-direction:column; gap:8px; padding-top:12px">
+          <a href="mailto:hello@tangodigital.com" style="font-size:17px; color:#F5F4F0; border-bottom:1px solid rgba(12,107,87,.45); align-self:start" style-hover="color:#7FD9C1">hello@tangodigital.com</a>
+          <span style="font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:.12em; text-transform:uppercase; color:rgba(245,244,240,.55)">Replies within one business day</span>
+        </div>
+      </div>
+      <form onSubmit="{{ submit }}" data-reveal style="display:flex; flex-direction:column; gap:18px; padding:36px; background:#141A1A; border:1px solid rgba(245,244,240,.16)">
+        <div style="display:flex; flex-direction:column; gap:8px">
+          <label for="td-name" style="font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:.16em; text-transform:uppercase; color:rgba(245,244,240,.55)">Name</label>
+          <input id="td-name" type="text" placeholder="Your name" style="padding:14px 16px; background:#080D0E; border:1px solid rgba(245,244,240,.2); color:#F5F4F0; font-family:Archivo,sans-serif; font-size:15px; border-radius:2px; outline:none" style-focus="border-color:#7FD9C1">
+        </div>
+        <div style="display:flex; flex-direction:column; gap:8px">
+          <label for="td-biz" style="font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:.16em; text-transform:uppercase; color:rgba(245,244,240,.55)">Business &amp; website</label>
+          <input id="td-biz" type="text" placeholder="Company, and URL if you have one" style="padding:14px 16px; background:#080D0E; border:1px solid rgba(245,244,240,.2); color:#F5F4F0; font-family:Archivo,sans-serif; font-size:15px; border-radius:2px; outline:none" style-focus="border-color:#7FD9C1">
+        </div>
+        <div style="display:flex; flex-direction:column; gap:8px">
+          <label for="td-need" style="font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:.16em; text-transform:uppercase; color:rgba(245,244,240,.55)">What do you need</label>
+          <textarea id="td-need" rows="4" placeholder="Website, more leads, less admin — or all of it" style="padding:14px 16px; background:#080D0E; border:1px solid rgba(245,244,240,.2); color:#F5F4F0; font-family:Archivo,sans-serif; font-size:15px; border-radius:2px; outline:none; resize:vertical" style-focus="border-color:#7FD9C1"></textarea>
+        </div>
+        <button type="submit" style="margin-top:6px; padding:16px; background:#7FD9C1; color:#0E1314; border:0; border-radius:2px; font-family:Archivo,sans-serif; font-size:15px; font-weight:600; cursor:pointer" style-hover="background:#0E1314; color:#FFFFFF">{{ submitLabel }}</button>
+      </form>
+    </div>
+  </section>
+
+  <footer style="display:flex; align-items:center; justify-content:space-between; gap:24px; flex-wrap:wrap; padding:32px 40px; border-top:1px solid rgba(14,17,18,.1)">
+    <span style="font-size:15px; font-weight:600; letter-spacing:-.02em">Tango Digital</span>
+    <span style="font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:.12em; text-transform:uppercase; color:#8A9094">Next-gen marketing for small business</span>
+    <span style="font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:.12em; color:#8A9094">© 2026</span>
+  </footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;motion&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Behaviour&quot;},&quot;faqStartOpen&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Behaviour&quot;}}">
+class Component extends DCLogic {
+  state = { open: null, sent: false, slide: 0, detail: null };
+
+  get openIndex() {
+    const o = this.state.open;
+    if (o !== null) return o;
+    return (this.props.faqStartOpen ?? true) ? 0 : -1;
+  }
+
+  get rows() {
+    return [
+      { item: "Who builds it", agency: "Junior, offshore team", us: "Me, start to finish" },
+      { item: "Setup fee", agency: "$8k–$25k", us: "From $2.5k" },
+      { item: "Monthly retainer", agency: "$3k–$6k + ad spend", us: "From $900 + ad spend" },
+      { item: "Contract", agency: "6–12 months locked", us: "Month to month" },
+      { item: "Time to first campaign", agency: "8–12 weeks", us: "About 3 weeks" },
+      { item: "Reporting", agency: "40 slides of impressions", us: "One page: leads, cost, revenue" },
+      { item: "Who owns the accounts", agency: "The agency, usually", us: "You, always" }
+    ];
+  }
+
+  get faqData() {
+    return [
+      { q: "Why are you cheaper than an agency?", a: "No office, no sales team, no layers of management billing your account. Modern tooling and automation do the work that used to need a department, so the cost of delivery is genuinely lower — I'm not discounting, I just have less to pay for." },
+      { q: "One person — what if you get hit by a bus?", a: "Everything is built in your accounts, documented, and portable. If I vanish tomorrow you keep the site, the ad accounts, the automations and the data, and any competent operator can pick it up. No proprietary platform holding you hostage." },
+      { q: "Do I have to sign a long contract?", a: "No. Build work is fixed-scope and fixed-price. Ongoing work is month to month — if it stops paying for itself, you stop. That's the whole accountability mechanism." },
+      { q: "Is the AI stuff just hype?", a: "The hype is. The useful part is boring: answering every enquiry within a minute, chasing quotes nobody followed up, drafting content, and killing admin. Those move revenue for a small business more than anything fashionable." },
+      { q: "What if I already have a website I like?", a: "Then we don't touch it. Plenty of engagements are lead generation and automation only, on top of what you've got. I'll tell you honestly if the site is the thing holding you back." },
+      { q: "How do I know it's working?", a: "Tracking goes in before spend does — calls, forms, and where each lead came from. One page a month: leads in, cost per lead, what closed. If the numbers don't move, we change the plan or you leave." }
+    ];
+  }
+
+  get caseData() {
+    return [
+      { title: "Ridgeway Roofing", tags: "Web build · Local SEO", sector: "Trades & home services",
+        problem: "A five-van roofing firm getting most of its work from word of mouth, with a site that hadn't been touched since 2018 and no way of knowing which jobs came from where.",
+        work: "Rebuilt the site around the three services that actually make money, wrote the copy, set up call tracking, and cleaned up the Google Business Profile with real job photos and service-area pages.",
+        outcome: "Enquiries now arrive with a source attached, so quoting time goes to the jobs worth quoting. The owner stopped paying a directory site a monthly fee to send him tyre-kickers." },
+      { title: "Marlow Dental", tags: "Lead generation · Automation", sector: "Clinics & health practices",
+        problem: "Plenty of website visits, very few bookings. Enquiries sat in an inbox overnight and patients booked with whoever answered first.",
+        work: "Built a treatment-specific landing page, ran tightly matched search campaigns, and wired instant response: every enquiry gets a reply in under a minute, then two follow-ups if nobody books.",
+        outcome: "No enquiry goes unanswered, and reception spends its time on patients in the chair rather than chasing emails." },
+      { title: "Hale & Croft Legal", tags: "Web build · AI content", sector: "Professional services",
+        problem: "A two-partner practice competing with firms that outspend them ten to one, and no time to write anything for the site.",
+        work: "A fast, sober site that reads like the partners talk, plus an AI-assisted workflow that turns a ten-minute voice note into a publishable article the partners approve.",
+        outcome: "The firm publishes consistently for the first time, and ranks for the specific matters it actually wants — not general 'solicitor near me' traffic." },
+      { title: "Ember Kitchen", tags: "Automation · Lead generation", sector: "Hospitality & food",
+        problem: "Bookings and function enquiries came in on three different channels and got lost between shifts.",
+        work: "One intake form feeding a single pipeline, automatic confirmations and reminders, review requests after each visit, and a simple weekly report for the owner.",
+        outcome: "Fewer no-shows, a steady stream of new reviews, and the owner sees the week's numbers without asking anyone." }
+    ];
+  }
+
+  componentDidMount() {
+    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (reduce || this.props.motion === false) return;
+
+    const nodes = Array.from(document.querySelectorAll("[data-reveal]"));
+    if (this.io) this.io.disconnect();
+    const show = el => {
+      el.style.opacity = "1";
+      el.style.transform = "none";
+    };
+    this.io = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (!e.isIntersecting) return;
+        show(e.target);
+        this.io.unobserve(e.target);
+      });
+    }, { rootMargin: "0px 0px -8% 0px", threshold: 0.05 });
+    nodes.forEach((n, idx) => {
+      const inView = n.getBoundingClientRect().top < window.innerHeight * 0.95;
+      n.style.transition = "opacity .6s cubic-bezier(.16,1,.3,1), transform .6s cubic-bezier(.16,1,.3,1)";
+      if (inView) { show(n); return; }
+      n.style.opacity = "0";
+      n.style.transform = "translateY(16px)";
+      this.io.observe(n);
+    });
+    clearTimeout(this.revealFallback);
+    this.revealFallback = setTimeout(() => nodes.forEach(show), 4000);
+
+    this.counters = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (!e.isIntersecting) return;
+        this.runCount(e.target);
+        this.counters.unobserve(e.target);
+      });
+    }, { threshold: 0.6 });
+    document.querySelectorAll("[data-count]").forEach(n => this.counters.observe(n));
+  }
+
+  componentWillUnmount() {
+    if (this.io) this.io.disconnect();
+    if (this.counters) this.counters.disconnect();
+    clearTimeout(this.revealFallback);
+  }
+
+  runCount(el) {
+    const target = parseFloat(el.getAttribute("data-count")) || 0;
+    const suffix = el.getAttribute("data-suffix") || "";
+    const prefix = el.getAttribute("data-prefix") || "";
+    const dur = 1400, t0 = performance.now();
+    const tick = now => {
+      const p = Math.min(1, (now - t0) / dur);
+      const eased = 1 - Math.pow(1 - p, 3);
+      el.textContent = prefix + Math.round(target * eased) + suffix;
+      if (p < 1) requestAnimationFrame(tick);
+    };
+    requestAnimationFrame(tick);
+  }
+
+  renderVals() {
+    const open = this.openIndex;
+    const slide = this.state.slide || 0;
+    const d = this.state.detail;
+    const cd = this.caseData;
+    return {
+      trackShift: "translateX(calc(" + (-slide * 38) + "% - 19%))",
+      prev: () => this.setState({ slide: Math.max(0, slide - 1) }),
+      next: () => this.setState({ slide: Math.min(1, slide + 1) }),
+      cases: cd.map((c, i) => ({ title: c.title, tags: c.tags, open: () => this.setState({ detail: i }) })),
+      detail: d === null || d === undefined ? null : Object.assign({}, cd[d], { slotId: "case-" + d }),
+      close: () => this.setState({ detail: null }),
+      rows: this.rows,
+      faqs: this.faqData.map((f, i) => ({
+        q: f.q,
+        a: f.a,
+        open: open === i,
+        sign: open === i ? "−" : "+",
+        toggle: () => this.setState({ open: open === i ? -1 : i })
+      })),
+      submitLabel: this.state.sent ? "Sent — talk soon" : "Book my 20 minutes",
+      submit: e => { e.preventDefault(); this.setState({ sent: true }); }
+    };
+  }
+}
+</script>
+</body>
+</html>
