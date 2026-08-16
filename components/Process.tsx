@@ -1,5 +1,4 @@
 import { processSteps } from "@/content/process";
-import Placeholder from "./Placeholder";
 import Reveal from "./Reveal";
 
 // Process lives inside the frosted-glass-over-photo treatment (formerly the
@@ -12,10 +11,12 @@ export default function Process() {
       id="process"
       className="relative overflow-hidden border-b border-[rgba(14,17,18,.1)] px-6 py-[120px] md:px-10"
     >
-      {/* Background photo */}
-      <div className="absolute inset-0">
-        <Placeholder label="Wide landscape / workspace photo" tone="dark" />
-      </div>
+      {/* Background photo (graceful: falls back to bg-night if absent) */}
+      <div
+        aria-hidden="true"
+        className="absolute inset-0 bg-night bg-cover bg-center"
+        style={{ backgroundImage: "url(/process-tim-advising.jpg)" }}
+      />
       {/* Scrim */}
       <div
         aria-hidden="true"
