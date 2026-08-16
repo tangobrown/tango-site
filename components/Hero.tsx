@@ -15,7 +15,7 @@ export default function Hero() {
       <div
         aria-hidden="true"
         className="absolute inset-0 bg-cover"
-        style={{ backgroundImage: "url(/hero-tim-brown.jpg)", backgroundPosition: "center 25%" }}
+        style={{ backgroundImage: "url(/hero-tim-brown.jpg)", backgroundPosition: "center top" }}
       />
       {/* Gradient overlay */}
       <div aria-hidden="true" className="absolute inset-0" style={{ background: overlay }} />
@@ -25,7 +25,7 @@ export default function Hero() {
         <div className="flex max-w-[560px] flex-col gap-8 md:max-w-[52%]">
           <Reveal
             as="h1"
-            className="m-0 text-balance text-[clamp(40px,6.2vw,96px)] font-semibold leading-[.96] tracking-[-.045em] text-bone"
+            className="m-0 text-balance text-[clamp(40px,5.6vw,84px)] font-semibold leading-[.96] tracking-[-.045em] text-bone"
           >
             Beat the competition.
             <br />
