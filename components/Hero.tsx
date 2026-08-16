@@ -9,7 +9,9 @@ export default function Hero() {
   return (
     <section
       id="top"
-      className="relative overflow-hidden border-b border-[rgba(245,244,240,.12)] bg-night"
+      // Padding on the section (not the inner box) so the content's left edge
+      // lines up with every other section's content container.
+      className="relative overflow-hidden border-b border-[rgba(245,244,240,.12)] bg-night px-6 md:px-10"
     >
       {/* Background photograph (graceful: falls back to bg-night if absent) */}
       <div
@@ -21,11 +23,13 @@ export default function Hero() {
       <div aria-hidden="true" className="absolute inset-0" style={{ background: overlay }} />
 
       {/* Content — constrained to the left half of the container */}
-      <div className="relative mx-auto flex min-h-[520px] max-w-content items-center px-6 py-[104px] md:min-h-[600px] md:px-10">
+      <div className="relative mx-auto flex min-h-[520px] max-w-content items-center py-[104px] md:min-h-[600px]">
         <div className="flex max-w-[560px] flex-col gap-8 md:max-w-[52%]">
           <Reveal
             as="h1"
-            className="m-0 text-balance text-[clamp(40px,5.6vw,84px)] font-semibold leading-[.96] tracking-[-.045em] text-bone"
+            // Mobile: title spans 80% of the container width. Desktop: fills the
+            // left column.
+            className="m-0 max-w-[80%] text-balance text-[clamp(40px,4.6vw,68px)] font-semibold leading-[.96] tracking-[-.045em] text-bone md:max-w-none"
           >
             Beat the competition.
             <br />
