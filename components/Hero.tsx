@@ -23,7 +23,7 @@ export default function Hero() {
       <div aria-hidden="true" className="absolute inset-0" style={{ background: overlay }} />
 
       {/* Content — constrained to the left half of the container */}
-      <div className="relative mx-auto flex min-h-[520px] max-w-content items-center py-[104px] md:min-h-[600px]">
+      <div className="relative mx-auto flex min-h-[520px] max-w-content items-center py-[104px] md:min-h-[680px] md:pb-[120px] md:pt-[176px]">
         <div className="flex max-w-[560px] flex-col gap-8 md:max-w-[52%]">
           <Reveal
             as="h1"
@@ -40,8 +40,9 @@ export default function Hero() {
             as="p"
             className="m-0 max-w-[620px] text-pretty text-[20px] leading-[1.5] text-[rgba(245,244,240,.82)]"
           >
-            Websites, lead generation, and AI automation — built by one operator who actually does
-            the work. No account managers, no retainer theatre, no 40-slide reports about nothing.
+            Hello, Tim here. I offer Websites, SEO and AI automation, built by one operator who
+            actually does the work. No account managers, no retainer theatre, no 40-slide reports
+            about nothing.
           </Reveal>
 
           <Reveal className="flex flex-wrap gap-3">
@@ -49,7 +50,7 @@ export default function Hero() {
               href="#contact"
               className="inline-flex items-center gap-[10px] rounded-[2px] bg-mint px-6 py-4 text-[15px] font-semibold text-night transition-colors hover:bg-bone"
             >
-              Book a free 20-min call <span className="font-mono">→</span>
+              Talk to me <span className="font-mono">→</span>
             </a>
             <a
               href="#services"
