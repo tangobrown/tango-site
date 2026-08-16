@@ -1,4 +1,3 @@
-import Placeholder from "./Placeholder";
 import Reveal from "./Reveal";
 
 const chips = ["Direct line, always", "Month to month", "You own everything"];
@@ -9,11 +8,16 @@ export default function About() {
       id="about"
       className="border-b border-[rgba(14,17,18,.1)] px-6 py-[110px] md:px-10"
     >
-      <div className="mx-auto grid max-w-content grid-cols-[repeat(auto-fit,minmax(280px,1fr))] items-start gap-14">
-        {/* Portrait — capped so it doesn't stretch when the grid collapses */}
-        <Reveal className="flex max-w-[420px] flex-col gap-4">
-          <div className="relative aspect-[4/5] w-full border border-[rgba(14,17,18,.12)] bg-white">
-            <Placeholder label="Portrait of Tim Brown" />
+      <div className="mx-auto grid max-w-content grid-cols-1 items-start gap-14 md:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)]">
+        {/* Portrait — fills its column on desktop; capped on mobile */}
+        <Reveal className="flex w-full max-w-[460px] flex-col gap-4 md:max-w-none">
+          <div className="relative aspect-square w-full overflow-hidden border border-[rgba(14,17,18,.12)] bg-white">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/about-tim.jpg"
+              alt="Tim Brown, founder and operator of Tango Digital"
+              className="absolute inset-0 h-full w-full object-cover"
+            />
           </div>
           <span className="font-mono text-[11px] uppercase tracking-[.14em] text-ink-4">
             Founder & operator — Tango Digital
