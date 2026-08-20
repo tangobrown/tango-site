@@ -1,33 +1,13 @@
-// Labelled placeholder tile. Stands in for the eleven real assets the
-// handoff calls for (headshot, portrait, case images, icons, background
-// photo) until they arrive — swap each for a real <next/image> then.
-// Fills its parent, so the parent controls size and aspect ratio.
+// Neutral stone image placeholder used until real assets land (handoff
+// open item #6). Fills its parent; swap for a real <next/image fill> later.
+// Carries a faint label so each slot's intended content is obvious in dev.
 
-type PlaceholderProps = {
-  label: string;
-  /** "light" tiles sit on light sections, "dark" on the night/photo layers. */
-  tone?: "light" | "dark";
-  className?: string;
-};
-
-export default function Placeholder({
-  label,
-  tone = "light",
-  className = "",
-}: PlaceholderProps) {
-  const tones =
-    tone === "dark"
-      ? "bg-night-deep text-[rgba(245,244,240,.5)]"
-      : "bg-[#E7E3DA] text-ink-4";
-
+export default function Placeholder({ label }: { label?: string }) {
   return (
-    <div
-      aria-hidden="true"
-      className={`flex h-full w-full items-center justify-center overflow-hidden p-3 text-center ${tones} ${className}`}
-    >
-      <span className="font-mono text-[10px] uppercase leading-tight tracking-[.16em]">
-        {label}
-      </span>
+    <div className="absolute inset-0 flex items-center justify-center bg-stone p-4 text-center">
+      {label ? (
+        <span className="text-[11px] uppercase tracking-[0.12em] text-muted/70">{label}</span>
+      ) : null}
     </div>
   );
 }

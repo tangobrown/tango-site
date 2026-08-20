@@ -1,65 +1,55 @@
-import Reveal from "./Reveal";
-
-// Left-to-right gradient: dark under the text on the left, clearing to reveal
-// the photograph on the right. Uses the night base colour (14,19,20).
-const overlay =
-  "linear-gradient(90deg, rgba(14,19,20,.96) 0%, rgba(14,19,20,.9) 30%, rgba(14,19,20,.6) 56%, rgba(14,19,20,.18) 82%, rgba(14,19,20,0) 100%)";
+import ArrowIcon from "./ArrowIcon";
+import Placeholder from "./Placeholder";
+import { navLinks, site } from "@/lib/site";
 
 export default function Hero() {
   return (
     <section
       id="top"
-      // Padding on the section (not the inner box) so the content's left edge
-      // lines up with every other section's content container.
-      className="relative overflow-hidden border-b border-[rgba(245,244,240,.12)] bg-night px-6 md:px-10"
+      className="relative grid grid-cols-1 lg:h-[92vh] lg:min-h-[700px] lg:grid-cols-[38%_minmax(0,1fr)]"
     >
-      {/* Background photograph (graceful: falls back to bg-night if absent) */}
-      <div
-        aria-hidden="true"
-        className="absolute inset-0 bg-cover"
-        style={{ backgroundImage: "url(/hero-tim-brown.jpg)", backgroundPosition: "center top" }}
-      />
-      {/* Gradient overlay */}
-      <div aria-hidden="true" className="absolute inset-0" style={{ background: overlay }} />
-
-      {/* Content — constrained to the left half of the container */}
-      <div className="relative mx-auto flex min-h-[520px] max-w-content items-center py-[104px] md:min-h-[680px] md:pb-[120px] md:pt-[176px]">
-        <div className="flex max-w-[560px] flex-col gap-8 md:max-w-[52%]">
-          <Reveal
-            as="h1"
-            // Mobile: title spans 80% of the container width. Desktop: fills the
-            // left column.
-            className="m-0 max-w-[80%] text-balance text-[clamp(40px,4.6vw,68px)] font-semibold leading-[.96] tracking-[-.045em] text-bone md:max-w-none"
-          >
-            Beat the competition.
-            <br />
-            <span className="text-[rgba(245,244,240,.5)]">Skip the agency</span> price tag.
-          </Reveal>
-
-          <Reveal
-            as="p"
-            className="m-0 max-w-[620px] text-pretty text-[20px] leading-[1.5] text-[rgba(245,244,240,.82)]"
-          >
-            Hello, Tim here. I offer Websites, SEO and AI automation, built by one operator who
-            actually does the work. No account managers, no retainer theatre, no 40-slide reports
-            about nothing.
-          </Reveal>
-
-          <Reveal className="flex flex-wrap gap-3">
-            <a
-              href="#contact"
-              className="inline-flex items-center gap-[10px] rounded-[2px] bg-mint px-6 py-4 text-[15px] font-semibold text-night transition-colors hover:bg-bone"
-            >
-              Talk to me <span className="font-mono">→</span>
-            </a>
-            <a
-              href="#services"
-              className="inline-flex items-center rounded-[2px] border border-[rgba(245,244,240,.28)] px-6 py-4 text-[15px] font-medium text-bone transition-colors hover:border-bone"
-            >
-              See what I do
-            </a>
-          </Reveal>
+      {/* Left — dark block (copy) */}
+      <div className="order-2 flex flex-col justify-between gap-14 bg-ink-dark p-[32px_20px_40px] text-cream-text lg:order-1 lg:gap-0 lg:p-[44px_48px_56px]">
+        <div className="flex items-center gap-3">
+          <div className="h-[34px] w-[34px] flex-none rounded-full bg-rust" />
+          <span className="font-bebas text-[21px] tracking-[0.01em]">{site.name}</span>
         </div>
+
+        <div className="flex flex-col gap-7">
+          <h1 className="m-0 text-pretty font-bebas text-[clamp(38px,4.1vw,62px)] font-normal leading-[0.98] tracking-[0.005em]">
+            Websites, search and quiet automation — built by one person who answers the phone.
+          </h1>
+          <p className="m-0 max-w-[34ch] text-[16px] leading-[1.6] text-muted-dark">
+            Freelance web design, SEO and AI workflows. Based in Devon, working with people I like.
+          </p>
+          <a
+            href="#contact"
+            className="inline-flex items-center gap-[10px] self-start border border-[#6E675E] px-[26px] py-[14px] text-[14px] uppercase tracking-[0.04em] text-cream-text transition-colors hover:border-rust hover:bg-rust hover:text-white"
+          >
+            Let&apos;s connect <ArrowIcon size={18} />
+          </a>
+        </div>
+      </div>
+
+      {/* Right — image + top scrim + desktop nav */}
+      <div className="relative order-1 h-[48vh] bg-stone lg:order-2 lg:h-auto">
+        <Placeholder label="Hero — Tim at work, or a recent site" />
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-x-0 top-0 h-[130px]"
+          style={{ background: "linear-gradient(to bottom, rgba(20,18,15,0.42), rgba(20,18,15,0))" }}
+        />
+        <nav className="absolute right-11 top-[34px] hidden gap-[30px] lg:flex">
+          {navLinks.map((link) => (
+            <a
+              key={link.href}
+              href={link.href}
+              className="text-[13px] uppercase tracking-[0.06em] text-cream transition-colors hover:text-white [text-shadow:0_1px_6px_rgba(0,0,0,0.35)]"
+            >
+              {link.label}
+            </a>
+          ))}
+        </nav>
       </div>
     </section>
   );

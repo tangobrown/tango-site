@@ -1,61 +1,44 @@
 import type { Metadata, Viewport } from "next";
-import { Archivo, JetBrains_Mono, Public_Sans } from "next/font/google";
+import { Bebas_Neue, Public_Sans } from "next/font/google";
 import "./globals.css";
 
-// Archivo — headings and display text.
-const archivo = Archivo({
+// Bebas Neue (400) — headings, wordmark, band, card titles.
+const bebas = Bebas_Neue({
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  variable: "--font-archivo",
+  weight: ["400"],
+  variable: "--font-bebas",
   display: "swap",
 });
 
-// Public Sans — paragraph / body copy.
+// Public Sans (300–700) — body, nav, buttons, forms, quotes.
 const publicSans = Public_Sans({
   subsets: ["latin"],
-  weight: ["400", "500"],
+  weight: ["300", "400", "500", "600", "700"],
   variable: "--font-public",
   display: "swap",
 });
 
-// JetBrains Mono — every eyebrow, label, caption, price, ticker item,
-// nav link, arrow glyph and service bullet.
-const jetbrainsMono = JetBrains_Mono({
-  subsets: ["latin"],
-  weight: ["400", "500"],
-  variable: "--font-mono",
-  display: "swap",
-});
-
-const SITE_URL = "https://tangodigital.com";
+const SITE_URL = "https://timbrown.co";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
-  title: "Tango Digital — Websites, lead generation & AI automation in Exeter",
+  title: "Tim Brown — Freelance web design, SEO & automation in Devon",
   description:
-    "Agency-grade websites, lead generation and AI automation for small businesses — built by one operator, without agency pricing. Book a free 20-minute call.",
-  keywords: [
-    "digital growth consultant",
-    "Exeter",
-    "web design",
-    "lead generation",
-    "AI automation",
-    "small business marketing",
-  ],
+    "Freelance web design, SEO and AI workflows, built by one person who answers the phone. Based in Devon, working with clients anywhere.",
   openGraph: {
-    title: "Tango Digital — Next-gen marketing for small business",
+    title: "Tim Brown — Freelance web design, SEO & automation",
     description:
-      "Websites, lead generation and AI automation, built by one operator. Skip the agency price tag.",
+      "Websites, search and quiet automation — built by one person who answers the phone.",
     url: SITE_URL,
-    siteName: "Tango Digital",
+    siteName: "Tim Brown",
     locale: "en_GB",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Tango Digital — Next-gen marketing for small business",
+    title: "Tim Brown — Freelance web design, SEO & automation",
     description:
-      "Websites, lead generation and AI automation, built by one operator. Skip the agency price tag.",
+      "Websites, search and quiet automation — built by one person who answers the phone.",
   },
 };
 
@@ -64,22 +47,20 @@ export const viewport: Viewport = {
   initialScale: 1,
 };
 
-// LocalBusiness structured data for the Exeter practice. Address is a
-// placeholder until the client confirms.
 const jsonLd = {
   "@context": "https://schema.org",
-  "@type": "ProfessionalService",
-  name: "Tango Digital",
+  "@type": "Person",
+  name: "Tim Brown",
+  jobTitle: "Freelance web designer",
   description:
-    "Freelance digital growth consultancy — websites, lead generation and AI automation for small businesses.",
-  areaServed: "United Kingdom",
-  founder: { "@type": "Person", name: "Tim Brown" },
-  address: {
-    "@type": "PostalAddress",
-    addressLocality: "Exeter",
-    addressCountry: "GB",
-  },
+    "Freelance web design, SEO and AI automation, based in Devon, UK.",
   url: SITE_URL,
+  address: { "@type": "PostalAddress", addressRegion: "Devon", addressCountry: "GB" },
+  makesOffer: [
+    { "@type": "Offer", itemOffered: { "@type": "Service", name: "Web design" } },
+    { "@type": "Offer", itemOffered: { "@type": "Service", name: "SEO & optimisation" } },
+    { "@type": "Offer", itemOffered: { "@type": "Service", name: "AI & automation" } },
+  ],
 };
 
 export default function RootLayout({
@@ -88,10 +69,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html
-      lang="en-GB"
-      className={`${archivo.variable} ${jetbrainsMono.variable} ${publicSans.variable} scroll-smooth scroll-pt-24`}
-    >
+    <html lang="en-GB" className={`${bebas.variable} ${publicSans.variable}`}>
       <body>
         <script
           type="application/ld+json"

@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&amp;family=Public+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+<script src="./image-slot.js"></script>
+<style>
+  html, body { margin: 0; padding: 0; background: #FAF7F2; }
+  * { box-sizing: border-box; }
+  a { color: #B5502E; text-decoration: none; }
+  a:hover { color: #8E3C1F; }
+  ::selection { background: #EBD9CD; }
+  .cw::-webkit-scrollbar { height: 0; }
+  @keyframes mqL { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+  @keyframes mqR { from { transform: translateX(-50%); } to { transform: translateX(0); } }
+  .mq-l { animation: mqL 64s linear infinite; }
+  .mq-r { animation: mqR 64s linear infinite; }
+  .mq-l2 { animation: mqL 42s linear infinite; }
+  .mqwrap:hover .mq-l, .mqwrap:hover .mq-r, .mqwrap:hover .mq-l2 { animation-play-state: paused; }
+  @media (prefers-reduced-motion: reduce) { .mq-l, .mq-r, .mq-l2 { animation: none; } }
+</style>
+</helmet>
+<div style="font-family: 'Public Sans', system-ui, sans-serif; color: #1F1D1A; background: #FAF7F2; overflow-x: hidden;">
+
+  <section data-screen-label="Hero" style="display: grid; grid-template-columns: 38% minmax(0, 1fr); min-height: 700px; height: 92vh; position: relative;">
+    <div style="background: #24211D; color: #F6F1E9; padding: 44px 48px 56px; display: flex; flex-direction: column; justify-content: space-between;">
+      <div style="display: flex; align-items: center; gap: 12px;">
+        <div style="width: 34px; height: 34px; border-radius: 50%; background: #B5502E;"></div>
+        <span style="font-family: 'Bebas Neue', sans-serif; font-size: 21px; letter-spacing: 0.01em;">Tim Brown</span>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 28px;">
+        <h1 style="margin: 0; font-family: 'Bebas Neue', sans-serif; font-weight: 400; font-size: clamp(38px, 4.1vw, 62px); line-height: 0.98; letter-spacing: 0.005em; text-wrap: pretty;">Websites, search and quiet automation — built by one person who answers the phone.</h1>
+        <p style="margin: 0; font-size: 16px; line-height: 1.6; color: #B8B0A4; max-width: 34ch;">Freelance web design, SEO and AI workflows. Based in Devon, working with people I like.</p>
+        <a href="#contact" style="align-self: flex-start; border: 1px solid #6E675E; color: #F6F1E9; padding: 14px 26px; font-size: 14px; letter-spacing: 0.04em; text-transform: uppercase; display: inline-flex; align-items: center; gap: 10px;" style-hover="background: #B5502E; border-color: #B5502E; color: #FFFFFF;">Let's connect <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="18" height="18" style="flex: 0 0 auto; display: block;"><path d="M16.0037 9.41421L7.39712 18.0208L5.98291 16.6066L14.5895 8H7.00373V6H18.0037V17H16.0037V9.41421Z"></path></svg></a>
+      </div>
+    </div>
+    <div style="position: relative; background: #E9E3D9;">
+      <image-slot id="hero" shape="rect" placeholder="Hero image — you at work, or a recent site"></image-slot>
+      <div style="position: absolute; inset: 0 0 auto 0; height: 130px; background: linear-gradient(to bottom, rgba(20,18,15,0.42), rgba(20,18,15,0)); pointer-events: none;"></div>
+      <nav style="position: absolute; top: 34px; right: 44px; display: flex; gap: 30px; pointer-events: auto;">
+        <a href="#services" style="color: #FAF7F2; font-size: 13px; letter-spacing: 0.06em; text-transform: uppercase; text-shadow: 0 1px 6px rgba(0,0,0,0.35);" style-hover="color: #FFFFFF;">Services</a>
+        <a href="#work" style="color: #FAF7F2; font-size: 13px; letter-spacing: 0.06em; text-transform: uppercase; text-shadow: 0 1px 6px rgba(0,0,0,0.35);" style-hover="color: #FFFFFF;">Work</a>
+        <a href="#about" style="color: #FAF7F2; font-size: 13px; letter-spacing: 0.06em; text-transform: uppercase; text-shadow: 0 1px 6px rgba(0,0,0,0.35);" style-hover="color: #FFFFFF;">About</a>
+        <a href="#contact" style="color: #FAF7F2; font-size: 13px; letter-spacing: 0.06em; text-transform: uppercase; text-shadow: 0 1px 6px rgba(0,0,0,0.35);" style-hover="color: #FFFFFF;">Contact</a>
+      </nav>
+    </div>
+  </section>
+
+  <section data-screen-label="Intro" style="padding: 120px max(32px, calc((100% - 1160px) / 2)) 104px; display: grid; grid-template-columns: 1.15fr 1fr; gap: 8vw; align-items: start;">
+    <h2 style="margin: 0; font-family: 'Bebas Neue', sans-serif; font-weight: 400; font-size: clamp(30px, 3.1vw, 46px); line-height: 1.02; letter-spacing: 0.01em; text-wrap: pretty">Most small businesses don't need an agency. They need one person who understands the work and finishes it.</h2>
+    <div style="display: flex; flex-direction: column; gap: 18px; padding-top: 10px;">
+      <p style="margin: 0; font-size: 16px; line-height: 1.75; color: #56504A;">I've spent the last decade building sites for joiners, bars and economists — and for teams at the World Bank. Same approach either way: understand the business, write it down plainly, then build something quick and easy to look after.</p>
+      <p style="margin: 0; font-size: 16px; line-height: 1.75; color: #56504A;">You talk to me from the first call to launch. No handovers, no account managers, no surprise invoices.</p>
+    </div>
+  </section>
+
+  <section data-screen-label="Services" id="services" style="border-top: 1px solid #E3DCD1; border-bottom: 1px solid #E3DCD1; margin-bottom: 0;">
+    <div style="padding: 0 max(32px, calc((100% - 1160px) / 2)); display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); background: #FFFFFF; background-clip: content-box;">
+    <div style="padding: 66px 40px 76px; border-left: 1px solid #E3DCD1; border-right: 1px solid #E3DCD1; display: flex; flex-direction: column; gap: 150px;">
+      <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#B5502E" stroke-width="1.4"><rect x="2.5" y="4" width="19" height="13" rx="1.5"></rect><path d="M9 20.5h6M12 17v3.5"></path></svg>
+      <div style="display: flex; flex-direction: column; gap: 14px;">
+        <h3 style="margin: 0; font-family: 'Bebas Neue', sans-serif; font-weight: 400; font-size: 34px">Web design</h3>
+        <p style="margin: 0; font-size: 15px; line-height: 1.7; color: #56504A;">Sites that load fast, read well and are built so you can update them yourself. Design, copy shaping and build, start to finish.</p>
+      </div>
+    </div>
+    <div style="padding: 66px 40px 76px; border-right: 1px solid #E3DCD1; display: flex; flex-direction: column; gap: 150px;">
+      <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#B5502E" stroke-width="1.4"><path d="M3 17l5.5-6 4 3.5L21 6"></path><path d="M15.5 6H21v5.5"></path></svg>
+      <div style="display: flex; flex-direction: column; gap: 14px;">
+        <h3 style="margin: 0; font-family: 'Bebas Neue', sans-serif; font-weight: 400; font-size: 34px">Optimisation</h3>
+        <p style="margin: 0; font-size: 15px; line-height: 1.7; color: #56504A;">Local and technical SEO for people who'd rather be found than famous. Clear reporting, no monthly retainer padding.</p>
+      </div>
+    </div>
+    <div style="padding: 66px 40px 76px; border-right: 1px solid #E3DCD1; display: flex; flex-direction: column; gap: 150px;">
+      <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#B5502E" stroke-width="1.4"><path d="M3 18l5-11 5 11M4.7 14.4h6.6"></path><path d="M18 17V6M18 6l-3 3M18 6l3 3"></path></svg>
+      <div style="display: flex; flex-direction: column; gap: 14px;">
+        <h3 style="margin: 0; font-family: 'Bebas Neue', sans-serif; font-weight: 400; font-size: 34px">AI &amp; automation</h3>
+        <p style="margin: 0; font-size: 15px; line-height: 1.7; color: #56504A;">The dull, repeated jobs — quotes, enquiries, admin — handled quietly in the background so your week gets shorter.</p>
+      </div>
+    </div>
+  </div>
+  </section>
+
+  <section data-screen-label="What to expect" style="background: #24211D; padding: 26px 0; overflow: hidden; margin-bottom: 30px;">
+    <div class="mqwrap">
+      <div class="mq-l2" style="display: flex; width: max-content; gap: 26px; align-items: center;">
+          <span style="display: inline-flex; align-items: center; gap: 26px; white-space: nowrap; font-family: 'Bebas Neue', sans-serif; font-size: 28px; letter-spacing: 0.045em; color: #F6F1E9;">Transparent pricing<span style="width: 6px; height: 6px; border-radius: 50%; background: #B5502E; flex: 0 0 auto;"></span></span>
+          <span style="display: inline-flex; align-items: center; gap: 26px; white-space: nowrap; font-family: 'Bebas Neue', sans-serif; font-size: 28px; letter-spacing: 0.045em; color: #F6F1E9;">Fixed timelines<span style="width: 6px; height: 6px; border-radius: 50%; background: #B5502E; flex: 0 0 auto;"></span></span>
+          <span style="display: inline-flex; align-items: center; gap: 26px; white-space: nowrap; font-family: 'Bebas Neue', sans-serif; font-size: 28px; letter-spacing: 0.045em; color: #F6F1E9;">Ongoing support<span style="width: 6px; height: 6px; border-radius: 50%; background: #B5502E; flex: 0 0 auto;"></span></span>
+          <span style="display: inline-flex; align-items: center; gap: 26px; white-space: nowrap; font-family: 'Bebas Neue', sans-serif; font-size: 28px; letter-spacing: 0.045em; color: #F6F1E9;">One person, start to finish<span style="width: 6px; height: 6px; border-radius: 50%; background: #B5502E; flex: 0 0 auto;"></span></span>
+          <span style="display: inline-flex; align-items: center; gap: 26px; white-space: nowrap; font-family: 'Bebas Neue', sans-serif; font-size: 28px; letter-spacing: 0.045em; color: #F6F1E9;">No monthly lock-in<span style="width: 6px; height: 6px; border-radius: 50%; background: #B5502E; flex: 0 0 auto;"></span></span>
+          <span style="display: inline-flex; align-items: center; gap: 26px; white-space: nowrap; font-family: 'Bebas Neue', sans-serif; font-size: 28px; letter-spacing: 0.045em; color: #F6F1E9;">Built to edit yourself<span style="width: 6px; height: 6px; border-radius: 50%; background: #B5502E; flex: 0 0 auto;"></span></span>
+          <span style="display: inline-flex; align-items: center; gap: 26px; white-space: nowrap; font-family: 'Bebas Neue', sans-serif; font-size: 28px; letter-spacing: 0.045em; color: #F6F1E9;">Honest advice<span style="width: 6px; height: 6px; border-radius: 50%; background: #B5502E; flex: 0 0 auto;"></span></span>
+          <span style="display: inline-flex; align-items: center; gap: 26px; white-space: nowrap; font-family: 'Bebas Neue', sans-serif; font-size: 28px; letter-spacing: 0.045em; color: #F6F1E9;">Replies within a day<span style="width: 6px; height: 6px; border-radius: 50%; background: #B5502E; flex: 0 0 auto;"></span></span>
+          <span style="display: inline-flex; align-items: center; gap: 26px; white-space: nowrap; font-family: 'Bebas Neue', sans-serif; font-size: 28px; letter-spacing: 0.045em; color: #F6F1E9;">Local SEO included<span style="width: 6px; height: 6px; border-radius: 50%; background: #B5502E; flex: 0 0 auto;"></span></span>
+          <span style="display: inline-flex; align-items: center; gap: 26px; white-space: nowrap; font-family: 'Bebas Neue', sans-serif; font-size: 28px; letter-spacing: 0.045em; color: #F6F1E9;">Transparent pricing<span style="width: 6px; height: 6px; border-radius: 50%; background: #B5502E; flex: 0 0 auto;"></span></span>
+          <span style="display: inline-flex; align-items: center; gap: 26px; white-space: nowrap; font-family: 'Bebas Neue', sans-serif; font-size: 28px; letter-spacing: 0.045em; color: #F6F1E9;">Fixed timelines<span style="width: 6px; height: 6px; border-radius: 50%; background: #B5502E; flex: 0 0 auto;"></span></span>
+          <span style="display: inline-flex; align-items: center; gap: 26px; white-space: nowrap; font-family: 'Bebas Neue', sans-serif; font-size: 28px; letter-spacing: 0.045em; color: #F6F1E9;">Ongoing support<span style="width: 6px; height: 6px; border-radius: 50%; background: #B5502E; flex: 0 0 auto;"></span></span>
+          <span style="display: inline-flex; align-items: center; gap: 26px; white-space: nowrap; font-family: 'Bebas Neue', sans-serif; font-size: 28px; letter-spacing: 0.045em; color: #F6F1E9;">One person, start to finish<span style="width: 6px; height: 6px; border-radius: 50%; background: #B5502E; flex: 0 0 auto;"></span></span>
+          <span style="display: inline-flex; align-items: center; gap: 26px; white-space: nowrap; font-family: 'Bebas Neue', sans-serif; font-size: 28px; letter-spacing: 0.045em; color: #F6F1E9;">No monthly lock-in<span style="width: 6px; height: 6px; border-radius: 50%; background: #B5502E; flex: 0 0 auto;"></span></span>
+          <span style="display: inline-flex; align-items: center; gap: 26px; white-space: nowrap; font-family: 'Bebas Neue', sans-serif; font-size: 28px; letter-spacing: 0.045em; color: #F6F1E9;">Built to edit yourself<span style="width: 6px; height: 6px; border-radius: 50%; background: #B5502E; flex: 0 0 auto;"></span></span>
+          <span style="display: inline-flex; align-items: center; gap: 26px; white-space: nowrap; font-family: 'Bebas Neue', sans-serif; font-size: 28px; letter-spacing: 0.045em; color: #F6F1E9;">Honest advice<span style="width: 6px; height: 6px; border-radius: 50%; background: #B5502E; flex: 0 0 auto;"></span></span>
+          <span style="display: inline-flex; align-items: center; gap: 26px; white-space: nowrap; font-family: 'Bebas Neue', sans-serif; font-size: 28px; letter-spacing: 0.045em; color: #F6F1E9;">Replies within a day<span style="width: 6px; height: 6px; border-radius: 50%; background: #B5502E; flex: 0 0 auto;"></span></span>
+          <span style="display: inline-flex; align-items: center; gap: 26px; white-space: nowrap; font-family: 'Bebas Neue', sans-serif; font-size: 28px; letter-spacing: 0.045em; color: #F6F1E9;">Local SEO included<span style="width: 6px; height: 6px; border-radius: 50%; background: #B5502E; flex: 0 0 auto;"></span></span>
+      </div>
+    </div>
+  </section>
+
+  <section data-screen-label="Work" id="work" style="padding: 120px 0 90px;">
+    <h2 style="margin: 0 auto 60px; max-width: 20ch; text-align: center; font-family: 'Bebas Neue', sans-serif; font-weight: 400; font-size: clamp(30px, 3.1vw, 44px); line-height: 1.04; text-wrap: pretty">A few of the people I've built things for.</h2>
+    <div class="cw" ref="{{ railRef }}" style="display: flex; gap: 22px; overflow-x: auto; scroll-behavior: smooth; scrollbar-width: none; padding: 0 max(32px, calc((100% - 1160px) / 2)) 8px; align-items: stretch;">
+      <article role="button" tabIndex="0" onClick="{{ open1 }}" style="flex: 0 0 430px; position: relative; height: 545px; background: #E9E3D9; cursor: pointer; overflow: hidden;" style-hover="opacity: 0.94;">
+        <image-slot id="w1" shape="rect" placeholder="Devon Joinery"></image-slot>
+        <div style="position: absolute; inset: auto 0 0 0; height: 62%; background: linear-gradient(to bottom, rgba(20,18,15,0), rgba(20,18,15,0.82)); pointer-events: none;"></div>
+        <div style="position: absolute; inset: auto 0 0 0; padding: 28px 28px 26px; display: flex; flex-direction: column; gap: 7px; pointer-events: none;">
+          <span style="font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: #D9CFC2;">Joinery workshop · Devon</span>
+          <h3 style="margin: 0; font-family: 'Bebas Neue', sans-serif; font-weight: 400; font-size: 27px; line-height: 1.15; color: #FAF7F2;">Devon Joinery</h3>
+        </div>
+      </article>
+      <article role="button" tabIndex="0" onClick="{{ open2 }}" style="flex: 0 0 430px; position: relative; height: 545px; background: #E9E3D9; cursor: pointer; overflow: hidden;" style-hover="opacity: 0.94;">
+        <image-slot id="w2" shape="rect" placeholder="Vowles Carpentry"></image-slot>
+        <div style="position: absolute; inset: auto 0 0 0; height: 62%; background: linear-gradient(to bottom, rgba(20,18,15,0), rgba(20,18,15,0.82)); pointer-events: none;"></div>
+        <div style="position: absolute; inset: auto 0 0 0; padding: 28px 28px 26px; display: flex; flex-direction: column; gap: 7px; pointer-events: none;">
+          <span style="font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: #D9CFC2;">Carpentry · Somerset</span>
+          <h3 style="margin: 0; font-family: 'Bebas Neue', sans-serif; font-weight: 400; font-size: 27px; line-height: 1.15; color: #FAF7F2;">Vowles Carpentry</h3>
+        </div>
+      </article>
+      <article role="button" tabIndex="0" onClick="{{ open3 }}" style="flex: 0 0 430px; position: relative; height: 545px; background: #E9E3D9; cursor: pointer; overflow: hidden;" style-hover="opacity: 0.94;">
+        <image-slot id="w3" shape="rect" placeholder="The Old Fashioned Cocktail Co."></image-slot>
+        <div style="position: absolute; inset: auto 0 0 0; height: 62%; background: linear-gradient(to bottom, rgba(20,18,15,0), rgba(20,18,15,0.82)); pointer-events: none;"></div>
+        <div style="position: absolute; inset: auto 0 0 0; padding: 28px 28px 26px; display: flex; flex-direction: column; gap: 7px; pointer-events: none;">
+          <span style="font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: #D9CFC2;">Drinks brand · E-commerce</span>
+          <h3 style="margin: 0; font-family: 'Bebas Neue', sans-serif; font-weight: 400; font-size: 27px; line-height: 1.15; color: #FAF7F2;">The Old Fashioned Cocktail Co.</h3>
+        </div>
+      </article>
+      <article role="button" tabIndex="0" onClick="{{ open4 }}" style="flex: 0 0 430px; position: relative; height: 545px; background: #E9E3D9; cursor: pointer; overflow: hidden;" style-hover="opacity: 0.94;">
+        <image-slot id="w4" shape="rect" placeholder="PIM-PAM"></image-slot>
+        <div style="position: absolute; inset: auto 0 0 0; height: 62%; background: linear-gradient(to bottom, rgba(20,18,15,0), rgba(20,18,15,0.82)); pointer-events: none;"></div>
+        <div style="position: absolute; inset: auto 0 0 0; padding: 28px 28px 26px; display: flex; flex-direction: column; gap: 7px; pointer-events: none;">
+          <span style="font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: #D9CFC2;">World Bank programme</span>
+          <h3 style="margin: 0; font-family: 'Bebas Neue', sans-serif; font-weight: 400; font-size: 27px; line-height: 1.15; color: #FAF7F2;">PIM-PAM</h3>
+        </div>
+      </article>
+      <article role="button" tabIndex="0" onClick="{{ open5 }}" style="flex: 0 0 430px; position: relative; height: 545px; background: #E9E3D9; cursor: pointer; overflow: hidden;" style-hover="opacity: 0.94;">
+        <image-slot id="w5" shape="rect" placeholder="InfraGov Assessment Tool"></image-slot>
+        <div style="position: absolute; inset: auto 0 0 0; height: 62%; background: linear-gradient(to bottom, rgba(20,18,15,0), rgba(20,18,15,0.82)); pointer-events: none;"></div>
+        <div style="position: absolute; inset: auto 0 0 0; padding: 28px 28px 26px; display: flex; flex-direction: column; gap: 7px; pointer-events: none;">
+          <span style="font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: #D9CFC2;">World Bank programme</span>
+          <h3 style="margin: 0; font-family: 'Bebas Neue', sans-serif; font-weight: 400; font-size: 27px; line-height: 1.15; color: #FAF7F2;">InfraGov Assessment Tool</h3>
+        </div>
+      </article>
+      <article role="button" tabIndex="0" onClick="{{ open6 }}" style="flex: 0 0 430px; position: relative; height: 545px; background: #E9E3D9; cursor: pointer; overflow: hidden;" style-hover="opacity: 0.94;">
+        <image-slot id="w6" shape="rect" placeholder="Sanwei Asia"></image-slot>
+        <div style="position: absolute; inset: auto 0 0 0; height: 62%; background: linear-gradient(to bottom, rgba(20,18,15,0), rgba(20,18,15,0.82)); pointer-events: none;"></div>
+        <div style="position: absolute; inset: auto 0 0 0; padding: 28px 28px 26px; display: flex; flex-direction: column; gap: 7px; pointer-events: none;">
+          <span style="font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: #D9CFC2;">Manufacturing group · Bilingual</span>
+          <h3 style="margin: 0; font-family: 'Bebas Neue', sans-serif; font-weight: 400; font-size: 27px; line-height: 1.15; color: #FAF7F2;">Sanwei Asia</h3>
+        </div>
+      </article>
+      <article role="button" tabIndex="0" onClick="{{ open7 }}" style="flex: 0 0 430px; position: relative; height: 545px; background: #E9E3D9; cursor: pointer; overflow: hidden;" style-hover="opacity: 0.94;">
+        <image-slot id="w7" shape="rect" placeholder="IPJ London"></image-slot>
+        <div style="position: absolute; inset: auto 0 0 0; height: 62%; background: linear-gradient(to bottom, rgba(20,18,15,0), rgba(20,18,15,0.82)); pointer-events: none;"></div>
+        <div style="position: absolute; inset: auto 0 0 0; padding: 28px 28px 26px; display: flex; flex-direction: column; gap: 7px; pointer-events: none;">
+          <span style="font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: #D9CFC2;">Practice site · London</span>
+          <h3 style="margin: 0; font-family: 'Bebas Neue', sans-serif; font-weight: 400; font-size: 27px; line-height: 1.15; color: #FAF7F2;">IPJ London</h3>
+        </div>
+      </article>
+      <article role="button" tabIndex="0" onClick="{{ open8 }}" style="flex: 0 0 430px; position: relative; height: 545px; background: #E9E3D9; cursor: pointer; overflow: hidden;" style-hover="opacity: 0.94;">
+        <image-slot id="w8" shape="rect" placeholder="505 Economics"></image-slot>
+        <div style="position: absolute; inset: auto 0 0 0; height: 62%; background: linear-gradient(to bottom, rgba(20,18,15,0), rgba(20,18,15,0.82)); pointer-events: none;"></div>
+        <div style="position: absolute; inset: auto 0 0 0; padding: 28px 28px 26px; display: flex; flex-direction: column; gap: 7px; pointer-events: none;">
+          <span style="font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: #D9CFC2;">Research consultancy</span>
+          <h3 style="margin: 0; font-family: 'Bebas Neue', sans-serif; font-weight: 400; font-size: 27px; line-height: 1.15; color: #FAF7F2;">505 Economics</h3>
+        </div>
+      </article>
+      <article role="button" tabIndex="0" onClick="{{ open9 }}" style="flex: 0 0 430px; position: relative; height: 545px; background: #E9E3D9; cursor: pointer; overflow: hidden;" style-hover="opacity: 0.94;">
+        <image-slot id="w9" shape="rect" placeholder="Highgrove"></image-slot>
+        <div style="position: absolute; inset: auto 0 0 0; height: 62%; background: linear-gradient(to bottom, rgba(20,18,15,0), rgba(20,18,15,0.82)); pointer-events: none;"></div>
+        <div style="position: absolute; inset: auto 0 0 0; padding: 28px 28px 26px; display: flex; flex-direction: column; gap: 7px; pointer-events: none;">
+          <span style="font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: #D9CFC2;">Estate · Editorial pages</span>
+          <h3 style="margin: 0; font-family: 'Bebas Neue', sans-serif; font-weight: 400; font-size: 27px; line-height: 1.15; color: #FAF7F2;">Highgrove</h3>
+        </div>
+      </article>
+    </div>
+    <div style="display: flex; gap: 14px; justify-content: center; padding-top: 46px;">
+      <button type="button" onClick="{{ prev }}" aria-label="Previous projects" style="width: 46px; height: 46px; border: 1px solid #D6CDC0; background: transparent; color: #1F1D1A; font-size: 17px; cursor: pointer; display: flex; align-items: center; justify-content: center;" style-hover="background: #24211D; color: #FAF7F2; border-color: #24211D;">←</button>
+      <button type="button" onClick="{{ next }}" aria-label="Next projects" style="width: 46px; height: 46px; border: 1px solid #D6CDC0; background: transparent; color: #1F1D1A; font-size: 17px; cursor: pointer; display: flex; align-items: center; justify-content: center;" style-hover="background: #24211D; color: #FAF7F2; border-color: #24211D;">→</button>
+    </div>
+  </section>
+
+  <section data-screen-label="About" id="about" style="padding: 104px max(32px, calc((100% - 1160px) / 2)); display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 7vw; align-items: center;">
+    <div style="height: 470px; min-width: 0; background: #E9E3D9;"><image-slot id="about-1" shape="rect" placeholder="Portrait of you"></image-slot></div>
+    <div style="display: flex; flex-direction: column; gap: 20px;">
+      <h2 style="margin: 0; font-family: 'Bebas Neue', sans-serif; font-weight: 400; font-size: clamp(28px, 2.7vw, 40px); line-height: 1.15;">A bit about me</h2>
+      <p style="margin: 0; font-size: 16px; line-height: 1.75; color: #56504A;">I'm Tim. I build websites for a living and I've been doing it long enough to know that the hard part is rarely the code — it's working out what a business actually wants to say.</p>
+      <p style="margin: 0; font-size: 16px; line-height: 1.75; color: #56504A;">So we start with a conversation, not a questionnaire. I'll ask about your customers, your busiest month, the jobs you wish you got more of. Then I build the smallest thing that gets you those.</p>
+      <a href="#contact" style="font-size: 14px; font-weight: 500; letter-spacing: 0.03em; text-transform: uppercase; display: inline-flex; align-items: center; gap: 9px; align-self: flex-start; border-bottom: 1px solid #E0C4B5; padding-bottom: 4px;" style-hover="border-color: #B5502E;">Let's connect <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="17" height="17" style="flex: 0 0 auto; display: block;"><path d="M16.0037 9.41421L7.39712 18.0208L5.98291 16.6066L14.5895 8H7.00373V6H18.0037V17H16.0037V9.41421Z"></path></svg></a>
+    </div>
+  </section>
+
+  <section data-screen-label="How I work" style="padding: 24px max(32px, calc((100% - 1160px) / 2)) 116px; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 7vw; align-items: center;">
+    <div style="display: flex; flex-direction: column; gap: 20px;">
+      <h2 style="margin: 0; font-family: 'Bebas Neue', sans-serif; font-weight: 400; font-size: clamp(28px, 2.7vw, 40px); line-height: 1.15;">How working together goes</h2>
+      <p style="margin: 0; font-size: 16px; line-height: 1.75; color: #56504A;">A call, a fixed price, and a date. You'll see the design before anything is built, and you'll see the site before anyone else does. Most projects take three to five weeks.</p>
+      <p style="margin: 0; font-size: 16px; line-height: 1.75; color: #56504A;">Afterwards I'm still here — for the small fixes, the new page, the thing that broke on a Sunday. Freelance doesn't have to mean gone.</p>
+      <a href="#contact" style="font-size: 14px; font-weight: 500; letter-spacing: 0.03em; text-transform: uppercase; display: inline-flex; align-items: center; gap: 9px; align-self: flex-start; border-bottom: 1px solid #E0C4B5; padding-bottom: 4px;" style-hover="border-color: #B5502E;">Start a project <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="17" height="17" style="flex: 0 0 auto; display: block;"><path d="M16.0037 9.41421L7.39712 18.0208L5.98291 16.6066L14.5895 8H7.00373V6H18.0037V17H16.0037V9.41421Z"></path></svg></a>
+    </div>
+    <div style="height: 470px; background: #E9E3D9;"><image-slot id="about-2" shape="rect" placeholder="Studio, desk or process shot"></image-slot></div>
+  </section>
+
+  <sc-if value="{{ showTestimonials }}" hint-placeholder-val="{{ true }}">
+  <section data-screen-label="Testimonials" style="padding: 10px 0 130px; overflow: hidden;">
+    <div style="padding: 0 max(32px, calc((100% - 1160px) / 2)); margin-bottom: 56px;">
+      <h2 style="margin: 0 auto; max-width: 24ch; text-align: center; font-family: 'Bebas Neue', sans-serif; font-weight: 400; font-size: clamp(28px, 2.8vw, 40px); line-height: 1.04; text-wrap: pretty">See what people say about me.</h2>
+    </div>
+    <div class="mqwrap" style="display: flex; flex-direction: column; gap: 20px;">
+      <div style="overflow: hidden;">
+      <div style="display: flex; width: max-content; gap: 20px;" class="mq-l">
+        <figure style="flex: 0 0 400px; margin: 0; background: #FFFFFF; border: 1px solid #EAE2D6; padding: 34px 34px 30px; display: flex; flex-direction: column; justify-content: space-between; gap: 26px;">
+          <blockquote style="margin: 0; font-family: 'Public Sans', sans-serif; font-size: 17px; line-height: 1.6; color: #1F1D1A;">“Tim listened more than he talked, which was a first. The site reads exactly how we speak to customers.”</blockquote>
+          <figcaption style="display: flex; flex-direction: column; gap: 3px;">
+            <span style="font-size: 14px; font-weight: 500;">Sam Vowles</span>
+            <span style="font-size: 13px; color: #8C857B;">Vowles Carpentry</span>
+          </figcaption>
+        </figure>
+        <figure style="flex: 0 0 400px; margin: 0; background: #FFFFFF; border: 1px solid #EAE2D6; padding: 34px 34px 30px; display: flex; flex-direction: column; justify-content: space-between; gap: 26px;">
+          <blockquote style="margin: 0; font-family: 'Public Sans', sans-serif; font-size: 17px; line-height: 1.6; color: #1F1D1A;">“We went from chasing the wrong jobs to being asked for the work we actually want. That is down to him.”</blockquote>
+          <figcaption style="display: flex; flex-direction: column; gap: 3px;">
+            <span style="font-size: 14px; font-weight: 500;">Rachel Ford</span>
+            <span style="font-size: 13px; color: #8C857B;">Devon Joinery</span>
+          </figcaption>
+        </figure>
+        <figure style="flex: 0 0 400px; margin: 0; background: #FFFFFF; border: 1px solid #EAE2D6; padding: 34px 34px 30px; display: flex; flex-direction: column; justify-content: space-between; gap: 26px;">
+          <blockquote style="margin: 0; font-family: 'Public Sans', sans-serif; font-size: 17px; line-height: 1.6; color: #1F1D1A;">“He took a framework that lived in a 90-tab spreadsheet and made it something governments will finish.”</blockquote>
+          <figcaption style="display: flex; flex-direction: column; gap: 3px;">
+            <span style="font-size: 14px; font-weight: 500;">Dr Anya Roshan</span>
+            <span style="font-size: 13px; color: #8C857B;">World Bank</span>
+          </figcaption>
+        </figure>
+        <figure style="flex: 0 0 400px; margin: 0; background: #FFFFFF; border: 1px solid #EAE2D6; padding: 34px 34px 30px; display: flex; flex-direction: column; justify-content: space-between; gap: 26px;">
+          <blockquote style="margin: 0; font-family: 'Public Sans', sans-serif; font-size: 17px; line-height: 1.6; color: #1F1D1A;">“December used to be the month the website fell over. This year nobody mentioned the website at all.”</blockquote>
+          <figcaption style="display: flex; flex-direction: column; gap: 3px;">
+            <span style="font-size: 14px; font-weight: 500;">Marco Devlin</span>
+            <span style="font-size: 13px; color: #8C857B;">The Old Fashioned Cocktail Co.</span>
+          </figcaption>
+        </figure>
+        <figure style="flex: 0 0 400px; margin: 0; background: #FFFFFF; border: 1px solid #EAE2D6; padding: 34px 34px 30px; display: flex; flex-direction: column; justify-content: space-between; gap: 26px;">
+          <blockquote style="margin: 0; font-family: 'Public Sans', sans-serif; font-size: 17px; line-height: 1.6; color: #1F1D1A;">“Two offices, two languages, one site — and neither side can break the other. Quietly impressive.”</blockquote>
+          <figcaption style="display: flex; flex-direction: column; gap: 3px;">
+            <span style="font-size: 14px; font-weight: 500;">Li Wen</span>
+            <span style="font-size: 13px; color: #8C857B;">Sanwei Asia</span>
+          </figcaption>
+        </figure>
+        <figure style="flex: 0 0 400px; margin: 0; background: #FFFFFF; border: 1px solid #EAE2D6; padding: 34px 34px 30px; display: flex; flex-direction: column; justify-content: space-between; gap: 26px;">
+          <blockquote style="margin: 0; font-family: 'Public Sans', sans-serif; font-size: 17px; line-height: 1.6; color: #1F1D1A;">“Tim listened more than he talked, which was a first. The site reads exactly how we speak to customers.”</blockquote>
+          <figcaption style="display: flex; flex-direction: column; gap: 3px;">
+            <span style="font-size: 14px; font-weight: 500;">Sam Vowles</span>
+            <span style="font-size: 13px; color: #8C857B;">Vowles Carpentry</span>
+          </figcaption>
+        </figure>
+        <figure style="flex: 0 0 400px; margin: 0; background: #FFFFFF; border: 1px solid #EAE2D6; padding: 34px 34px 30px; display: flex; flex-direction: column; justify-content: space-between; gap: 26px;">
+          <blockquote style="margin: 0; font-family: 'Public Sans', sans-serif; font-size: 17px; line-height: 1.6; color: #1F1D1A;">“We went from chasing the wrong jobs to being asked for the work we actually want. That is down to him.”</blockquote>
+          <figcaption style="display: flex; flex-direction: column; gap: 3px;">
+            <span style="font-size: 14px; font-weight: 500;">Rachel Ford</span>
+            <span style="font-size: 13px; color: #8C857B;">Devon Joinery</span>
+          </figcaption>
+        </figure>
+        <figure style="flex: 0 0 400px; margin: 0; background: #FFFFFF; border: 1px solid #EAE2D6; padding: 34px 34px 30px; display: flex; flex-direction: column; justify-content: space-between; gap: 26px;">
+          <blockquote style="margin: 0; font-family: 'Public Sans', sans-serif; font-size: 17px; line-height: 1.6; color: #1F1D1A;">“He took a framework that lived in a 90-tab spreadsheet and made it something governments will finish.”</blockquote>
+          <figcaption style="display: flex; flex-direction: column; gap: 3px;">
+            <span style="font-size: 14px; font-weight: 500;">Dr Anya Roshan</span>
+            <span style="font-size: 13px; color: #8C857B;">World Bank</span>
+          </figcaption>
+        </figure>
+        <figure style="flex: 0 0 400px; margin: 0; background: #FFFFFF; border: 1px solid #EAE2D6; padding: 34px 34px 30px; display: flex; flex-direction: column; justify-content: space-between; gap: 26px;">
+          <blockquote style="margin: 0; font-family: 'Public Sans', sans-serif; font-size: 17px; line-height: 1.6; color: #1F1D1A;">“December used to be the month the website fell over. This year nobody mentioned the website at all.”</blockquote>
+          <figcaption style="display: flex; flex-direction: column; gap: 3px;">
+            <span style="font-size: 14px; font-weight: 500;">Marco Devlin</span>
+            <span style="font-size: 13px; color: #8C857B;">The Old Fashioned Cocktail Co.</span>
+          </figcaption>
+        </figure>
+        <figure style="flex: 0 0 400px; margin: 0; background: #FFFFFF; border: 1px solid #EAE2D6; padding: 34px 34px 30px; display: flex; flex-direction: column; justify-content: space-between; gap: 26px;">
+          <blockquote style="margin: 0; font-family: 'Public Sans', sans-serif; font-size: 17px; line-height: 1.6; color: #1F1D1A;">“Two offices, two languages, one site — and neither side can break the other. Quietly impressive.”</blockquote>
+          <figcaption style="display: flex; flex-direction: column; gap: 3px;">
+            <span style="font-size: 14px; font-weight: 500;">Li Wen</span>
+            <span style="font-size: 13px; color: #8C857B;">Sanwei Asia</span>
+          </figcaption>
+        </figure>
+      </div>
+      </div>
+      <div style="overflow: hidden;">
+      <div style="display: flex; width: max-content; gap: 20px;" class="mq-r">
+        <figure style="flex: 0 0 400px; margin: 0; background: #FFFFFF; border: 1px solid #EAE2D6; padding: 34px 34px 30px; display: flex; flex-direction: column; justify-content: space-between; gap: 26px;">
+          <blockquote style="margin: 0; font-family: 'Public Sans', sans-serif; font-size: 17px; line-height: 1.6; color: #1F1D1A;">“Fixed price, fixed date, and he hit both. I have worked with agencies that managed neither.”</blockquote>
+          <figcaption style="display: flex; flex-direction: column; gap: 3px;">
+            <span style="font-size: 14px; font-weight: 500;">James Patel</span>
+            <span style="font-size: 13px; color: #8C857B;">IPJ London</span>
+          </figcaption>
+        </figure>
+        <figure style="flex: 0 0 400px; margin: 0; background: #FFFFFF; border: 1px solid #EAE2D6; padding: 34px 34px 30px; display: flex; flex-direction: column; justify-content: space-between; gap: 26px;">
+          <blockquote style="margin: 0; font-family: 'Public Sans', sans-serif; font-size: 17px; line-height: 1.6; color: #1F1D1A;">“Our writing is the product. Tim built something that gets out of its way and still looks considered.”</blockquote>
+          <figcaption style="display: flex; flex-direction: column; gap: 3px;">
+            <span style="font-size: 14px; font-weight: 500;">Ellie Shaw</span>
+            <span style="font-size: 13px; color: #8C857B;">505 Economics</span>
+          </figcaption>
+        </figure>
+        <figure style="flex: 0 0 400px; margin: 0; background: #FFFFFF; border: 1px solid #EAE2D6; padding: 34px 34px 30px; display: flex; flex-direction: column; justify-content: space-between; gap: 26px;">
+          <blockquote style="margin: 0; font-family: 'Public Sans', sans-serif; font-size: 17px; line-height: 1.6; color: #1F1D1A;">“He answers the phone. After three agencies, I cannot tell you how much that is worth.”</blockquote>
+          <figcaption style="display: flex; flex-direction: column; gap: 3px;">
+            <span style="font-size: 14px; font-weight: 500;">Hannah Croft</span>
+            <span style="font-size: 13px; color: #8C857B;">Highgrove</span>
+          </figcaption>
+        </figure>
+        <figure style="flex: 0 0 400px; margin: 0; background: #FFFFFF; border: 1px solid #EAE2D6; padding: 34px 34px 30px; display: flex; flex-direction: column; justify-content: space-between; gap: 26px;">
+          <blockquote style="margin: 0; font-family: 'Public Sans', sans-serif; font-size: 17px; line-height: 1.6; color: #1F1D1A;">“Half our admin disappeared in a fortnight. I still do not entirely know how.”</blockquote>
+          <figcaption style="display: flex; flex-direction: column; gap: 3px;">
+            <span style="font-size: 14px; font-weight: 500;">Dan Merrow</span>
+            <span style="font-size: 13px; color: #8C857B;">Moorland Plant Hire</span>
+          </figcaption>
+        </figure>
+        <figure style="flex: 0 0 400px; margin: 0; background: #FFFFFF; border: 1px solid #EAE2D6; padding: 34px 34px 30px; display: flex; flex-direction: column; justify-content: space-between; gap: 26px;">
+          <blockquote style="margin: 0; font-family: 'Public Sans', sans-serif; font-size: 17px; line-height: 1.6; color: #1F1D1A;">“Straight answers, no jargon, and he told us what not to spend money on.”</blockquote>
+          <figcaption style="display: flex; flex-direction: column; gap: 3px;">
+            <span style="font-size: 14px; font-weight: 500;">Priya Nandra</span>
+            <span style="font-size: 13px; color: #8C857B;">Coast Physio</span>
+          </figcaption>
+        </figure>
+        <figure style="flex: 0 0 400px; margin: 0; background: #FFFFFF; border: 1px solid #EAE2D6; padding: 34px 34px 30px; display: flex; flex-direction: column; justify-content: space-between; gap: 26px;">
+          <blockquote style="margin: 0; font-family: 'Public Sans', sans-serif; font-size: 17px; line-height: 1.6; color: #1F1D1A;">“Fixed price, fixed date, and he hit both. I have worked with agencies that managed neither.”</blockquote>
+          <figcaption style="display: flex; flex-direction: column; gap: 3px;">
+            <span style="font-size: 14px; font-weight: 500;">James Patel</span>
+            <span style="font-size: 13px; color: #8C857B;">IPJ London</span>
+          </figcaption>
+        </figure>
+        <figure style="flex: 0 0 400px; margin: 0; background: #FFFFFF; border: 1px solid #EAE2D6; padding: 34px 34px 30px; display: flex; flex-direction: column; justify-content: space-between; gap: 26px;">
+          <blockquote style="margin: 0; font-family: 'Public Sans', sans-serif; font-size: 17px; line-height: 1.6; color: #1F1D1A;">“Our writing is the product. Tim built something that gets out of its way and still looks considered.”</blockquote>
+          <figcaption style="display: flex; flex-direction: column; gap: 3px;">
+            <span style="font-size: 14px; font-weight: 500;">Ellie Shaw</span>
+            <span style="font-size: 13px; color: #8C857B;">505 Economics</span>
+          </figcaption>
+        </figure>
+        <figure style="flex: 0 0 400px; margin: 0; background: #FFFFFF; border: 1px solid #EAE2D6; padding: 34px 34px 30px; display: flex; flex-direction: column; justify-content: space-between; gap: 26px;">
+          <blockquote style="margin: 0; font-family: 'Public Sans', sans-serif; font-size: 17px; line-height: 1.6; color: #1F1D1A;">“He answers the phone. After three agencies, I cannot tell you how much that is worth.”</blockquote>
+          <figcaption style="display: flex; flex-direction: column; gap: 3px;">
+            <span style="font-size: 14px; font-weight: 500;">Hannah Croft</span>
+            <span style="font-size: 13px; color: #8C857B;">Highgrove</span>
+          </figcaption>
+        </figure>
+        <figure style="flex: 0 0 400px; margin: 0; background: #FFFFFF; border: 1px solid #EAE2D6; padding: 34px 34px 30px; display: flex; flex-direction: column; justify-content: space-between; gap: 26px;">
+          <blockquote style="margin: 0; font-family: 'Public Sans', sans-serif; font-size: 17px; line-height: 1.6; color: #1F1D1A;">“Half our admin disappeared in a fortnight. I still do not entirely know how.”</blockquote>
+          <figcaption style="display: flex; flex-direction: column; gap: 3px;">
+            <span style="font-size: 14px; font-weight: 500;">Dan Merrow</span>
+            <span style="font-size: 13px; color: #8C857B;">Moorland Plant Hire</span>
+          </figcaption>
+        </figure>
+        <figure style="flex: 0 0 400px; margin: 0; background: #FFFFFF; border: 1px solid #EAE2D6; padding: 34px 34px 30px; display: flex; flex-direction: column; justify-content: space-between; gap: 26px;">
+          <blockquote style="margin: 0; font-family: 'Public Sans', sans-serif; font-size: 17px; line-height: 1.6; color: #1F1D1A;">“Straight answers, no jargon, and he told us what not to spend money on.”</blockquote>
+          <figcaption style="display: flex; flex-direction: column; gap: 3px;">
+            <span style="font-size: 14px; font-weight: 500;">Priya Nandra</span>
+            <span style="font-size: 13px; color: #8C857B;">Coast Physio</span>
+          </figcaption>
+        </figure>
+      </div>
+      </div>
+    </div>
+  </section>
+  </sc-if>
+
+  <footer data-screen-label="Contact" id="contact" style="background: #24211D; color: #F6F1E9; padding: 110px max(32px, calc((100% - 1160px) / 2)) 60px;">
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8vw;">
+      <div style="display: flex; flex-direction: column; gap: 26px;">
+        <h2 style="margin: 0; font-family: 'Bebas Neue', sans-serif; font-weight: 400; font-size: clamp(32px, 3.4vw, 50px); line-height: 1.0; letter-spacing: 0.01em; text-wrap: pretty;">Tell me what you're trying to build.</h2>
+        <p style="margin: 0; font-size: 16px; line-height: 1.7; color: #B8B0A4; max-width: 38ch;">A sentence is plenty to start. I reply to everything within a day, and I'll tell you honestly if I'm not the right person.</p>
+        <div style="display: flex; flex-direction: column; gap: 14px; padding-top: 8px;">
+          <a href="mailto:hello@timbrown.co" style="color: #F6F1E9; font-size: 17px; border-bottom: 1px solid #4A443C; padding-bottom: 6px; align-self: flex-start;" style-hover="border-color: #B5502E;">hello@timbrown.co</a>
+          <a href="tel:+447000000000" style="color: #F6F1E9; font-size: 17px; border-bottom: 1px solid #4A443C; padding-bottom: 6px; align-self: flex-start;" style-hover="border-color: #B5502E;">+44 7000 000 000</a>
+          <span style="font-size: 15px; color: #8C857B;">Devon, UK — working with clients anywhere</span>
+        </div>
+      </div>
+      <form onSubmit="{{ submit }}" style="display: flex; flex-direction: column; gap: 20px;">
+        <label style="display: flex; flex-direction: column; gap: 8px; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: #8C857B;">Name
+          <input type="text" name="name" placeholder="Your name" style="background: transparent; border: none; border-bottom: 1px solid #4A443C; color: #F6F1E9; font-family: 'Public Sans', sans-serif; font-size: 16px; padding: 10px 0; outline: none;" style-focus="border-color: #B5502E;">
+        </label>
+        <label style="display: flex; flex-direction: column; gap: 8px; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: #8C857B;">Email
+          <input type="email" name="email" placeholder="you@company.com" style="background: transparent; border: none; border-bottom: 1px solid #4A443C; color: #F6F1E9; font-family: 'Public Sans', sans-serif; font-size: 16px; padding: 10px 0; outline: none;" style-focus="border-color: #B5502E;">
+        </label>
+        <label style="display: flex; flex-direction: column; gap: 8px; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: #8C857B;">What do you need?
+          <textarea name="message" rows="4" placeholder="A new site, better rankings, less admin…" style="background: transparent; border: none; border-bottom: 1px solid #4A443C; color: #F6F1E9; font-family: 'Public Sans', sans-serif; font-size: 16px; padding: 10px 0; outline: none; resize: vertical;" style-focus="border-color: #B5502E;"></textarea>
+        </label>
+        <button type="submit" style="align-self: flex-start; margin-top: 6px; background: #B5502E; color: #FFFFFF; border: none; padding: 16px 32px; font-family: 'Public Sans', sans-serif; font-size: 14px; letter-spacing: 0.05em; text-transform: uppercase; cursor: pointer;" style-hover="background: #98411F;">Send it over</button>
+        <sc-if value="{{ sent }}" hint-placeholder-val="{{ false }}">
+          <p style="margin: 0; font-size: 15px; color: #C9BFB2;">Thanks — that's with me. I'll come back to you within a day.</p>
+        </sc-if>
+      </form>
+    </div>
+    <div style="display: flex; justify-content: space-between; align-items: center; gap: 24px; flex-wrap: wrap; margin-top: 90px; padding-top: 26px; border-top: 1px solid #3A342D; font-size: 13px; color: #8C857B;">
+      <span>© 2026 Tim Brown</span>
+      <div style="display: flex; gap: 24px;">
+        <a href="#services" style="color: #8C857B;" style-hover="color: #F6F1E9;">Services</a>
+        <a href="#work" style="color: #8C857B;" style-hover="color: #F6F1E9;">Work</a>
+        <a href="https://www.linkedin.com" style="color: #8C857B;" style-hover="color: #F6F1E9;">LinkedIn</a>
+      </div>
+    </div>
+  </footer>
+  <div onClick="{{ close }}" style="{{ scrimStyle }}"></div>
+  <aside style="{{ panelStyle }}">
+    <button type="button" onClick="{{ close }}" aria-label="Close" style="position: absolute; top: 22px; right: 24px; z-index: 2; width: 40px; height: 40px; border: none; border-radius: 50%; background: rgba(250,247,242,0.9); color: #1F1D1A; font-size: 17px; cursor: pointer; display: flex; align-items: center; justify-content: center;" style-hover="background: #FFFFFF;">✕</button>
+    <div style="height: 340px; flex: 0 0 340px; background: #E9E3D9;">
+      <image-slot id="{{ panelSlot }}" shape="rect" placeholder="Project image"></image-slot>
+    </div>
+    <div style="padding: 40px 44px 56px; display: flex; flex-direction: column; gap: 22px; overflow-y: auto;">
+      <div style="display: flex; flex-direction: column; gap: 10px;">
+        <span style="font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: #8C857B;">{{ activeMeta }}</span>
+        <h2 style="margin: 0; font-family: 'Bebas Neue', sans-serif; font-weight: 400; font-size: 36px; line-height: 1.0; letter-spacing: 0.01em;">{{ activeTitle }}</h2>
+      </div>
+      <p style="margin: 0; font-size: 16px; line-height: 1.75; color: #56504A;">{{ activeBody }}</p>
+      <div style="display: flex; flex-direction: column; gap: 12px; padding-top: 6px; border-top: 1px solid #E3DCD1;">
+        <div style="display: flex; justify-content: space-between; gap: 20px; font-size: 14px; padding-top: 14px;">
+          <span style="color: #8C857B;">What I did</span>
+          <span style="text-align: right; max-width: 60%;">{{ activeScope }}</span>
+        </div>
+        <div style="display: flex; justify-content: space-between; gap: 20px; font-size: 14px;">
+          <span style="color: #8C857B;">Year</span>
+          <span>{{ activeYear }}</span>
+        </div>
+      </div>
+      <a href="{{ activeUrl }}" target="_blank" rel="noreferrer" style="align-self: flex-start; margin-top: 8px; background: #24211D; color: #F6F1E9; padding: 15px 28px; font-size: 13px; letter-spacing: 0.05em; text-transform: uppercase; display: inline-flex; align-items: center; gap: 10px;" style-hover="background: #B5502E; color: #FFFFFF;">Visit the live site <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="17" height="17" style="flex: 0 0 auto; display: block;"><path d="M16.0037 9.41421L7.39712 18.0208L5.98291 16.6066L14.5895 8H7.00373V6H18.0037V17H16.0037V9.41421Z"></path></svg></a>
+    </div>
+  </aside>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;showLogoWall&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Sections&quot;}}">
+const PROJECTS = [
+  { id: 'w1', title: 'Devon Joinery', meta: 'Joinery workshop · Devon', year: '2025', scope: 'Site, copy shaping, local SEO', url: 'https://example.com',
+    body: 'A workshop that was getting the wrong sort of enquiry. We rebuilt the site around the jobs they actually wanted — staircases, bespoke fitted furniture — and put the workshop itself front and centre. Local SEO followed. Fewer enquiries now, better ones.' },
+  { id: 'w2', title: 'Vowles Carpentry', meta: 'Carpentry · Somerset', year: '2025', scope: 'Site, phone-first editing', url: 'https://example.com',
+    body: 'A portfolio the team can add to from a phone, on site, with muddy hands. Photograph the job, drop it in, done — no laptop, no CMS training, no waiting on me.' },
+  { id: 'w3', title: 'The Old Fashioned Cocktail Co.', meta: 'Drinks brand · E-commerce', year: '2024', scope: 'Design, build, checkout', url: 'https://example.com',
+    body: 'A brand-led shop front with a checkout that behaves itself through December. Built for the seasonal spike: fast product pages, honest stock counts, and gifting flows that do not fall over on the busiest weekend of the year.' },
+  { id: 'w4', title: 'PIM-PAM', meta: 'World Bank programme', year: '2024', scope: 'Interface design, front-end', url: 'https://example.com',
+    body: 'A public-facing tool for a World Bank programme. Dense comparative data, plain language, and a structure that lets a minister and a researcher both find what they came for.' },
+  { id: 'w5', title: 'InfraGov Assessment Tool', meta: 'World Bank programme', year: '2023', scope: 'UX, build, documentation', url: 'https://example.com',
+    body: 'An assessment framework that existed as a very long spreadsheet. Turned into something governments can actually fill in — sectioned, saveable, and clear about why each question is being asked.' },
+  { id: 'w6', title: 'Sanwei Asia', meta: 'Manufacturing group · Bilingual', year: '2023', scope: 'Bilingual site, CMS', url: 'https://example.com',
+    body: 'A bilingual site for a manufacturing group, built to be edited from two time zones without either side breaking the other. Structured content, mirrored layouts, one source of truth.' },
+  { id: 'w7', title: 'IPJ London', meta: 'Practice site · London', year: '2023', scope: 'Design and build', url: 'https://example.com',
+    body: 'A quiet, confident presence for a London practice — and a site that survives referrals. Most visitors arrive having already been told the practice is good; the job was to confirm it in ten seconds.' },
+  { id: 'w8', title: '505 Economics', meta: 'Research consultancy', year: '2022', scope: 'Site, publication system', url: 'https://example.com',
+    body: 'A research consultancy where the writing does the selling, so nothing gets in its way. Long-form pages built for reading, and a publication flow that takes minutes rather than an afternoon.' },
+  { id: 'w9', title: 'Highgrove', meta: 'Estate · Editorial pages', year: '2022', scope: 'Editorial layouts', url: 'https://example.com',
+    body: 'Careful, understated pages for a name that does not need shouting about. Generous imagery, restrained type, and layouts that hold up whether there are three photographs or thirty.' },
+];
+
+class Component extends DCLogic {
+  state = { sent: false, active: null };
+  rail = React.createRef();
+  scroll(dir) {
+    const el = this.rail.current;
+    if (el) el.scrollBy({ left: dir * 450 * 2, behavior: 'smooth' });
+  }
+  componentDidMount() {
+    this._esc = (e) => { if (e.key === 'Escape') this.setState({ active: null }); };
+    window.addEventListener('keydown', this._esc);
+  }
+  componentWillUnmount() { window.removeEventListener('keydown', this._esc); }
+  renderVals() {
+    const i = this.state.active;
+    const p = i == null ? null : PROJECTS[i];
+    const open = i != null;
+    const openers = {};
+    PROJECTS.forEach((_, n) => { openers['open' + (n + 1)] = () => this.setState({ active: n }); });
+    return {
+      ...openers,
+      close: () => this.setState({ active: null }),
+      panelSlot: p ? 'panel-' + p.id : 'panel-none',
+      activeTitle: p ? p.title : '',
+      activeMeta: p ? p.meta : '',
+      activeBody: p ? p.body : '',
+      activeScope: p ? p.scope : '',
+      activeYear: p ? p.year : '',
+      activeUrl: p ? p.url : '#',
+      scrimStyle: {
+        position: 'fixed', inset: 0, background: 'rgba(20,18,15,0.5)', zIndex: 40,
+        opacity: open ? 1 : 0, pointerEvents: open ? 'auto' : 'none',
+        transition: 'opacity 320ms ease'
+      },
+      panelStyle: {
+        position: 'fixed', top: 0, right: 0, bottom: 0, width: 'min(560px, 92vw)',
+        background: '#FAF7F2', zIndex: 41, display: 'flex', flexDirection: 'column',
+        boxShadow: '-24px 0 60px rgba(20,18,15,0.28)',
+        transform: open ? 'translateX(0)' : 'translateX(100%)',
+        transition: 'transform 380ms cubic-bezier(0.22, 0.61, 0.36, 1)',
+        visibility: open ? 'visible' : 'hidden'
+      },
+      railRef: this.rail,
+      prev: () => this.scroll(-1),
+      next: () => this.scroll(1),
+      sent: this.state.sent,
+      showTestimonials: this.props.showTestimonials ?? true,
+      submit: (e) => { e.preventDefault(); this.setState({ sent: true }); }
+    };
+  }
+}
+</script>
+</body>
+</html>

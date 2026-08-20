@@ -1,58 +1,55 @@
 import type { Config } from "tailwindcss";
 
-// Tokens are lifted verbatim from the Tango Digital handoff
-// (design_handoff_tango_digital_site/README.md → "Design tokens").
-// Where the handoff and the prototype HTML disagreed, the handoff wins.
+// Tokens lifted verbatim from the handoff (design_handoff_freelance_site/
+// README.md → "Design tokens").
 const config: Config = {
   content: [
     "./app/**/*.{ts,tsx}",
     "./components/**/*.{ts,tsx}",
-    "./content/**/*.{ts,tsx}",
+    "./lib/**/*.{ts,tsx}",
   ],
   theme: {
     extend: {
       colors: {
-        bone: "#F5F4F0",
-        "bone-hover": "#FAFAF7",
         ink: {
-          DEFAULT: "#0E1112",
-          2: "#3E4447",
-          3: "#5B6265",
-          4: "#8A9094",
+          DEFAULT: "#1F1D1A",
+          soft: "#56504A",
+          dark: "#24211D",
         },
-        forest: "#0C6B57",
-        mint: "#7FD9C1",
-        night: {
-          DEFAULT: "#0E1314",
-          deep: "#080D0E",
-          form: "#141A1A", // form card fill on the dark contact section
+        cream: {
+          DEFAULT: "#FAF7F2",
+          text: "#F6F1E9",
         },
-        glass: "rgba(20,26,26,.42)",
+        rust: {
+          DEFAULT: "#B5502E",
+          dark: "#98411F",
+          link: "#8E3C1F",
+        },
+        stone: "#E9E3D9",
+        rule: {
+          DEFAULT: "#E3DCD1",
+          card: "#EAE2D6",
+          btn: "#D6CDC0",
+        },
+        muted: {
+          DEFAULT: "#8C857B",
+          dark: "#B8B0A4",
+          light: "#D9CFC2",
+        },
+        hairdark: {
+          DEFAULT: "#4A443C",
+          2: "#3A342D",
+        },
+        "underline-accent": "#E0C4B5",
       },
       fontFamily: {
-        sans: ["var(--font-archivo)", "system-ui", "sans-serif"],
-        body: ["var(--font-public)", "system-ui", "sans-serif"],
-        mono: ["var(--font-mono)", "monospace"],
+        bebas: ["var(--font-bebas)", "sans-serif"],
+        sans: ["var(--font-public)", "system-ui", "sans-serif"],
       },
       maxWidth: {
-        content: "1320px", // default section content width
-        comparison: "1100px",
-        faq: "980px",
-      },
-      borderRadius: {
-        // Radii are near-zero by design (handoff): buttons/cards 2px,
-        // the difference panel 22px, pills/circles fully round.
-        panel: "22px",
-      },
-      transitionTimingFunction: {
-        // The single motion curve used everywhere in the design.
-        fluid: "cubic-bezier(.16,1,.3,1)",
+        content: "1160px",
       },
       keyframes: {
-        ticker: {
-          from: { transform: "translateX(0)" },
-          to: { transform: "translateX(-50%)" },
-        },
         "marquee-left": {
           from: { transform: "translateX(0)" },
           to: { transform: "translateX(-50%)" },
@@ -61,21 +58,11 @@ const config: Config = {
           from: { transform: "translateX(-50%)" },
           to: { transform: "translateX(0)" },
         },
-        "scrim-in": {
-          from: { opacity: "0" },
-          to: { opacity: "1" },
-        },
-        "panel-in": {
-          from: { transform: "translateX(100%)" },
-          to: { transform: "translateX(0)" },
-        },
       },
       animation: {
-        ticker: "ticker 38s linear infinite",
         "marquee-left": "marquee-left 64s linear infinite",
         "marquee-right": "marquee-right 64s linear infinite",
-        "scrim-in": "scrim-in .3s ease both",
-        "panel-in": "panel-in .5s cubic-bezier(.16,1,.3,1) both",
+        "marquee-band": "marquee-left 42s linear infinite",
       },
     },
   },

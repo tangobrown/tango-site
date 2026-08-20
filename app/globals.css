@@ -4,67 +4,40 @@
 
 @layer base {
   html {
-    /* Smooth anchor scrolling; padding keeps headings clear of the sticky bar. */
     scroll-behavior: smooth;
-    scroll-padding-top: 96px;
   }
 
   body {
     margin: 0;
-    background: #f5f4f0; /* bone */
-    color: #0e1112; /* ink */
-    font-family: var(--font-archivo), system-ui, sans-serif;
+    background: #faf7f2; /* cream */
+    color: #1f1d1a; /* ink */
+    font-family: var(--font-public), system-ui, sans-serif;
     -webkit-font-smoothing: antialiased;
     overflow-x: hidden;
   }
 
-  /* Paragraph / quote copy uses Public Sans; headings stay Archivo, and
-     mono labels keep their font-mono utility (class selector wins over
-     these element selectors). */
-  p,
-  blockquote {
-    font-family: var(--font-public), system-ui, sans-serif;
-  }
-
   ::selection {
-    background: #0c6b57; /* forest */
-    color: #f5f4f0; /* bone */
+    background: #ebd9cd;
   }
 }
 
 @layer components {
-  /* Two-layer technical grid overlay. Applied to the hero and contact
-     (dark) sections; a light variant exists for light sections. */
-  .grid-overlay-dark {
-    background-image:
-      linear-gradient(rgba(245, 244, 240, 0.055) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(245, 244, 240, 0.055) 1px, transparent 1px);
-    background-size: 100% 88px, 88px 100%;
+  /* Horizontal scroll rail with the scrollbar hidden. */
+  .no-scrollbar {
+    scrollbar-width: none;
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    height: 0;
+    width: 0;
   }
 
-  .grid-overlay-light {
-    background-image:
-      linear-gradient(rgba(14, 17, 18, 0.06) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(14, 17, 18, 0.06) 1px, transparent 1px);
-    background-size: 100% 88px, 88px 100%;
-  }
-
-  /* Marquee / ticker rows pause when the pointer is over the strip. */
-  .marquee-row:hover .marquee-track {
+  /* Pause every marquee track when the group is hovered. */
+  .marquee-group:hover .marquee-track {
     animation-play-state: paused;
   }
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
-  .text-pretty {
-    text-wrap: pretty;
-  }
-}
-
-/* Freeze every marquee/ticker for readers who prefer reduced motion. */
+/* Freeze all marquees under reduced-motion. */
 @media (prefers-reduced-motion: reduce) {
   .marquee-track {
     animation: none !important;
