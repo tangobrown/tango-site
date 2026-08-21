@@ -16,8 +16,8 @@ export default function Hero() {
         >
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src="/logo.png" alt="" className="h-14 w-auto" />
-          <span className="flex flex-col whitespace-nowrap font-bebas text-[19px] leading-[0.88] tracking-[0.02em] text-cream-text">
-            <span>Tim (aka Tango)</span>
+          <span className="flex flex-col font-bebas text-[22px] leading-[0.88] tracking-[0.02em] text-rust">
+            <span>Tim</span>
             <span>Brown</span>
           </span>
         </a>
