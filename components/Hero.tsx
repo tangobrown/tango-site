@@ -9,7 +9,7 @@ export default function Hero() {
     >
       {/* Left — dark block (copy) */}
       <div className="order-2 flex flex-col justify-between gap-14 bg-ink-dark p-[32px_20px_40px] text-cream-text lg:order-1 lg:gap-0 lg:p-[44px_48px_56px]">
-        <a href="#top" aria-label="Tim Brown — home" className="inline-flex">
+        <a href="#top" aria-label="Tim Brown — home" className="hidden lg:inline-flex">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src="/logo.png" alt="Tim Brown" className="h-14 w-auto" />
         </a>
