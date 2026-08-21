@@ -5,7 +5,6 @@ import { projects } from "@/lib/projects";
 import Placeholder from "./Placeholder";
 import ProjectPanel from "./ProjectPanel";
 
-const CARD_SCRIM = "linear-gradient(to bottom, rgba(20,18,15,0), rgba(20,18,15,0.82))";
 
 export default function WorkCarousel() {
   const [active, setActive] = useState<number | null>(null);
@@ -47,26 +46,23 @@ export default function WorkCarousel() {
                 setActive(i);
               }
             }}
-            className="relative h-[400px] flex-none basis-[82vw] cursor-pointer snap-start overflow-hidden bg-stone transition-opacity hover:opacity-[0.94] lg:h-[500px] lg:basis-[480px]"
+            className="flex h-[400px] flex-none basis-[82vw] cursor-pointer snap-start flex-col overflow-hidden transition-opacity hover:opacity-[0.94] lg:h-[500px] lg:basis-[480px]"
           >
-            {p.images?.[0] ? (
-              // eslint-disable-next-line @next/next/no-img-element
-              <img
-                src={p.images[0]}
-                alt={p.title}
-                className="absolute inset-0 h-full w-full object-cover"
-              />
-            ) : (
-              <Placeholder />
-            )}
-            <div
-              aria-hidden="true"
-              className="pointer-events-none absolute inset-x-0 bottom-0 h-[62%]"
-              style={{ background: CARD_SCRIM }}
-            />
-            <div className="pointer-events-none absolute inset-x-0 bottom-0 flex flex-col gap-[7px] p-[28px_28px_26px]">
-              <span className="text-[11px] uppercase tracking-[0.12em] text-muted-light">{p.meta}</span>
-              <h3 className="m-0 font-bebas text-[27px] font-normal leading-[1.15] text-cream">
+            <div className="relative flex-1 overflow-hidden bg-stone">
+              {p.images?.[0] ? (
+                // eslint-disable-next-line @next/next/no-img-element
+                <img
+                  src={p.images[0]}
+                  alt={p.title}
+                  className="absolute inset-0 h-full w-full object-cover"
+                />
+              ) : (
+                <Placeholder />
+              )}
+            </div>
+            <div className="flex flex-col gap-[7px] bg-white p-[24px_28px_26px]">
+              <span className="text-[11px] uppercase tracking-[0.12em] text-muted">{p.meta}</span>
+              <h3 className="m-0 font-bebas text-[27px] font-normal leading-[1.15] text-ink">
                 {p.title}
               </h3>
             </div>
