@@ -54,7 +54,7 @@ export default function WorkCarousel() {
                 <img
                   src={p.images[0]}
                   alt={p.title}
-                  className="absolute inset-0 h-full w-full object-cover"
+                  className="absolute inset-0 h-full w-full object-cover object-left-top"
                 />
               ) : (
                 <Placeholder />

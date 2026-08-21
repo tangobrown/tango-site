@@ -125,7 +125,7 @@ export default function ProjectPanel({
                     key={i}
                     src={src}
                     alt={`${project?.title} — image ${i + 1} of ${images.length}`}
-                    className="h-full w-full flex-none object-cover"
+                    className="h-full w-full flex-none object-cover object-left-top"
                   />
                 ))}
               </div>
