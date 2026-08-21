@@ -1,5 +1,4 @@
 import ArrowIcon from "./ArrowIcon";
-import Placeholder from "./Placeholder";
 import { navLinks, site } from "@/lib/site";
 
 export default function Hero() {
@@ -33,7 +32,12 @@ export default function Hero() {
 
       {/* Right — image + top scrim + desktop nav */}
       <div className="relative order-1 h-[48vh] bg-stone lg:order-2 lg:h-auto">
-        <Placeholder label="Hero — Tim at work, or a recent site" />
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src="/hero.jpg"
+          alt="Tim Brown"
+          className="absolute inset-0 h-full w-full object-cover object-right-top"
+        />
         <div
           aria-hidden="true"
           className="pointer-events-none absolute inset-x-0 top-0 h-[130px]"
