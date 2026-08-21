@@ -1,5 +1,5 @@
 import ArrowIcon from "./ArrowIcon";
-import { navLinks, site } from "@/lib/site";
+import { navLinks } from "@/lib/site";
 
 export default function Hero() {
   return (
@@ -9,10 +9,10 @@ export default function Hero() {
     >
       {/* Left — dark block (copy) */}
       <div className="order-2 flex flex-col justify-between gap-14 bg-ink-dark p-[32px_20px_40px] text-cream-text lg:order-1 lg:gap-0 lg:p-[44px_48px_56px]">
-        <div className="flex items-center gap-3">
-          <div className="h-[34px] w-[34px] flex-none rounded-full bg-rust" />
-          <span className="font-bebas text-[21px] tracking-[0.01em]">{site.name}</span>
-        </div>
+        <a href="#top" aria-label="Tim Brown — home" className="inline-flex">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="/logo.png" alt="Tim Brown" className="h-10 w-auto" />
+        </a>
 
         <div className="flex flex-col gap-7">
           <h1 className="m-0 text-pretty font-bebas text-[clamp(38px,4.1vw,62px)] font-normal leading-[0.98] tracking-[0.005em]">

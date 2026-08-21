@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import ArrowIcon from "./ArrowIcon";
-import { navLinks, site } from "@/lib/site";
+import { navLinks } from "@/lib/site";
 
 // Mobile-only chrome: a slim sticky dark header with a hamburger that opens
 // a full-screen menu. Hidden on desktop (the hero carries its own nav).
@@ -12,9 +12,14 @@ export default function SiteNav() {
   return (
     <div className="lg:hidden">
       <header className="sticky top-0 z-30 flex items-center justify-between bg-ink-dark px-5 py-3 text-cream-text">
-        <a href="#top" className="flex items-center gap-[10px]" onClick={() => setOpen(false)}>
-          <span className="h-[22px] w-[22px] flex-none rounded-full bg-rust" />
-          <span className="font-bebas text-[19px] tracking-[0.01em]">{site.name}</span>
+        <a
+          href="#top"
+          aria-label="Tim Brown — home"
+          className="inline-flex"
+          onClick={() => setOpen(false)}
+        >
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="/logo.png" alt="Tim Brown" className="h-6 w-auto" />
         </a>
         <button
           type="button"
@@ -40,9 +45,14 @@ export default function SiteNav() {
       {open && (
         <div className="fixed inset-0 z-40 flex flex-col bg-ink-dark px-5 pb-10 pt-3 text-cream-text">
           <div className="flex items-center justify-between py-1">
-            <a href="#top" className="flex items-center gap-[10px]" onClick={() => setOpen(false)}>
-              <span className="h-[22px] w-[22px] flex-none rounded-full bg-rust" />
-              <span className="font-bebas text-[19px] tracking-[0.01em]">{site.name}</span>
+            <a
+              href="#top"
+              aria-label="Tim Brown — home"
+              className="inline-flex"
+              onClick={() => setOpen(false)}
+            >
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/logo.png" alt="Tim Brown" className="h-6 w-auto" />
             </a>
             <button
               type="button"
