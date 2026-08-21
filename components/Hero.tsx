@@ -11,7 +11,7 @@ export default function Hero() {
       <div className="order-2 flex flex-col justify-between gap-14 bg-ink-dark p-[32px_20px_40px] text-cream-text lg:order-1 lg:gap-0 lg:p-[44px_48px_56px]">
         <a href="#top" aria-label="Tim Brown — home" className="inline-flex">
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/logo.png" alt="Tim Brown" className="h-10 w-auto" />
+          <img src="/logo.png" alt="Tim Brown" className="h-14 w-auto" />
         </a>
 
         <div className="flex flex-col gap-7">
