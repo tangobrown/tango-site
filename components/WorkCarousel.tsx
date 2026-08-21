@@ -13,7 +13,7 @@ export default function WorkCarousel() {
   const triggerRefs = useRef<(HTMLElement | null)[]>([]);
 
   const scroll = (dir: number) =>
-    railRef.current?.scrollBy({ left: dir * 900, behavior: "smooth" });
+    railRef.current?.scrollBy({ left: dir * 1000, behavior: "smooth" });
 
   const close = () => {
     const i = active;
@@ -47,7 +47,7 @@ export default function WorkCarousel() {
                 setActive(i);
               }
             }}
-            className="relative h-[420px] flex-none basis-[78vw] cursor-pointer snap-start overflow-hidden bg-stone transition-opacity hover:opacity-[0.94] lg:h-[545px] lg:basis-[430px]"
+            className="relative h-[400px] flex-none basis-[82vw] cursor-pointer snap-start overflow-hidden bg-stone transition-opacity hover:opacity-[0.94] lg:h-[500px] lg:basis-[480px]"
           >
             <Placeholder />
             <div
