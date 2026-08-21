@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import type { Project } from "@/lib/projects";
 import ArrowIcon from "./ArrowIcon";
 import Placeholder from "./Placeholder";
@@ -17,6 +17,29 @@ export default function ProjectPanel({
   const open = project !== null;
   const panelRef = useRef<HTMLElement>(null);
   const closeRef = useRef<HTMLButtonElement>(null);
+
+  // Image carousel (panel only). Card shows images[0]; here we page through all.
+  const images = project?.images ?? [];
+  const [slide, setSlide] = useState(0);
+  const touchX = useRef<number | null>(null);
+
+  // Reset to the first image whenever a different project opens.
+  useEffect(() => {
+    setSlide(0);
+  }, [project?.id]);
+
+  const prevImg = () => setSlide((s) => Math.max(0, s - 1));
+  const nextImg = () => setSlide((s) => Math.min(images.length - 1, s + 1));
+  const onTouchStart = (e: React.TouchEvent) => {
+    touchX.current = e.touches[0].clientX;
+  };
+  const onTouchEnd = (e: React.TouchEvent) => {
+    if (touchX.current === null) return;
+    const dx = e.changedTouches[0].clientX - touchX.current;
+    if (dx < -40) nextImg();
+    else if (dx > 40) prevImg();
+    touchX.current = null;
+  };
 
   useEffect(() => {
     if (!open) return;
@@ -82,14 +105,68 @@ export default function ProjectPanel({
           ✕
         </button>
 
-        <div className="relative h-[220px] flex-none bg-stone lg:h-[340px]">
-          {project?.image ? (
-            // eslint-disable-next-line @next/next/no-img-element
-            <img
-              src={project.image}
-              alt={project.title}
-              className="absolute inset-0 h-full w-full object-cover"
-            />
+        <div
+          className="relative h-[220px] flex-none overflow-hidden bg-stone lg:h-[340px]"
+          onTouchStart={onTouchStart}
+          onTouchEnd={onTouchEnd}
+        >
+          {images.length > 0 ? (
+            <>
+              <div
+                className="flex h-full w-full ease-out"
+                style={{
+                  transform: `translateX(-${slide * 100}%)`,
+                  transition: "transform 400ms cubic-bezier(0.22, 0.61, 0.36, 1)",
+                }}
+              >
+                {images.map((src, i) => (
+                  // eslint-disable-next-line @next/next/no-img-element
+                  <img
+                    key={i}
+                    src={src}
+                    alt={`${project?.title} — image ${i + 1} of ${images.length}`}
+                    className="h-full w-full flex-none object-cover"
+                  />
+                ))}
+              </div>
+
+              {images.length > 1 && (
+                <>
+                  <button
+                    type="button"
+                    onClick={prevImg}
+                    disabled={slide === 0}
+                    aria-label="Previous image"
+                    className="absolute left-3 top-1/2 z-[2] flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full bg-[rgba(250,247,242,0.9)] text-[15px] text-ink transition-colors hover:bg-white disabled:pointer-events-none disabled:opacity-0"
+                  >
+                    ←
+                  </button>
+                  <button
+                    type="button"
+                    onClick={nextImg}
+                    disabled={slide === images.length - 1}
+                    aria-label="Next image"
+                    className="absolute right-3 top-1/2 z-[2] flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full bg-[rgba(250,247,242,0.9)] text-[15px] text-ink transition-colors hover:bg-white disabled:pointer-events-none disabled:opacity-0"
+                  >
+                    →
+                  </button>
+                  <div className="absolute inset-x-0 bottom-3 z-[2] flex justify-center gap-2">
+                    {images.map((_, i) => (
+                      <button
+                        key={i}
+                        type="button"
+                        onClick={() => setSlide(i)}
+                        aria-label={`Go to image ${i + 1}`}
+                        aria-current={i === slide}
+                        className={`h-[7px] w-[7px] rounded-full transition-colors ${
+                          i === slide ? "bg-cream" : "bg-cream/50 hover:bg-cream/80"
+                        }`}
+                      />
+                    ))}
+                  </div>
+                </>
+              )}
+            </>
           ) : project ? (
             <Placeholder />
           ) : null}
