@@ -38,7 +38,7 @@ export default function AboutBlock({
             imageSide === "right" ? "lg:order-1" : "lg:order-2"
           }`}
         >
-          <h2 className="m-0 font-bebas text-[clamp(28px,2.7vw,40px)] font-normal leading-[1.15]">
+          <h2 className="m-0 font-bebas text-[clamp(32px,3.3vw,50px)] font-normal leading-[1.15]">
             {heading}
           </h2>
           {paragraphs.map((p, i) => (

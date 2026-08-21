@@ -23,7 +23,7 @@ export default function WorkCarousel() {
 
   return (
     <section id="work" className="pb-[90px] pt-20 lg:pt-[120px]">
-      <h2 className="mx-auto mb-[60px] max-w-[20ch] px-5 text-pretty text-center font-bebas text-[clamp(30px,3.1vw,44px)] font-normal leading-[1.04] lg:px-8">
+      <h2 className="mx-auto mb-[60px] max-w-[20ch] px-5 text-pretty text-center font-bebas text-[clamp(34px,3.7vw,54px)] font-normal leading-[1.04] lg:px-8">
         A few of the people I&apos;ve built things for.
       </h2>
 

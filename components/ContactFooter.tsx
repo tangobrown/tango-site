@@ -34,7 +34,7 @@ export default function ContactFooter() {
         <div className="grid grid-cols-1 gap-10 lg:grid-cols-2 lg:gap-[8vw]">
           {/* Left */}
           <div className="flex flex-col gap-[26px]">
-            <h2 className="m-0 text-pretty font-bebas text-[clamp(32px,3.4vw,50px)] font-normal leading-[1.0] tracking-[0.01em]">
+            <h2 className="m-0 text-pretty font-bebas text-[clamp(38px,4.1vw,62px)] font-normal leading-[1.0] tracking-[0.01em]">
               Tell me what you&apos;re trying to build.
             </h2>
             <p className="m-0 max-w-[38ch] text-[16px] leading-[1.7] text-muted-dark">

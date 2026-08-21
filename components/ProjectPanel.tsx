@@ -89,7 +89,7 @@ export default function ProjectPanel({
         <div className="flex min-h-0 flex-1 flex-col gap-[22px] overflow-y-auto p-[40px_44px_56px]">
           <div className="flex flex-col gap-[10px]">
             <span className="text-[11px] uppercase tracking-[0.12em] text-muted">{project?.meta}</span>
-            <h2 className="m-0 font-bebas text-[36px] font-normal leading-[1.0] tracking-[0.01em]">
+            <h2 className="m-0 font-bebas text-[44px] font-normal leading-[1.0] tracking-[0.01em]">
               {project?.title}
             </h2>
           </div>

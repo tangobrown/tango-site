@@ -38,7 +38,7 @@ export default function Testimonials() {
   return (
     <section className="overflow-hidden pb-[130px] pt-[10px]">
       <div className="mx-auto mb-14 max-w-content px-5 lg:px-8">
-        <h2 className="mx-auto max-w-[24ch] text-pretty text-center font-bebas text-[clamp(28px,2.8vw,40px)] font-normal leading-[1.04]">
+        <h2 className="mx-auto max-w-[24ch] text-pretty text-center font-bebas text-[clamp(32px,3.4vw,50px)] font-normal leading-[1.04]">
           See what people say about me.
         </h2>
       </div>
