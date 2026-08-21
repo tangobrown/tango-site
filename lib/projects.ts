@@ -11,6 +11,8 @@ export type Project = {
   scope: string;
   url: string | null;
   body: string;
+  /** Card/panel image; falls back to a neutral placeholder when unset. */
+  image?: string;
 };
 
 export const projects: Project[] = [
@@ -22,6 +24,7 @@ export const projects: Project[] = [
     scope: "Site, copy shaping, local SEO",
     url: null,
     body: "A workshop that was getting the wrong sort of enquiry. We rebuilt the site around the jobs they actually wanted — staircases, bespoke fitted furniture — and put the workshop itself front and centre. Local SEO followed. Fewer enquiries now, better ones.",
+    image: "/work/w1.jpg",
   },
   {
     id: "w2",

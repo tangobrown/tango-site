@@ -49,7 +49,16 @@ export default function WorkCarousel() {
             }}
             className="relative h-[400px] flex-none basis-[82vw] cursor-pointer snap-start overflow-hidden bg-stone transition-opacity hover:opacity-[0.94] lg:h-[500px] lg:basis-[480px]"
           >
-            <Placeholder />
+            {p.image ? (
+              // eslint-disable-next-line @next/next/no-img-element
+              <img
+                src={p.image}
+                alt={p.title}
+                className="absolute inset-0 h-full w-full object-cover"
+              />
+            ) : (
+              <Placeholder />
+            )}
             <div
               aria-hidden="true"
               className="pointer-events-none absolute inset-x-0 bottom-0 h-[62%]"

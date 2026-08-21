@@ -83,7 +83,16 @@ export default function ProjectPanel({
         </button>
 
         <div className="relative h-[220px] flex-none bg-stone lg:h-[340px]">
-          {project ? <Placeholder /> : null}
+          {project?.image ? (
+            // eslint-disable-next-line @next/next/no-img-element
+            <img
+              src={project.image}
+              alt={project.title}
+              className="absolute inset-0 h-full w-full object-cover"
+            />
+          ) : project ? (
+            <Placeholder />
+          ) : null}
         </div>
 
         <div className="flex min-h-0 flex-1 flex-col gap-[22px] overflow-y-auto p-[40px_44px_56px]">
