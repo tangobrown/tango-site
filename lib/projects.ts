@@ -37,6 +37,7 @@ export const projects: Project[] = [
     scope: "Site, phone-first editing",
     url: null,
     body: "A portfolio the team can add to from a phone, on site, with muddy hands. Photograph the job, drop it in, done — no laptop, no CMS training, no waiting on me.",
+    images: ["/work/w2.jpg"],
   },
   {
     id: "w3",
