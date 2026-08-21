@@ -6,6 +6,7 @@ import Intro from "@/components/Intro";
 import Services from "@/components/Services";
 import SiteNav from "@/components/SiteNav";
 import Testimonials from "@/components/Testimonials";
+import WaysToWork from "@/components/WaysToWork";
 import WorkCarousel from "@/components/WorkCarousel";
 
 export default function Home() {
@@ -45,6 +46,7 @@ export default function Home() {
           imageSide="right"
           sectionClassName="lg:pb-[116px] lg:pt-[24px]"
         />
+        <WaysToWork />
         <Testimonials />
       </main>
       <ContactFooter />
