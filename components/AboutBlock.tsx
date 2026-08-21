@@ -9,6 +9,8 @@ type Props = {
   imageLabel: string;
   imageSide: "left" | "right";
   sectionClassName?: string;
+  imageSrc?: string;
+  imageAlt?: string;
 };
 
 // Shared by the About and "How working together goes" sections; the image
@@ -21,6 +23,8 @@ export default function AboutBlock({
   imageLabel,
   imageSide,
   sectionClassName = "",
+  imageSrc,
+  imageAlt,
 }: Props) {
   return (
     <section id={id} className={`py-16 ${sectionClassName}`}>
@@ -30,7 +34,16 @@ export default function AboutBlock({
             imageSide === "right" ? "lg:order-2" : "lg:order-1"
           }`}
         >
-          <Placeholder label={imageLabel} />
+          {imageSrc ? (
+            // eslint-disable-next-line @next/next/no-img-element
+            <img
+              src={imageSrc}
+              alt={imageAlt ?? "Tim Brown"}
+              className="absolute inset-0 h-full w-full object-cover"
+            />
+          ) : (
+            <Placeholder label={imageLabel} />
+          )}
         </div>
 
         <div

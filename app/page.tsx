@@ -27,6 +27,8 @@ export default function Home() {
           ]}
           linkLabel="Let's connect"
           imageLabel="Portrait of Tim"
+          imageSrc="/about-1.jpg"
+          imageAlt="Tim Brown"
           imageSide="left"
           sectionClassName="lg:py-[104px]"
         />
