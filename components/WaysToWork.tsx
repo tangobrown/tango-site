@@ -23,7 +23,8 @@ export default function WaysToWork() {
   return (
     <section className="py-16 lg:pb-[116px] lg:pt-[64px]">
       <div className="mx-auto max-w-content px-5 lg:px-8">
-        <div className="flex flex-col gap-4 lg:max-w-[640px]">
+        <div className="border border-rule bg-white p-7 lg:p-14">
+          <div className="flex flex-col gap-4 lg:max-w-[640px]">
           <h2 className="m-0 font-bebas text-[clamp(32px,3.3vw,50px)] font-normal leading-[1.15]">
             Ways to work together
           </h2>
@@ -41,6 +42,7 @@ export default function WaysToWork() {
               <p className="m-0 text-[15px] leading-[1.7] text-ink-soft">{way.body}</p>
             </div>
           ))}
+          </div>
         </div>
       </div>
     </section>
