@@ -20,8 +20,8 @@ export default function SiteNav() {
         >
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src="/logo.png" alt="" className="h-9 w-auto" />
-          <span className="flex flex-col font-bebas text-[15px] leading-[0.88] tracking-[0.02em] text-cream-text">
-            <span>Tim</span>
+          <span className="flex flex-col whitespace-nowrap font-bebas text-[15px] leading-[0.88] tracking-[0.02em] text-cream-text">
+            <span>Tim (aka Tango)</span>
             <span>Brown</span>
           </span>
         </a>
