@@ -40,6 +40,8 @@ export default function Home() {
           ]}
           linkLabel="Start a project"
           imageLabel="Studio, desk or process shot"
+          imageSrc="/about-2.jpg"
+          imageAlt="Tim Brown at work"
           imageSide="right"
           sectionClassName="lg:pb-[116px] lg:pt-[24px]"
         />
