@@ -15,11 +15,15 @@ export default function SiteNav() {
         <a
           href="#top"
           aria-label="Tim Brown — home"
-          className="inline-flex"
+          className="inline-flex items-center gap-2.5"
           onClick={() => setOpen(false)}
         >
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/logo.png" alt="Tim Brown" className="h-9 w-auto" />
+          <img src="/logo.png" alt="" className="h-9 w-auto" />
+          <span className="flex flex-col font-bebas text-[15px] leading-[0.88] tracking-[0.02em] text-cream-text">
+            <span>Tim</span>
+            <span>Brown</span>
+          </span>
         </a>
         <button
           type="button"
