@@ -8,13 +8,12 @@ export default function Intro() {
         </h2>
         <div className="flex flex-col gap-[18px] lg:pt-[10px]">
           <p className="m-0 text-[17px] leading-[1.75] text-ink-soft">
-            I&apos;ve spent the last decade building sites for joiners, bars and economists — and for
-            teams at the World Bank. Same approach either way: understand the business, write it down
-            plainly, then build something quick and easy to look after.
+            That&apos;s where I come in. Someone who takes your success personally.
           </p>
           <p className="m-0 text-[17px] leading-[1.75] text-ink-soft">
-            You talk to me from the first call to launch. No handovers, no account managers, no
-            surprise invoices.
+            Your digital/website department who will work tirelessly each month to ensure your
+            website looks good, outperforms your competition and attracts new leads for your
+            business.
           </p>
         </div>
       </div>
