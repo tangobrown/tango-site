@@ -3,7 +3,7 @@ type Service = { title: string; body: string; iconSrc: string };
 const services: Service[] = [
   {
     title: "Website Builds",
-    body: "Fast, good-looking websites built to bring in work. Design, copy shaping and build, start to finish — and yours to update whenever you like.",
+    body: "Beautiful, fast websites that are focused on converting viewers into leads. From the copy to the visuals, you'll have a website to be proud of.",
     iconSrc: "/icons/globe.webp",
   },
   {
