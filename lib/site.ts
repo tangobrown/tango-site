@@ -21,12 +21,11 @@ export const navLinks = [
 // The expectations band items, in order (handoff §4).
 export const expectations = [
   "Transparent pricing",
-  "Fixed timelines",
+  "Local SEO (Google)",
+  "Monthly reporting",
   "Ongoing support",
+  "Optimised for AI Search",
   "One person, start to finish",
-  "No monthly lock-in",
-  "Built to edit yourself",
+  "Blazing fast sites",
   "Honest advice",
-  "Replies within a day",
-  "Local SEO included",
 ] as const;
