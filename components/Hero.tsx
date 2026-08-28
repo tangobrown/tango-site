@@ -5,7 +5,7 @@ export default function Hero() {
   return (
     <section
       id="top"
-      className="relative grid grid-cols-1 lg:h-[92vh] lg:min-h-[700px] lg:grid-cols-[38%_minmax(0,1fr)]"
+      className="relative grid grid-cols-1 lg:h-[92vh] lg:min-h-[700px] lg:grid-cols-[43%_minmax(0,1fr)]"
     >
       {/* Left — dark block (copy) */}
       <div className="order-2 flex flex-col justify-between gap-14 bg-ink-dark p-[32px_20px_40px] text-cream-text lg:order-1 lg:gap-0 lg:p-[44px_48px_56px]">
@@ -26,9 +26,10 @@ export default function Hero() {
           <h1 className="m-0 text-pretty font-bebas text-[clamp(38px,4.1vw,62px)] font-normal leading-[0.98] tracking-[0.005em]">
             Hey, I&apos;m Tim Brown - a digital growth expert for small businesses in the UK.
           </h1>
-          <p className="m-0 max-w-[34ch] text-[16px] leading-[1.6] text-muted-dark">
+          <p className="m-0 max-w-[44ch] text-[16px] leading-[1.6] text-muted-dark">
             I&apos;ll build, host and optimise your website, so you can get more leads from your
-            ideal customers.
+            ideal customers and then automate repetitive tasks so that you can spend more time on
+            what makes you money.
           </p>
           <a
             href="#contact"
