@@ -4,7 +4,7 @@ function Card({ t, hidden }: { t: Testimonial; hidden?: boolean }) {
   return (
     <figure
       aria-hidden={hidden || undefined}
-      className="m-0 flex w-[300px] flex-none flex-col justify-between gap-[26px] border border-rule-card bg-white p-[26px_24px] lg:w-[400px] lg:p-[34px_34px_30px]"
+      className="m-0 flex min-h-[220px] w-[300px] flex-none flex-col justify-between gap-[26px] border border-rule-card bg-white p-[26px_24px] lg:min-h-[260px] lg:w-[400px] lg:p-[34px_34px_30px]"
     >
       <blockquote className="m-0 text-[16px] leading-[1.6] text-ink lg:text-[17px]">
         &ldquo;{t.quote}&rdquo;
