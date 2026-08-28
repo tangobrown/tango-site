@@ -47,7 +47,7 @@ const config: Config = {
         sans: ["var(--font-public)", "system-ui", "sans-serif"],
       },
       maxWidth: {
-        content: "1160px",
+        content: "1240px",
       },
       keyframes: {
         "marquee-left": {

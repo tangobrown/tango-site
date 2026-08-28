@@ -28,7 +28,7 @@ export default function WorkCarousel() {
 
       <div
         ref={railRef}
-        className="no-scrollbar flex snap-x snap-mandatory gap-[14px] overflow-x-auto scroll-smooth px-5 pb-2 lg:snap-none lg:gap-[22px] lg:px-[max(32px,calc((100%-1160px)/2))]"
+        className="no-scrollbar flex snap-x snap-mandatory gap-[14px] overflow-x-auto scroll-smooth px-5 pb-2 lg:snap-none lg:gap-[22px] lg:px-[max(32px,calc((100%-1240px)/2))]"
       >
         {projects.map((p, i) => (
           <article
