@@ -2,18 +2,18 @@ type Service = { title: string; body: string; iconSrc: string };
 
 const services: Service[] = [
   {
-    title: "Web design",
-    body: "Sites that load fast, read well and are built so you can update them yourself. Design, copy shaping and build, start to finish.",
+    title: "Website Builds",
+    body: "Fast, good-looking websites built to bring in work. Design, copy shaping and build, start to finish — and yours to update whenever you like.",
     iconSrc: "/icons/globe.webp",
   },
   {
     title: "Optimisation",
-    body: "Local and technical SEO for people who'd rather be found than famous. Clear reporting, no monthly retainer padding.",
+    body: "Local and technical SEO plus the speed tweaks that keep pages loading in a blink. Clear reporting, no monthly retainer padding.",
     iconSrc: "/icons/chart.webp",
   },
   {
-    title: "AI & automation",
-    body: "The dull, repeated jobs — quotes, enquiries, admin — handled quietly in the background so your week gets shorter.",
+    title: "Site Hosting",
+    body: "Managed hosting that stays quick and secure. Updates, backups and the odd Sunday fix handled, so your site is never your problem.",
     iconSrc: "/icons/layers.webp",
   },
 ];
