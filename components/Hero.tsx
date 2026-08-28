@@ -27,7 +27,8 @@ export default function Hero() {
             Hey, I&apos;m Tim Brown - a digital growth expert for small businesses in the UK.
           </h1>
           <p className="m-0 max-w-[34ch] text-[16px] leading-[1.6] text-muted-dark">
-            Freelance web design, SEO and AI workflows. Based in Devon, working with people I like.
+            I&apos;ll build, host and optimise your website, so you can get more leads from your
+            ideal customers.
           </p>
           <a
             href="#contact"
