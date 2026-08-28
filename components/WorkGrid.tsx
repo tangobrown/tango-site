@@ -20,12 +20,11 @@ export default function WorkGrid() {
 
   return (
     <section id="work" className="px-5 py-20 lg:px-8 lg:py-[120px]">
-      <div className="mx-auto max-w-content">
-        <h2 className="mx-auto mb-[60px] max-w-[20ch] text-pretty text-center font-bebas text-[clamp(34px,3.7vw,54px)] font-normal leading-[1.04]">
-          A few of the people I&apos;ve built things for.
-        </h2>
+      <h2 className="mx-auto mb-[60px] max-w-[20ch] text-pretty text-center font-bebas text-[clamp(34px,3.7vw,54px)] font-normal leading-[1.04]">
+        A few of the people I&apos;ve built things for.
+      </h2>
 
-        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+      <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {items.map((p, i) => (
             <article
               key={p.id}
@@ -65,7 +64,6 @@ export default function WorkGrid() {
             </article>
           ))}
         </div>
-      </div>
 
       <ProjectPanel project={active == null ? null : items[active]} onClose={close} />
     </section>
