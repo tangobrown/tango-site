@@ -30,7 +30,7 @@ export default function AboutBlock({
     <section id={id} className={`py-16 ${sectionClassName}`}>
       <div className="mx-auto grid max-w-content grid-cols-1 gap-6 px-5 lg:grid-cols-2 lg:items-center lg:gap-[7vw] lg:px-8">
         <div
-          className={`relative order-1 h-[320px] bg-stone lg:h-[540px] ${
+          className={`relative order-1 h-[400px] bg-stone lg:h-[540px] ${
             imageSide === "right" ? "lg:order-2" : "lg:order-1"
           }`}
         >
@@ -39,7 +39,7 @@ export default function AboutBlock({
             <img
               src={imageSrc}
               alt={imageAlt ?? "Tim Brown"}
-              className="absolute inset-0 h-full w-full object-cover"
+              className="absolute inset-0 h-full w-full object-cover object-top lg:object-center"
             />
           ) : (
             <Placeholder label={imageLabel} />
