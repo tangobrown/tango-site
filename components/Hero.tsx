@@ -24,7 +24,7 @@ export default function Hero() {
 
         <div className="flex flex-col gap-7">
           <h1 className="m-0 text-pretty font-bebas text-[clamp(38px,4.1vw,62px)] font-normal leading-[0.98] tracking-[0.005em]">
-            Websites, search and quiet automation — built by one person who answers the phone.
+            Hey, I&apos;m Tim Brown - a digital growth expert for small businesses in the UK.
           </h1>
           <p className="m-0 max-w-[34ch] text-[16px] leading-[1.6] text-muted-dark">
             Freelance web design, SEO and AI workflows. Based in Devon, working with people I like.
