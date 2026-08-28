@@ -179,7 +179,7 @@ export default function ProjectPanel({
               {project?.title}
             </h2>
           </div>
-          <p className="m-0 text-[16px] leading-[1.75] text-ink-soft">{project?.body}</p>
+          <p className="m-0 text-[17px] leading-[1.75] text-ink-soft">{project?.body}</p>
           <div className="flex flex-col gap-3 border-t border-rule pt-[6px]">
             <div className="flex justify-between gap-5 pt-[14px] text-[14px]">
               <span className="text-muted">What I did</span>

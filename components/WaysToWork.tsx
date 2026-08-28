@@ -28,7 +28,7 @@ export default function WaysToWork() {
           <h2 className="m-0 font-bebas text-[clamp(32px,3.3vw,50px)] font-normal leading-[1.15]">
             Ways to work together
           </h2>
-          <p className="m-0 text-[16px] leading-[1.75] text-ink-soft">
+          <p className="m-0 text-[17px] leading-[1.75] text-ink-soft">
             However far you want to take it — from a single build to a standing partnership. Most
             people start at one and move down over time.
           </p>
@@ -39,7 +39,7 @@ export default function WaysToWork() {
             <div key={way.n} className="flex flex-col gap-4 border-t border-rule pt-6">
               <span className="font-bebas text-[34px] leading-none text-rust">{way.n}</span>
               <h3 className="m-0 font-bebas text-[26px] font-normal leading-[1.1]">{way.title}</h3>
-              <p className="m-0 text-[15px] leading-[1.7] text-ink-soft">{way.body}</p>
+              <p className="m-0 text-[16px] leading-[1.7] text-ink-soft">{way.body}</p>
             </div>
           ))}
           </div>

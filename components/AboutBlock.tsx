@@ -55,7 +55,7 @@ export default function AboutBlock({
             {heading}
           </h2>
           {paragraphs.map((p, i) => (
-            <p key={i} className="m-0 text-[16px] leading-[1.75] text-ink-soft">
+            <p key={i} className="m-0 text-[17px] leading-[1.75] text-ink-soft">
               {p}
             </p>
           ))}

@@ -44,7 +44,7 @@ export default function Services() {
                 />
                 <div className="flex flex-col gap-[14px]">
                   <h3 className="m-0 font-bebas text-[34px] font-normal">{service.title}</h3>
-                  <p className="m-0 text-[15px] leading-[1.7] text-ink-soft">{service.body}</p>
+                  <p className="m-0 text-[16px] leading-[1.7] text-ink-soft">{service.body}</p>
                 </div>
               </div>
             );

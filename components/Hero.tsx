@@ -26,7 +26,7 @@ export default function Hero() {
           <h1 className="m-0 text-pretty font-bebas text-[clamp(38px,4.1vw,62px)] font-normal leading-[0.98] tracking-[0.005em]">
             Hey, I&apos;m Tim Brown - a digital growth expert for small businesses in the UK.
           </h1>
-          <p className="m-0 max-w-[52ch] text-[16px] leading-[1.6] text-muted-dark">
+          <p className="m-0 max-w-[52ch] text-[17px] leading-[1.6] text-muted-dark">
             I&apos;ll build, host and optimise your website, so you can get more leads from your
             ideal customers and then automate repetitive tasks so that you can spend more time on
             what makes you money.

@@ -37,7 +37,7 @@ export default function ContactFooter() {
             <h2 className="m-0 text-pretty font-bebas text-[clamp(38px,4.1vw,62px)] font-normal leading-[1.0] tracking-[0.01em]">
               Tell me what you&apos;re trying to build.
             </h2>
-            <p className="m-0 max-w-[38ch] text-[16px] leading-[1.7] text-muted-dark">
+            <p className="m-0 max-w-[38ch] text-[17px] leading-[1.7] text-muted-dark">
               A sentence is plenty to start. I reply to everything within a day, and I&apos;ll tell
               you honestly if I&apos;m not the right person.
             </p>
