@@ -53,8 +53,8 @@ export default function Services() {
                 className={`flex flex-col gap-10 border-rule p-[40px_24px_48px] lg:gap-[150px] lg:p-[66px_40px_76px] ${borders}`}
               >
                 <svg
-                  width="30"
-                  height="30"
+                  width="46"
+                  height="46"
                   viewBox="0 0 24 24"
                   fill="none"
                   stroke="currentColor"
