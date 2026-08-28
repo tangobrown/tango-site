@@ -8,12 +8,14 @@ export default function Intro() {
         </h2>
         <div className="flex flex-col gap-[18px] lg:pt-[10px]">
           <p className="m-0 text-[17px] leading-[1.75] text-ink-soft">
-            That&apos;s where I come in. Someone who takes your success personally.
+            That&apos;s where I come in. I&apos;ll be your digital/website department who will take
+            your success personally.
           </p>
           <p className="m-0 text-[17px] leading-[1.75] text-ink-soft">
-            Your digital/website department who will work tirelessly each month to ensure your
-            website looks good, outperforms your competition and attracts new leads for your
-            business.
+            I&apos;ll work tirelessly each month to ensure your website looks good, outperforms your
+            competition and attracts new leads for your business. You&apos;ll be dealing with me (not
+            an account manager, or agency junior) and you won&apos;t pay agency fees that put off
+            small businesses getting help with their marketing efforts.
           </p>
         </div>
       </div>
