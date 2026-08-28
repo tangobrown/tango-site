@@ -1,6 +1,4 @@
-import type { ReactNode } from "react";
-
-type Service = { title: string; body: string; icon?: ReactNode; iconSrc?: string };
+type Service = { title: string; body: string; iconSrc: string };
 
 const services: Service[] = [
   {
@@ -11,17 +9,12 @@ const services: Service[] = [
   {
     title: "Optimisation",
     body: "Local and technical SEO for people who'd rather be found than famous. Clear reporting, no monthly retainer padding.",
-    iconSrc: "/icons/line-chart.gif",
+    iconSrc: "/icons/chart.gif",
   },
   {
     title: "AI & automation",
     body: "The dull, repeated jobs — quotes, enquiries, admin — handled quietly in the background so your week gets shorter.",
-    icon: (
-      <>
-        <path d="M3 18l5-11 5 11M4.7 14.4h6.6" />
-        <path d="M18 17V6M18 6l-3 3M18 6l3 3" />
-      </>
-    ),
+    iconSrc: "/icons/layers.gif",
   },
 ];
 
@@ -42,30 +35,13 @@ export default function Services() {
                 key={service.title}
                 className={`flex flex-col gap-10 border-rule p-[40px_24px_48px] lg:gap-[150px] lg:p-[66px_40px_76px] ${borders}`}
               >
-                {service.iconSrc ? (
-                  // eslint-disable-next-line @next/next/no-img-element
-                  <img
-                    src={service.iconSrc}
-                    alt=""
-                    className="h-[52px] w-[52px] object-contain"
-                    aria-hidden="true"
-                  />
-                ) : (
-                  <svg
-                    width="46"
-                    height="46"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth={1.4}
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    className="text-rust"
-                    aria-hidden="true"
-                  >
-                    {service.icon}
-                  </svg>
-                )}
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={service.iconSrc}
+                  alt=""
+                  className="h-[70px] w-[70px] object-contain"
+                  aria-hidden="true"
+                />
                 <div className="flex flex-col gap-[14px]">
                   <h3 className="m-0 font-bebas text-[34px] font-normal">{service.title}</h3>
                   <p className="m-0 text-[15px] leading-[1.7] text-ink-soft">{service.body}</p>
