@@ -61,7 +61,7 @@ export default function AboutBlock({
           ))}
           <a
             href="#contact"
-            className="inline-flex items-center gap-[9px] self-start border-b border-underline-accent pb-1 text-[14px] font-medium uppercase tracking-[0.03em] text-ink transition-colors hover:border-rust"
+            className="mt-3 inline-flex items-center gap-[9px] self-start border-b border-underline-accent pb-1 text-[14px] font-medium uppercase tracking-[0.03em] text-ink transition-colors hover:border-rust lg:mt-4"
           >
             {linkLabel} <ArrowIcon size={17} />
           </a>
