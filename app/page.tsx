@@ -7,7 +7,7 @@ import Services from "@/components/Services";
 import SiteNav from "@/components/SiteNav";
 import Testimonials from "@/components/Testimonials";
 import WaysToWork from "@/components/WaysToWork";
-import WorkCarousel from "@/components/WorkCarousel";
+import WorkGrid from "@/components/WorkGrid";
 
 export default function Home() {
   return (
@@ -18,7 +18,7 @@ export default function Home() {
         <Intro />
         <Services />
         <ExpectationsBand />
-        <WorkCarousel />
+        <WorkGrid />
         <AboutBlock
           id="about"
           heading="A bit about me"
