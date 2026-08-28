@@ -4,17 +4,17 @@ const services: Service[] = [
   {
     title: "Web design",
     body: "Sites that load fast, read well and are built so you can update them yourself. Design, copy shaping and build, start to finish.",
-    iconSrc: "/icons/globe.gif",
+    iconSrc: "/icons/globe.webp",
   },
   {
     title: "Optimisation",
     body: "Local and technical SEO for people who'd rather be found than famous. Clear reporting, no monthly retainer padding.",
-    iconSrc: "/icons/chart.gif",
+    iconSrc: "/icons/chart.webp",
   },
   {
     title: "AI & automation",
     body: "The dull, repeated jobs — quotes, enquiries, admin — handled quietly in the background so your week gets shorter.",
-    iconSrc: "/icons/layers.gif",
+    iconSrc: "/icons/layers.webp",
   },
 ];
 
