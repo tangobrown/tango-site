@@ -49,7 +49,7 @@ export default function WorkCarousel() {
 
       {/* Coverflow stage */}
       <div
-        className="relative mx-auto h-[66vw] max-h-[700px] select-none"
+        className="relative mx-auto h-[64vw] max-h-[624px] select-none"
         role="group"
         aria-roledescription="carousel"
         aria-label="Selected work"
@@ -110,7 +110,7 @@ export default function WorkCarousel() {
       </div>
 
       {/* Caption for the active project */}
-      <div className="mx-auto mt-8 flex flex-col items-center gap-1 text-center lg:mt-10">
+      <div className="mx-auto mt-2 flex flex-col items-center gap-1 text-center lg:mt-3">
         <span className="text-[11px] uppercase tracking-[0.14em] text-muted">
           {activeProject.meta}
         </span>
