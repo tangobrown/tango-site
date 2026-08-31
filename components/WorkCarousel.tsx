@@ -86,7 +86,7 @@ export default function WorkCarousel() {
               }
               tabIndex={visible ? 0 : -1}
               onClick={() => (isActive ? setOpen(true) : setActive(i))}
-              className="absolute left-1/2 top-1/2 aspect-[1196/872] w-[86vw] max-w-[950px] transition-[transform,opacity] duration-[550ms] ease-out will-change-transform"
+              className="absolute left-1/2 top-1/2 aspect-[1196/872] w-[86vw] max-w-[840px] transition-[transform,opacity] duration-[550ms] ease-out will-change-transform"
               style={{
                 transform: `translate(-50%, -50%) translateX(${d * 62}%) scale(${
                   isActive ? 1 : 0.78
