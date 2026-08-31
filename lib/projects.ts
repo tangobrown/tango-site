@@ -40,6 +40,16 @@ export const projects: Project[] = [
     images: ["/work/w2.jpg"],
   },
   {
+    id: "torbay",
+    title: "Torbay Sweeps",
+    meta: "Chimney sweep · Torbay",
+    year: "2025",
+    scope: "Site, local SEO",
+    url: "https://torbaysweeps.co.uk",
+    body: "A chimney sweeping and stove-installation business that wanted the phone to ring across Brixham, Paignton and the South Hams. A fast, trustworthy site built around the local searches that turn into bookings — quote requests front and centre.",
+    images: ["/work/torbay.jpg"],
+  },
+  {
     id: "w3",
     title: "The Old Fashioned Cocktail Co.",
     meta: "Drinks brand · E-commerce",
