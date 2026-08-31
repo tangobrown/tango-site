@@ -49,7 +49,7 @@ export default function WorkCarousel() {
 
       {/* Coverflow stage */}
       <div
-        className="relative mx-auto h-[62vw] max-h-[560px] select-none"
+        className="relative mx-auto h-[62vw] max-h-[620px] select-none"
         role="group"
         aria-roledescription="carousel"
         aria-label="Selected work"
@@ -86,7 +86,7 @@ export default function WorkCarousel() {
               }
               tabIndex={visible ? 0 : -1}
               onClick={() => (isActive ? setOpen(true) : setActive(i))}
-              className="absolute left-1/2 top-1/2 aspect-[1200/825] w-[86vw] max-w-[820px] transition-[transform,opacity] duration-[550ms] ease-out will-change-transform"
+              className="absolute left-1/2 top-1/2 aspect-[1200/825] w-[86vw] max-w-[900px] transition-[transform,opacity] duration-[550ms] ease-out will-change-transform"
               style={{
                 transform: `translate(-50%, -50%) translateX(${d * 62}%) scale(${
                   isActive ? 1 : 0.78
@@ -101,7 +101,7 @@ export default function WorkCarousel() {
               <img
                 src={p.cover}
                 alt={p.title}
-                className="h-full w-full object-contain drop-shadow-[0_26px_50px_rgba(31,29,26,0.16)]"
+                className="h-full w-full object-contain drop-shadow-[0_10px_20px_rgba(31,29,26,0.09)]"
                 draggable={false}
               />
             </button>
