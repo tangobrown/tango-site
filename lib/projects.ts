@@ -57,6 +57,7 @@ export const projects: Project[] = [
     scope: "Interface design, front-end",
     url: null,
     body: "A public-facing tool for a World Bank programme. Dense comparative data, plain language, and a structure that lets a minister and a researcher both find what they came for.",
+    images: ["/work/w4.jpg"],
   },
   {
     id: "w5",
