@@ -44,7 +44,7 @@ export default function WorkCarousel() {
   return (
     <section id="work" className="overflow-hidden px-5 py-20 lg:py-[120px]">
       <h2 className="mx-auto mb-[54px] max-w-[20ch] text-pretty text-center font-bebas text-[clamp(34px,3.7vw,54px)] font-normal leading-[1.04]">
-        A few of the people I&apos;ve built things for.
+        What have I been working on lately?
       </h2>
 
       {/* Coverflow stage */}

@@ -34,7 +34,7 @@ export default function Home() {
           sectionClassName="lg:py-[104px]"
         />
         <AboutBlock
-          heading="How working together goes"
+          heading="Who do I work with"
           paragraphs={[
             "A call, a fixed price, and a date. You'll see the design before anything is built, and you'll see the site before anyone else does. Most projects take three to five weeks.",
             "Afterwards I'm still here — for the small fixes, the new page, the thing that broke on a Sunday. Freelance doesn't have to mean gone.",
