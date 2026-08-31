@@ -12,8 +12,13 @@ export type Project = {
   url: string | null;
   body: string;
   /**
-   * Project images. The card shows the first; the panel shows all in a
-   * carousel. Falls back to a neutral placeholder when empty/unset.
+   * Transparent device-frame mock shown in the work coverflow carousel.
+   * Rendered whole (object-contain), floating on the page.
+   */
+  cover?: string;
+  /**
+   * Project images. The panel shows all in a carousel. Falls back to a
+   * neutral placeholder when empty/unset.
    */
   images?: string[];
 };
@@ -27,6 +32,7 @@ export const projects: Project[] = [
     scope: "Site, copy shaping, local SEO",
     url: null,
     body: "A workshop that was getting the wrong sort of enquiry. We rebuilt the site around the jobs they actually wanted — staircases, bespoke fitted furniture — and put the workshop itself front and centre. Local SEO followed. Fewer enquiries now, better ones.",
+    cover: "/work/tablet/w1.png",
     images: ["/work/w1.jpg"],
   },
   {
@@ -37,6 +43,7 @@ export const projects: Project[] = [
     scope: "Site, phone-first editing",
     url: null,
     body: "A portfolio the team can add to from a phone, on site, with muddy hands. Photograph the job, drop it in, done — no laptop, no CMS training, no waiting on me.",
+    cover: "/work/tablet/w2.png",
     images: ["/work/w2.jpg"],
   },
   {
@@ -47,6 +54,7 @@ export const projects: Project[] = [
     scope: "Site, local SEO",
     url: "https://torbaysweeps.co.uk",
     body: "A chimney sweeping and stove-installation business that wanted the phone to ring across Brixham, Paignton and the South Hams. A fast, trustworthy site built around the local searches that turn into bookings — quote requests front and centre.",
+    cover: "/work/tablet/torbay.png",
     images: ["/work/torbay.jpg"],
   },
   {
@@ -57,6 +65,7 @@ export const projects: Project[] = [
     scope: "Design, build, checkout",
     url: null,
     body: "A brand-led shop front with a checkout that behaves itself through December. Built for the seasonal spike: fast product pages, honest stock counts, and gifting flows that do not fall over on the busiest weekend of the year.",
+    cover: "/work/tablet/w3.png",
     images: ["/work/w3.jpg"],
   },
   {
@@ -67,6 +76,7 @@ export const projects: Project[] = [
     scope: "Interface design, front-end",
     url: null,
     body: "The public face of a World Bank programme — digital tools for smarter public investment and asset management, built around the sixteen dimensions of InfraGov 2.0. Plain language over dense policy, so a minister and a researcher both find what they came for.",
+    cover: "/work/tablet/w4.png",
     images: ["/work/w4.jpg"],
   },
   {
@@ -77,6 +87,7 @@ export const projects: Project[] = [
     scope: "Data visualisation, front-end",
     url: null,
     body: "An interactive world map that turns a governance index into something you can actually read — click a country, see its score, compare across a region. Dense comparative data made public-friendly.",
+    cover: "/work/tablet/cbd.png",
     images: ["/work/cbd.jpg"],
   },
   {
@@ -87,6 +98,7 @@ export const projects: Project[] = [
     scope: "UX, build, documentation",
     url: null,
     body: "An assessment framework that existed as a very long spreadsheet. Turned into something governments can actually fill in — sectioned, saveable, and clear about why each question is being asked.",
+    cover: "/work/tablet/w5.png",
     images: ["/work/w5.jpg"],
   },
   {
