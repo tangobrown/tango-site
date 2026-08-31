@@ -41,7 +41,7 @@ export default function WorkGrid() {
                   setActive(i);
                 }
               }}
-              className="flex cursor-pointer flex-col overflow-hidden transition-opacity hover:opacity-[0.94]"
+              className="group flex cursor-pointer flex-col overflow-hidden"
             >
               <div className="relative aspect-[4/3] overflow-hidden bg-stone">
                 {p.images?.[0] ? (
@@ -49,7 +49,7 @@ export default function WorkGrid() {
                   <img
                     src={p.images[0]}
                     alt={p.title}
-                    className="absolute inset-0 h-full w-full object-cover object-top"
+                    className="absolute inset-0 h-full w-full origin-top-left scale-[1.05] object-cover object-left-top transition-transform duration-[600ms] ease-out group-hover:-translate-x-[7px] group-hover:-translate-y-[7px] group-hover:scale-[1.08]"
                   />
                 ) : (
                   <Placeholder />
