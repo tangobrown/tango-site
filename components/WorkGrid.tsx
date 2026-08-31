@@ -5,8 +5,8 @@ import { projects } from "@/lib/projects";
 import Placeholder from "./Placeholder";
 import ProjectPanel from "./ProjectPanel";
 
-// 4×2 grid — first eight projects.
-const items = projects.slice(0, 8);
+// 3×3 grid — all nine projects.
+const items = projects.slice(0, 9);
 
 export default function WorkGrid() {
   const [active, setActive] = useState<number | null>(null);
@@ -24,7 +24,7 @@ export default function WorkGrid() {
         A few of the people I&apos;ve built things for.
       </h2>
 
-      <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+      <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {items.map((p, i) => (
             <article
               key={p.id}
