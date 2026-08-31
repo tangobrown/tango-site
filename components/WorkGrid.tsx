@@ -49,7 +49,7 @@ export default function WorkGrid() {
                   <img
                     src={p.images[0]}
                     alt={p.title}
-                    className="absolute inset-0 h-full w-full object-cover object-left-top"
+                    className="absolute inset-0 h-full w-full object-cover object-top"
                   />
                 ) : (
                   <Placeholder />

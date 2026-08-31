@@ -56,8 +56,18 @@ export const projects: Project[] = [
     year: "2024",
     scope: "Interface design, front-end",
     url: null,
-    body: "A public-facing tool for a World Bank programme. Dense comparative data, plain language, and a structure that lets a minister and a researcher both find what they came for.",
+    body: "The public face of a World Bank programme — digital tools for smarter public investment and asset management, built around the sixteen dimensions of InfraGov 2.0. Plain language over dense policy, so a minister and a researcher both find what they came for.",
     images: ["/work/w4.jpg"],
+  },
+  {
+    id: "cbd",
+    title: "Country Benchmarking",
+    meta: "World Bank programme",
+    year: "2024",
+    scope: "Data visualisation, front-end",
+    url: null,
+    body: "An interactive world map that turns a governance index into something you can actually read — click a country, see its score, compare across a region. Dense comparative data made public-friendly.",
+    images: ["/work/cbd.jpg"],
   },
   {
     id: "w5",
@@ -67,6 +77,7 @@ export const projects: Project[] = [
     scope: "UX, build, documentation",
     url: null,
     body: "An assessment framework that existed as a very long spreadsheet. Turned into something governments can actually fill in — sectioned, saveable, and clear about why each question is being asked.",
+    images: ["/work/w5.jpg"],
   },
   {
     id: "w6",
