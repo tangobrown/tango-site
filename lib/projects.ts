@@ -47,6 +47,7 @@ export const projects: Project[] = [
     scope: "Design, build, checkout",
     url: null,
     body: "A brand-led shop front with a checkout that behaves itself through December. Built for the seasonal spike: fast product pages, honest stock counts, and gifting flows that do not fall over on the busiest weekend of the year.",
+    images: ["/work/w3.jpg"],
   },
   {
     id: "w4",
