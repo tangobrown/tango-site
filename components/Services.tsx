@@ -12,8 +12,8 @@ const services: Service[] = [
     iconSrc: "/icons/chart.webp",
   },
   {
-    title: "Site Hosting",
-    body: "Managed hosting that stays quick and secure. Updates, backups and the odd Sunday fix handled, so your site is never your problem.",
+    title: "AI & Automation",
+    body: "The time-consuming stuff — repetitive tasks, workflows, reporting and customer interactions — automated quietly in the background, so your week gets shorter and nothing slips through.",
     iconSrc: "/icons/layers.webp",
   },
 ];
