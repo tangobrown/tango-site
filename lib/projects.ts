@@ -118,6 +118,7 @@ export const projects: Project[] = [
     scope: "Design and build",
     url: "https://ipjlondon.com/",
     body: "A London furniture consultancy that needed a site as considered as the pieces they source — calm, editorial and quietly confident. Most visitors arrive already referred; the job was to confirm, in a few seconds, that they're in the right hands.",
+    cover: "/work/tablet/ipj.png",
   },
   {
     id: "w8",
