@@ -113,11 +113,11 @@ export const projects: Project[] = [
   {
     id: "w7",
     title: "IPJ London",
-    meta: "Practice site · London",
+    meta: "Furniture consultancy · London",
     year: "2023",
     scope: "Design and build",
-    url: null,
-    body: "A quiet, confident presence for a London practice — and a site that survives referrals. Most visitors arrive having already been told the practice is good; the job was to confirm it in ten seconds.",
+    url: "https://ipjlondon.com/",
+    body: "A London furniture consultancy that needed a site as considered as the pieces they source — calm, editorial and quietly confident. Most visitors arrive already referred; the job was to confirm, in a few seconds, that they're in the right hands.",
   },
   {
     id: "w8",
