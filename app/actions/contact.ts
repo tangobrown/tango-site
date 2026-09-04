@@ -60,7 +60,7 @@ export async function submitContact(
         HtmlBody: `<p><strong>Name:</strong> ${escapeHtml(name)}<br/><strong>Email:</strong> ${escapeHtml(
           email,
         )}</p><p style="white-space:pre-wrap">${escapeHtml(message)}</p>`,
-        MessageStream: "outbound",
+        MessageStream: "tango-brown-form",
       }),
     });
 
