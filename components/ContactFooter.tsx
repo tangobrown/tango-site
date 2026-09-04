@@ -10,7 +10,7 @@ const initialState: ContactState = { status: "idle" };
 const labelClass =
   "flex flex-col gap-2 text-[12px] uppercase tracking-[0.08em] text-muted";
 const inputClass =
-  "border-0 border-b border-hairdark bg-transparent px-0 py-[10px] text-[16px] text-cream-text outline-none transition-colors focus:border-rust";
+  "w-full rounded-[6px] border border-hairdark bg-[rgba(246,241,233,0.07)] px-[15px] py-[13px] text-[16px] text-cream-text outline-none transition-colors placeholder:text-muted focus:border-rust focus:bg-[rgba(246,241,233,0.1)]";
 
 function SubmitButton() {
   const { pending } = useFormStatus();
