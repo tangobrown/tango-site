@@ -8,7 +8,7 @@ const services: Service[] = [
   },
   {
     title: "Optimisation",
-    body: "I get more local customers to your website through Google and AI search, then keep improving the site so more of them turn into enquiries. You'll get a simple report each month to update you on progress.",
+    body: "I get more local customers to your website through Google and AI search, then keep improving the site so more of them turn into enquiries to grow your business.",
     iconSrc: "/icons/chart.webp",
   },
   {
