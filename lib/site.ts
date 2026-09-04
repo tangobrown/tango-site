@@ -3,10 +3,8 @@
 
 export const site = {
   name: "Tim Brown",
-  email: "hello@timbrown.co",
-  tel: "+44 7000 000 000",
-  telHref: "tel:+447000000000",
-  linkedin: "https://www.linkedin.com",
+  email: "tim@tangobrown.com",
+  linkedin: "https://www.linkedin.com/in/timbrown-exeter/",
   location: "Devon, UK — working with clients anywhere",
   copyright: "© 2026 Tim Brown",
 } as const;

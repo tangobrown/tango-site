@@ -49,10 +49,12 @@ export default function ContactFooter() {
                 {site.email}
               </a>
               <a
-                href={site.telHref}
+                href={site.linkedin}
+                target="_blank"
+                rel="noreferrer"
                 className="self-start border-b border-hairdark pb-[6px] text-[17px] text-cream-text transition-colors hover:border-rust"
               >
-                {site.tel}
+                Connect on LinkedIn
               </a>
               <span className="text-[15px] text-muted">{site.location}</span>
             </div>
