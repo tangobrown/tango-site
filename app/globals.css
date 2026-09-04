@@ -3,11 +3,6 @@
 @tailwind utilities;
 
 @layer base {
-  :root {
-    /* Body font (headings use --font-bebas → Staatliches via next/font). */
-    --font-public: "Scoutie Sans";
-  }
-
   html {
     scroll-behavior: smooth;
   }
@@ -17,6 +12,7 @@
     background: #faf7f2; /* cream */
     color: #1f1d1a; /* ink */
     font-family: var(--font-public), system-ui, sans-serif;
+    font-weight: 500;
     -webkit-font-smoothing: antialiased;
     overflow-x: hidden;
   }
