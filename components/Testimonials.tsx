@@ -10,7 +10,7 @@ function Card({ t, hidden }: { t: Testimonial; hidden?: boolean }) {
         &ldquo;{t.quote}&rdquo;
       </blockquote>
       <figcaption className="flex items-center gap-3">
-        <span className="flex h-10 w-10 flex-none items-center justify-center overflow-hidden rounded-full border border-rule-card bg-stone">
+        <span className="flex h-[52px] w-[52px] flex-none items-center justify-center overflow-hidden rounded-full border border-rule-card bg-stone">
           {t.logo ? (
             // eslint-disable-next-line @next/next/no-img-element
             <img src={t.logo} alt="" className="h-full w-full object-cover" />
