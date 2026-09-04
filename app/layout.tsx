@@ -22,11 +22,11 @@ const SITE_URL = "https://timbrown.co";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
-  title: "Tim Brown — Freelance web design, SEO & automation in Devon",
+  title: "Tim Brown | Digital Growth Expert for UK Small Businesses",
   description:
     "Freelance web design, SEO and AI workflows, built by one person who answers the phone. Based in Devon, working with clients anywhere.",
   openGraph: {
-    title: "Tim Brown — Freelance web design, SEO & automation",
+    title: "Tim Brown | Digital Growth Expert for UK Small Businesses",
     description:
       "Websites, search and quiet automation — built by one person who answers the phone.",
     url: SITE_URL,
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Tim Brown — Freelance web design, SEO & automation",
+    title: "Tim Brown | Digital Growth Expert for UK Small Businesses",
     description:
       "Websites, search and quiet automation — built by one person who answers the phone.",
   },
