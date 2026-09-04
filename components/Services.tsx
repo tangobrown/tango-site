@@ -8,7 +8,7 @@ const services: Service[] = [
   },
   {
     title: "Optimisation",
-    body: "Local and technical SEO plus the speed tweaks that keep pages loading in a blink. Clear reporting, no monthly retainer padding.",
+    body: "I get more local customers to your website through Google and AI search, then keep improving the site so more of them turn into enquiries. You'll get a simple report each month to update you on progress.",
     iconSrc: "/icons/chart.webp",
   },
   {
