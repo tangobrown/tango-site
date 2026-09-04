@@ -1,9 +1,11 @@
 import type { Metadata, Viewport } from "next";
-import { Bebas_Neue, Public_Sans } from "next/font/google";
+import { Staatliches, Public_Sans } from "next/font/google";
 import "./globals.css";
 
-// Bebas Neue (400) — headings, wordmark, band, card titles.
-const bebas = Bebas_Neue({
+// Staatliches (400) — headings, wordmark, band, card titles.
+// (Kept on the --font-bebas variable / `font-bebas` token so all existing
+// heading classes pick it up.)
+const heading = Staatliches({
   subsets: ["latin"],
   weight: ["400"],
   variable: "--font-bebas",
@@ -69,7 +71,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en-GB" className={`${bebas.variable} ${publicSans.variable}`}>
+    <html lang="en-GB" className={`${heading.variable} ${publicSans.variable}`}>
       <body>
         <script
           type="application/ld+json"
