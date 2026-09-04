@@ -131,11 +131,12 @@ export const projects: Project[] = [
   },
   {
     id: "w9",
-    title: "Highgrove",
-    meta: "Estate · Editorial pages",
+    title: "Highgrove Retirement Village",
+    meta: "Retirement village · New Zealand",
     year: "2022",
-    scope: "Editorial layouts",
-    url: null,
-    body: "Careful, understated pages for a name that does not need shouting about. Generous imagery, restrained type, and layouts that hold up whether there are three photographs or thirty.",
+    scope: "Design, build, editorial layouts",
+    url: "https://highgrove.co.nz",
+    body: "A retirement village where the website has to reassure two audiences at once — the person moving in and the family helping them decide. Warm, generous imagery and plain, unhurried pages that make the next step feel easy.",
+    cover: "/work/tablet/highgrove.png",
   },
 ];
