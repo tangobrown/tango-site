@@ -33,6 +33,8 @@ export default function Services() {
             return (
               <div
                 key={service.title}
+                data-reveal
+                style={{ transitionDelay: `${i * 90}ms` }}
                 className={`flex flex-col gap-10 border-rule p-[40px_24px_36px] lg:gap-[150px] lg:p-[66px_40px_56px] ${borders}`}
               >
                 {/* eslint-disable-next-line @next/next/no-img-element */}

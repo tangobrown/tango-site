@@ -28,7 +28,10 @@ export default function AboutBlock({
 }: Props) {
   return (
     <section id={id} className={`py-16 ${sectionClassName}`}>
-      <div className="mx-auto grid max-w-content grid-cols-1 gap-6 px-5 lg:grid-cols-2 lg:items-center lg:gap-[7vw] lg:px-8">
+      <div
+        data-reveal
+        className="mx-auto grid max-w-content grid-cols-1 gap-6 px-5 lg:grid-cols-2 lg:items-center lg:gap-[7vw] lg:px-8"
+      >
         <div
           className={`relative order-1 h-[400px] bg-stone lg:h-[540px] ${
             imageSide === "right" ? "lg:order-2" : "lg:order-1"

@@ -33,7 +33,7 @@ export default function ContactFooter() {
       <div className="mx-auto max-w-content px-5 pb-8 pt-16 lg:px-8 lg:pb-[60px] lg:pt-[110px]">
         <div className="grid grid-cols-1 gap-10 lg:grid-cols-2 lg:gap-[8vw]">
           {/* Left */}
-          <div className="flex flex-col gap-[26px]">
+          <div data-reveal className="flex flex-col gap-[26px]">
             <h2 className="m-0 text-pretty font-bebas text-[clamp(38px,4.1vw,62px)] font-normal leading-[1.0] tracking-[0.01em]">
               Tell me what you&apos;re trying to build.
             </h2>
@@ -61,7 +61,12 @@ export default function ContactFooter() {
           </div>
 
           {/* Right — form */}
-          <form action={formAction} className="flex flex-col gap-5">
+          <form
+            action={formAction}
+            data-reveal
+            style={{ transitionDelay: "120ms" }}
+            className="flex flex-col gap-5"
+          >
             <label className={labelClass}>
               Name
               <input type="text" name="name" placeholder="Your name" className={inputClass} />

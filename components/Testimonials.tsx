@@ -45,7 +45,7 @@ function Row({ items, direction }: { items: Testimonial[]; direction: "left" | "
 export default function Testimonials() {
   return (
     <section className="overflow-hidden pb-[130px] pt-[10px]">
-      <div className="mx-auto mb-14 max-w-content px-5 lg:px-8">
+      <div data-reveal className="mx-auto mb-14 max-w-content px-5 lg:px-8">
         <h2 className="mx-auto max-w-[24ch] text-pretty text-center font-bebas text-[clamp(32px,3.4vw,50px)] font-normal leading-[1.04]">
           See what people say about me.
         </h2>

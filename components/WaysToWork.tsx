@@ -23,7 +23,7 @@ export default function WaysToWork() {
   return (
     <section className="py-16 lg:pb-[116px] lg:pt-[64px]">
       <div className="mx-auto max-w-content px-5 lg:px-8">
-        <div className="border border-rule bg-white p-7 lg:p-14">
+        <div data-reveal className="border border-rule bg-white p-7 lg:p-14">
           <div className="flex flex-col gap-4 lg:max-w-[640px]">
           <h2 className="m-0 font-bebas text-[clamp(32px,3.3vw,50px)] font-normal leading-[1.15]">
             Ways to work together

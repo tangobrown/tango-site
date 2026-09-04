@@ -3,6 +3,7 @@ import ContactFooter from "@/components/ContactFooter";
 import ExpectationsBand from "@/components/ExpectationsBand";
 import Hero from "@/components/Hero";
 import Intro from "@/components/Intro";
+import ScrollReveal from "@/components/ScrollReveal";
 import Services from "@/components/Services";
 import SiteNav from "@/components/SiteNav";
 import Testimonials from "@/components/Testimonials";
@@ -50,6 +51,7 @@ export default function Home() {
         <Testimonials />
       </main>
       <ContactFooter />
+      <ScrollReveal />
     </>
   );
 }

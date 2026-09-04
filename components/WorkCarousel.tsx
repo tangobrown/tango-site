@@ -43,7 +43,10 @@ export default function WorkCarousel() {
 
   return (
     <section id="work" className="overflow-hidden px-5 py-20 lg:py-[120px]">
-      <h2 className="mx-auto mb-[54px] max-w-[20ch] text-pretty text-center font-bebas text-[clamp(34px,3.7vw,54px)] font-normal leading-[1.04]">
+      <h2
+        data-reveal
+        className="mx-auto mb-[54px] max-w-[20ch] text-pretty text-center font-bebas text-[clamp(34px,3.7vw,54px)] font-normal leading-[1.04]"
+      >
         What have I been working on lately?
       </h2>
 
