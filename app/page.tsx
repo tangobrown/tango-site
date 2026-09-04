@@ -32,7 +32,7 @@ export default function Home() {
           imageSrc="/about-1.jpg"
           imageAlt="Tim Brown"
           imageSide="left"
-          sectionClassName="lg:py-[104px]"
+          sectionClassName="py-12 lg:pt-[60px] lg:pb-[104px]"
         />
         <AboutBlock
           heading="Who do I work with?"
@@ -45,7 +45,7 @@ export default function Home() {
           imageSrc="/about-2.jpg"
           imageAlt="Tim Brown at work"
           imageSide="right"
-          sectionClassName="lg:pb-[116px] lg:pt-[24px]"
+          sectionClassName="py-16 lg:pb-[116px] lg:pt-[24px]"
         />
         <WaysToWork />
         <Testimonials />

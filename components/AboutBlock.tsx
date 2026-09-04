@@ -27,7 +27,7 @@ export default function AboutBlock({
   imageAlt,
 }: Props) {
   return (
-    <section id={id} className={`py-16 ${sectionClassName}`}>
+    <section id={id} className={sectionClassName}>
       <div
         data-reveal
         className="mx-auto grid max-w-content grid-cols-1 gap-6 px-5 lg:grid-cols-2 lg:items-center lg:gap-[7vw] lg:px-8"

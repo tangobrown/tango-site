@@ -42,7 +42,7 @@ export default function WorkCarousel() {
   const activeProject = items[active];
 
   return (
-    <section id="work" className="overflow-hidden px-5 py-20 lg:py-[120px]">
+    <section id="work" className="overflow-hidden px-5 pt-20 pb-12 lg:pt-[120px] lg:pb-[64px]">
       <h2
         data-reveal
         className="mx-auto mb-[54px] max-w-[20ch] text-pretty text-center font-bebas text-[clamp(34px,3.7vw,54px)] font-normal leading-[1.04]"
