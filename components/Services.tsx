@@ -13,7 +13,7 @@ const services: Service[] = [
   },
   {
     title: "AI & Automation",
-    body: "The time-consuming stuff — repetitive tasks, workflows, reporting and customer interactions — automated quietly in the background, so your week gets shorter and nothing slips through.",
+    body: "Implementation of AI & Automation workflows to help free up more of your time and grow. With all of the noise about AI, I help to cut through that and find what works practically for your business.",
     iconSrc: "/icons/layers.webp",
   },
 ];
