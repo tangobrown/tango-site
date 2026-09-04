@@ -3,6 +3,11 @@
 @tailwind utilities;
 
 @layer base {
+  :root {
+    /* Body font (headings use --font-bebas → Staatliches via next/font). */
+    --font-public: "Scoutie Sans";
+  }
+
   html {
     scroll-behavior: smooth;
   }

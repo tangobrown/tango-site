@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Staatliches, Public_Sans } from "next/font/google";
+import { Staatliches } from "next/font/google";
 import "./globals.css";
 
 // Staatliches (400) — headings, wordmark, band, card titles.
@@ -12,13 +12,9 @@ const heading = Staatliches({
   display: "swap",
 });
 
-// Public Sans (300–700) — body, nav, buttons, forms, quotes.
-const publicSans = Public_Sans({
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
-  variable: "--font-public",
-  display: "swap",
-});
+// Body font is Scoutie Sans (300–700), loaded via a <link> in <head> below
+// and wired to the --font-public variable in globals.css. It ships too new to
+// be in next/font's catalogue yet, hence the stylesheet approach.
 
 const SITE_URL = "https://timbrown.co";
 
@@ -71,7 +67,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en-GB" className={`${heading.variable} ${publicSans.variable}`}>
+    <html lang="en-GB" className={heading.variable}>
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Scoutie+Sans:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet"
+        />
+      </head>
       <body>
         <script
           type="application/ld+json"
