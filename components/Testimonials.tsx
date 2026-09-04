@@ -9,9 +9,17 @@ function Card({ t, hidden }: { t: Testimonial; hidden?: boolean }) {
       <blockquote className="m-0 text-[16px] leading-[1.6] text-ink lg:text-[17px]">
         &ldquo;{t.quote}&rdquo;
       </blockquote>
-      <figcaption className="flex flex-col gap-[3px]">
-        <span className="text-[14px] font-medium">{t.name}</span>
-        <span className="text-[13px] text-muted">{t.company}</span>
+      <figcaption className="flex items-center gap-3">
+        <span className="flex h-10 w-10 flex-none items-center justify-center overflow-hidden rounded-full border border-rule-card bg-stone">
+          {t.logo ? (
+            // eslint-disable-next-line @next/next/no-img-element
+            <img src={t.logo} alt="" className="h-full w-full object-cover" />
+          ) : null}
+        </span>
+        <span className="flex flex-col gap-[3px]">
+          <span className="text-[14px] font-medium">{t.name}</span>
+          <span className="text-[13px] text-muted">{t.company}</span>
+        </span>
       </figcaption>
     </figure>
   );

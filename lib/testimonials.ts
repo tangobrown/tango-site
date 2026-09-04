@@ -5,6 +5,8 @@ export type Testimonial = {
   quote: string;
   name: string;
   company: string;
+  /** Small circular company logo mark shown beside the name. */
+  logo?: string;
 };
 
 export const testimonialsRow1: Testimonial[] = [
