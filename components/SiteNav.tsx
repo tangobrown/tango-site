@@ -10,8 +10,8 @@ export default function SiteNav() {
   const [open, setOpen] = useState(false);
 
   return (
-    <div className="lg:hidden">
-      <header className="sticky top-0 z-30 flex items-center justify-between bg-ink-dark px-5 py-2 text-cream-text">
+    <>
+      <header className="sticky top-0 z-30 flex items-center justify-between bg-ink-dark px-5 py-2 text-cream-text lg:hidden">
         <a
           href="#top"
           aria-label="Tim Brown — home"
@@ -47,7 +47,7 @@ export default function SiteNav() {
       </header>
 
       {open && (
-        <div className="fixed inset-0 z-40 flex flex-col bg-ink-dark px-5 pb-10 pt-3 text-cream-text">
+        <div className="fixed inset-0 z-40 flex flex-col bg-ink-dark px-5 pb-10 pt-3 text-cream-text lg:hidden">
           <div className="flex items-center justify-between py-1">
             <a
               href="#top"
@@ -90,6 +90,6 @@ export default function SiteNav() {
           </a>
         </div>
       )}
-    </div>
+    </>
   );
 }
