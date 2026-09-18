@@ -19,10 +19,10 @@ export default function SiteNav() {
 
   return (
     <>
-      {/* Desktop header — sticky, shrinks on scroll */}
+      {/* Desktop header — fixed, transparent over the hero, dark bar on scroll */}
       <header
-        className={`sticky top-0 z-40 hidden bg-ink-dark text-cream-text transition-shadow duration-300 lg:block ${
-          scrolled ? "shadow-[0_2px_24px_rgba(0,0,0,0.28)]" : ""
+        className={`fixed inset-x-0 top-0 z-40 hidden text-cream-text transition-[background-color,box-shadow] duration-300 lg:block ${
+          scrolled ? "bg-ink-dark shadow-[0_2px_24px_rgba(0,0,0,0.28)]" : "bg-transparent"
         }`}
       >
         <div
@@ -52,7 +52,7 @@ export default function SiteNav() {
               <a
                 key={link.href}
                 href={link.href}
-                className="text-[13px] uppercase tracking-[0.06em] text-cream transition-colors hover:text-white"
+                className="text-[13px] uppercase tracking-[0.06em] text-cream transition-colors hover:text-white [text-shadow:0_1px_6px_rgba(0,0,0,0.35)]"
               >
                 {link.label}
               </a>

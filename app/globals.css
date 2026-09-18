@@ -7,6 +7,19 @@
     scroll-behavior: smooth;
   }
 
+  /* Keep anchored sections clear of the fixed desktop header. */
+  section[id],
+  footer[id] {
+    scroll-margin-top: 72px;
+  }
+
+  @media (min-width: 1024px) {
+    section[id],
+    footer[id] {
+      scroll-margin-top: 96px;
+    }
+  }
+
   body {
     margin: 0;
     background: #faf7f2; /* cream */
