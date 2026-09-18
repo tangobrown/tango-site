@@ -27,7 +27,7 @@ export const projects: Project[] = [
   {
     id: "w1",
     title: "Devon Joinery",
-    meta: "Joinery workshop · Devon",
+    meta: "Carpentry & Joinery workshop · Devon",
     year: "2025",
     scope: "Site, copy shaping, local SEO",
     url: null,
