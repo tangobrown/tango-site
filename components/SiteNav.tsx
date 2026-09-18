@@ -26,7 +26,7 @@ export default function SiteNav() {
         }`}
       >
         <div
-          className={`mx-auto flex max-w-content items-center justify-between px-8 transition-all duration-300 ${
+          className={`flex items-center justify-between px-8 transition-all duration-300 lg:px-11 ${
             scrolled ? "py-[10px]" : "py-[18px]"
           }`}
         >
