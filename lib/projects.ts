@@ -58,16 +58,6 @@ export const projects: Project[] = [
     images: ["/work/torbay.jpg"],
   },
   {
-    id: "moss",
-    title: "The Moss Man",
-    meta: "House washing · Northland, NZ",
-    year: "2025",
-    scope: "Site, local SEO",
-    url: "https://themossman.co.nz",
-    body: "A house washing and exterior cleaning business that wanted to own the local search across Kerikeri and the Bay of Islands. A bold, friendly site built around quote requests — quick to skim, easy to trust, and impossible to miss the phone number.",
-    cover: "/work/tablet/moss.png",
-  },
-  {
     id: "w3",
     title: "The Old Fashioned Cocktail Co.",
     meta: "Drinks brand · E-commerce",
@@ -117,8 +107,9 @@ export const projects: Project[] = [
     meta: "Manufacturing group · Bilingual",
     year: "2023",
     scope: "Bilingual site, CMS",
-    url: null,
+    url: "https://sanwei-asia.com/",
     body: "A bilingual site for a manufacturing group, built to be edited from two time zones without either side breaking the other. Structured content, mirrored layouts, one source of truth.",
+    cover: "/work/tablet/sanwei.png",
   },
   {
     id: "w7",
