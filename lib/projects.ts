@@ -38,7 +38,7 @@ export const projects: Project[] = [
   {
     id: "w2",
     title: "Vowles Carpentry",
-    meta: "Carpentry · Somerset",
+    meta: "Building & Carpentry · Teignmouth",
     year: "2025",
     scope: "Site, phone-first editing",
     url: null,
@@ -60,7 +60,7 @@ export const projects: Project[] = [
   {
     id: "w3",
     title: "The Old Fashioned Cocktail Co.",
-    meta: "Drinks brand · E-commerce",
+    meta: "Mobile Cocktail Bar · New York",
     year: "2024",
     scope: "Design, build, checkout",
     url: null,
@@ -71,7 +71,7 @@ export const projects: Project[] = [
   {
     id: "w4",
     title: "PIM-PAM",
-    meta: "World Bank programme",
+    meta: "World Bank Programme Website",
     year: "2024",
     scope: "Interface design, front-end",
     url: null,
@@ -82,7 +82,7 @@ export const projects: Project[] = [
   {
     id: "cbd",
     title: "Country Benchmarking",
-    meta: "World Bank programme",
+    meta: "World Bank Dashboard",
     year: "2024",
     scope: "Data visualisation, front-end",
     url: null,
@@ -93,7 +93,7 @@ export const projects: Project[] = [
   {
     id: "w5",
     title: "InfraGov Assessment Tool",
-    meta: "World Bank programme",
+    meta: "World Bank Dashboard",
     year: "2023",
     scope: "UX, build, documentation",
     url: null,
@@ -104,7 +104,7 @@ export const projects: Project[] = [
   {
     id: "w6",
     title: "Sanwei Asia",
-    meta: "Manufacturing group · Bilingual",
+    meta: "Engineering & Manufacturing · Taiwan & UK",
     year: "2023",
     scope: "Bilingual site, CMS",
     url: "https://sanwei-asia.com/",
@@ -114,21 +114,12 @@ export const projects: Project[] = [
   {
     id: "w7",
     title: "IPJ London",
-    meta: "Furniture consultancy · London",
+    meta: "Furniture Consultancy · London",
     year: "2023",
     scope: "Design and build",
     url: "https://ipjlondon.com/",
     body: "A London furniture consultancy that needed a site as considered as the pieces they source — calm, editorial and quietly confident. Most visitors arrive already referred; the job was to confirm, in a few seconds, that they're in the right hands.",
     cover: "/work/tablet/ipj.png",
-  },
-  {
-    id: "w8",
-    title: "505 Economics",
-    meta: "Research consultancy",
-    year: "2022",
-    scope: "Site, publication system",
-    url: null,
-    body: "A research consultancy where the writing does the selling, so nothing gets in its way. Long-form pages built for reading, and a publication flow that takes minutes rather than an afternoon.",
   },
   {
     id: "w9",
