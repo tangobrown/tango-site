@@ -1,16 +1,73 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import ArrowIcon from "./ArrowIcon";
 import { navLinks } from "@/lib/site";
 
-// Mobile-only chrome: a slim sticky dark header with a hamburger that opens
-// a full-screen menu. Hidden on desktop (the hero carries its own nav).
+// Site chrome. On desktop a sticky header that shrinks once you scroll; on
+// mobile a slim sticky bar with a hamburger that opens a full-screen menu.
 export default function SiteNav() {
   const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 20);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   return (
     <>
+      {/* Desktop header — sticky, shrinks on scroll */}
+      <header
+        className={`sticky top-0 z-40 hidden bg-ink-dark text-cream-text transition-shadow duration-300 lg:block ${
+          scrolled ? "shadow-[0_2px_24px_rgba(0,0,0,0.28)]" : ""
+        }`}
+      >
+        <div
+          className={`mx-auto flex max-w-content items-center justify-between px-8 transition-all duration-300 ${
+            scrolled ? "py-[10px]" : "py-[18px]"
+          }`}
+        >
+          <a href="#top" aria-label="Tim Brown — home" className="inline-flex items-center gap-3">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/logo.png"
+              alt=""
+              className={`w-auto transition-all duration-300 ${scrolled ? "h-9" : "h-12"}`}
+            />
+            <span
+              className={`flex flex-col font-bebas leading-[0.88] tracking-[0.02em] text-white transition-all duration-300 ${
+                scrolled ? "text-[18px]" : "text-[22px]"
+              }`}
+            >
+              <span>Tim</span>
+              <span>Brown</span>
+            </span>
+          </a>
+
+          <nav className="flex items-center gap-9">
+            {navLinks.map((link) => (
+              <a
+                key={link.href}
+                href={link.href}
+                className="text-[13px] uppercase tracking-[0.06em] text-cream transition-colors hover:text-white"
+              >
+                {link.label}
+              </a>
+            ))}
+            <a
+              href="#contact"
+              className="inline-flex items-center gap-[9px] bg-rust px-[22px] py-[11px] text-[13px] uppercase tracking-[0.04em] text-white transition-colors hover:bg-rust-dark"
+            >
+              Let&apos;s connect <ArrowIcon size={16} />
+            </a>
+          </nav>
+        </div>
+      </header>
+
+      {/* Mobile header */}
       <header className="sticky top-0 z-30 flex items-center justify-between bg-ink-dark px-5 py-2 text-cream-text lg:hidden">
         <a
           href="#top"
