@@ -37,8 +37,8 @@ export default function Home() {
         <AboutBlock
           heading="Who do I work with?"
           paragraphs={[
-            "I work with small businesses across the UK that have big plans and not much time — a builder in Exeter, a clinic in Plymouth, an online shop shipping nationwide. What you share is ambition, and a to-do list that keeps getting longer.",
-            "Think of me as your tech, web and marketing department, minus the office space, the salaries and the Christmas party bill. I learn how your business runs, then look after the lot: website, hosting, SEO, and the AI tools and automations that quietly save you hours every week - you won't be handed to a junior or lost in a ticket system.",
+            "I work with small businesses across the UK that have big plans and not much time. You might be a builder in Exeter, a clinic in Plymouth, an online shop shipping nationwide. What you share is ambition, and a to-do list that keeps getting longer.",
+            "Think of me as your tech, web and marketing department, minus the office space, the salaries and the Christmas party bill. I learn how your business runs, then look after the lot: website, hosting, SEO, and the AI tools and automations that quietly save you hours every week. You'll deal with me and you won't be handed to a junior or lost in a ticket system.",
           ]}
           linkLabel="Start a project"
           imageLabel="Studio, desk or process shot"
