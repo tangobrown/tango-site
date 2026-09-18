@@ -1,14 +1,29 @@
 import { testimonialsRow1, testimonialsRow2, type Testimonial } from "@/lib/testimonials";
 
+function Stars() {
+  return (
+    <div className="flex gap-[3px] text-rust" aria-label="5 out of 5 stars">
+      {Array.from({ length: 5 }).map((_, i) => (
+        <svg key={i} width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M12 2.5l2.9 5.87 6.48.94-4.69 4.57 1.11 6.45L12 17.77l-5.8 3.05 1.1-6.45L2.62 9.8l6.48-.94L12 2.5z" />
+        </svg>
+      ))}
+    </div>
+  );
+}
+
 function Card({ t, hidden }: { t: Testimonial; hidden?: boolean }) {
   return (
     <figure
       aria-hidden={hidden || undefined}
       className="m-0 flex min-h-[220px] w-[300px] flex-none flex-col justify-between gap-[26px] border border-rule-card bg-white p-[26px_24px] lg:min-h-[260px] lg:w-[400px] lg:p-[34px_34px_30px]"
     >
-      <blockquote className="m-0 text-[16px] leading-[1.6] text-ink lg:text-[17px]">
-        &ldquo;{t.quote}&rdquo;
-      </blockquote>
+      <div className="flex flex-col gap-[16px]">
+        <Stars />
+        <blockquote className="m-0 text-[16px] leading-[1.6] text-ink lg:text-[17px]">
+          &ldquo;{t.quote}&rdquo;
+        </blockquote>
+      </div>
       <figcaption className="flex items-center gap-3">
         <span className="flex h-[52px] w-[52px] flex-none items-center justify-center overflow-hidden rounded-full border border-rule-card bg-stone">
           {t.logo ? (
