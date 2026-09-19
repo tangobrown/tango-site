@@ -24,7 +24,7 @@ export default function Home() {
           id="about"
           heading="A bit about me"
           paragraphs={[
-            "Hi, I'm Tim. I've been designing websites and running marketing since 2010, long enough to see plenty of algorithm changes and tech shifts come and go. Now it's AI, and I'm excited about how it can help small businesses automate the day-to-day and free up time for the work that matters. I'm also embracing for ongoing SEO services to make things more cost-effective for my customers.",
+            "Hi, I'm Tim. I've been designing websites and running marketing since 2010, long enough to see plenty of algorithm changes and tech shifts come and go. Now it's AI, and I'm excited about how it can help small businesses automate the day-to-day and free up time for the work that matters. I'm also embracing it for ongoing SEO services to make things more cost-effective for my customers.",
             "A Kiwi by birth, I now live in Devon with my wife and son. When I'm not working, you'll find me watching rugby, cricket, American football or golf, or out exploring the South West countryside.",
           ]}
           linkLabel="Let's connect"
