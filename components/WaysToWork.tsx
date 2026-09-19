@@ -29,8 +29,7 @@ export default function WaysToWork() {
             Ways to work together
           </h2>
           <p className="m-0 text-[17px] leading-[1.75] text-ink-soft">
-            However far you want to take it — from a single build to a standing partnership. Most
-            people start at one and move down over time.
+            There&apos;s a few different ways I can work with you.
           </p>
         </div>
 
