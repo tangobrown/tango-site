@@ -5,17 +5,17 @@ const ways: Way[] = [
   {
     n: "01",
     title: "Build & host",
-    body: "I design and build your website, and host it — kept fast, secure and up to date so you never have to think about it.",
+    body: "I design and build you a beautiful new website, and host it. I keep it blazing fast, secure and up to date so you never have to think about it.",
   },
   {
     n: "02",
     title: "Build & optimise",
-    body: "I design and build your website, and optimise it for SEO on an ongoing basis — steadily growing the search traffic and enquiries that matter.",
+    body: "I design and build your website, plus I optimise it for SEO on an ongoing basis, steadily growing the search traffic and enquiries that matter.",
   },
   {
     n: "03",
     title: "Fully embedded",
-    body: "I become entrenched in your business — website, SEO, automation and AI working together, run by one person who knows how it all fits.",
+    body: "I become entrenched in your business. Website, SEO, automation and AI to save you time and grow your business month-by-month.",
   },
 ];
 
