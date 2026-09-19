@@ -93,7 +93,7 @@ export default function WorkCarousel() {
       </div>
 
       {/* Caption for the active project */}
-      <div className="mx-auto mt-7 flex flex-col items-center gap-1 text-center lg:mt-9">
+      <div className="mx-auto mt-2 flex flex-col items-center gap-1 text-center lg:mt-3">
         <h3 className="m-0 font-bebas text-[clamp(26px,2.6vw,36px)] font-normal leading-[1.05] text-ink">
           {activeProject.title}
         </h3>
