@@ -29,7 +29,7 @@ export default function WaysToWork() {
             Ways to work together
           </h2>
           <p className="m-0 text-[17px] leading-[1.75] text-ink-soft">
-            There&apos;s a few different ways I can work with you.
+            There&apos;s a few different ways I can work with you and your business.
           </p>
         </div>
 
