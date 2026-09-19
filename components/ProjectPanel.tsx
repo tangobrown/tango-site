@@ -82,13 +82,13 @@ export default function ProjectPanel({
           ✕
         </button>
 
-        <div className="relative flex h-[220px] flex-none items-center justify-center overflow-hidden bg-cream p-6 lg:h-[300px] lg:p-8">
+        <div className="relative flex h-[250px] flex-none items-center justify-start overflow-hidden bg-cream px-8 py-4 lg:h-[380px] lg:py-5 lg:pl-[27px] lg:pr-9">
           {project?.cover ? (
             // eslint-disable-next-line @next/next/no-img-element
             <img
               src={project.cover}
               alt={project.title}
-              className="h-full w-full object-contain drop-shadow-[0_12px_22px_rgba(31,29,26,0.1)]"
+              className="h-full w-auto max-w-full object-contain drop-shadow-[0_12px_22px_rgba(31,29,26,0.1)]"
             />
           ) : project ? (
             <Placeholder />
