@@ -9,18 +9,30 @@ const items = projects.filter((p) => p.cover);
 export default function WorkCarousel() {
   const [active, setActive] = useState(0);
   const [paused, setPaused] = useState(false);
+  const [stopped, setStopped] = useState(false);
   const touchX = useRef<number | null>(null);
   const n = items.length;
 
   const go = (dir: number) => setActive((a) => (a + dir + n) % n);
 
-  // Auto-advance one slide every 3s; pause on hover / reduced motion.
+  // Any manual interaction permanently stops the autoscroll (desktop + mobile).
+  const userGo = (dir: number) => {
+    setStopped(true);
+    go(dir);
+  };
+  const userGoto = (i: number) => {
+    setStopped(true);
+    setActive(i);
+  };
+
+  // Auto-advance one slide every 3s until the user interacts; pause on hover /
+  // reduced motion.
   useEffect(() => {
-    if (paused) return;
+    if (stopped || paused) return;
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
     const id = setInterval(() => setActive((a) => (a + 1) % n), 3000);
     return () => clearInterval(id);
-  }, [paused, n]);
+  }, [stopped, paused, n]);
 
   // Signed distance from the active slide, wrapped to the shortest way round.
   const rel = (i: number) => {
@@ -36,7 +48,7 @@ export default function WorkCarousel() {
   const onTouchEnd = (e: React.TouchEvent) => {
     if (touchX.current == null) return;
     const dx = e.changedTouches[0].clientX - touchX.current;
-    if (Math.abs(dx) > 40) go(dx < 0 ? 1 : -1);
+    if (Math.abs(dx) > 40) userGo(dx < 0 ? 1 : -1);
     touchX.current = null;
   };
 
@@ -61,10 +73,10 @@ export default function WorkCarousel() {
         onKeyDown={(e) => {
           if (e.key === "ArrowLeft") {
             e.preventDefault();
-            go(-1);
+            userGo(-1);
           } else if (e.key === "ArrowRight") {
             e.preventDefault();
-            go(1);
+            userGo(1);
           }
         }}
         onTouchStart={onTouchStart}
@@ -127,7 +139,7 @@ export default function WorkCarousel() {
       <div className="mt-9 flex items-center justify-center gap-6">
         <button
           type="button"
-          onClick={() => go(-1)}
+          onClick={() => userGo(-1)}
           aria-label="Previous project"
           className="flex h-11 w-11 items-center justify-center rounded-full border border-rule-btn text-ink transition-colors hover:border-rust hover:text-rust"
         >
@@ -141,7 +153,7 @@ export default function WorkCarousel() {
             <button
               key={p.id}
               type="button"
-              onClick={() => setActive(i)}
+              onClick={() => userGoto(i)}
               aria-label={`Go to ${p.title}`}
               aria-current={i === active || undefined}
               className={`h-[7px] rounded-full transition-all duration-300 ${
@@ -153,7 +165,7 @@ export default function WorkCarousel() {
 
         <button
           type="button"
-          onClick={() => go(1)}
+          onClick={() => userGo(1)}
           aria-label="Next project"
           className="flex h-11 w-11 items-center justify-center rounded-full border border-rule-btn text-ink transition-colors hover:border-rust hover:text-rust"
         >
