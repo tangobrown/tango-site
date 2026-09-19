@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { projects } from "@/lib/projects";
 
 // Coverflow — the projects that have a device-frame cover.
@@ -8,10 +8,19 @@ const items = projects.filter((p) => p.cover);
 
 export default function WorkCarousel() {
   const [active, setActive] = useState(0);
+  const [paused, setPaused] = useState(false);
   const touchX = useRef<number | null>(null);
   const n = items.length;
 
   const go = (dir: number) => setActive((a) => (a + dir + n) % n);
+
+  // Auto-advance one slide every 3s; pause on hover / reduced motion.
+  useEffect(() => {
+    if (paused) return;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    const id = setInterval(() => setActive((a) => (a + 1) % n), 3000);
+    return () => clearInterval(id);
+  }, [paused, n]);
 
   // Signed distance from the active slide, wrapped to the shortest way round.
   const rel = (i: number) => {
@@ -60,6 +69,8 @@ export default function WorkCarousel() {
         }}
         onTouchStart={onTouchStart}
         onTouchEnd={onTouchEnd}
+        onMouseEnter={() => setPaused(true)}
+        onMouseLeave={() => setPaused(false)}
       >
         {items.map((p, i) => {
           const d = rel(i);

@@ -1,4 +1,6 @@
 // The different ways clients work with Tim — an escalating set of engagements.
+import ArrowIcon from "./ArrowIcon";
+
 type Way = { n: string; title: string; body: string };
 
 const ways: Way[] = [
@@ -24,16 +26,24 @@ export default function WaysToWork() {
     <section className="py-16 lg:pb-[116px] lg:pt-[64px]">
       <div className="mx-auto max-w-content px-5 lg:px-8">
         <div data-reveal className="border border-rule bg-white p-7 lg:p-14">
-          <div className="flex flex-col gap-4 lg:max-w-[640px]">
-          <h2 className="m-0 font-bebas text-[clamp(32px,3.3vw,50px)] font-normal leading-[1.15]">
-            Ways to work together
-          </h2>
-          <p className="m-0 text-[17px] leading-[1.75] text-ink-soft">
-            There&apos;s a few different ways I can work with you and your business.
-          </p>
-        </div>
+          <div className="flex flex-col gap-6 lg:flex-row lg:items-start lg:justify-between lg:gap-10">
+            <div className="flex flex-col gap-4 lg:max-w-[640px]">
+              <h2 className="m-0 font-bebas text-[clamp(32px,3.3vw,50px)] font-normal leading-[1.15]">
+                Ways to work together
+              </h2>
+              <p className="m-0 text-[17px] leading-[1.75] text-ink-soft">
+                There&apos;s a few different ways I can work with you and your business.
+              </p>
+            </div>
+            <a
+              href="#contact"
+              className="inline-flex flex-none items-center gap-[10px] self-start bg-rust px-[26px] py-[14px] text-[14px] font-medium uppercase tracking-[0.04em] text-white transition-colors hover:bg-rust-dark"
+            >
+              Get Pricing <ArrowIcon size={17} />
+            </a>
+          </div>
 
-        <div className="mt-12 grid grid-cols-1 gap-10 md:grid-cols-3 lg:mt-16 lg:gap-12">
+          <div className="mt-12 grid grid-cols-1 gap-10 md:grid-cols-3 lg:mt-16 lg:gap-12">
           {ways.map((way) => (
             <div key={way.n} className="flex flex-col gap-4 border-t border-rule pt-6">
               <span className="font-bebas text-[34px] leading-none text-rust">{way.n}</span>
