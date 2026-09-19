@@ -185,10 +185,6 @@ export default function ProjectPanel({
               <span className="text-muted">What I did</span>
               <span className="max-w-[60%] text-right">{project?.scope}</span>
             </div>
-            <div className="flex justify-between gap-5 text-[14px]">
-              <span className="text-muted">Year</span>
-              <span>{project?.year}</span>
-            </div>
           </div>
           {project?.url ? (
             <a
