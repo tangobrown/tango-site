@@ -2,24 +2,16 @@
 
 import { useRef, useState } from "react";
 import { projects } from "@/lib/projects";
-import ProjectPanel from "./ProjectPanel";
 
 // Coverflow — the projects that have a device-frame cover.
 const items = projects.filter((p) => p.cover);
 
 export default function WorkCarousel() {
   const [active, setActive] = useState(0);
-  const [open, setOpen] = useState(false);
-  const cardRefs = useRef<(HTMLButtonElement | null)[]>([]);
   const touchX = useRef<number | null>(null);
   const n = items.length;
 
   const go = (dir: number) => setActive((a) => (a + dir + n) % n);
-
-  const closePanel = () => {
-    setOpen(false);
-    cardRefs.current[active]?.focus();
-  };
 
   // Signed distance from the active slide, wrapped to the shortest way round.
   const rel = (i: number) => {
@@ -75,20 +67,9 @@ export default function WorkCarousel() {
           const isActive = d === 0;
           const visible = abs <= 1;
           return (
-            <button
+            <div
               key={p.id}
-              ref={(el) => {
-                cardRefs.current[i] = el;
-              }}
-              type="button"
               aria-hidden={!visible || undefined}
-              aria-label={
-                isActive
-                  ? `${p.title} — ${p.meta}. Open project details.`
-                  : `Show ${p.title}`
-              }
-              tabIndex={visible ? 0 : -1}
-              onClick={() => (isActive ? setOpen(true) : setActive(i))}
               className="absolute left-1/2 top-1/2 aspect-[1196/872] w-[86vw] max-w-[840px] transition-[transform,opacity] duration-[550ms] ease-out will-change-transform"
               style={{
                 transform: `translate(-50%, -50%) translateX(${d * 62}%) scale(${
@@ -96,8 +77,7 @@ export default function WorkCarousel() {
                 })`,
                 zIndex: 20 - abs,
                 opacity: visible ? (isActive ? 1 : 0.5) : 0,
-                pointerEvents: visible ? "auto" : "none",
-                cursor: isActive ? "pointer" : "pointer",
+                pointerEvents: "none",
               }}
             >
               {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -107,7 +87,7 @@ export default function WorkCarousel() {
                 className="h-full w-full object-contain drop-shadow-[0_16px_26px_rgba(31,29,26,0.12)]"
                 draggable={false}
               />
-            </button>
+            </div>
           );
         })}
       </div>
@@ -120,13 +100,16 @@ export default function WorkCarousel() {
         <h3 className="m-0 font-bebas text-[clamp(26px,2.6vw,36px)] font-normal leading-[1.05] text-ink">
           {activeProject.title}
         </h3>
-        <button
-          type="button"
-          onClick={() => setOpen(true)}
-          className="mt-2 border-b border-underline-accent pb-1 text-[13px] font-medium uppercase tracking-[0.04em] text-ink transition-colors hover:border-rust"
-        >
-          View project
-        </button>
+        {activeProject.url ? (
+          <a
+            href={activeProject.url}
+            target="_blank"
+            rel="noreferrer"
+            className="mt-2 border-b border-underline-accent pb-1 text-[13px] font-medium uppercase tracking-[0.04em] text-ink transition-colors hover:border-rust"
+          >
+            View project
+          </a>
+        ) : null}
       </div>
 
       {/* Controls */}
@@ -168,8 +151,6 @@ export default function WorkCarousel() {
           </svg>
         </button>
       </div>
-
-      <ProjectPanel project={open ? activeProject : null} onClose={closePanel} />
     </section>
   );
 }
