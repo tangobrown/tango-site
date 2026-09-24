@@ -25,6 +25,20 @@ export async function submitContact(
   const email = ((formData.get("email") as string | null) ?? "").trim();
   const message = ((formData.get("message") as string | null) ?? "").trim();
 
+  // --- Spam guards (silent: pretend success so bots don't learn/retry) ---
+  // 1. Honeypot: a hidden field real users never see. If filled, it's a bot.
+  const honeypot = ((formData.get("company_website") as string | null) ?? "").trim();
+  if (honeypot) return { status: "success" };
+
+  // 2. Time trap: humans take a few seconds to fill the form; bots submit
+  //    instantly. Only enforced when the timestamp is present.
+  const loadedAt = Number(formData.get("loaded_at"));
+  if (loadedAt && Date.now() - loadedAt < 3000) return { status: "success" };
+
+  // 3. Link flood: legitimate enquiries rarely contain a pile of URLs.
+  const linkCount = (message.match(/https?:\/\//gi) ?? []).length;
+  if (linkCount > 4) return { status: "success" };
+
   if (!name) return { status: "error", message: "Please add your name." };
   if (!EMAIL_RE.test(email))
     return { status: "error", message: "Please add a valid email address." };

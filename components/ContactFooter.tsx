@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import { useActionState } from "react";
 import { useFormStatus } from "react-dom";
 import { submitContact, type ContactState } from "@/app/actions/contact";
@@ -27,6 +28,9 @@ function SubmitButton() {
 
 export default function ContactFooter() {
   const [state, formAction] = useActionState(submitContact, initialState);
+  // Time the form was shown — used server-side to reject instant (bot) submits.
+  const [loadedAt, setLoadedAt] = useState("");
+  useEffect(() => setLoadedAt(String(Date.now())), []);
 
   return (
     <footer id="contact" className="bg-ink-dark text-cream-text">
@@ -67,6 +71,19 @@ export default function ContactFooter() {
             style={{ transitionDelay: "120ms" }}
             className="flex flex-col gap-5"
           >
+            {/* Honeypot — hidden from people, tempting to bots. Leave it empty. */}
+            <div aria-hidden="true" className="pointer-events-none absolute left-[-9999px] h-0 w-0 overflow-hidden">
+              <label>
+                Company website
+                <input
+                  type="text"
+                  name="company_website"
+                  tabIndex={-1}
+                  autoComplete="off"
+                />
+              </label>
+            </div>
+            <input type="hidden" name="loaded_at" value={loadedAt} readOnly />
             <label className={labelClass}>
               Name
               <input type="text" name="name" placeholder="Your name" className={inputClass} />
