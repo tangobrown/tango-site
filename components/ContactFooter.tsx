@@ -122,10 +122,10 @@ export default function ContactFooter() {
         <div className="mt-16 flex flex-col items-center gap-4 border-t border-hairdark-2 pt-[26px] text-[13px] text-muted lg:mt-[90px] lg:flex-row lg:justify-between lg:gap-6">
           <span>{site.copyright}</span>
           <div className="flex gap-6">
-            <a href="#services" className="text-muted transition-colors hover:text-cream-text">
+            <a href="/#services" className="text-muted transition-colors hover:text-cream-text">
               Services
             </a>
-            <a href="#work" className="text-muted transition-colors hover:text-cream-text">
+            <a href="/#work" className="text-muted transition-colors hover:text-cream-text">
               Work
             </a>
             <a

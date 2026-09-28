@@ -30,7 +30,7 @@ export default function SiteNav() {
             scrolled ? "py-[10px]" : "py-[18px]"
           }`}
         >
-          <a href="#top" aria-label="Tim Brown — home" className="inline-flex items-center gap-3">
+          <a href="/#top" aria-label="Tim Brown — home" className="inline-flex items-center gap-3">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src="/logo.png"
@@ -70,7 +70,7 @@ export default function SiteNav() {
       {/* Mobile header */}
       <header className="sticky top-0 z-30 flex items-center justify-between bg-ink-dark px-5 py-2 text-cream-text lg:hidden">
         <a
-          href="#top"
+          href="/#top"
           aria-label="Tim Brown — home"
           className="inline-flex items-center gap-2.5"
           onClick={() => setOpen(false)}
@@ -107,7 +107,7 @@ export default function SiteNav() {
         <div className="fixed inset-0 z-40 flex flex-col bg-ink-dark px-5 pb-10 pt-3 text-cream-text lg:hidden">
           <div className="flex items-center justify-between py-1">
             <a
-              href="#top"
+              href="/#top"
               aria-label="Tim Brown — home"
               className="inline-flex"
               onClick={() => setOpen(false)}
