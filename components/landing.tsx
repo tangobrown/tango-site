@@ -1,5 +1,5 @@
-// Shared building blocks for the service sub-pages (/ecommerce,
-// /websites-for-trades). Styled to match the home page.
+// Shared building blocks for the service sub-pages (/ecommerce-websites,
+// /service-websites). Styled to match the home page.
 import type { ReactNode } from "react";
 import ArrowIcon from "./ArrowIcon";
 
