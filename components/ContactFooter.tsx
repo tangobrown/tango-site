@@ -8,6 +8,12 @@ import { site } from "@/lib/site";
 
 const initialState: ContactState = { status: "idle" };
 
+const enquiryTypes = [
+  "Website review for my business",
+  "Quote for a website build",
+  "Something else",
+] as const;
+
 const labelClass =
   "flex flex-col gap-2 text-[12px] uppercase tracking-[0.08em] text-muted";
 const inputClass =
@@ -98,7 +104,41 @@ export default function ContactFooter() {
               />
             </label>
             <label className={labelClass}>
-              What do you need?
+              What are you after?
+              <span className="relative block">
+                <select
+                  name="enquiry_type"
+                  defaultValue=""
+                  className={`${inputClass} cursor-pointer appearance-none pr-11 invalid:text-muted [&_option]:bg-ink-dark [&_option]:text-cream-text`}
+                  required
+                >
+                  <option value="" disabled>
+                    Choose an option
+                  </option>
+                  {enquiryTypes.map((type) => (
+                    <option key={type} value={type}>
+                      {type}
+                    </option>
+                  ))}
+                </select>
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth={2}
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  className="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 text-muted"
+                  aria-hidden="true"
+                >
+                  <path d="M6 9l6 6 6-6" />
+                </svg>
+              </span>
+            </label>
+            <label className={labelClass}>
+              Please provide details
               <textarea
                 name="message"
                 rows={4}

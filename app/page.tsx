@@ -30,7 +30,7 @@ export default function Home() {
           ]}
           linkLabel="Let's connect"
           imageLabel="Portrait of Tim"
-          imageSrc="/about-1.jpg"
+          imageSrc="/about-2.jpg"
           imageAlt="Tim Brown"
           imageSide="left"
           sectionClassName="py-12 lg:pt-[60px] lg:pb-[104px]"

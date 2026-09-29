@@ -16,6 +16,11 @@ export type ContactState = {
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const FALLBACK_TO = "tim@tangobrown.com";
+const ENQUIRY_TYPES = [
+  "Website review for my business",
+  "Quote for a website build",
+  "Something else",
+];
 
 export async function submitContact(
   _prev: ContactState,
@@ -24,6 +29,7 @@ export async function submitContact(
   const name = ((formData.get("name") as string | null) ?? "").trim();
   const email = ((formData.get("email") as string | null) ?? "").trim();
   const message = ((formData.get("message") as string | null) ?? "").trim();
+  const enquiryType = ((formData.get("enquiry_type") as string | null) ?? "").trim();
 
   // --- Spam guards (silent: pretend success so bots don't learn/retry) ---
   // 1. Honeypot: a hidden field real users never see. If filled, it's a bot.
@@ -42,6 +48,8 @@ export async function submitContact(
   if (!name) return { status: "error", message: "Please add your name." };
   if (!EMAIL_RE.test(email))
     return { status: "error", message: "Please add a valid email address." };
+  if (!ENQUIRY_TYPES.includes(enquiryType))
+    return { status: "error", message: "Please choose what you're after." };
   if (!message)
     return { status: "error", message: "Tell me a little about what you need." };
 
@@ -69,11 +77,11 @@ export async function submitContact(
         From: from,
         To: to,
         ReplyTo: `${name} <${email}>`,
-        Subject: `New enquiry from ${name}`,
-        TextBody: `Name: ${name}\nEmail: ${email}\n\n${message}`,
+        Subject: `New enquiry from ${name}: ${enquiryType}`,
+        TextBody: `Name: ${name}\nEmail: ${email}\nAfter: ${enquiryType}\n\n${message}`,
         HtmlBody: `<p><strong>Name:</strong> ${escapeHtml(name)}<br/><strong>Email:</strong> ${escapeHtml(
           email,
-        )}</p><p style="white-space:pre-wrap">${escapeHtml(message)}</p>`,
+        )}<br/><strong>After:</strong> ${escapeHtml(enquiryType)}</p><p style="white-space:pre-wrap">${escapeHtml(message)}</p>`,
         MessageStream: "tango-brown-form",
       }),
     });
