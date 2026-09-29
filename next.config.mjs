@@ -1,10 +1,10 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   async redirects() {
-    return [
-      { source: "/ecommerce", destination: "/ecommerce-websites", permanent: true },
-      { source: "/websites-for-trades", destination: "/service-websites", permanent: true },
-    ];
+    // The site is one page; retired sub-page URLs point back home.
+    return ["/ecommerce", "/ecommerce-websites", "/websites-for-trades", "/service-websites"].map(
+      (source) => ({ source, destination: "/", permanent: true }),
+    );
   },
 };
 

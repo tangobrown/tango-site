@@ -8,6 +8,7 @@ import Services from "@/components/Services";
 import SiteNav from "@/components/SiteNav";
 import Testimonials from "@/components/Testimonials";
 import WaysToWork from "@/components/WaysToWork";
+import WhoIWorkWith from "@/components/WhoIWorkWith";
 import WorkCarousel from "@/components/WorkCarousel";
 
 export default function Home() {
@@ -34,19 +35,7 @@ export default function Home() {
           imageSide="left"
           sectionClassName="py-12 lg:pt-[60px] lg:pb-[104px]"
         />
-        <AboutBlock
-          heading="Who do I work with?"
-          paragraphs={[
-            "I work with small businesses across the UK that have big plans and not much time. You might be a builder in Exeter, a clinic in Plymouth, an online shop shipping nationwide. What you share is ambition, and a to-do list that keeps getting longer.",
-            "Think of me as your tech, web and marketing department, minus the office space, the salaries and the Christmas party bill. I learn how your business runs, then look after the lot: website, hosting, SEO, and the AI tools and automations that quietly save you hours every week. You'll deal with me and you won't be handed to a junior or lost in a ticket system.",
-          ]}
-          linkLabel="Start a project"
-          imageLabel="Studio, desk or process shot"
-          imageSrc="/about-2.jpg"
-          imageAlt="Tim Brown at work"
-          imageSide="right"
-          sectionClassName="py-16 lg:pb-[116px] lg:pt-[24px]"
-        />
+        <WhoIWorkWith />
         <WaysToWork />
         <Testimonials />
       </main>
