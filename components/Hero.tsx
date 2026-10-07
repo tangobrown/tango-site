@@ -1,3 +1,4 @@
+import Image from "next/image";
 import ArrowIcon from "./ArrowIcon";
 import HeroOrbit from "./HeroOrbit";
 import { btnPrimary, container } from "./ui";
@@ -19,19 +20,32 @@ export default function Hero() {
         />
 
         <div className="relative flex flex-col items-start gap-[30px]">
-          <h1 className="m-0 max-w-[11ch] text-[clamp(44px,5.4vw,82px)] font-semibold leading-[0.96] tracking-[-0.045em]">
-            Websites{" "}
-            <span className="inline-block align-[-0.06em] text-brand-bright" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="currentColor" className="h-[0.85em] w-[0.85em]">
-                <path d="M16.0037 9.41421L7.39712 18.0208L5.98291 16.6066L14.5895 8H7.00373V6H18.0037V17H16.0037V9.41421Z" />
-              </svg>
+          <h1 className="m-0 max-w-[15ch] text-[clamp(42px,5.4vw,82px)] font-semibold leading-[0.96] tracking-[-0.045em]">
+            Get your{" "}
+            <span className="whitespace-nowrap">
+              website{" "}
+              <span className="inline-block align-[-0.06em] text-brand-bright" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="currentColor" className="h-[0.85em] w-[0.85em]">
+                  <path d="M16.0037 9.41421L7.39712 18.0208L5.98291 16.6066L14.5895 8H7.00373V6H18.0037V17H16.0037V9.41421Z" />
+                </svg>
+              </span>
             </span>{" "}
-            that work as hard as you do
+            working as hard <span className="whitespace-nowrap">as you do</span>
           </h1>
-          <p className="m-0 max-w-[44ch] text-[19px] leading-[1.37] tracking-[-0.015em] text-footer-link">
-            I build, host and optimise blazing fast websites that look good and attract your ideal
-            customers.
-          </p>
+          <div className="flex max-w-[560px] items-start gap-4 sm:items-center sm:gap-5">
+            <Image
+              src="/tim-avatar.jpg"
+              alt="Tim Brown"
+              width={240}
+              height={240}
+              priority
+              className="h-[clamp(60px,6vw,88px)] w-[clamp(60px,6vw,88px)] shrink-0 rounded-full object-cover"
+            />
+            <p className="m-0 text-[19px] leading-[1.37] tracking-[-0.015em] text-footer-link">
+              Hey, I&apos;m Tim - a digital growth consultant based in Exeter. I build, host and
+              optimise blazing fast websites that look good and attract your ideal customers.
+            </p>
+          </div>
           <a href="#work" className={btnPrimary}>
             See the work <ArrowIcon size={18} />
           </a>
