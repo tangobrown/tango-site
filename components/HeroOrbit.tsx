@@ -137,7 +137,7 @@ export default function HeroOrbit({ className = "" }: { className?: string }) {
       {/* One-liner for the item at the top (read out with its label below) */}
       <div
         aria-hidden="true"
-        className="absolute left-1/2 top-1/2 grid w-[58%] -translate-x-1/2 -translate-y-1/2 place-items-center text-center"
+        className="absolute left-1/2 top-[47%] grid w-[58%] -translate-x-1/2 -translate-y-1/2 place-items-center text-center"
       >
         {ITEMS.map(({ label, blurb, icon }, i) => {
           const { autoAlpha, y } = blurbLook(place(0, i).focus);
@@ -150,7 +150,7 @@ export default function HeroOrbit({ className = "" }: { className?: string }) {
                 visibility: autoAlpha ? "visible" : "hidden",
                 transform: `translateY(${y}px)`,
               }}
-              className="col-start-1 row-start-1 flex flex-col items-center gap-[clamp(10px,1.1vw,16px)] text-white"
+              className="col-start-1 row-start-1 flex flex-col items-center gap-[clamp(6px,0.6vw,10px)] text-white"
             >
               <svg viewBox="0 0 24 24" fill="currentColor" className="h-[clamp(30px,2.8vw,42px)] w-auto">
                 <path d={icon} />
