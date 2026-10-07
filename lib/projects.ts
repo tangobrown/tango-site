@@ -77,15 +77,6 @@ export const projects: Project[] = [
     cover: "/work/tablet/sanwei.png",
   },
   {
-    id: "infragov",
-    title: "World Bank",
-    category: "InfraGov Assessment Tool",
-    services: "UI/UX design & development",
-    summary: "A 90-tab spreadsheet turned into an assessment governments actually finish.",
-    url: "https://infragov-dashboard.vercel.app/en",
-    cover: "/work/tablet/w5.png",
-  },
-  {
     id: "highgrove",
     title: "Highgrove Retirement Village",
     category: "Retirement village · NZ",
