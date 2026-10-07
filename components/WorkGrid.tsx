@@ -26,10 +26,9 @@ export default function WorkGrid() {
 
   return (
     <section id="work" className="px-5 pb-[clamp(52px,6.5vw,88px)] lg:px-11">
-      {/* Indent matches the tablet's 4.01% inset within a grid column. */}
       <h2
         data-reveal
-        className={`${h2Section} mb-[26px] pl-[4.01%] sm:pl-[calc((100%-16px)/2*0.0401)] lg:pl-[calc((100%-32px)/3*0.0401)]`}
+        className={`${h2Section} mb-[26px] text-center`}
       >
         Selected work
       </h2>

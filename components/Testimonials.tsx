@@ -35,7 +35,7 @@ export default function Testimonials() {
 
   return (
     <section className={`${container} pb-[clamp(52px,6.5vw,88px)]`}>
-      <h2 data-reveal className={`${h2Section} mb-[26px]`}>
+      <h2 data-reveal className={`${h2Section} mb-[40px]`}>
         See what people say about me
       </h2>
 

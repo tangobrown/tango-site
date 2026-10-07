@@ -1,12 +1,19 @@
 import type { Metadata, Viewport } from "next";
-import { Syne } from "next/font/google";
+import { Golos_Text, Syne } from "next/font/google";
 import "./globals.css";
 
-// Syne — the one family for everything (headings 600, body 500).
+// Syne for body text, buttons and nav (500); Golos Text for headings (600).
 const syne = Syne({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
   variable: "--font-syne",
+  display: "swap",
+});
+
+const golos = Golos_Text({
+  subsets: ["latin"],
+  weight: ["500", "600", "700"],
+  variable: "--font-golos",
   display: "swap",
 });
 
@@ -61,7 +68,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en-GB" className={syne.variable}>
+    <html lang="en-GB" className={`${syne.variable} ${golos.variable}`}>
       <body>
         <script
           type="application/ld+json"

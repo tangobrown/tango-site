@@ -1,5 +1,6 @@
 import Image from "next/image";
 import ArrowIcon from "./ArrowIcon";
+import { ContactButton } from "./ContactPanel";
 import HeroOrbit from "./HeroOrbit";
 import { btnPrimary, container } from "./ui";
 
@@ -46,9 +47,9 @@ export default function Hero() {
               optimise blazing fast websites that look good and attract your ideal customers.
             </p>
           </div>
-          <a href="#work" className={btnPrimary}>
-            See the work <ArrowIcon size={18} />
-          </a>
+          <ContactButton className={`${btnPrimary} mt-3`}>
+            Get started <ArrowIcon size={18} />
+          </ContactButton>
         </div>
 
         <HeroOrbit className="order-first mx-auto w-full max-w-[310px] lg:order-none lg:mr-[22px] lg:w-[calc(100%-22px)] lg:max-w-[min(540px,62vh)] lg:justify-self-end" />

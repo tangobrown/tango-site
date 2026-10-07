@@ -26,11 +26,12 @@
   h1,
   h2,
   h3 {
+    font-family: var(--font-golos), system-ui, sans-serif;
     font-weight: 600;
   }
 
   ::selection {
-    background: #0b8a47;
+    background: #14a85a;
     color: #ffffff;
   }
 }
