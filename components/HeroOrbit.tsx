@@ -6,7 +6,11 @@ import { useGSAP } from "@gsap/react";
 
 gsap.registerPlugin(useGSAP);
 
-const ITEMS = ["Development", "Optimisation", "AI & Automation"];
+const ITEMS = [
+  { label: "Development", blurb: "Beautiful, blazing fast websites and online shops" },
+  { label: "Optimisation", blurb: "Optimising your site for search and conversions" },
+  { label: "AI & Automation", blurb: "Integrating AI to take care of those boring tasks" },
+];
 const STEP = 360 / ITEMS.length;
 /** Orbit radius as a % of the square box. */
 const R = 40;
@@ -34,8 +38,13 @@ const look = (focus: number) => ({
   borderColor: gsap.utils.interpolate("rgba(255,255,255,0.16)", "rgba(11,138,71,1)", focus),
 });
 
+// The centre line for each item fades in as it reaches the top, so two lines
+// briefly cross-fade during a turn.
+const blurbLook = (focus: number) => ({ autoAlpha: focus ** 2, y: (1 - focus) * 10 });
+
 // The three things Tim does, set around a ring that turns a third at a time.
-// The one at the top grows and fills green. Labels stay upright throughout.
+// The one at the top grows and fills green, and its one-liner shows in the
+// middle of the circle. Labels stay upright throughout.
 export default function HeroOrbit({ className = "" }: { className?: string }) {
   const root = useRef<HTMLDivElement>(null);
 
@@ -43,6 +52,7 @@ export default function HeroOrbit({ className = "" }: { className?: string }) {
     () => {
       const slots = gsap.utils.toArray<HTMLElement>("[data-slot]");
       const pills = gsap.utils.toArray<HTMLElement>("[data-pill]");
+      const blurbs = gsap.utils.toArray<HTMLElement>("[data-blurb]");
       const ticks = root.current?.querySelector("[data-ticks]");
       const orbit = { angle: 0 };
 
@@ -51,6 +61,7 @@ export default function HeroOrbit({ className = "" }: { className?: string }) {
           const { left, top, focus } = place(orbit.angle, i);
           gsap.set(slot, { left, top });
           gsap.set(pills[i], look(focus));
+          gsap.set(blurbs[i], blurbLook(focus));
         });
         if (ticks) gsap.set(ticks, { rotation: orbit.angle, svgOrigin: "50 50" });
       };
@@ -110,17 +121,37 @@ export default function HeroOrbit({ className = "" }: { className?: string }) {
         />
       </svg>
 
-      <p className="absolute left-1/2 top-1/2 m-0 -translate-x-1/2 -translate-y-1/2 text-[13px] font-semibold uppercase tracking-[0.16em] text-white/40">
-        What I do
-      </p>
+      {/* One-liner for the item at the top (read out with its label below) */}
+      <div
+        aria-hidden="true"
+        className="absolute left-1/2 top-1/2 grid w-[58%] -translate-x-1/2 -translate-y-1/2 place-items-center text-center"
+      >
+        {ITEMS.map(({ label, blurb }, i) => {
+          const { autoAlpha, y } = blurbLook(place(0, i).focus);
+          return (
+            <p
+              key={label}
+              data-blurb
+              style={{
+                opacity: autoAlpha,
+                visibility: autoAlpha ? "visible" : "hidden",
+                transform: `translateY(${y}px)`,
+              }}
+              className="col-start-1 row-start-1 m-0 text-balance text-[clamp(16px,1.65vw,24px)] font-medium leading-[1.25] tracking-[-0.02em] text-white"
+            >
+              {blurb}
+            </p>
+          );
+        })}
+      </div>
 
       <ul className="m-0 list-none p-0" aria-label="What I do">
-        {ITEMS.map((item, i) => {
+        {ITEMS.map(({ label, blurb }, i) => {
           const { left, top, focus } = place(0, i);
           const { scale, ...initial } = look(focus);
           return (
             <li
-              key={item}
+              key={label}
               data-slot
               style={{ left, top }}
               className="absolute -translate-x-1/2 -translate-y-1/2"
@@ -130,8 +161,9 @@ export default function HeroOrbit({ className = "" }: { className?: string }) {
                 style={{ ...initial, transform: `scale(${scale})` }}
                 className="block whitespace-nowrap rounded-full border px-[1.1em] py-[0.55em] text-[clamp(15px,1.55vw,23px)] font-semibold tracking-[-0.02em]"
               >
-                {item}
+                {label}
               </span>
+              <span className="sr-only">: {blurb}</span>
             </li>
           );
         })}
