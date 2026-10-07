@@ -48,7 +48,7 @@ export default function SiteNav() {
   return (
     <>
       <header
-        className={`fixed left-1/2 z-30 flex w-[min(1240px,calc(100%-28px))] -translate-x-1/2 items-center justify-between gap-4 rounded-full bg-white py-2 pl-[26px] pr-2 shadow-nav transition-[top] duration-300 ${
+        className={`fixed left-1/2 z-30 flex w-[min(1300px,calc(100%-40px))] -translate-x-1/2 items-center justify-between gap-4 rounded-full bg-white py-2 pl-[26px] pr-2 shadow-nav transition-[top] duration-300 ${
           scrolled ? "top-[10px]" : "top-[14px]"
         }`}
       >

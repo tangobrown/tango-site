@@ -1,7 +1,7 @@
 // Shared class strings for the v4 design system.
 
-/** Centred 1240px content column with a 20px minimum gutter. */
-export const container = "mx-auto w-full max-w-[1280px] px-5";
+/** Centred 1300px content column with a 20px minimum gutter. */
+export const container = "mx-auto w-full max-w-[1340px] px-5";
 
 /** Vertical rhythm for the main sections. */
 export const sectionY = "py-[clamp(52px,6.5vw,88px)]";
