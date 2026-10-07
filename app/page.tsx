@@ -7,7 +7,7 @@ import Services from "@/components/Services";
 import SiteNav from "@/components/SiteNav";
 import SplitBlock from "@/components/SplitBlock";
 import Testimonials from "@/components/Testimonials";
-import WorkCarousel from "@/components/WorkCarousel";
+import WorkGrid from "@/components/WorkGrid";
 
 export default function Home() {
   return (
@@ -43,7 +43,7 @@ export default function Home() {
           imageSide="left"
           className="pb-[clamp(52px,6.5vw,88px)] pt-[clamp(28px,3.5vw,50px)]"
         />
-        <WorkCarousel />
+        <WorkGrid />
         <Testimonials />
       </main>
       <Footer />
