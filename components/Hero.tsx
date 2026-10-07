@@ -1,50 +1,40 @@
-import Image from "next/image";
 import ArrowIcon from "./ArrowIcon";
+import HeroOrbit from "./HeroOrbit";
 import { btnPrimary } from "./ui";
 
+// Dark hero: headline and intro on the left, the rotating "what I do" orbit
+// on the right. On mobile the orbit sits above the copy.
 export default function Hero() {
   return (
-    <section
-      id="top"
-      className="relative h-[88svh] max-h-[860px] min-h-[620px] overflow-hidden bg-surface-hero text-white md:h-[92vh]"
-    >
-      <Image
-        src="/images/hero-tim.webp"
-        alt="Tim Brown sitting in front of a street-art mural"
-        fill
-        priority
-        sizes="100vw"
-        className="object-cover object-[right_top]"
-      />
-      {/* Legibility scrim */}
+    <section id="top" className="relative overflow-hidden bg-ink text-white">
+      {/* Soft green glow behind the orbit */}
       <div
         aria-hidden="true"
-        className="absolute inset-0"
-        style={{
-          background:
-            "linear-gradient(90deg, rgba(10,14,12,0.62) 0%, rgba(10,14,12,0.28) 50%, rgba(10,14,12,0.05) 100%)",
-        }}
+        className="pointer-events-none absolute right-[-12%] top-[30%] h-[min(110vw,900px)] w-[min(110vw,900px)] -translate-y-1/2 rounded-full lg:right-[-8%] lg:top-1/2"
+        style={{ background: "radial-gradient(closest-side, rgba(11,138,71,0.2), rgba(11,138,71,0))" }}
       />
 
-      <div className="absolute inset-x-0 bottom-0 flex flex-col gap-[30px] px-[clamp(20px,3vw,40px)] pb-[clamp(28px,4vw,44px)]">
-        <h1 className="m-0 max-w-[11ch] text-[clamp(46px,6.6vw,104px)] font-semibold leading-[0.96] tracking-[-0.045em]">
-          Websites{" "}
-          <span className="inline-block align-[-0.06em] text-brand-bright" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="currentColor" className="h-[0.85em] w-[0.85em]">
-              <path d="M16.0037 9.41421L7.39712 18.0208L5.98291 16.6066L14.5895 8H7.00373V6H18.0037V17H16.0037V9.41421Z" />
-            </svg>
-          </span>{" "}
-          that work as hard as you do
-        </h1>
-        <div className="flex flex-col gap-6 md:flex-row md:flex-wrap md:items-end md:justify-between">
-          <p className="m-0 max-w-[44ch] text-[19px] leading-[1.37] tracking-[-0.015em]">
+      <div className="relative grid grid-cols-1 items-end gap-10 px-[clamp(20px,3vw,40px)] pb-[clamp(36px,4vw,48px)] pt-[104px] lg:h-[92vh] lg:max-h-[860px] lg:min-h-[640px] lg:grid-cols-[minmax(0,1.1fr)_minmax(0,1fr)] lg:pt-[120px]">
+        <div className="flex flex-col items-start gap-[30px]">
+          <h1 className="m-0 max-w-[11ch] text-[clamp(46px,6.2vw,100px)] font-semibold leading-[0.96] tracking-[-0.045em]">
+            Websites{" "}
+            <span className="inline-block align-[-0.06em] text-brand-bright" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="currentColor" className="h-[0.85em] w-[0.85em]">
+                <path d="M16.0037 9.41421L7.39712 18.0208L5.98291 16.6066L14.5895 8H7.00373V6H18.0037V17H16.0037V9.41421Z" />
+              </svg>
+            </span>{" "}
+            that work as hard as you do
+          </h1>
+          <p className="m-0 max-w-[44ch] text-[19px] leading-[1.37] tracking-[-0.015em] text-footer-link">
             I build, host and optimise blazing fast websites that look good and attract your ideal
             customers.
           </p>
-          <a href="#work" className={`${btnPrimary} self-start md:self-auto`}>
+          <a href="#work" className={btnPrimary}>
             See the work <ArrowIcon size={16} />
           </a>
         </div>
+
+        <HeroOrbit className="order-first mx-auto w-full max-w-[340px] self-center lg:order-none lg:max-w-[min(580px,64vh)]" />
       </div>
     </section>
   );
