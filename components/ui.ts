@@ -12,6 +12,9 @@ const btnBase =
 
 export const btnPrimary = `${btnBase} bg-brand text-white hover:bg-brand-dark`;
 
+/** Dark green pill, for use on brand-green backgrounds. */
+export const btnDark = `${btnBase} bg-pine text-white hover:bg-[#081a13]`;
+
 /** Section H2 (left-aligned sections). */
 export const h2Section =
   "m-0 text-[clamp(35px,3.4vw,48px)] font-semibold leading-[1.08] tracking-[-0.015em]";
