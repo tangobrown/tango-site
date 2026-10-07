@@ -47,8 +47,8 @@ function place(angle: number, i: number) {
 const look = (focus: number) => ({
   scale: 0.88 + 0.18 * focus,
   color: gsap.utils.interpolate("rgba(255,255,255,0.55)", "rgba(255,255,255,1)", focus),
-  backgroundColor: gsap.utils.interpolate("rgba(27,31,29,1)", "rgba(11,138,71,1)", focus),
-  borderColor: gsap.utils.interpolate("rgba(255,255,255,0.16)", "rgba(11,138,71,1)", focus),
+  backgroundColor: gsap.utils.interpolate("rgba(22,57,43,1)", "rgba(20,168,90,1)", focus),
+  borderColor: gsap.utils.interpolate("rgba(255,255,255,0.16)", "rgba(20,168,90,1)", focus),
 });
 
 // The centre line for each item fades in as it reaches the top, so two lines

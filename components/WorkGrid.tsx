@@ -75,7 +75,7 @@ export default function WorkGrid() {
                       target="_blank"
                       rel="noreferrer"
                       onClick={(e) => e.stopPropagation()}
-                      className="inline-flex h-[50px] items-center gap-3 self-start rounded-full bg-white pl-[24px] pr-[20px] text-[17px] font-semibold tracking-normal text-ink transition-colors hover:bg-ink hover:text-white"
+                      className="inline-flex h-[50px] items-center gap-3 self-start rounded-full bg-white pl-[24px] pr-[20px] text-[17px] font-semibold tracking-normal text-ink transition-colors hover:bg-pine hover:text-white"
                     >
                       Visit the live site <ArrowIcon size={18} />
                     </a>

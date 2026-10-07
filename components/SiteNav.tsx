@@ -18,7 +18,7 @@ function Wordmark({ className = "" }: { className?: string }) {
 }
 
 const ctaClass =
-  "inline-flex shrink-0 items-center rounded-full bg-ink px-6 py-[14px] text-[17px] font-semibold tracking-normal text-white transition-colors duration-200 hover:bg-brand";
+  "inline-flex shrink-0 items-center rounded-full bg-pine px-6 py-[14px] text-[17px] font-semibold tracking-normal text-white transition-colors duration-200 hover:bg-brand";
 
 // Floating white pill nav. Fixed so it stays reachable while scrolling.
 export default function SiteNav() {

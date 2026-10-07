@@ -6,7 +6,9 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        brand: { DEFAULT: "#0B8A47", dark: "#076B36", bright: "#2FD07A" },
+        brand: { DEFAULT: "#14A85A", dark: "#0F8A49", bright: "#2FD07A" },
+        // Dark green for the hero, footer and dark buttons.
+        pine: { DEFAULT: "#0E2A1F", light: "#16392B" },
         ink: { DEFAULT: "#141414", soft: "#3E3E3E", muted: "#6B6B6B" },
         surface: {
           panel: "#F2F4F2",

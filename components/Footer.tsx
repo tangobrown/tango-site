@@ -5,7 +5,7 @@ const colLink = "text-[15px] text-footer-link transition-colors hover:text-white
 
 export default function Footer() {
   return (
-    <footer className="bg-ink text-white">
+    <footer className="bg-pine text-white">
       <div className={`${container} pb-[26px] pt-[clamp(56px,7vw,80px)]`}>
         <div className="flex flex-col gap-x-8 gap-y-10 md:flex-row md:flex-wrap">
           <div className="flex flex-col md:flex-[2_1_260px] items-start gap-[10px]">

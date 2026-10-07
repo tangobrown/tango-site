@@ -8,7 +8,7 @@ import { btnPrimary, container } from "./ui";
 // On mobile the orbit sits above the copy.
 export default function Hero() {
   return (
-    <section id="top" className="relative overflow-hidden bg-ink text-white">
+    <section id="top" className="relative overflow-hidden bg-pine text-white">
       <div
         className={`${container} relative grid grid-cols-1 items-center gap-10 pb-12 pt-[104px] lg:h-[92vh] lg:max-h-[860px] lg:min-h-[640px] lg:grid-cols-[minmax(0,1.1fr)_minmax(0,1fr)] lg:pb-6`}
       >
@@ -16,7 +16,7 @@ export default function Hero() {
         <div
           aria-hidden="true"
           className="pointer-events-none absolute left-1/2 top-[274px] h-[min(110vw,900px)] w-[min(110vw,900px)] -translate-x-1/2 -translate-y-1/2 rounded-full lg:left-auto lg:right-[calc(34px+min(540px,62vh)/2)] lg:top-[calc(50%+40px)] lg:translate-x-1/2"
-          style={{ background: "radial-gradient(closest-side, rgba(11,138,71,0.2), rgba(11,138,71,0))" }}
+          style={{ background: "radial-gradient(closest-side, rgba(20,168,90,0.22), rgba(20,168,90,0))" }}
         />
 
         <div className="relative flex flex-col items-start gap-[30px]">

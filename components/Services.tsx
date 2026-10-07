@@ -48,7 +48,7 @@ function Tick() {
       height="18"
       viewBox="0 0 24 24"
       fill="none"
-      stroke="#0B8A47"
+      stroke="#14A85A"
       strokeWidth={2.2}
       strokeLinecap="round"
       strokeLinejoin="round"
