@@ -6,9 +6,14 @@ import { useGSAP } from "@gsap/react";
 
 gsap.registerPlugin(useGSAP);
 
-const ITEMS = [
+// `icon` is the path data for a 24×24 icon shown above the one-liner.
+const ITEMS: { label: string; blurb: string; icon?: string }[] = [
   { label: "Development", blurb: "Beautiful, blazing fast websites and online shops" },
-  { label: "Optimisation", blurb: "Optimising your site for search and conversions" },
+  {
+    label: "Optimisation",
+    blurb: "Optimising your site for search and conversions",
+    icon: "M3 12H7V21H3V12ZM17 8H21V21H17V8ZM10 2H14V21H10V2Z",
+  },
   { label: "AI & Automation", blurb: "Integrating AI to take care of those boring tasks" },
 ];
 const STEP = 360 / ITEMS.length;
@@ -126,10 +131,10 @@ export default function HeroOrbit({ className = "" }: { className?: string }) {
         aria-hidden="true"
         className="absolute left-1/2 top-1/2 grid w-[58%] -translate-x-1/2 -translate-y-1/2 place-items-center text-center"
       >
-        {ITEMS.map(({ label, blurb }, i) => {
+        {ITEMS.map(({ label, blurb, icon }, i) => {
           const { autoAlpha, y } = blurbLook(place(0, i).focus);
           return (
-            <p
+            <div
               key={label}
               data-blurb
               style={{
@@ -137,10 +142,17 @@ export default function HeroOrbit({ className = "" }: { className?: string }) {
                 visibility: autoAlpha ? "visible" : "hidden",
                 transform: `translateY(${y}px)`,
               }}
-              className="col-start-1 row-start-1 m-0 text-balance text-[clamp(16px,1.65vw,24px)] font-medium leading-[1.25] tracking-[-0.02em] text-white"
+              className="col-start-1 row-start-1 flex flex-col items-center gap-[clamp(10px,1.1vw,16px)] text-white"
             >
-              {blurb}
-            </p>
+              {icon && (
+                <svg viewBox="0 0 24 24" fill="currentColor" className="h-[clamp(30px,2.8vw,42px)] w-auto">
+                  <path d={icon} />
+                </svg>
+              )}
+              <p className="m-0 text-balance text-[clamp(16px,1.65vw,24px)] font-medium leading-[1.25] tracking-[-0.02em]">
+                {blurb}
+              </p>
+            </div>
           );
         })}
       </div>
