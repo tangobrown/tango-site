@@ -1,6 +1,5 @@
 import ArrowIcon from "./ArrowIcon";
 import { ContactButton } from "./ContactPanel";
-import { container, sectionY } from "./ui";
 
 type Box = {
   label: string;
@@ -49,76 +48,72 @@ const tones = {
   },
 } as const;
 
-// Two full-width outlined rows. On hover (or keyboard focus) a colour fills
-// the row from left to right. The whole row opens the contact panel; it can
-// point at a service page once those exist.
+// A full-width band directly under the hero, split into two outlined halves.
+// On hover (or keyboard focus) a colour fills a half from the left. Each half
+// opens the contact panel; it can point at a service page once those exist.
+// The outer padding lines the text up with the 1300px content column: each
+// half is 50% of the page, so (page - 1300px) / 2 is "100% - 650px".
+
 export default function Services() {
   return (
-    <section id="services" className={`${container} ${sectionY}`}>
-      <h2
-        data-reveal
-        className="m-0 mb-[60px] text-center text-[clamp(37px,3.9vw,53px)] font-semibold leading-[1.08] tracking-[-0.015em]"
-      >
-        Need a hand?
-        <br />
-        Here&apos;s what I do
-      </h2>
-
-      <div className="flex flex-col gap-4">
-        {boxes.map((box, i) => {
-          const t = tones[box.tone];
-          return (
+    <section
+      id="services"
+      aria-label="What I do"
+      className="grid grid-cols-1 border-b border-ink/15 md:grid-cols-2"
+    >
+      {boxes.map((box, i) => {
+        const t = tones[box.tone];
+        return (
+          <div
+            key={box.label}
+            className={`group relative overflow-hidden ${i > 0 ? "border-t border-ink/15 md:border-l md:border-t-0" : ""}`}
+          >
+            {/* Colour fill, grows across the half on hover */}
             <div
-              key={box.label}
-              data-reveal
-              style={{ transitionDelay: `${i * 90}ms` }}
-              className="group relative overflow-hidden rounded-[24px] border border-ink/15"
-            >
-              {/* Colour fill, grows across the row on hover */}
-              <div
-                aria-hidden="true"
-                className={`absolute inset-0 origin-left scale-x-0 transition-transform duration-500 ease-[cubic-bezier(0.22,0.61,0.36,1)] group-focus-within:scale-x-100 group-hover:scale-x-100 ${t.fill}`}
-              />
+              aria-hidden="true"
+              className={`absolute inset-0 origin-left scale-x-0 transition-transform duration-500 ease-[cubic-bezier(0.22,0.61,0.36,1)] group-focus-within:scale-x-100 group-hover:scale-x-100 ${t.fill}`}
+            />
 
-              <div
-                className={`relative grid grid-cols-1 items-center gap-x-[clamp(24px,4vw,64px)] gap-y-4 p-[clamp(26px,3.6vw,48px)] transition-colors duration-300 md:grid-cols-[minmax(0,1.15fr)_minmax(0,1fr)_auto] ${t.text}`}
-              >
-                <div className="flex flex-col gap-3">
-                  <p
-                    className={`m-0 text-[15px] font-semibold uppercase tracking-[0.08em] text-brand transition-colors duration-300 ${t.label}`}
-                  >
-                    {box.label}
-                  </p>
-                  <h3 className="m-0 text-[clamp(28px,2.8vw,40px)] font-semibold leading-[1.08] tracking-[-0.015em]">
-                    {box.title}
-                  </h3>
-                </div>
+            <div
+              className={`relative flex h-full flex-col gap-4 px-5 py-[clamp(36px,4.4vw,64px)] transition-colors duration-300 md:px-[clamp(28px,3.6vw,56px)] ${
+                i === 0 ? "md:pl-[max(20px,calc(100%-650px))]" : "md:pr-[max(20px,calc(100%-650px))]"
+              } ${t.text}`}
+            >
+              <div className="flex items-center justify-between gap-6">
                 <p
-                  className={`m-0 text-[19px] leading-[1.47] text-ink-soft transition-colors duration-300 ${t.intro}`}
+                  className={`m-0 text-[15px] font-semibold uppercase tracking-[0.08em] text-brand transition-colors duration-300 ${t.label}`}
                 >
-                  {box.intro}
+                  {box.label}
                 </p>
                 <span
                   aria-hidden="true"
-                  className={`flex h-14 w-14 items-center justify-center justify-self-start rounded-full border border-ink/20 transition-colors duration-300 md:justify-self-end ${t.arrow}`}
+                  className={`flex h-14 w-14 flex-none items-center justify-center rounded-full border border-ink/20 transition-colors duration-300 ${t.arrow}`}
                 >
                   <ArrowIcon size={20} />
                 </span>
               </div>
-
-              {/* Whole-row hit area */}
-              <ContactButton
-                preset="Website review for my business"
-                className="absolute inset-0 z-10 rounded-[24px] outline-none"
+              <h3 className="m-0 text-[clamp(28px,2.8vw,40px)] font-semibold leading-[1.08] tracking-[-0.015em]">
+                {box.title}
+              </h3>
+              <p
+                className={`m-0 max-w-[46ch] text-[19px] leading-[1.47] text-ink-soft transition-colors duration-300 ${t.intro}`}
               >
-                <span className="sr-only">
-                  {box.cta}: {box.label.toLowerCase()}
-                </span>
-              </ContactButton>
+                {box.intro}
+              </p>
             </div>
-          );
-        })}
-      </div>
+
+            {/* Whole-half hit area */}
+            <ContactButton
+              preset="Website review for my business"
+              className="absolute inset-0 z-10 outline-none"
+            >
+              <span className="sr-only">
+                {box.cta}: {box.label.toLowerCase()}
+              </span>
+            </ContactButton>
+          </div>
+        );
+      })}
     </section>
   );
 }
