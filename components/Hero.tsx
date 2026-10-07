@@ -21,6 +21,19 @@ export default function Hero() {
         />
 
         <div className="relative flex flex-col items-start gap-[30px]">
+          <div className="flex items-center gap-3">
+            <Image
+              src="/tim-avatar.jpg"
+              alt=""
+              width={240}
+              height={240}
+              priority
+              className="h-[clamp(44px,4vw,60px)] w-[clamp(44px,4vw,60px)] shrink-0 rounded-full object-cover"
+            />
+            <p className="m-0 text-[15px] font-medium leading-[1.3] text-footer-link sm:text-[17px]">
+              <span className="font-semibold text-white">Tim Brown</span> - Website Growth Consultant
+            </p>
+          </div>
           <h1 className="m-0 text-[clamp(38px,4.9vw,72px)] font-semibold leading-[0.96] tracking-[-0.025em]">
             Get your{" "}
             <span className="whitespace-nowrap">
@@ -33,20 +46,10 @@ export default function Hero() {
             </span>{" "}
             working as hard <span className="whitespace-nowrap">as you do</span>
           </h1>
-          <div className="flex max-w-[560px] items-start gap-4 sm:items-center sm:gap-5">
-            <Image
-              src="/tim-avatar.jpg"
-              alt="Tim Brown"
-              width={240}
-              height={240}
-              priority
-              className="h-[clamp(60px,6vw,88px)] w-[clamp(60px,6vw,88px)] shrink-0 rounded-full object-cover"
-            />
-            <p className="m-0 text-[19px] leading-[1.37] tracking-normal text-footer-link">
-              Hey, I&apos;m Tim - a digital growth consultant based in Exeter. I build, host and
-              optimise blazing fast websites that look good and attract your ideal customers.
-            </p>
-          </div>
+          <p className="m-0 max-w-[46ch] text-[19px] leading-[1.37] tracking-normal text-footer-link">
+            I build, host and optimise blazing fast websites that look good and attract your ideal
+            customers. Based in Exeter, working with clients all over the UK.
+          </p>
           <ContactButton className={`${btnPrimary} mt-3`}>
             Get started <ArrowIcon size={18} />
           </ContactButton>
