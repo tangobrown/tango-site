@@ -16,9 +16,9 @@
     margin: 0;
     background: #ffffff;
     color: #141414;
-    font-family: var(--font-hanken), system-ui, sans-serif;
+    font-family: var(--font-syne), system-ui, sans-serif;
     font-weight: 500;
-    letter-spacing: -0.015em;
+    letter-spacing: 0;
     -webkit-font-smoothing: antialiased;
     overflow-x: clip; /* prevent horizontal scroll without breaking position: sticky */
   }

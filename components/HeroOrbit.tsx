@@ -155,7 +155,7 @@ export default function HeroOrbit({ className = "" }: { className?: string }) {
               <svg viewBox="0 0 24 24" fill="currentColor" className="h-[clamp(30px,2.8vw,42px)] w-auto">
                 <path d={icon} />
               </svg>
-              <p className="m-0 text-balance text-[clamp(16px,1.65vw,24px)] font-medium leading-[1.25] tracking-[-0.02em]">
+              <p className="m-0 text-balance text-[clamp(16px,1.65vw,24px)] font-medium leading-[1.25] tracking-[-0.005em]">
                 {blurb}
               </p>
             </div>
@@ -177,7 +177,7 @@ export default function HeroOrbit({ className = "" }: { className?: string }) {
               <span
                 data-pill
                 style={{ ...initial, transform: `scale(${scale})` }}
-                className="block whitespace-nowrap rounded-full border px-[1.1em] py-[0.55em] text-[clamp(15px,1.55vw,23px)] font-semibold tracking-[-0.02em]"
+                className="block whitespace-nowrap rounded-full border px-[1.1em] py-[0.55em] text-[clamp(14px,1.45vw,21px)] font-semibold tracking-[-0.005em]"
               >
                 {label}
               </span>

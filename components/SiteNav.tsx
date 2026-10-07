@@ -7,7 +7,7 @@ import { ContactButton } from "./ContactPanel";
 function Wordmark({ className = "" }: { className?: string }) {
   return (
     <span
-      className={`flex flex-col text-[17px] font-bold leading-[0.92] tracking-[-0.02em] text-ink ${className}`}
+      className={`flex flex-col text-[17px] font-bold leading-[0.92] tracking-[-0.005em] text-ink ${className}`}
     >
       <span>TIM</span>
       <span>
@@ -112,7 +112,7 @@ export default function SiteNav() {
                 key={link.href}
                 href={link.href}
                 onClick={() => setMenuOpen(false)}
-                className="text-[32px] font-semibold tracking-[-0.03em] text-ink"
+                className="text-[32px] font-semibold tracking-[-0.01em] text-ink"
               >
                 {link.label}
               </a>

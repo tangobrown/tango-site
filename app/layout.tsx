@@ -1,12 +1,12 @@
 import type { Metadata, Viewport } from "next";
-import { Hanken_Grotesk } from "next/font/google";
+import { Syne } from "next/font/google";
 import "./globals.css";
 
-// Hanken Grotesk — the one family for everything (headings 600, body 500).
-const hanken = Hanken_Grotesk({
+// Syne — the one family for everything (headings 600, body 500).
+const syne = Syne({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
-  variable: "--font-hanken",
+  variable: "--font-syne",
   display: "swap",
 });
 
@@ -61,7 +61,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en-GB" className={hanken.variable}>
+    <html lang="en-GB" className={syne.variable}>
       <body>
         <script
           type="application/ld+json"

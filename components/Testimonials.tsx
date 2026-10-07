@@ -57,7 +57,7 @@ export default function Testimonials() {
           className="m-0 flex min-h-[320px] flex-[2_1_460px] flex-col justify-between gap-8 rounded-md bg-brand p-[clamp(26px,3.4vw,44px)] text-white md:h-[clamp(300px,30vw,400px)] md:min-h-0"
         >
           <blockquote
-            className={`m-0 max-w-[30ch] text-[clamp(24px,2.4vw,34px)] font-medium leading-[1.22] tracking-[-0.025em] transition-[opacity,transform] ${fade}`}
+            className={`m-0 max-w-[30ch] text-[clamp(24px,2.4vw,34px)] font-medium leading-[1.22] tracking-[-0.01em] transition-[opacity,transform] ${fade}`}
           >
             &ldquo;{t.quote}&rdquo;
           </blockquote>

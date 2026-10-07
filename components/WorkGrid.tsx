@@ -66,7 +66,7 @@ export default function WorkGrid() {
                     isActive ? "translate-y-0 opacity-100" : "translate-y-1 opacity-0"
                   }`}
                 >
-                  <p className="m-0 max-w-[30ch] text-[clamp(17px,1.5vw,21px)] font-medium leading-[1.38] tracking-[-0.015em]">
+                  <p className="m-0 max-w-[30ch] text-[clamp(17px,1.5vw,21px)] font-medium leading-[1.38] tracking-normal">
                     {p.summary}
                   </p>
                   {p.url ? (
@@ -85,7 +85,7 @@ export default function WorkGrid() {
 
               {/* Caption, indented to line up with the tablet's edge */}
               <div className="px-[4.01%]">
-                <h3 className="m-0 mt-1 text-[clamp(22px,1.9vw,26px)] font-semibold leading-[1.1] tracking-[-0.03em]">
+                <h3 className="m-0 mt-1 text-[clamp(22px,1.9vw,26px)] font-semibold leading-[1.1] tracking-[-0.01em]">
                   {p.title}
                 </h3>
                 <p className="m-0 mt-1 text-[15px] text-ink-muted">{p.category}</p>

@@ -84,7 +84,7 @@ export function ContactPanelProvider({ children }: { children: ReactNode }) {
 }
 
 const inputClass =
-  "w-full rounded-md border border-rule bg-white px-4 py-[14px] text-[16px] font-medium tracking-[-0.015em] text-ink outline-none transition-colors placeholder:text-footer-muted focus:border-brand";
+  "w-full rounded-md border border-rule bg-white px-4 py-[14px] text-[16px] font-medium tracking-normal text-ink outline-none transition-colors placeholder:text-footer-muted focus:border-brand";
 
 function SubmitButton() {
   const { pending } = useFormStatus();
@@ -208,7 +208,7 @@ function ContactPanel({
       {/* Body */}
       <div className="flex flex-1 flex-col gap-7 overflow-y-auto px-[clamp(22px,4vw,36px)] pb-10 pt-8">
         <div className="flex flex-col gap-3">
-          <h2 className="m-0 text-[40px] font-semibold leading-[1.02] tracking-[-0.04em]">
+          <h2 className="m-0 text-[40px] font-semibold leading-[1.02] tracking-[-0.02em]">
             Let&apos;s talk
           </h2>
           <p className="m-0 text-[18px] leading-[1.45] text-ink-soft">
