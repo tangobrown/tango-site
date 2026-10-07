@@ -9,7 +9,7 @@ export default function Footer() {
       <div className={`${container} pb-[26px] pt-[clamp(56px,7vw,80px)]`}>
         <div className="flex flex-col gap-x-8 gap-y-10 md:flex-row md:flex-wrap">
           <div className="flex flex-col md:flex-[2_1_260px] items-start gap-[10px]">
-            <p className="m-0 text-[20px] font-medium">Prefer to talk?</p>
+            <p className="m-0 font-sans text-[20px] font-medium">Prefer to talk?</p>
             <a
               href={`mailto:${site.email}`}
               className="text-[17px] text-white transition-colors hover:text-brand-bright"
@@ -28,7 +28,7 @@ export default function Footer() {
           </div>
 
           <div className="flex flex-col md:flex-[1_1_140px] items-start gap-[9px]">
-            <p className="m-0 mb-1 text-[17px] font-semibold">Services</p>
+            <p className="m-0 mb-1 font-sans text-[17px] font-semibold">Services</p>
             <a href="#services" className={colLink}>
               Web design
             </a>
@@ -41,7 +41,7 @@ export default function Footer() {
           </div>
 
           <div className="flex flex-col md:flex-[1_1_140px] items-start gap-[9px]">
-            <p className="m-0 mb-1 text-[17px] font-semibold">More</p>
+            <p className="m-0 mb-1 font-sans text-[17px] font-semibold">More</p>
             <a href="#work" className={colLink}>
               Work
             </a>

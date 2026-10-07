@@ -23,6 +23,13 @@
     overflow-x: clip; /* prevent horizontal scroll without breaking position: sticky */
   }
 
+  /* Paragraph text in Onest. Add `font-sans` to keep a label in Syne. */
+  p,
+  li,
+  blockquote {
+    font-family: var(--font-onest), system-ui, sans-serif;
+  }
+
   h1,
   h2,
   h3 {
