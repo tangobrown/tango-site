@@ -1,23 +1,12 @@
 import type { Metadata, Viewport } from "next";
-import { Staatliches, Schibsted_Grotesk } from "next/font/google";
+import { Hanken_Grotesk } from "next/font/google";
 import "./globals.css";
 
-// Staatliches (400) — headings, wordmark, band, card titles.
-// (Kept on the --font-bebas variable / `font-bebas` token so all existing
-// heading classes pick it up.)
-const heading = Staatliches({
-  subsets: ["latin"],
-  weight: ["400"],
-  variable: "--font-bebas",
-  display: "swap",
-});
-
-// Schibsted Grotesk — body, nav, buttons, forms, quotes. Base weight is 500
-// (set on <body> in globals.css); heavier weights available for emphasis.
-const publicFont = Schibsted_Grotesk({
+// Hanken Grotesk — the one family for everything (headings 600, body 500).
+const hanken = Hanken_Grotesk({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
-  variable: "--font-public",
+  variable: "--font-hanken",
   display: "swap",
 });
 
@@ -72,7 +61,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en-GB" className={`${heading.variable} ${publicFont.variable}`}>
+    <html lang="en-GB" className={hanken.variable}>
       <body>
         <script
           type="application/ld+json"

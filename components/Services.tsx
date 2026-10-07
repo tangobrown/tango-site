@@ -1,57 +1,111 @@
-type Service = { title: string; body: string; iconSrc: string };
+import { ContactButton } from "./ContactPanel";
+import ArrowIcon from "./ArrowIcon";
+import { btnPrimary, container, sectionY } from "./ui";
 
-const services: Service[] = [
+type Box = {
+  label: string;
+  title: string;
+  intro: string;
+  points: string[];
+  cta: string;
+};
+
+const boxes: Box[] = [
   {
-    title: "Website Builds",
-    body: "Beautiful looking, blazing fast websites that convert viewers into leads. From the copy to the visuals, you'll have a website to be proud of, adapting seamlessly across all device types.",
-    iconSrc: "/icons/globe.webp",
+    label: "For service businesses",
+    title: "Service based companies wanting to get more leads",
+    intro:
+      "For builders, plumbers, electricians, cleaners, consultants, clinics and other local service businesses.",
+    points: [
+      "Fast, mobile-first websites with your number one tap away",
+      "Local SEO and Google Business Profile, so nearby customers find you first",
+      "Designed to turn visitors into calls and quote requests",
+      "Hosting, updates and support",
+      "AI chat and quote assistants, so you never miss an enquiry",
+    ],
+    cta: "Get a free website check",
   },
   {
-    title: "Optimisation",
-    body: "I get more local customers to your website through Google and AI search, then keep improving the site so more of them turn into enquiries to grow your business.",
-    iconSrc: "/icons/chart.webp",
-  },
-  {
-    title: "AI & Automation",
-    body: "Implementation of AI & Automation workflows to help free up more of your time and grow. With all of the noise about AI, I help to cut through that and find what works practically for your business.",
-    iconSrc: "/icons/layers.webp",
+    label: "For e-commerce stores",
+    title: "Online stores looking to modernise & level-up sales",
+    intro:
+      "Custom online stores for ambitious UK brands who want a super-fast site, built on modern technology.",
+    points: [
+      "Fast, custom storefronts with no template limits",
+      "SEO that gets your products found on Google and in AI search",
+      "Monthly conversion testing and tweaks that turns more visitors into buyers",
+      "AI search, recommendations and shopping assistants",
+      "Hosting and care, with a clear monthly report",
+    ],
+    cta: "Get a free store review",
   },
 ];
 
+function Tick() {
+  return (
+    <svg
+      width="18"
+      height="18"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="#0B8A47"
+      strokeWidth={2.2}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className="mt-[3px] flex-none"
+      aria-hidden="true"
+    >
+      <path d="M5 12.5l4.5 4.5L19 7.5" />
+    </svg>
+  );
+}
+
 export default function Services() {
   return (
-    <section id="services" className="border-y border-rule">
-      <div className="mx-auto max-w-content px-5 lg:px-8">
-        <div className="grid grid-cols-1 bg-white lg:grid-cols-3">
-          {services.map((service, i) => {
-            const isLast = i === services.length - 1;
-            const borders = [
-              i === 0 ? "lg:border-l" : "",
-              "lg:border-r",
-              !isLast ? "border-b lg:border-b-0" : "",
-            ].join(" ");
-            return (
-              <div
-                key={service.title}
-                data-reveal
-                style={{ transitionDelay: `${i * 90}ms` }}
-                className={`flex flex-col gap-10 border-rule p-[40px_24px_36px] lg:gap-[150px] lg:p-[66px_40px_56px] ${borders}`}
-              >
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src={service.iconSrc}
-                  alt=""
-                  className="h-[70px] w-[70px] object-contain"
-                  aria-hidden="true"
-                />
-                <div className="flex flex-col gap-[14px]">
-                  <h3 className="m-0 font-bebas text-[34px] font-normal">{service.title}</h3>
-                  <p className="m-0 text-[16px] leading-[1.7] text-ink-soft">{service.body}</p>
-                </div>
-              </div>
-            );
-          })}
-        </div>
+    <section id="services" className={`${container} ${sectionY}`}>
+      <h2
+        data-reveal
+        className="m-0 mb-[44px] text-center text-[clamp(37px,3.9vw,53px)] font-semibold leading-[1.08] tracking-[-0.035em]"
+      >
+        Need a hand?
+        <br />
+        Here&apos;s what I do
+      </h2>
+
+      <div className="flex flex-wrap items-stretch gap-3">
+        {boxes.map((box, i) => (
+          <div
+            key={box.label}
+            data-reveal
+            style={{ transitionDelay: `${i * 90}ms` }}
+            className="flex flex-[1_1_380px] flex-col gap-[26px] rounded-md bg-surface-panel p-[clamp(28px,4vw,48px)]"
+          >
+            <div className="flex flex-col items-start gap-[14px]">
+              <span className="rounded-full border border-brand px-3 py-[5px] text-[14px] font-semibold tracking-normal text-brand">
+                {box.label}
+              </span>
+              <h3 className="m-0 text-[clamp(30px,2.8vw,40px)] font-semibold leading-[1.05] tracking-[-0.035em]">
+                {box.title}
+              </h3>
+              <p className="m-0 text-[19px] leading-[1.47] text-ink-soft">{box.intro}</p>
+            </div>
+
+            <ul className="m-0 flex flex-1 list-none flex-col gap-[14px] border-t border-rule p-0 pt-[22px]">
+              {box.points.map((point) => (
+                <li key={point} className="flex gap-3 text-[18px] leading-[1.42]">
+                  <Tick />
+                  <span>{point}</span>
+                </li>
+              ))}
+            </ul>
+
+            <div>
+              <ContactButton preset="Website review for my business" className={btnPrimary}>
+                {box.cta} <ArrowIcon size={16} />
+              </ContactButton>
+            </div>
+          </div>
+        ))}
       </div>
     </section>
   );

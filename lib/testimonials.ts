@@ -1,11 +1,10 @@
-// Two marquee rows of real, permissioned client quotes — one quote from each
-// client per row.
+// Real, permissioned client quotes — two per client.
 
 export type Testimonial = {
   quote: string;
   name: string;
   company: string;
-  /** Small circular company logo mark shown beside the name. */
+  /** Photo of the client (or their company mark), shown beside the quote. */
   logo?: string;
 };
 
@@ -112,3 +111,6 @@ export const testimonialsRow2: Testimonial[] = [
     logo: "/testimonials/moving-maids.jpg",
   },
 ];
+
+// Single list for the slider: each client's first quote, then their second.
+export const testimonials: Testimonial[] = [...testimonialsRow1, ...testimonialsRow2];

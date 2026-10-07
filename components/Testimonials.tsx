@@ -1,73 +1,89 @@
-import { testimonialsRow1, testimonialsRow2, type Testimonial } from "@/lib/testimonials";
+"use client";
 
-function Stars() {
-  return (
-    <div className="flex gap-[3px] text-rust" aria-label="5 out of 5 stars">
-      {Array.from({ length: 5 }).map((_, i) => (
-        <svg key={i} width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-          <path d="M12 2.5l2.9 5.87 6.48.94-4.69 4.57 1.11 6.45L12 17.77l-5.8 3.05 1.1-6.45L2.62 9.8l6.48-.94L12 2.5z" />
-        </svg>
-      ))}
-    </div>
-  );
-}
+import Image from "next/image";
+import { useRef, useState } from "react";
+import { testimonials } from "@/lib/testimonials";
+import { container, h2Section } from "./ui";
 
-function Card({ t, hidden }: { t: Testimonial; hidden?: boolean }) {
-  return (
-    <figure
-      aria-hidden={hidden || undefined}
-      className="m-0 flex min-h-[220px] w-[300px] flex-none flex-col justify-between gap-[26px] border border-rule-card bg-white p-[26px_24px] lg:min-h-[260px] lg:w-[400px] lg:p-[34px_34px_30px]"
-    >
-      <div className="flex flex-col gap-[16px]">
-        <Stars />
-        <blockquote className="m-0 text-[16px] leading-[1.6] text-ink lg:text-[17px]">
-          &ldquo;{t.quote}&rdquo;
-        </blockquote>
-      </div>
-      <figcaption className="flex items-center gap-3">
-        <span className="flex h-[52px] w-[52px] flex-none items-center justify-center overflow-hidden rounded-full border border-rule-card bg-stone">
-          {t.logo ? (
-            // eslint-disable-next-line @next/next/no-img-element
-            <img src={t.logo} alt="" className="h-full w-full object-cover" />
-          ) : null}
-        </span>
-        <span className="flex flex-col gap-[3px]">
-          <span className="text-[14px] font-medium">{t.name}</span>
-          <span className="text-[13px] text-muted">{t.company}</span>
-        </span>
-      </figcaption>
-    </figure>
-  );
-}
+const pad = (n: number) => String(n).padStart(2, "0");
 
-function Row({ items, direction }: { items: Testimonial[]; direction: "left" | "right" }) {
-  const anim = direction === "left" ? "animate-marquee-left" : "animate-marquee-right";
-  return (
-    <div className="overflow-hidden">
-      {/* Card list duplicated back-to-back for a seamless loop. */}
-      <div className={`marquee-track flex w-max gap-5 ${anim}`}>
-        {items.map((t) => (
-          <Card key={`a-${t.name}`} t={t} />
-        ))}
-        {items.map((t) => (
-          <Card key={`b-${t.name}`} t={t} hidden />
-        ))}
-      </div>
-    </div>
-  );
-}
+const roundBtn =
+  "flex h-12 w-12 items-center justify-center rounded-full border border-white/60 text-white transition-colors hover:border-white hover:bg-white hover:text-brand";
 
+// One testimonial at a time: photo on the left, green quote card on the right.
+// Changing slides fades out (180ms), swaps, then fades back in (220ms).
 export default function Testimonials() {
+  const [index, setIndex] = useState(0);
+  const [phase, setPhase] = useState<"in" | "out">("in");
+  const timer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const n = testimonials.length;
+  const t = testimonials[index];
+
+  const go = (dir: number) => {
+    if (timer.current) clearTimeout(timer.current);
+    setPhase("out");
+    timer.current = setTimeout(() => {
+      setIndex((i) => (i + dir + n) % n);
+      setPhase("in");
+    }, 180);
+  };
+
+  const fade =
+    phase === "in"
+      ? "translate-y-0 opacity-100 duration-[220ms]"
+      : "translate-y-[6px] opacity-0 duration-[180ms]";
+
   return (
-    <section className="overflow-hidden pb-[130px] pt-[10px]">
-      <div data-reveal className="mx-auto mb-14 max-w-content px-5 lg:px-8">
-        <h2 className="mx-auto max-w-[24ch] text-pretty text-center font-bebas text-[clamp(32px,3.4vw,50px)] font-normal leading-[1.04]">
-          See what people say about me.
-        </h2>
-      </div>
-      <div className="marquee-group flex flex-col gap-5">
-        <Row items={testimonialsRow1} direction="left" />
-        <Row items={testimonialsRow2} direction="right" />
+    <section className={`${container} pb-[clamp(52px,6.5vw,88px)]`}>
+      <h2 data-reveal className={`${h2Section} mb-[26px]`}>
+        See what people say about me
+      </h2>
+
+      <div data-reveal className="flex flex-wrap gap-3">
+        <div className="relative h-[260px] flex-[1_1_300px] overflow-hidden rounded-md bg-surface-placeholder md:h-[clamp(300px,30vw,400px)]">
+          {t.logo ? (
+            <Image
+              src={t.logo}
+              alt={`${t.name}, ${t.company}`}
+              fill
+              sizes="(min-width: 768px) 420px, 100vw"
+              className={`object-cover transition-[opacity,transform] ${fade}`}
+            />
+          ) : null}
+        </div>
+
+        <figure
+          aria-live="polite"
+          className="m-0 flex min-h-[320px] flex-[2_1_460px] flex-col justify-between gap-8 rounded-md bg-brand p-[clamp(26px,3.4vw,44px)] text-white md:h-[clamp(300px,30vw,400px)] md:min-h-0"
+        >
+          <blockquote
+            className={`m-0 max-w-[30ch] text-[clamp(24px,2.4vw,34px)] font-medium leading-[1.22] tracking-[-0.025em] transition-[opacity,transform] ${fade}`}
+          >
+            &ldquo;{t.quote}&rdquo;
+          </blockquote>
+
+          <div className="flex flex-wrap items-end justify-between gap-5">
+            <figcaption className={`flex flex-col gap-1 transition-[opacity,transform] ${fade}`}>
+              <span className="text-[18px] font-semibold">{t.name}</span>
+              <span className="text-[15px] font-medium opacity-[0.85]">{t.company}</span>
+            </figcaption>
+            <div className="flex items-center gap-3">
+              <span className="text-[14px] font-semibold tabular-nums tracking-normal">
+                {pad(index + 1)} / {pad(n)}
+              </span>
+              <button type="button" onClick={() => go(-1)} aria-label="Previous testimonial" className={roundBtn}>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M7.82843 10.9999H20V12.9999H7.82843L13.1924 18.3638L11.7782 19.778L4 11.9999L11.7782 4.22168L13.1924 5.63589L7.82843 10.9999Z" />
+                </svg>
+              </button>
+              <button type="button" onClick={() => go(1)} aria-label="Next testimonial" className={roundBtn}>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z" />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </figure>
       </div>
     </section>
   );

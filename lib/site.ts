@@ -1,5 +1,4 @@
-// Site-wide strings. Contact details and the LinkedIn URL are placeholders
-// (handoff open items #2 and #4) — replace before launch.
+// Site-wide strings.
 
 export const site = {
   name: "Tim Brown",
@@ -10,10 +9,10 @@ export const site = {
 } as const;
 
 export const navLinks = [
-  { label: "Services", href: "/#services" },
-  { label: "Work", href: "/#work" },
-  { label: "About", href: "/#about" },
-  { label: "Contact", href: "#contact" },
+  { label: "Services", href: "#services" },
+  { label: "Approach", href: "#approach" },
+  { label: "Work", href: "#work" },
+  { label: "About", href: "#about" },
 ] as const;
 
 // The expectations band items, in order (handoff §4).
@@ -26,4 +25,11 @@ export const expectations = [
   "One person, start to finish",
   "Blazing fast sites",
   "Honest advice",
+] as const;
+
+// Options for the contact form's "What are you after?" field.
+export const enquiryTypes = [
+  "Website review for my business",
+  "Quote for a website build",
+  "Something else",
 ] as const;

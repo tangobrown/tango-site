@@ -1,134 +1,106 @@
-// The nine work projects. `url` is null until the real live-site URL is
-// supplied — the panel hides the "Visit the live site" button when null
-// rather than linking nowhere (handoff open item #3). `imageSlot`/`panelSlot`
-// name the asset positions; images are placeholder blocks until they land.
+// Selected work, in display order. `category` is the pill on the card;
+// `services` and `summary` show on the green hover overlay.
 
 export type Project = {
   id: string;
   title: string;
-  meta: string;
-  year: string;
-  scope: string;
+  category: string;
+  services: string;
+  summary: string;
   url: string | null;
-  body: string;
-  /**
-   * Transparent device-frame mock shown in the work coverflow carousel.
-   * Rendered whole (object-contain), floating on the page.
-   */
-  cover?: string;
-  /**
-   * Project images. The panel shows all in a carousel. Falls back to a
-   * neutral placeholder when empty/unset.
-   */
-  images?: string[];
+  /** Transparent device-frame mock shown on the card. */
+  cover: string;
 };
 
 export const projects: Project[] = [
   {
-    id: "w1",
+    id: "devon-joinery",
     title: "Devon Joinery",
-    meta: "Branding, Website build & SEO for a carpentry business in Devon",
-    year: "2025",
-    scope: "Site, copy shaping, local SEO",
+    category: "Joinery · Devon",
+    services: "Branding, website & SEO",
+    summary: "Rebuilt around the jobs they actually wanted. Fewer enquiries now — better ones.",
     url: "https://devonjoinery.co.uk",
-    body: "A workshop that was getting the wrong sort of enquiry. We rebuilt the site around the jobs they actually wanted — staircases, bespoke fitted furniture — and put the workshop itself front and centre. Local SEO followed. Fewer enquiries now, better ones.",
     cover: "/work/tablet/w1.png",
-    images: ["/work/w1.jpg"],
   },
   {
-    id: "w2",
+    id: "vowles",
     title: "Vowles Carpentry",
-    meta: "Branding, website build & SEO for a carpentry business in Devon",
-    year: "2025",
-    scope: "Site, phone-first editing",
+    category: "Carpentry · Devon",
+    services: "Branding, website & SEO",
+    summary: "A portfolio the team updates from a phone, on site, with muddy hands.",
     url: "https://paulvowlescarpentry.co.uk",
-    body: "A portfolio the team can add to from a phone, on site, with muddy hands. Photograph the job, drop it in, done — no laptop, no CMS training, no waiting on me.",
     cover: "/work/tablet/w2.png",
-    images: ["/work/w2.jpg"],
   },
   {
-    id: "w7",
+    id: "ipj",
     title: "IPJ London",
-    meta: "Branding and website build for an office furniture consultancy in London",
-    year: "2023",
-    scope: "Design and build",
+    category: "Furniture · London",
+    services: "Branding & website",
+    summary: "A quiet, confident site that confirms the referral in ten seconds.",
     url: "https://ipjlondon.com",
-    body: "A London furniture consultancy that needed a site as considered as the pieces they source — calm, editorial and quietly confident. Most visitors arrive already referred; the job was to confirm, in a few seconds, that they're in the right hands.",
     cover: "/work/tablet/ipj.png",
   },
   {
-    id: "w3",
+    id: "old-fashioned",
     title: "The Old Fashioned Cocktail Co.",
-    meta: "Branding, website build & SEO for a mobile cocktail bar in New York",
-    year: "2024",
-    scope: "Design, build, checkout",
+    category: "Mobile bar · New York",
+    services: "Branding, website & SEO",
+    summary: "A brand-led site for a mobile cocktail bar, built to turn browsers into bookings.",
     url: "https://theoldfashionedcocktailco.com",
-    body: "A brand-led shop front with a checkout that behaves itself through December. Built for the seasonal spike: fast product pages, honest stock counts, and gifting flows that do not fall over on the busiest weekend of the year.",
     cover: "/work/tablet/w3.png",
-    images: ["/work/w3.jpg"],
   },
   {
-    id: "w4",
+    id: "pim-pam",
     title: "World Bank",
-    meta: "Branding & website build for PIM-PAM.net (part of the World Bank)",
-    year: "2024",
-    scope: "Interface design, front-end",
+    category: "PIM-PAM",
+    services: "Branding & website",
+    summary: "The public home of a World Bank programme on smarter public investment.",
     url: "https://pim-pam.net",
-    body: "The public face of a World Bank programme — digital tools for smarter public investment and asset management, built around the sixteen dimensions of InfraGov 2.0. Plain language over dense policy, so a minister and a researcher both find what they came for.",
     cover: "/work/tablet/w4.png",
-    images: ["/work/w4.jpg"],
   },
   {
     id: "torbay",
     title: "Torbay Sweeps",
-    meta: "Website build for a chimney sweep in Torbay",
-    year: "2025",
-    scope: "Site, local SEO",
+    category: "Chimney sweep · Torbay",
+    services: "Website build",
+    summary: "A fast, trustworthy site built around the local searches that turn into bookings.",
     url: "https://torbaysweeps.co.uk",
-    body: "A chimney sweeping and stove-installation business that wanted the phone to ring across Brixham, Paignton and the South Hams. A fast, trustworthy site built around the local searches that turn into bookings — quote requests front and centre.",
     cover: "/work/tablet/torbay.png",
-    images: ["/work/torbay.jpg"],
   },
   {
-    id: "w6",
+    id: "sanwei",
     title: "Sanwei Asia",
-    meta: "Website build & SEO for a manufacturing business in Taiwan & UK",
-    year: "2023",
-    scope: "Bilingual site, CMS",
+    category: "Manufacturing · Taiwan & UK",
+    services: "Website & SEO",
+    summary: "One bilingual site, edited from two time zones without breaking.",
     url: "https://sanwei-asia.com",
-    body: "A bilingual site for a manufacturing group, built to be edited from two time zones without either side breaking the other. Structured content, mirrored layouts, one source of truth.",
     cover: "/work/tablet/sanwei.png",
   },
   {
-    id: "w5",
+    id: "infragov",
     title: "World Bank",
-    meta: "UI/UX design & development of the InfraGov Assessment Tool",
-    year: "2023",
-    scope: "UX, build, documentation",
+    category: "InfraGov Assessment Tool",
+    services: "UI/UX design & development",
+    summary: "A 90-tab spreadsheet turned into an assessment governments actually finish.",
     url: "https://infragov-dashboard.vercel.app/en",
-    body: "An assessment framework that existed as a very long spreadsheet. Turned into something governments can actually fill in — sectioned, saveable, and clear about why each question is being asked.",
     cover: "/work/tablet/w5.png",
-    images: ["/work/w5.jpg"],
   },
   {
-    id: "w9",
+    id: "highgrove",
     title: "Highgrove Retirement Village",
-    meta: "Website build & SEO for a Retirement village in NZ",
-    year: "2022",
-    scope: "Design, build, editorial layouts",
+    category: "Retirement village · NZ",
+    services: "Website & SEO",
+    summary: "Warm, unhurried pages that reassure residents and the families helping them decide.",
     url: "https://highgrove.co.nz",
-    body: "A retirement village where the website has to reassure two audiences at once — the person moving in and the family helping them decide. Warm, generous imagery and plain, unhurried pages that make the next step feel easy.",
     cover: "/work/tablet/highgrove.png",
   },
   {
     id: "cbd",
     title: "World Bank",
-    meta: "UI/UX design & development of the Country Benchmarking Dashboard",
-    year: "2024",
-    scope: "Data visualisation, front-end",
+    category: "Country Benchmarking",
+    services: "UI/UX design & development",
+    summary: "An interactive world map that makes a global governance index readable.",
     url: "https://cbd.pim-pam.net/",
-    body: "An interactive world map that turns a governance index into something you can actually read — click a country, see its score, compare across a region. Dense comparative data made public-friendly.",
     cover: "/work/tablet/cbd.png",
-    images: ["/work/cbd.jpg"],
   },
 ];

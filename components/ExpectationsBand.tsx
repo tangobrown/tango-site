@@ -1,26 +1,32 @@
 import { expectations } from "@/lib/site";
+import ArrowIcon from "./ArrowIcon";
 
 function Item({ text }: { text: string }) {
   return (
-    <span className="inline-flex items-center gap-[26px] whitespace-nowrap font-bebas text-[22px] tracking-[0.045em] text-cream-text lg:text-[28px]">
+    <span className="inline-flex items-center gap-[30px] whitespace-nowrap text-[17px] font-medium">
       {text}
-      <span className="h-[6px] w-[6px] flex-none rounded-full bg-rust" />
+      <span className="opacity-70">
+        <ArrowIcon size={14} />
+      </span>
     </span>
   );
 }
 
+// Green "what to expect" marquee. The list is duplicated back-to-back so the
+// -50% loop is seamless; hovering pauses it.
 export default function ExpectationsBand() {
   return (
-    <section className="mb-[30px] overflow-hidden bg-ink-dark py-[18px] lg:py-[26px]">
+    <section aria-label="What to expect" className="overflow-hidden bg-brand py-[15px] text-white">
       <div className="marquee-group">
-        {/* List duplicated back-to-back for a seamless -50% loop. */}
-        <div className="marquee-track flex w-max animate-marquee-band items-center gap-[26px]">
+        <div className="marquee-track flex w-max animate-marquee items-center gap-[30px]">
           {expectations.map((text) => (
             <Item key={`a-${text}`} text={text} />
           ))}
-          {expectations.map((text) => (
-            <Item key={`b-${text}`} text={text} />
-          ))}
+          <span aria-hidden="true" className="contents">
+            {expectations.map((text) => (
+              <Item key={`b-${text}`} text={text} />
+            ))}
+          </span>
         </div>
       </div>
     </section>

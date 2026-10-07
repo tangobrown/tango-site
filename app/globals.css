@@ -7,31 +7,31 @@
     scroll-behavior: smooth;
   }
 
-  /* Keep anchored sections clear of the fixed desktop header. */
-  section[id],
-  footer[id] {
-    scroll-margin-top: 72px;
-  }
-
-  @media (min-width: 1024px) {
-    section[id],
-    footer[id] {
-      scroll-margin-top: 96px;
-    }
+  /* Keep anchored sections clear of the floating nav pill. */
+  section[id] {
+    scroll-margin-top: 88px;
   }
 
   body {
     margin: 0;
-    background: #faf7f2; /* cream */
-    color: #1f1d1a; /* ink */
-    font-family: var(--font-public), system-ui, sans-serif;
+    background: #ffffff;
+    color: #141414;
+    font-family: var(--font-hanken), system-ui, sans-serif;
     font-weight: 500;
+    letter-spacing: -0.015em;
     -webkit-font-smoothing: antialiased;
     overflow-x: clip; /* prevent horizontal scroll without breaking position: sticky */
   }
 
+  h1,
+  h2,
+  h3 {
+    font-weight: 600;
+  }
+
   ::selection {
-    background: #ebd9cd;
+    background: #0b8a47;
+    color: #ffffff;
   }
 }
 
@@ -45,7 +45,7 @@
     width: 0;
   }
 
-  /* Pause every marquee track when the group is hovered. */
+  /* Pause the marquee while it's hovered. */
   .marquee-group:hover .marquee-track {
     animation-play-state: paused;
   }
@@ -55,11 +55,10 @@
    so no-JS shows everything. ScrollReveal.tsx toggles `.is-visible`. */
 .reveal-ready [data-reveal] {
   opacity: 0;
-  transform: translateY(26px);
+  transform: translateY(22px);
   transition:
     opacity 0.7s cubic-bezier(0.22, 0.61, 0.36, 1),
     transform 0.7s cubic-bezier(0.22, 0.61, 0.36, 1);
-  will-change: opacity, transform;
 }
 
 .reveal-ready [data-reveal].is-visible {
@@ -67,16 +66,26 @@
   transform: none;
 }
 
-/* Freeze all marquees + reveals under reduced-motion. */
+/* Reduced motion: stop the marquee and make every transition instant. */
 @media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
   .marquee-track {
     animation: none !important;
     transform: none !important;
   }
 
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+
   .reveal-ready [data-reveal] {
     opacity: 1 !important;
     transform: none !important;
-    transition: none !important;
   }
 }
