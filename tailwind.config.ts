@@ -20,7 +20,7 @@ const config: Config = {
         footer: { link: "#CFCFCF", muted: "#9A9A9A", legal: "#8A8A8A" },
       },
       fontFamily: {
-        sans: ["var(--font-syne)", "system-ui", "sans-serif"],
+        sans: ["var(--font-onest)", "system-ui", "sans-serif"],
       },
       maxWidth: {
         content: "1240px",

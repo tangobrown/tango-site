@@ -33,7 +33,7 @@ export default function SplitBlock({
         data-reveal
         className={`flex flex-col items-start gap-[18px] ${imageSide === "left" ? "md:order-2" : ""}`}
       >
-        <h2 className={h2Section}>{title}</h2>
+        <h2 className={`${h2Section} mb-3`}>{title}</h2>
         {paragraphs.map((p) => (
           <p key={p} className={bodyText}>
             {p}

@@ -65,7 +65,7 @@ export default function Services() {
     <section id="services" className={`${container} ${sectionY}`}>
       <h2
         data-reveal
-        className="m-0 mb-[44px] text-center text-[clamp(37px,3.9vw,53px)] font-semibold leading-[1.08] tracking-[-0.015em]"
+        className="m-0 mb-[60px] text-center text-[clamp(37px,3.9vw,53px)] font-semibold leading-[1.08] tracking-[-0.015em]"
       >
         Need a hand?
         <br />
@@ -84,7 +84,7 @@ export default function Services() {
               <span className="rounded-full border border-brand px-3 py-[5px] text-[14px] font-semibold tracking-normal text-brand">
                 {box.label}
               </span>
-              <h3 className="m-0 text-[clamp(30px,2.8vw,40px)] font-semibold leading-[1.05] tracking-[-0.015em]">
+              <h3 className="m-0 mb-2 text-[clamp(30px,2.8vw,40px)] font-semibold leading-[1.05] tracking-[-0.015em]">
                 {box.title}
               </h3>
               <p className="m-0 text-[19px] leading-[1.47] text-ink-soft">{box.intro}</p>

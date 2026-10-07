@@ -172,7 +172,7 @@ export default function HeroOrbit({ className = "" }: { className?: string }) {
               key={label}
               data-slot
               style={{ left, top }}
-              className="absolute -translate-x-1/2 -translate-y-1/2 font-sans"
+              className="absolute -translate-x-1/2 -translate-y-1/2"
             >
               <span
                 data-pill

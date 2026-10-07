@@ -1,18 +1,11 @@
 import type { Metadata, Viewport } from "next";
-import { Onest, Syne } from "next/font/google";
+import { Onest } from "next/font/google";
 import "./globals.css";
 
-// Syne for headings, buttons, nav and labels; Onest for paragraph text.
-const syne = Syne({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  variable: "--font-syne",
-  display: "swap",
-});
-
+// Onest — the one family for everything (headings 600, body 500).
 const onest = Onest({
   subsets: ["latin"],
-  weight: ["400", "500", "600"],
+  weight: ["400", "500", "600", "700"],
   variable: "--font-onest",
   display: "swap",
 });
@@ -68,7 +61,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en-GB" className={`${syne.variable} ${onest.variable}`}>
+    <html lang="en-GB" className={onest.variable}>
       <body>
         <script
           type="application/ld+json"

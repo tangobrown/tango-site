@@ -28,7 +28,7 @@ export default function WorkGrid() {
     <section id="work" className="px-5 pb-[clamp(52px,6.5vw,88px)] lg:px-11">
       <h2
         data-reveal
-        className={`${h2Section} mb-[26px] text-center`}
+        className={`${h2Section} mb-[44px] text-center`}
       >
         Selected work
       </h2>
@@ -87,7 +87,7 @@ export default function WorkGrid() {
                 <h3 className="m-0 mt-1 text-[clamp(22px,1.9vw,26px)] font-semibold leading-[1.1] tracking-[-0.01em]">
                   {p.title}
                 </h3>
-                <p className="m-0 mt-1 text-[15px] text-ink-muted">{p.category}</p>
+                <p className="m-0 mt-2 text-[15px] text-ink-muted">{p.category}</p>
               </div>
             </article>
           );

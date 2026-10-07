@@ -16,18 +16,11 @@
     margin: 0;
     background: #ffffff;
     color: #141414;
-    font-family: var(--font-syne), system-ui, sans-serif;
+    font-family: var(--font-onest), system-ui, sans-serif;
     font-weight: 500;
     letter-spacing: 0;
     -webkit-font-smoothing: antialiased;
     overflow-x: clip; /* prevent horizontal scroll without breaking position: sticky */
-  }
-
-  /* Paragraph text in Onest. Add `font-sans` to keep a label in Syne. */
-  p,
-  li,
-  blockquote {
-    font-family: var(--font-onest), system-ui, sans-serif;
   }
 
   h1,
