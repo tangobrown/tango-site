@@ -27,15 +27,6 @@ const config: Config = {
         nav: "0 6px 24px rgba(0,0,0,0.12)",
         panel: "-20px 0 60px rgba(0,0,0,0.18)",
       },
-      keyframes: {
-        marquee: {
-          from: { transform: "translateX(0)" },
-          to: { transform: "translateX(-50%)" },
-        },
-      },
-      animation: {
-        marquee: "marquee 44s linear infinite",
-      },
     },
   },
   plugins: [],

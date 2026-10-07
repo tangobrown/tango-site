@@ -30,7 +30,7 @@ export default function Hero() {
             customers.
           </p>
           <a href="#work" className={btnPrimary}>
-            See the work <ArrowIcon size={16} />
+            See the work <ArrowIcon size={18} />
           </a>
         </div>
 

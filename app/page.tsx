@@ -1,5 +1,4 @@
 import { ContactPanelProvider } from "@/components/ContactPanel";
-import ExpectationsBand from "@/components/ExpectationsBand";
 import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
 import ScrollReveal from "@/components/ScrollReveal";
@@ -15,7 +14,6 @@ export default function Home() {
       <SiteNav />
       <main>
         <Hero />
-        <ExpectationsBand />
         <Services />
         <SplitBlock
           id="approach"

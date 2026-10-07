@@ -15,18 +15,6 @@ export const navLinks = [
   { label: "About", href: "#about" },
 ] as const;
 
-// The expectations band items, in order (handoff §4).
-export const expectations = [
-  "Transparent pricing",
-  "Local SEO (Google)",
-  "Monthly reporting",
-  "Ongoing support",
-  "Optimised for AI Search",
-  "One person, start to finish",
-  "Blazing fast sites",
-  "Honest advice",
-] as const;
-
 // Options for the contact form's "What are you after?" field.
 export const enquiryTypes = [
   "Website review for my business",

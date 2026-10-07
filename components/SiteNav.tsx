@@ -18,7 +18,7 @@ function Wordmark({ className = "" }: { className?: string }) {
 }
 
 const ctaClass =
-  "inline-flex shrink-0 items-center rounded-full bg-ink px-5 py-3 text-[15px] font-semibold tracking-normal text-white transition-colors duration-200 hover:bg-brand";
+  "inline-flex shrink-0 items-center rounded-full bg-ink px-6 py-[14px] text-[17px] font-semibold tracking-normal text-white transition-colors duration-200 hover:bg-brand";
 
 // Floating white pill nav. Fixed so it stays reachable while scrolling.
 export default function SiteNav() {
@@ -119,7 +119,7 @@ export default function SiteNav() {
             ))}
           </nav>
           <div className="mt-auto" onClick={() => setMenuOpen(false)}>
-            <ContactButton className={`${ctaClass} h-[50px] px-6`}>Let&apos;s connect</ContactButton>
+            <ContactButton className={`${ctaClass} h-[56px] px-7`}>Let&apos;s connect</ContactButton>
           </div>
         </div>
       )}

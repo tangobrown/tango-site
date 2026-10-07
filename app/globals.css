@@ -44,11 +44,6 @@
     height: 0;
     width: 0;
   }
-
-  /* Pause the marquee while it's hovered. */
-  .marquee-group:hover .marquee-track {
-    animation-play-state: paused;
-  }
 }
 
 /* Scroll-in reveal. Hidden state only applies once JS marks the page ready,
@@ -66,15 +61,10 @@
   transform: none;
 }
 
-/* Reduced motion: stop the marquee and make every transition instant. */
+/* Reduced motion: make every transition instant. */
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
-  }
-
-  .marquee-track {
-    animation: none !important;
-    transform: none !important;
   }
 
   *,

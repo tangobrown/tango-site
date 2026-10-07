@@ -101,7 +101,7 @@ export default function Services() {
 
             <div>
               <ContactButton preset="Website review for my business" className={btnPrimary}>
-                {box.cta} <ArrowIcon size={16} />
+                {box.cta} <ArrowIcon size={18} />
               </ContactButton>
             </div>
           </div>
