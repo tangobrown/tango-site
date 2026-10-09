@@ -20,7 +20,7 @@ export default function WorkGrid() {
           <article
             key={p.id}
             style={{ top: `calc(var(--stack-top) + ${i * 6}px)` }}
-            className="grid grid-cols-1 overflow-hidden rounded-[20px] border border-ink/10 bg-white shadow-[0_-10px_40px_rgba(14,42,31,0.08)] [--stack-top:84px] md:h-[min(500px,calc(100svh-150px))] md:grid-cols-[minmax(0,1.15fr)_minmax(0,1fr)] lg:h-[min(560px,calc(100vh-200px))] lg:grid-cols-[minmax(0,1.25fr)_minmax(0,1fr)] lg:rounded-[24px] lg:[--stack-top:100px] [@media(min-height:560px)]:sticky"
+            className="grid grid-cols-1 overflow-hidden rounded-[20px] border border-ink/10 bg-white [--stack-top:84px] md:h-[min(500px,calc(100svh-150px))] md:grid-cols-[minmax(0,1.15fr)_minmax(0,1fr)] lg:h-[min(560px,calc(100vh-200px))] lg:grid-cols-[minmax(0,1.25fr)_minmax(0,1fr)] lg:rounded-[24px] lg:[--stack-top:100px] [@media(min-height:560px)]:sticky"
           >
             <div className="relative h-[clamp(170px,30svh,260px)] bg-[#effff7] md:h-full">
               <Image

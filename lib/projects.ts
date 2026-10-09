@@ -68,15 +68,6 @@ export const projects: Project[] = [
     cover: "/work/tablet/torbay.png",
   },
   {
-    id: "sanwei",
-    title: "Sanwei Asia",
-    category: "Manufacturing · Taiwan & UK",
-    services: "Website & SEO",
-    summary: "One bilingual site, edited from two time zones without breaking.",
-    url: "https://sanwei-asia.com",
-    cover: "/work/tablet/sanwei.png",
-  },
-  {
     id: "highgrove",
     title: "Highgrove Retirement Village",
     category: "Retirement village · NZ",
@@ -84,14 +75,5 @@ export const projects: Project[] = [
     summary: "Warm, unhurried pages that reassure residents and the families helping them decide.",
     url: "https://highgrove.co.nz",
     cover: "/work/tablet/highgrove.png",
-  },
-  {
-    id: "cbd",
-    title: "World Bank",
-    category: "Country Benchmarking",
-    services: "UI/UX design & development",
-    summary: "An interactive world map that makes a global governance index readable.",
-    url: "https://cbd.pim-pam.net/",
-    cover: "/work/tablet/cbd.png",
   },
 ];
