@@ -8,7 +8,7 @@ import { container, h2Section } from "./ui";
 const pad = (n: number) => String(n).padStart(2, "0");
 
 const roundBtn =
-  "flex h-12 w-12 items-center justify-center rounded-full border border-white/60 text-white transition-colors hover:border-white hover:bg-white hover:text-brand";
+  "flex h-11 w-11 items-center justify-center rounded-full border border-white/60 text-white transition-colors hover:border-white hover:bg-white hover:text-brand";
 
 // One testimonial at a time: photo on the left, green quote card on the right.
 // Changing slides fades out (180ms), swaps, then fades back in (220ms).

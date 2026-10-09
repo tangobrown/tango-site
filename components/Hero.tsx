@@ -1,3 +1,4 @@
+import Image from "next/image";
 import ArrowIcon from "./ArrowIcon";
 import { ContactButton } from "./ContactPanel";
 import HeroAnimation from "./HeroAnimation";
@@ -18,6 +19,19 @@ export default function Hero() {
         className={`${container} relative grid grid-cols-1 items-center gap-10 pb-14 pt-[140px] lg:grid-cols-2 lg:gap-8 lg:h-[92vh] lg:max-h-[860px] lg:min-h-[640px] lg:pb-6 lg:pt-[104px]`}
       >
         <div className="flex max-w-[560px] flex-col items-start gap-[30px] lg:max-w-[580px]">
+          <div className="flex items-center gap-3">
+            <Image
+              src="/tim-avatar.jpg"
+              alt=""
+              width={240}
+              height={240}
+              priority
+              className="h-[clamp(44px,4vw,60px)] w-[clamp(44px,4vw,60px)] shrink-0 rounded-full object-cover"
+            />
+            <p className="m-0 text-[15px] font-medium leading-[1.3] text-footer-link sm:text-[17px]">
+              <span className="font-semibold text-white">Tim Brown</span> - Website Growth Consultant
+            </p>
+          </div>
           <h1 className="m-0 text-[clamp(36px,4.4vw,64px)] font-semibold leading-[0.96] tracking-[-0.025em]">
             Get your{" "}
             <span className="whitespace-nowrap">
@@ -31,11 +45,11 @@ export default function Hero() {
             working as hard <span className="whitespace-nowrap">as you do</span>
           </h1>
           <p className="m-0 max-w-[46ch] text-[19px] leading-[1.37] tracking-normal text-footer-link">
-            I&apos;m Tim, a Website Growth Consultant based in Exeter. I build, host and optimise
-            blazing fast websites that look good and attract your ideal customers.
+            I build, host and optimise blazing fast websites for companies in the UK that want to
+            look good and grow online.
           </p>
           <ContactButton className={`${btnPrimary} mt-3`}>
-            Get started <ArrowIcon size={18} />
+            Get started <ArrowIcon size={16} />
           </ContactButton>
         </div>
 

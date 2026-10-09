@@ -41,7 +41,7 @@ export default function SplitBlock({
         ))}
         <div className="mt-[14px]">
           <ContactButton className={btnPrimary}>
-            {buttonLabel} <ArrowIcon size={18} />
+            {buttonLabel} <ArrowIcon size={16} />
           </ContactButton>
         </div>
       </div>

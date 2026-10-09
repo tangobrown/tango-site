@@ -87,9 +87,9 @@ export default function Services() {
                 </p>
                 <span
                   aria-hidden="true"
-                  className={`flex h-14 w-14 flex-none items-center justify-center rounded-full border border-ink/20 transition-colors duration-300 ${t.arrow}`}
+                  className={`flex h-12 w-12 flex-none items-center justify-center rounded-full border border-ink/20 transition-colors duration-300 ${t.arrow}`}
                 >
-                  <ArrowIcon size={20} />
+                  <ArrowIcon size={18} />
                 </span>
               </div>
               <h3 className="m-0 text-[clamp(28px,2.8vw,40px)] font-semibold leading-[1.08] tracking-[-0.015em]">

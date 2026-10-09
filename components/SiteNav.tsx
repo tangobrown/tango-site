@@ -20,7 +20,7 @@ function Wordmark({ light = false }: { light?: boolean }) {
 }
 
 const ctaBase =
-  "inline-flex shrink-0 items-center rounded-full px-6 py-[14px] text-[17px] font-semibold tracking-normal text-white transition-colors duration-300";
+  "inline-flex shrink-0 items-center rounded-full px-5 py-3 text-[16px] font-semibold tracking-normal text-white transition-colors duration-300";
 const ctaClass = `${ctaBase} bg-pine hover:bg-brand`;
 
 const ease = "ease-[cubic-bezier(0.22,0.61,0.36,1)]";
@@ -139,7 +139,7 @@ export default function SiteNav() {
             ))}
           </nav>
           <div className="mt-auto" onClick={() => setMenuOpen(false)}>
-            <ContactButton className={`${ctaClass} h-[56px] px-7`}>Let&apos;s connect</ContactButton>
+            <ContactButton className={`${ctaClass} h-[50px] px-6`}>Let&apos;s connect</ContactButton>
           </div>
         </div>
       )}

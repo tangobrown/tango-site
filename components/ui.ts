@@ -8,7 +8,7 @@ export const sectionY = "py-[clamp(52px,6.5vw,88px)]";
 
 /** The one button: a pill with the label and arrow together. */
 const btnBase =
-  "inline-flex h-[54px] shrink-0 items-center gap-3 rounded-full pl-[26px] pr-[22px] text-[17px] font-semibold tracking-normal transition-colors duration-200";
+  "inline-flex h-[48px] shrink-0 items-center gap-[10px] rounded-full pl-[22px] pr-[18px] text-[16px] font-semibold tracking-normal transition-colors duration-200";
 
 export const btnPrimary = `${btnBase} bg-brand text-white hover:bg-brand-dark`;
 
