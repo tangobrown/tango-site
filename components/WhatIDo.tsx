@@ -24,7 +24,7 @@ const services: { title: string; text: string; icon: ReactNode }[] = [
 // desktop, with a full-width rule along the bottom.
 export default function WhatIDo() {
   return (
-    <section id="services" aria-label="What I do" className="border-b border-ink/15">
+    <section id="services" aria-label="What I do" className="border-b border-ink/15 bg-[#effff7]">
       <div className={`${container} grid grid-cols-1 divide-y divide-ink/15 lg:grid-cols-3 lg:divide-x lg:divide-y-0`}>
         {services.map((s) => (
           <div
