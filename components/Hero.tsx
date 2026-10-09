@@ -1,26 +1,44 @@
 import Image from "next/image";
 import ArrowIcon from "./ArrowIcon";
 import { ContactButton } from "./ContactPanel";
-import HeroOrbit from "./HeroOrbit";
 import { btnPrimary, container } from "./ui";
 
-// Dark hero: headline and intro on the left, the rotating "what I do" orbit
-// on the right, both inside the main content column and centred vertically.
-// On mobile the orbit sits above the copy.
+// Hero: photo of Tim as the background (anchored top right), with a dark
+// green fade on the left so the copy stays readable over it.
 export default function Hero() {
   return (
     <section id="top" className="relative overflow-hidden bg-pine text-white">
+      <Image
+        src="/images/tim-brown-hero.jpg"
+        alt="Tim Brown sitting in front of a street-art mural"
+        fill
+        priority
+        quality={90}
+        sizes="100vw"
+        className="object-cover object-[70%_top] lg:object-right-top"
+      />
+      {/* Legibility fades: from the bottom on small screens, from the left on large */}
       <div
-        className={`${container} relative grid grid-cols-1 items-center gap-10 pb-12 pt-[104px] lg:h-[92vh] lg:max-h-[860px] lg:min-h-[640px] lg:grid-cols-[minmax(0,1.25fr)_minmax(0,1fr)] lg:pb-6`}
-      >
-        {/* Soft green glow, centred on the orbit */}
-        <div
-          aria-hidden="true"
-          className="pointer-events-none absolute left-1/2 top-[274px] h-[min(110vw,900px)] w-[min(110vw,900px)] -translate-x-1/2 -translate-y-1/2 rounded-full lg:left-auto lg:right-[calc(42px+min(540px,62vh)/2)] lg:top-[calc(50%+40px)] lg:translate-x-1/2"
-          style={{ background: "radial-gradient(closest-side, rgba(20,168,90,0.22), rgba(20,168,90,0))" }}
-        />
+        aria-hidden="true"
+        className="absolute inset-0 lg:hidden"
+        style={{
+          background:
+            "linear-gradient(180deg, rgba(14,42,31,0.35) 0%, rgba(14,42,31,0.7) 38%, rgba(14,42,31,0.94) 62%, rgba(14,42,31,0.97) 100%)",
+        }}
+      />
+      <div
+        aria-hidden="true"
+        className="absolute inset-0 hidden lg:block"
+        style={{
+          background:
+            "linear-gradient(90deg, rgba(14,42,31,0.96) 0%, rgba(14,42,31,0.9) 36%, rgba(14,42,31,0.5) 54%, rgba(14,42,31,0) 72%)",
+        }}
+      />
 
-        <div className="relative flex flex-col items-start gap-[30px]">
+      <div
+        className={`${container} relative grid grid-cols-1 items-center pb-12 pt-[min(62vw,380px)] lg:h-[92vh] lg:max-h-[860px] lg:min-h-[640px] lg:pb-6 lg:pt-[104px]`}
+      >
+        <div className="flex max-w-[640px] flex-col items-start gap-[30px] lg:max-w-[min(680px,50%)]">
           <div className="flex items-center gap-3">
             <Image
               src="/tim-avatar.jpg"
@@ -54,8 +72,6 @@ export default function Hero() {
             Get started <ArrowIcon size={18} />
           </ContactButton>
         </div>
-
-        <HeroOrbit className="order-first mx-auto w-full max-w-[310px] lg:order-none lg:mr-[22px] lg:w-[calc(100%-22px)] lg:max-w-[min(540px,62vh)] lg:justify-self-end" />
       </div>
     </section>
   );
