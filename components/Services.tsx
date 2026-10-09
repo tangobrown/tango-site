@@ -14,6 +14,7 @@ type Card = {
   label: string;
   title: string;
   intro: string;
+  points: string[];
   cta: string;
   tone: "dark" | "light";
 };
@@ -24,6 +25,11 @@ const cards: Card[] = [
     title: "Service based companies wanting to get more leads",
     intro:
       "For builders, plumbers, electricians, cleaners, consultants, clinics and other local service businesses.",
+    points: [
+      "Bespoke websites that look stunning on all devices",
+      "Search engine optimisation for better rankings in search & AI",
+      "Built for converting browsers into leads in your inbox",
+    ],
     cta: "Get a free website check",
     tone: "dark",
   },
@@ -32,6 +38,11 @@ const cards: Card[] = [
     title: "Online stores looking to modernise & level-up sales",
     intro:
       "Custom online stores for ambitious UK brands who want a super-fast site, built on modern technology.",
+    points: [
+      "Stunning online shops, built to convert users into buyers",
+      "Bespoke functionality to suit your business needs",
+      "Optimised to get more users to your website",
+    ],
     cta: "Get a free store review",
     tone: "light",
   },
@@ -42,6 +53,8 @@ const tones = {
     card: "bg-pine text-white",
     label: "text-brand-bright",
     intro: "text-white/75",
+    tick: "#2FD07A",
+    rule: "border-white/15",
     arrow:
       "border-white/30 group-hover:border-brand-bright group-hover:bg-brand-bright group-hover:text-pine group-focus-within:border-brand-bright group-focus-within:bg-brand-bright group-focus-within:text-pine",
   },
@@ -49,10 +62,31 @@ const tones = {
     card: "bg-brand text-pine",
     label: "text-pine/80",
     intro: "text-pine/85",
+    tick: "#0E2A1F",
+    rule: "border-pine/20",
     arrow:
       "border-pine/30 group-hover:border-pine group-hover:bg-pine group-hover:text-white group-focus-within:border-pine group-focus-within:bg-pine group-focus-within:text-white",
   },
 } as const;
+
+function Tick({ color }: { color: string }) {
+  return (
+    <svg
+      width="18"
+      height="18"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke={color}
+      strokeWidth={2.6}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className="mt-[4px] flex-none"
+      aria-hidden="true"
+    >
+      <path d="M5 12.5l4.5 4.5L19 7.5" />
+    </svg>
+  );
+}
 
 // "Who do I work with?" On large screens the two cards start stacked like a
 // small deck in the middle; when they reach the centre of the viewport the
@@ -125,9 +159,17 @@ export default function Services() {
                 {card.title}
               </h3>
               <p className={`m-0 max-w-[46ch] text-[19px] leading-[1.47] ${t.intro}`}>{card.intro}</p>
+              <ul className={`m-0 mt-6 flex list-none flex-col gap-3 border-t p-0 pt-6 ${t.rule}`}>
+                {card.points.map((point) => (
+                  <li key={point} className="flex gap-3 text-[17px] font-medium leading-[1.4]">
+                    <Tick color={t.tick} />
+                    <span>{point}</span>
+                  </li>
+                ))}
+              </ul>
               <span
                 aria-hidden="true"
-                className={`mt-8 flex h-12 w-12 items-center justify-center self-end rounded-full border transition-colors duration-300 lg:mt-auto ${t.arrow}`}
+                className={`mt-6 flex h-12 w-12 items-center justify-center self-end rounded-full border transition-colors duration-300 ${t.arrow}`}
               >
                 <ArrowIcon size={18} />
               </span>
