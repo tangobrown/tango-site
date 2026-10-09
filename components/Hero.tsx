@@ -1,6 +1,8 @@
 import Image from "next/image";
+import ArrowIcon from "./ArrowIcon";
+import { ContactButton } from "./ContactPanel";
 import HeroAnimation from "./HeroAnimation";
-import { container } from "./ui";
+import { btnPrimary, container } from "./ui";
 
 // Hero: dark green with a soft light-green glow on the right. Copy on the
 // left, the design → conversion animation on the right (below on mobile).
@@ -14,7 +16,7 @@ export default function Hero() {
       />
 
       <div
-        className={`${container} relative grid grid-cols-1 items-center gap-10 pb-10 pt-[124px] lg:grid-cols-2 lg:gap-8 lg:h-[80vh] lg:max-h-[760px] lg:min-h-[580px] lg:pb-4 lg:pt-[96px]`}
+        className={`${container} relative grid grid-cols-1 items-center gap-10 pb-10 pt-[124px] lg:grid-cols-[minmax(0,1fr)_minmax(0,1.12fr)] lg:gap-8 lg:h-[80vh] lg:max-h-[760px] lg:min-h-[580px] lg:pb-4 lg:pt-[96px]`}
       >
         <div className="flex max-w-[560px] flex-col items-start gap-[30px] lg:max-w-[580px]">
           <div className="flex items-center gap-3">
@@ -46,11 +48,14 @@ export default function Hero() {
             I build, host and optimise blazing fast websites for companies in the UK that want to
             look good and grow online.
           </p>
+          <ContactButton className={`${btnPrimary} mt-2`}>
+            Get started <ArrowIcon size={16} />
+          </ContactButton>
         </div>
 
         <HeroAnimation
           accent="#14A85A"
-          className="mx-auto -mb-[16%] -mt-[12%] max-w-[560px] lg:my-0 lg:mr-0 lg:max-w-[min(600px,calc(80vh-110px))]"
+          className="mx-auto -mb-[16%] -mt-[12%] max-w-[560px] lg:-my-[5%] lg:mr-0 lg:max-w-[min(700px,calc(80vh-40px))]"
         />
       </div>
     </section>

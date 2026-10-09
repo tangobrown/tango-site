@@ -6,6 +6,7 @@ import Services from "@/components/Services";
 import SiteNav from "@/components/SiteNav";
 import SplitBlock from "@/components/SplitBlock";
 import Testimonials from "@/components/Testimonials";
+import WhatIDo from "@/components/WhatIDo";
 import WorkGrid from "@/components/WorkGrid";
 
 export default function Home() {
@@ -14,6 +15,7 @@ export default function Home() {
       <SiteNav />
       <main>
         <Hero />
+        <WhatIDo />
         <Services />
         <SplitBlock
           id="approach"

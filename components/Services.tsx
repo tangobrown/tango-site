@@ -98,7 +98,7 @@ export default function Services() {
   );
 
   return (
-    <section ref={root} id="services" className={`${container} ${sectionY}`}>
+    <section ref={root} id="who-i-work-with" className={`${container} ${sectionY}`}>
       <h2 data-reveal className={`${h2Section} mb-[44px] text-center`}>
         Who do I work with?
       </h2>
