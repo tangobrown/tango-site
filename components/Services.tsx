@@ -101,7 +101,7 @@ export default function Services() {
     <section
       ref={root}
       id="who-i-work-with"
-      className={`${container} pb-[clamp(72px,8.5vw,116px)] pt-[clamp(52px,6.5vw,88px)]`}
+      className={`${container} pb-[clamp(44px,5vw,72px)] pt-[clamp(52px,6.5vw,88px)]`}
     >
       <h2 data-reveal className={`${h2Section} mb-[44px] text-center`}>
         Who do I work with?

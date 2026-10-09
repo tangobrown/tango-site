@@ -28,7 +28,7 @@ export default function Home() {
           imageSrc="/about-2.jpg"
           imageAlt="Tim Brown working with clients at a laptop"
           imageSide="right"
-          className="py-[clamp(28px,3.5vw,50px)]"
+          className="pb-[clamp(28px,3.5vw,50px)] pt-[clamp(20px,2vw,28px)]"
         />
         <SplitBlock
           id="about"
