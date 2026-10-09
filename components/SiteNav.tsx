@@ -4,23 +4,30 @@ import { useEffect, useState } from "react";
 import { navLinks } from "@/lib/site";
 import { ContactButton } from "./ContactPanel";
 
-function Wordmark({ className = "" }: { className?: string }) {
+function Wordmark({ light = false }: { light?: boolean }) {
   return (
     <span
-      className={`flex flex-col text-[17px] font-bold leading-[0.92] tracking-[-0.005em] text-ink ${className}`}
+      className={`flex flex-col text-[17px] font-bold leading-[0.92] tracking-[-0.005em] transition-colors duration-500 ${
+        light ? "text-white" : "text-ink"
+      }`}
     >
       <span>TIM</span>
       <span>
-        BR<span className="text-brand">O</span>WN
+        BR<span className={light ? "text-brand-bright" : "text-brand"}>O</span>WN
       </span>
     </span>
   );
 }
 
-const ctaClass =
-  "inline-flex shrink-0 items-center rounded-full bg-pine px-6 py-[14px] text-[17px] font-semibold tracking-normal text-white transition-colors duration-200 hover:bg-brand";
+const ctaBase =
+  "inline-flex shrink-0 items-center rounded-full px-6 py-[14px] text-[17px] font-semibold tracking-normal text-white transition-colors duration-300";
+const ctaClass = `${ctaBase} bg-pine hover:bg-brand`;
 
-// Floating white pill nav. Fixed so it stays reachable while scrolling.
+const ease = "ease-[cubic-bezier(0.22,0.61,0.36,1)]";
+
+// Fixed nav. At the top of the page it's transparent and full width over the
+// dark hero (logo far left, button far right). Once you scroll it slides in to
+// the content width and becomes the white pill.
 export default function SiteNav() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -48,12 +55,14 @@ export default function SiteNav() {
   return (
     <>
       <header
-        className={`fixed left-1/2 z-30 flex w-[min(1300px,calc(100%-40px))] -translate-x-1/2 items-center justify-between gap-4 rounded-full bg-white py-2 pl-[26px] pr-2 shadow-nav transition-[top] duration-300 ${
-          scrolled ? "top-[10px]" : "top-[14px]"
+        className={`fixed z-30 flex items-center justify-between gap-4 rounded-full py-2 transition-[left,right,top,padding,background-color,box-shadow] duration-500 ${ease} ${
+          scrolled
+            ? "left-[max(20px,calc(50%-650px))] right-[max(20px,calc(50%-650px))] top-[10px] bg-white pl-[26px] pr-2 shadow-nav"
+            : "left-0 right-0 top-[14px] bg-transparent pl-5 pr-5 shadow-none md:pl-10 md:pr-10"
         }`}
       >
         <a href="#top" aria-label="Tim Brown — home">
-          <Wordmark />
+          <Wordmark light={!scrolled} />
         </a>
 
         <nav className="hidden items-center gap-[clamp(16px,2.6vw,34px)] md:flex" aria-label="Main">
@@ -61,7 +70,9 @@ export default function SiteNav() {
             <a
               key={link.href}
               href={link.href}
-              className="text-[17px] font-semibold text-ink transition-colors hover:text-brand"
+              className={`text-[17px] font-semibold transition-colors duration-300 ${
+                scrolled ? "text-ink hover:text-brand" : "text-white hover:text-brand-bright"
+              }`}
             >
               {link.label}
             </a>
@@ -69,17 +80,26 @@ export default function SiteNav() {
         </nav>
 
         <div className="flex items-center gap-2">
-          <ContactButton className={ctaClass}>Let&apos;s connect</ContactButton>
+          <ContactButton
+            className={`${ctaBase} ${scrolled ? "bg-pine hover:bg-brand" : "bg-brand hover:bg-brand-dark"}`}
+          >
+            Let&apos;s connect
+          </ContactButton>
           <button
             type="button"
             onClick={() => setMenuOpen(true)}
             aria-label="Open menu"
             aria-expanded={menuOpen}
-            className="flex h-11 w-11 flex-col items-center justify-center gap-[5px] rounded-full border border-rule md:hidden"
+            className={`flex h-11 w-11 flex-col items-center justify-center gap-[5px] rounded-full border transition-colors duration-300 md:hidden ${
+              scrolled ? "border-rule" : "border-white/40"
+            }`}
           >
-            <span className="block h-[1.5px] w-[18px] bg-ink" />
-            <span className="block h-[1.5px] w-[18px] bg-ink" />
-            <span className="block h-[1.5px] w-[18px] bg-ink" />
+            {[0, 1, 2].map((i) => (
+              <span
+                key={i}
+                className={`block h-[1.5px] w-[18px] transition-colors duration-300 ${scrolled ? "bg-ink" : "bg-white"}`}
+              />
+            ))}
           </button>
         </div>
       </header>
