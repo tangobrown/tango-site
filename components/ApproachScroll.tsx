@@ -55,7 +55,7 @@ export default function ApproachScroll() {
   );
 
   return (
-    <section ref={root} id="approach" className="pb-[clamp(28px,3.5vw,50px)] pt-[clamp(52px,6.5vw,88px)]">
+    <section ref={root} id="approach" className="py-[clamp(28px,3.5vw,50px)]">
       <div
         data-grid
         className={`${container} relative grid grid-cols-1 items-center gap-x-[clamp(40px,6vw,80px)] gap-y-10 lg:grid-cols-2`}
