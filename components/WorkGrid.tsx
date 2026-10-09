@@ -1,97 +1,64 @@
-"use client";
-
 import Image from "next/image";
-import { useState } from "react";
 import { projects } from "@/lib/projects";
 import ArrowIcon from "./ArrowIcon";
-import { h2Section } from "./ui";
+import { btnPrimary, container, h2Section } from "./ui";
 
-// Every tablet mock is 1196×872 with the device inset 4.01% left/right and
-// 5.5% top/bottom (transparent margin around it), with ~2.9%/4.1% corner
-// radii. The green hover layer uses the same box so it fills exactly the
-// tablet's shape rather than the whole tile.
-const DEVICE = { insetX: "4.01%", insetY: "5.5%", radius: "2.9% / 4.1%" };
-
-// Selected work: a full-width 3-column grid of tablet mocks with the title
-// below. Hovering (or focusing) a tablet turns it green with a short summary
-// and a link to the live site. Touch screens have no hover, so the first
-// tap does the same.
+// Selected work as a stack of cards. Each card sticks near the top of the
+// screen and the next one slides up over it as you scroll, so you move
+// through the projects one at a time. Tablet image on the left; title at the
+// top right, with the summary and live-site link along the bottom. Cards
+// only stick when the screen is tall enough to show a whole one.
 export default function WorkGrid() {
-  const [active, setActive] = useState<number | null>(null);
-
-  const onTileClick = (i: number) => {
-    if (window.matchMedia("(hover: hover)").matches) return;
-    setActive((a) => (a === i ? null : i));
-  };
-
   return (
-    <section id="work" className="px-5 pb-[clamp(52px,6.5vw,88px)] lg:px-11">
-      <h2
-        data-reveal
-        className={`${h2Section} mb-[44px] text-center`}
-      >
+    <section id="work" className={`${container} pb-[clamp(52px,6.5vw,88px)]`}>
+      <h2 data-reveal className={`${h2Section} mb-[clamp(36px,4vw,56px)] text-center`}>
         Selected work
       </h2>
 
-      <div className="grid grid-cols-1 gap-x-4 gap-y-6 sm:grid-cols-2 lg:grid-cols-3">
-        {projects.map((p, i) => {
-          const isActive = active === i;
-          return (
-            <article key={p.id} data-reveal style={{ transitionDelay: `${(i % 3) * 80}ms` }}>
-              <div
-                tabIndex={0}
-                onClick={() => onTileClick(i)}
-                aria-label={`${p.title} — ${p.category}`}
-                className="group relative aspect-[1196/872] outline-none"
-              >
-                <Image
-                  src={p.cover}
-                  alt={`${p.title} website shown on a tablet`}
-                  fill
-                  sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
-                  className="object-contain"
-                />
+      <div className="flex flex-col gap-[8vh]">
+        {projects.map((p, i) => (
+          <article
+            key={p.id}
+            style={{ top: `calc(var(--stack-top) + ${i * 6}px)` }}
+            className="grid grid-cols-1 overflow-hidden rounded-[20px] border border-ink/10 bg-white shadow-[0_-10px_40px_rgba(14,42,31,0.08)] [--stack-top:84px] md:h-[min(500px,calc(100svh-150px))] md:grid-cols-[minmax(0,1.15fr)_minmax(0,1fr)] lg:h-[min(560px,calc(100vh-200px))] lg:grid-cols-[minmax(0,1.25fr)_minmax(0,1fr)] lg:rounded-[24px] lg:[--stack-top:100px] [@media(min-height:560px)]:sticky"
+          >
+            <div className="relative h-[clamp(170px,30svh,260px)] bg-[#effff7] md:h-full">
+              <Image
+                src={p.cover}
+                alt={`${p.title} website shown on a tablet`}
+                fill
+                sizes="(min-width: 768px) 720px, 100vw"
+                className="object-contain p-[4%]"
+              />
+            </div>
 
-                {/* Green layer shaped like the tablet */}
-                <div
-                  style={{
-                    left: DEVICE.insetX,
-                    right: DEVICE.insetX,
-                    top: DEVICE.insetY,
-                    bottom: DEVICE.insetY,
-                    borderRadius: DEVICE.radius,
-                  }}
-                  className={`absolute flex flex-col justify-between bg-brand p-[clamp(18px,2.2vw,32px)] text-white transition-[opacity,transform] duration-[280ms,320ms] ease-[ease,cubic-bezier(0.22,0.61,0.36,1)] group-hover:translate-y-0 group-hover:opacity-100 group-focus-within:translate-y-0 group-focus-within:opacity-100 ${
-                    isActive ? "translate-y-0 opacity-100" : "translate-y-1 opacity-0"
-                  }`}
-                >
-                  <p className="m-0 max-w-[30ch] text-[clamp(17px,1.5vw,21px)] font-medium leading-[1.38] tracking-normal">
-                    {p.summary}
+            <div className="flex flex-col justify-between gap-5 p-[clamp(20px,3.4vw,48px)] md:gap-8">
+              <div className="flex flex-col gap-2 md:gap-3">
+                <div className="flex items-center justify-between gap-4">
+                  <p className="m-0 text-[15px] font-semibold uppercase tracking-[0.08em] text-brand">
+                    {p.category}
                   </p>
-                  {p.url ? (
-                    <a
-                      href={p.url}
-                      target="_blank"
-                      rel="noreferrer"
-                      onClick={(e) => e.stopPropagation()}
-                      className="inline-flex h-[44px] items-center gap-[10px] self-start rounded-full bg-white pl-[20px] pr-[16px] text-[16px] font-semibold tracking-normal text-ink transition-colors hover:bg-pine hover:text-white"
-                    >
-                      Visit the live site <ArrowIcon size={16} />
-                    </a>
-                  ) : null}
+                  <p className="m-0 font-mono text-[14px] text-ink-muted">
+                    {String(i + 1).padStart(2, "0")} / {String(projects.length).padStart(2, "0")}
+                  </p>
                 </div>
-              </div>
-
-              {/* Caption, indented to line up with the tablet's edge */}
-              <div className="px-[4.01%]">
-                <h3 className="m-0 mt-1 text-[clamp(22px,1.9vw,26px)] font-semibold leading-[1.1] tracking-[-0.01em]">
+                <h3 className="m-0 text-[clamp(28px,3vw,44px)] font-semibold leading-[1.05] tracking-[-0.015em]">
                   {p.title}
                 </h3>
-                <p className="m-0 mt-2 text-[15px] text-ink-muted">{p.category}</p>
+                <p className="m-0 hidden text-[16px] text-ink-muted md:block">{p.services}</p>
               </div>
-            </article>
-          );
-        })}
+
+              <div className="flex flex-col items-start gap-4 md:gap-6">
+                <p className="m-0 text-[17px] leading-[1.45] text-ink-soft md:text-[19px]">{p.summary}</p>
+                {p.url ? (
+                  <a href={p.url} target="_blank" rel="noreferrer" className={btnPrimary}>
+                    Visit the live site <ArrowIcon size={16} />
+                  </a>
+                ) : null}
+              </div>
+            </div>
+          </article>
+        ))}
       </div>
     </section>
   );
