@@ -43,8 +43,8 @@ export default function Hero() {
       <div
         className={`${container} relative grid grid-cols-1 items-center pb-12 pt-[calc(84px+58vw)] lg:h-[92vh] lg:max-h-[860px] lg:min-h-[640px] lg:pb-6 lg:pt-[104px]`}
       >
-        <div className="flex max-w-[640px] flex-col items-start gap-[30px] lg:max-w-[min(680px,50%)]">
-          <h1 className="m-0 text-[clamp(38px,4.9vw,72px)] font-semibold leading-[0.96] tracking-[-0.025em]">
+        <div className="flex max-w-[560px] flex-col items-start gap-[30px] lg:max-w-[min(580px,45%)]">
+          <h1 className="m-0 text-[clamp(36px,4.4vw,64px)] font-semibold leading-[0.96] tracking-[-0.025em]">
             Get your{" "}
             <span className="whitespace-nowrap">
               website{" "}
