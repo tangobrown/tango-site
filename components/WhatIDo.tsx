@@ -2,10 +2,11 @@ import type { ReactNode } from "react";
 import { container } from "./ui";
 
 // Website builds: browser window with content lines and a progress bar, and a
-// cog cut into its bottom-right corner (supplied as an SVG).
+// cog cut into its bottom-right corner (supplied as an SVG). Animated in
+// globals.css: the lines type in, the progress bar fills, the cog turns.
 function WebsiteBuildsIcon() {
   return (
-    <svg viewBox="0 0 64 64" fill="none" aria-hidden="true" className="-mt-1 mb-1 h-11 w-11">
+    <svg viewBox="0 0 64 64" fill="none" aria-hidden="true" className="wb-icon -mt-1 mb-1 h-11 w-11">
       <defs>
         <mask id="wb-cut" maskUnits="userSpaceOnUse" x="0" y="0" width="64" height="64">
           <rect width="64" height="64" fill="#fff" />
@@ -22,15 +23,17 @@ function WebsiteBuildsIcon() {
         <circle cx="11" cy="12.5" r="1.2" fill="#14a85a" />
         <circle cx="15" cy="12.5" r="1.2" fill="#0e2a1f" />
         <path d="M32 44v8M22 54h20" stroke="#0e2a1f" strokeWidth="2.5" strokeLinecap="round" />
-        <rect x="12" y="21.5" width="22" height="2.6" rx="1.3" fill="#0e2a1f" />
-        <rect x="12" y="26.5" width="30" height="2.6" rx="1.3" fill="#0e2a1f" />
-        <rect x="12" y="31.5" width="18" height="2.6" rx="1.3" fill="#0e2a1f" />
+        <rect className="wb-line" x="12" y="21.5" width="22" height="2.6" rx="1.3" fill="#0e2a1f" />
+        <rect className="wb-line wb-l2" x="12" y="26.5" width="30" height="2.6" rx="1.3" fill="#0e2a1f" />
+        <rect className="wb-line wb-l3" x="12" y="31.5" width="18" height="2.6" rx="1.3" fill="#0e2a1f" />
         <rect x="12" y="37" width="24" height="2.4" rx="1.2" fill="#0e2a1f" opacity=".15" />
-        <rect x="12" y="37" width="24" height="2.4" rx="1.2" fill="#14a85a" />
+        <rect className="wb-prog" x="12" y="37" width="24" height="2.4" rx="1.2" fill="#14a85a" />
       </g>
       <g mask="url(#wb-hole)">
-        <circle cx="50" cy="42" r="6.2" stroke="#14a85a" strokeWidth="3.6" strokeDasharray="2.43 2.44" />
-        <circle cx="50" cy="42" r="4.8" fill="#14a85a" />
+        <g className="wb-gear">
+          <circle cx="50" cy="42" r="6.2" stroke="#14a85a" strokeWidth="3.6" strokeDasharray="2.43 2.44" />
+          <circle cx="50" cy="42" r="4.8" fill="#14a85a" />
+        </g>
       </g>
     </svg>
   );
