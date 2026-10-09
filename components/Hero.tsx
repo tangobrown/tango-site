@@ -3,29 +3,34 @@ import ArrowIcon from "./ArrowIcon";
 import { ContactButton } from "./ContactPanel";
 import { btnPrimary, container } from "./ui";
 
-// Hero: photo of Tim as the background (anchored top right), with a dark
-// green fade on the left so the copy stays readable over it.
+// Hero: photo of Tim shown whole (not cropped), pinned to the top right. On
+// large screens it's as tall as the hero with dark green on its left behind
+// the copy; on small screens it sits full width at the top with the copy
+// below. Its left and bottom edges feather into the background.
 export default function Hero() {
   return (
     <section id="top" className="relative overflow-hidden bg-pine text-white">
-      <Image
-        src="/images/tim-brown-hero.jpg"
-        alt="Tim Brown sitting in front of a street-art mural"
-        fill
-        priority
-        quality={90}
-        sizes="100vw"
-        className="object-cover object-[70%_top] lg:object-right-top"
-      />
-      {/* Legibility fades: from the bottom on small screens, from the left on large */}
-      <div
-        aria-hidden="true"
-        className="absolute inset-0 lg:hidden"
-        style={{
-          background:
-            "linear-gradient(180deg, rgba(14,42,31,0.35) 0%, rgba(14,42,31,0.7) 38%, rgba(14,42,31,0.94) 62%, rgba(14,42,31,0.97) 100%)",
-        }}
-      />
+      <div className="absolute inset-x-0 top-[84px] aspect-[2000/1333] lg:left-auto lg:top-0 lg:h-full lg:max-w-full">
+        <Image
+          src="/images/tim-brown-hero.jpg"
+          alt="Tim Brown sitting in front of a street-art mural"
+          fill
+          priority
+          quality={90}
+          sizes="(min-width: 1024px) 90vw, 100vw"
+          className="object-cover object-right-top"
+        />
+        {/* Feather the photo's edges into the background */}
+        <div
+          aria-hidden="true"
+          className="absolute inset-0"
+          style={{
+            background:
+              "linear-gradient(0deg, rgba(14,42,31,1) 0%, rgba(14,42,31,0) 38%), linear-gradient(90deg, rgba(14,42,31,1) 0%, rgba(14,42,31,0) 22%)",
+          }}
+        />
+      </div>
+      {/* Legibility fade behind the copy on large screens */}
       <div
         aria-hidden="true"
         className="absolute inset-0 hidden lg:block"
@@ -36,7 +41,7 @@ export default function Hero() {
       />
 
       <div
-        className={`${container} relative grid grid-cols-1 items-center pb-12 pt-[min(62vw,380px)] lg:h-[92vh] lg:max-h-[860px] lg:min-h-[640px] lg:pb-6 lg:pt-[104px]`}
+        className={`${container} relative grid grid-cols-1 items-center pb-12 pt-[calc(84px+58vw)] lg:h-[92vh] lg:max-h-[860px] lg:min-h-[640px] lg:pb-6 lg:pt-[104px]`}
       >
         <div className="flex max-w-[640px] flex-col items-start gap-[30px] lg:max-w-[min(680px,50%)]">
           <div className="flex items-center gap-3">
