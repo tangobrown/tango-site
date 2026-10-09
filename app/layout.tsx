@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Onest } from "next/font/google";
+import { Geist, Geist_Mono, Onest } from "next/font/google";
 import "./globals.css";
 
 // Onest — the one family for everything (headings 600, body 500).
@@ -7,6 +7,21 @@ const onest = Onest({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
   variable: "--font-onest",
+  display: "swap",
+});
+
+// Geist + Geist Mono are only used inside the hero animation.
+const geist = Geist({
+  subsets: ["latin"],
+  weight: ["400", "500", "600"],
+  variable: "--font-geist",
+  display: "swap",
+});
+
+const geistMono = Geist_Mono({
+  subsets: ["latin"],
+  weight: ["400", "600"],
+  variable: "--font-geist-mono",
   display: "swap",
 });
 
@@ -61,7 +76,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en-GB" className={onest.variable}>
+    <html lang="en-GB" className={`${onest.variable} ${geist.variable} ${geistMono.variable}`}>
       <body>
         <script
           type="application/ld+json"

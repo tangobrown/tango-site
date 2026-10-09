@@ -1,8 +1,10 @@
 import ArrowIcon from "./ArrowIcon";
 import { ContactButton } from "./ContactPanel";
+import HeroAnimation from "./HeroAnimation";
 import { btnPrimary, container } from "./ui";
 
-// Hero: dark green with a soft light-green glow on the right, copy on the left.
+// Hero: dark green with a soft light-green glow on the right. Copy on the
+// left, the design → conversion animation on the right (below on mobile).
 export default function Hero() {
   return (
     <section id="top" className="relative overflow-hidden bg-pine text-white">
@@ -13,9 +15,9 @@ export default function Hero() {
       />
 
       <div
-        className={`${container} relative grid grid-cols-1 items-center pb-14 pt-[140px] lg:h-[92vh] lg:max-h-[860px] lg:min-h-[640px] lg:pb-6 lg:pt-[104px]`}
+        className={`${container} relative grid grid-cols-1 items-center gap-10 pb-14 pt-[140px] lg:grid-cols-2 lg:gap-8 lg:h-[92vh] lg:max-h-[860px] lg:min-h-[640px] lg:pb-6 lg:pt-[104px]`}
       >
-        <div className="flex max-w-[560px] flex-col items-start gap-[30px] lg:max-w-[min(580px,45%)]">
+        <div className="flex max-w-[560px] flex-col items-start gap-[30px] lg:max-w-[580px]">
           <h1 className="m-0 text-[clamp(36px,4.4vw,64px)] font-semibold leading-[0.96] tracking-[-0.025em]">
             Get your{" "}
             <span className="whitespace-nowrap">
@@ -36,6 +38,11 @@ export default function Hero() {
             Get started <ArrowIcon size={18} />
           </ContactButton>
         </div>
+
+        <HeroAnimation
+          accent="#2FD07A"
+          className="mx-auto max-w-[560px] lg:mr-0 lg:max-w-[min(640px,calc(92vh-140px))]"
+        />
       </div>
     </section>
   );
