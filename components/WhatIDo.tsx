@@ -1,52 +1,6 @@
 import type { ReactNode } from "react";
+import { AiAutomationIcon, SeoIcon, WebsiteBuildsIcon } from "./ServiceIcons";
 import { container } from "./ui";
-
-// Website builds: browser window with content lines and a progress bar, and a
-// cog cut into its bottom-right corner (supplied as an SVG). Animated in
-// globals.css: the lines type in, the progress bar fills, the cog turns.
-function WebsiteBuildsIcon() {
-  return (
-    <svg viewBox="0 0 64 64" fill="none" aria-hidden="true" className="wb-icon -mt-1 mb-1 h-11 w-11">
-      <defs>
-        <mask id="wb-cut" maskUnits="userSpaceOnUse" x="0" y="0" width="64" height="64">
-          <rect width="64" height="64" fill="#fff" />
-          <circle cx="50" cy="42" r="10" fill="#000" />
-        </mask>
-        <mask id="wb-hole" maskUnits="userSpaceOnUse" x="0" y="0" width="64" height="64">
-          <rect width="64" height="64" fill="#fff" />
-          <circle cx="50" cy="42" r="1.9" fill="#000" />
-        </mask>
-      </defs>
-      <g mask="url(#wb-cut)">
-        <rect x="6" y="8" width="52" height="36" rx="3.5" stroke="#0e2a1f" strokeWidth="2.5" />
-        <line x1="6" y1="17" x2="58" y2="17" stroke="#0e2a1f" strokeWidth="2.5" />
-        <circle cx="11" cy="12.5" r="1.2" fill="#14a85a" />
-        <circle cx="15" cy="12.5" r="1.2" fill="#0e2a1f" />
-        <path d="M32 44v8M22 54h20" stroke="#0e2a1f" strokeWidth="2.5" strokeLinecap="round" />
-        <rect className="wb-line" x="12" y="21.5" width="22" height="2.6" rx="1.3" fill="#0e2a1f" />
-        <rect className="wb-line wb-l2" x="12" y="26.5" width="30" height="2.6" rx="1.3" fill="#0e2a1f" />
-        <rect className="wb-line wb-l3" x="12" y="31.5" width="18" height="2.6" rx="1.3" fill="#0e2a1f" />
-        <rect x="12" y="37" width="24" height="2.4" rx="1.2" fill="#0e2a1f" opacity=".15" />
-        <rect className="wb-prog" x="12" y="37" width="24" height="2.4" rx="1.2" fill="#14a85a" />
-      </g>
-      <g mask="url(#wb-hole)">
-        <g className="wb-gear">
-          <circle cx="50" cy="42" r="6.2" stroke="#14a85a" strokeWidth="3.6" strokeDasharray="2.43 2.44" />
-          <circle cx="50" cy="42" r="4.8" fill="#14a85a" />
-        </g>
-      </g>
-    </svg>
-  );
-}
-
-// Single-colour 24×24 icon from a path.
-function PathIcon({ d }: { d: string }) {
-  return (
-    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" className="mb-2 h-9 w-9 text-brand">
-      <path d={d} />
-    </svg>
-  );
-}
 
 const services: { title: string; text: string; icon: ReactNode }[] = [
   {
@@ -57,12 +11,12 @@ const services: { title: string; text: string; icon: ReactNode }[] = [
   {
     title: "Optimisation",
     text: "Optimising your site for search and conversions, so more of the right people find you and get in touch.",
-    icon: <PathIcon d="M3 12H7V21H3V12ZM17 8H21V21H17V8ZM10 2H14V21H10V2Z" />,
+    icon: <SeoIcon />,
   },
   {
     title: "AI & Automation",
     text: "Integrating AI to take care of those boring tasks, from answering enquiries to the day-to-day admin.",
-    icon: <PathIcon d="M20.4668 8.69379L20.7134 8.12811C21.1529 7.11947 21.9445 6.31641 22.9323 5.87708L23.6919 5.53922C24.1027 5.35653 24.1027 4.75881 23.6919 4.57612L22.9748 4.25714C21.9616 3.80651 21.1558 2.97373 20.7238 1.93083L20.4706 1.31953C20.2942 0.893489 19.7058 0.893489 19.5293 1.31953L19.2761 1.93083C18.8442 2.97373 18.0384 3.80651 17.0252 4.25714L16.308 4.57612C15.8973 4.75881 15.8973 5.35653 16.308 5.53922L17.0677 5.87708C18.0555 6.31641 18.8471 7.11947 19.2866 8.12811L19.5331 8.69379C19.7136 9.10792 20.2864 9.10792 20.4668 8.69379ZM5.79993 16H7.95399L8.55399 14.5H11.4459L12.0459 16H14.1999L10.9999 8H8.99993L5.79993 16ZM9.99993 10.8852L10.6459 12.5H9.35399L9.99993 10.8852ZM15 16V8H17V16H15ZM3 3C2.44772 3 2 3.44772 2 4V20C2 20.5523 2.44772 21 3 21H21C21.5523 21 22 20.5523 22 20V11H20V19H4V5H14V3H3Z" />,
+    icon: <AiAutomationIcon />,
   },
 ];
 
@@ -78,7 +32,7 @@ export default function WhatIDo() {
             data-reveal
             className="flex flex-col items-start gap-3 py-9 lg:px-[clamp(28px,3vw,48px)] lg:py-[clamp(44px,4.4vw,64px)] lg:first:pl-0 lg:last:pr-0"
           >
-            {s.icon}
+            <div className="mb-4">{s.icon}</div>
             <h2 className="m-0 text-[clamp(24px,2.1vw,30px)] font-semibold leading-[1.1] tracking-[-0.015em]">
               {s.title}
             </h2>
