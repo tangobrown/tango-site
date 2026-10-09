@@ -103,7 +103,7 @@ export default function Services() {
       id="who-i-work-with"
       className={`${container} pb-[clamp(44px,5vw,72px)] pt-[clamp(52px,6.5vw,88px)]`}
     >
-      <h2 data-reveal className={`${h2Section} mb-[44px] text-center`}>
+      <h2 data-reveal className={`${h2Section} mb-[clamp(56px,5vw,72px)] text-center`}>
         Who do I work with?
       </h2>
 
