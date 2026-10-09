@@ -40,7 +40,7 @@ export default function Hero() {
         </div>
 
         <HeroAnimation
-          accent="#2FD07A"
+          accent="#14A85A"
           className="mx-auto max-w-[560px] lg:mr-0 lg:max-w-[min(640px,calc(92vh-140px))]"
         />
       </div>

@@ -1,8 +1,8 @@
 "use client";
 
 // Hero animation: Design → Build → SEO → Conversion loop (17.5s), from the
-// design handoff. Authored on a 1000×1000 stage and scaled to fit its
-// container width. Transparent background; decorative (aria-hidden).
+// design handoff (light theme). Authored on a 1000×1000 stage and scaled to
+// fit its container width. Transparent background; decorative (aria-hidden).
 import { createContext, useContext, useEffect, useRef, useState, type CSSProperties, type ReactNode } from 'react';
 
 const Easing = {
@@ -22,7 +22,7 @@ const useComposition = () => ({ T: useContext(TimeCtx), CUES });
 
 const FONT = 'var(--font-geist), system-ui, sans-serif';
 const MONO = 'var(--font-geist-mono), ui-monospace, monospace';
-const INK = '#E9ECEF', DIM = '#8A929C', SURF = '#12161B', SURF2 = '#181D24', LINE = 'rgba(255,255,255,0.08)';
+const INK = '#14171C', DIM = '#5F6670', SURF = '#FFFFFF', SURF2 = '#F4F5F7', LINE = 'rgba(0,0,0,0.1)';
 
 const c01 = (v: number) => Math.max(0, Math.min(1, v));
 function useMotion(T: number) {
@@ -55,7 +55,7 @@ type BlockProps = { x: number; y: number; w: number; h: number; r?: number; appe
 function Block({ x, y, w, h, r = 6, appear, fill, real = 0, color, keepFill, children, style }: BlockProps) {
   return (
     <div style={abs(x, y, w, h, { opacity: appear, transform: `scale(${0.94 + 0.06 * appear})`, transformOrigin: 'left center' })}>
-      <div style={abs(0, 0, w, h, { borderRadius: r, border: '1.5px dashed rgba(255,255,255,0.3)', boxSizing: 'border-box', opacity: 1 - fill })}></div>
+      <div style={abs(0, 0, w, h, { borderRadius: r, border: '1.5px dashed rgba(0,0,0,0.3)', boxSizing: 'border-box', opacity: 1 - fill })}></div>
       <div style={abs(0, 0, w, h, { borderRadius: r, background: color, opacity: fill * (keepFill ? 1 : 1 - real), ...style })}></div>
       {children ? <div style={abs(0, 0, w, h, { opacity: real, display: 'flex', alignItems: 'center' })}>{children}</div> : null}
     </div>
@@ -64,14 +64,14 @@ function Block({ x, y, w, h, r = 6, appear, fill, real = 0, color, keepFill, chi
 
 function Cursor({ x, y, o, s }: { x: number; y: number; o: number; s: number }) {
   return (
-    <div style={abs(x, y, 28, 28, { opacity: o, transform: `scale(${s})`, transformOrigin: '0 0', zIndex: 50, filter: 'drop-shadow(0 4px 10px rgba(0,0,0,0.5))' })}>
-      <svg width="28" height="28" viewBox="0 0 28 28"><path d="M3 2 L3 22 L8.5 17 L12.5 26 L16 24.5 L12 15.8 L19.5 15.5 Z" fill="#fff" stroke="#0A0C10" strokeWidth="1.5" strokeLinejoin="round" /></svg>
+    <div style={abs(x, y, 28, 28, { opacity: o, transform: `scale(${s})`, transformOrigin: '0 0', zIndex: 50 })}>
+      <svg width="28" height="28" viewBox="0 0 28 28"><path d="M3 2 L3 22 L8.5 17 L12.5 26 L16 24.5 L12 15.8 L19.5 15.5 Z" fill="#14171C" stroke="#FFFFFF" strokeWidth="1.5" strokeLinejoin="round" /></svg>
     </div>
   );
 }
 
 const CODE = (a: string): [string, string][][] => {
-  const P = '#6B7480', TG = '#F29C7B', AT = '#9CC5FF', TX = '#D6D9DE', ST = a;
+  const P = '#8A929C', TG = '#C2410C', AT = '#1D4ED8', TX = '#1F2328', ST = a;
   return [
     [[P, '<'], [TG, 'nav'], [P, '>'], [TX, 'Ember'], [P, '</'], [TG, 'nav'], [P, '>']],
     [[P, '<'], [TG, 'section'], [TX, ' '], [AT, 'class'], [P, '='], [ST, '"hero"'], [P, '>']],
@@ -93,9 +93,9 @@ function Editor({ T, B, S, accent, m }: { T: number; B: number; S: number; accen
   const deployed = m.pop(B + 3.7, 0.5);
   let caretPlaced = false;
   return (
-    <div style={abs(30, 430, 450, 330, { opacity: inn * (1 - out), transform: `translate(${-50 * (1 - inn) - 40 * out}px, ${20 * (1 - inn)}px)`, background: '#0D1014', border: `1px solid ${LINE}`, borderRadius: 14, boxShadow: '0 30px 60px rgba(0,0,0,0.55)', overflow: 'hidden', zIndex: 20 })}>
+    <div style={abs(30, 430, 450, 330, { opacity: inn * (1 - out), transform: `translate(${-50 * (1 - inn) - 40 * out}px, ${20 * (1 - inn)}px)`, background: '#FAFAFB', border: `1px solid ${LINE}`, borderRadius: 14, overflow: 'hidden', zIndex: 20 })}>
       <div style={{ display: 'flex', height: 40, borderBottom: `1px solid ${LINE}`, fontFamily: MONO, fontSize: 13 }}>
-        <div style={{ padding: '0 16px', display: 'flex', alignItems: 'center', color: INK, background: '#14181E', borderRight: `1px solid ${LINE}` }}>index.html</div>
+        <div style={{ padding: '0 16px', display: 'flex', alignItems: 'center', color: INK, background: '#FFFFFF', borderRight: `1px solid ${LINE}` }}>index.html</div>
         <div style={{ padding: '0 16px', display: 'flex', alignItems: 'center', color: DIM }}>styles.css</div>
       </div>
       <div style={{ padding: '14px 0', fontFamily: MONO, fontSize: 14, lineHeight: '26px' }}>
@@ -113,13 +113,13 @@ function Editor({ T, B, S, accent, m }: { T: number; B: number; S: number; accen
           }
           return (
             <div key={i} style={{ display: 'flex', height: 26 }}>
-              <span style={{ width: 40, textAlign: 'right', paddingRight: 16, color: '#3E4550', flexShrink: 0 }}>{i + 1}</span>
+              <span style={{ width: 40, textAlign: 'right', paddingRight: 16, color: '#B0B6BE', flexShrink: 0 }}>{i + 1}</span>
               <span>{parts}{caret}</span>
             </div>
           );
         })}
       </div>
-      <div style={abs(16, 280, 240, 32, { opacity: c01(deployed), transform: `scale(${0.8 + 0.2 * deployed})`, transformOrigin: 'left center', display: 'flex', alignItems: 'center', gap: 8, padding: '0 12px', borderRadius: 16, background: 'rgba(255,255,255,0.06)', fontFamily: FONT, fontSize: 13, color: INK, boxSizing: 'border-box' })}>
+      <div style={abs(16, 280, 240, 32, { opacity: c01(deployed), transform: `scale(${0.8 + 0.2 * deployed})`, transformOrigin: 'left center', display: 'flex', alignItems: 'center', gap: 8, padding: '0 12px', borderRadius: 16, background: 'rgba(0,0,0,0.06)', fontFamily: FONT, fontSize: 13, color: INK, boxSizing: 'border-box' })}>
         <svg width="16" height="16" viewBox="0 0 16 16"><circle cx="8" cy="8" r="8" fill={accent} /><path d="M4.5 8.2l2.2 2.2 4.6-4.8" stroke="#0A0C10" strokeWidth="1.8" fill="none" strokeLinecap="round" strokeLinejoin="round" /></svg>
         Build passed · deployed
       </div>
@@ -129,12 +129,12 @@ function Editor({ T, B, S, accent, m }: { T: number; B: number; S: number; accen
 
 function Ring({ v, label, accent }: { v: number; label: string; accent: string }) {
   const r = 32, C = 2 * Math.PI * r;
-  const col = v >= 90 ? accent : v >= 50 ? '#F5B85B' : '#F2705E';
+  const col = v >= 90 ? accent : v >= 50 ? '#D97706' : '#DC2626';
   return (
     <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 10 }}>
       <div style={{ position: 'relative', width: 80, height: 80 }}>
         <svg width="80" height="80" viewBox="0 0 80 80" style={{ transform: 'rotate(-90deg)' }}>
-          <circle cx="40" cy="40" r={r} stroke="rgba(255,255,255,0.08)" strokeWidth="6" fill="none" />
+          <circle cx="40" cy="40" r={r} stroke="rgba(0,0,0,0.08)" strokeWidth="6" fill="none" />
           <circle cx="40" cy="40" r={r} stroke={col} strokeWidth="6" fill="none" strokeLinecap="round" strokeDasharray={`${C * v / 100} ${C}`} />
         </svg>
         <div style={abs(0, 0, 80, 80, { display: 'flex', alignItems: 'center', justifyContent: 'center', fontFamily: MONO, fontSize: 22, color: col })}>{Math.round(v)}</div>
@@ -149,7 +149,7 @@ function Audit({ S, C, accent, m }: { S: number; C: number; accent: string; m: M
   const k = m.draw(S + 0.6, 1.4);
   const vals: [number, number, string][] = [[58, 100, 'Performance'], [64, 100, 'SEO'], [71, 98, 'Accessibility']];
   return (
-    <div style={abs(560, 470, 380, 230, { opacity: inn * (1 - out), transform: `translate(${50 * (1 - inn) + 40 * out}px, 0)`, background: SURF, border: `1px solid ${LINE}`, borderRadius: 14, boxShadow: '0 30px 60px rgba(0,0,0,0.55)', padding: 24, boxSizing: 'border-box', zIndex: 20, display: 'flex', flexDirection: 'column', gap: 22 })}>
+    <div style={abs(560, 470, 380, 230, { opacity: inn * (1 - out), transform: `translate(${50 * (1 - inn) + 40 * out}px, 0)`, background: SURF, border: `1px solid ${LINE}`, borderRadius: 14, padding: 24, boxSizing: 'border-box', zIndex: 20, display: 'flex', flexDirection: 'column', gap: 22 })}>
       <div style={{ fontFamily: MONO, fontSize: 13, color: DIM, letterSpacing: '0.04em' }}>PAGE AUDIT</div>
       <div style={{ display: 'flex', justifyContent: 'space-between' }}>
         {vals.map(([a, b, l]) => <Ring key={l} v={a + (b - a) * k} label={l} accent={accent} />)}
@@ -168,7 +168,7 @@ function Search({ S, C, accent, m }: { S: number; C: number; accent: string; m: 
     { t: 'Ember Roasters — Small-batch coffee', u: 'ember-roasters.com', p: 2 - 2 * mv, ours: true },
   ];
   return (
-    <div style={abs(40, 250, 420, 260, { opacity: inn * (1 - out), transform: `translate(${-50 * (1 - inn) - 40 * out}px, 0)`, background: SURF, border: `1px solid ${LINE}`, borderRadius: 14, boxShadow: '0 30px 60px rgba(0,0,0,0.55)', zIndex: 21, overflow: 'hidden' })}>
+    <div style={abs(40, 250, 420, 260, { opacity: inn * (1 - out), transform: `translate(${-50 * (1 - inn) - 40 * out}px, 0)`, background: SURF, border: `1px solid ${LINE}`, borderRadius: 14, zIndex: 21, overflow: 'hidden' })}>
       <div style={abs(20, 20, 380, 40, { borderRadius: 20, background: SURF2, border: `1px solid ${LINE}`, boxSizing: 'border-box', display: 'flex', alignItems: 'center', gap: 10, padding: '0 16px', fontFamily: FONT, fontSize: 15, color: INK })}>
         <svg width="16" height="16" viewBox="0 0 16 16"><circle cx="7" cy="7" r="5" stroke={DIM} strokeWidth="1.8" fill="none" /><path d="M11 11l3.5 3.5" stroke={DIM} strokeWidth="1.8" strokeLinecap="round" /></svg>
         coffee beans delivered
@@ -177,7 +177,7 @@ function Search({ S, C, accent, m }: { S: number; C: number; accent: string; m: 
         <div key={r.u} style={abs(12, 76 + r.p * 58, 396, 52, { borderRadius: 10, padding: '7px 12px', boxSizing: 'border-box', background: r.ours ? `color-mix(in oklch, ${accent} 10%, transparent)` : 'transparent', border: r.ours ? `1px solid color-mix(in oklch, ${accent} 45%, transparent)` : '1px solid transparent', zIndex: r.ours ? 2 : 1, display: 'flex', flexDirection: 'column', gap: 3 })}>
           <div style={{ fontFamily: FONT, fontSize: 15, fontWeight: 500, color: r.ours ? accent : INK, whiteSpace: 'nowrap' }}>{r.t}</div>
           <div style={{ fontFamily: MONO, fontSize: 12, color: DIM }}>{r.u}</div>
-          {r.ours ? <div style={abs(336, 12, 44, 26, { borderRadius: 13, background: accent, color: '#0A0C10', fontFamily: MONO, fontSize: 13, fontWeight: 600, display: 'flex', alignItems: 'center', justifyContent: 'center', opacity: c01(badge), transform: `scale(${badge})` })}>#1</div> : null}
+          {r.ours ? <div style={abs(336, 12, 44, 26, { borderRadius: 13, background: accent, color: '#FFFFFF', fontFamily: MONO, fontSize: 13, fontWeight: 600, display: 'flex', alignItems: 'center', justifyContent: 'center', opacity: c01(badge), transform: `scale(${badge})` })}>#1</div> : null}
         </div>
       ))}
     </div>
@@ -189,12 +189,12 @@ function Results({ C, O, accent, m }: { C: number; O: number; accent: string; m:
   const bars = [22, 25, 24, 30, 37, 48, 60, 76];
   const rate = 1.8 + 2.8 * m.draw(C + 1.9, 1.5);
   return (
-    <div style={abs(540, 430, 400, 290, { opacity: inn * (1 - out), transform: `translate(0, ${30 * (1 - inn)}px)`, background: SURF, border: `1px solid ${LINE}`, borderRadius: 14, boxShadow: '0 30px 60px rgba(0,0,0,0.55)', padding: 24, boxSizing: 'border-box', zIndex: 20, display: 'flex', flexDirection: 'column', gap: 6 })}>
+    <div style={abs(540, 430, 400, 290, { opacity: inn * (1 - out), transform: `translate(0, ${30 * (1 - inn)}px)`, background: SURF, border: `1px solid ${LINE}`, borderRadius: 14, padding: 24, boxSizing: 'border-box', zIndex: 20, display: 'flex', flexDirection: 'column', gap: 6 })}>
       <div style={{ fontFamily: MONO, fontSize: 13, color: DIM, letterSpacing: '0.04em' }}>CONVERSION RATE</div>
       <div style={{ fontFamily: FONT, fontSize: 44, fontWeight: 600, color: INK, letterSpacing: '-0.02em', fontVariantNumeric: 'tabular-nums' }}>{rate.toFixed(1)}%</div>
       <div style={{ display: 'flex', alignItems: 'flex-end', gap: 10, height: 120, marginTop: 'auto' }}>
         {bars.map((b, i) => (
-          <div key={i} style={{ flex: 1, height: `${b * 1.5 * m.enter(C + 1.9 + i * 0.12, 0.6)}px`, borderRadius: 4, background: i >= 5 ? accent : 'rgba(255,255,255,0.14)' }}></div>
+          <div key={i} style={{ flex: 1, height: `${b * 1.5 * m.enter(C + 1.9 + i * 0.12, 0.6)}px`, borderRadius: 4, background: i >= 5 ? accent : 'rgba(0,0,0,0.14)' }}></div>
         ))}
       </div>
     </div>
@@ -203,7 +203,7 @@ function Results({ C, O, accent, m }: { C: number; O: number; accent: string; m:
 
 function Toast({ y, a, out, accent, title, sub }: { y: number; a: number; out: number; accent: string; title: string; sub: string }) {
   return (
-    <div style={abs(620, y, 300, 58, { opacity: a * (1 - out), transform: `translate(${30 * (1 - a)}px,0)`, background: SURF2, border: `1px solid ${LINE}`, borderRadius: 12, boxShadow: '0 20px 40px rgba(0,0,0,0.5)', display: 'flex', alignItems: 'center', gap: 12, padding: '0 16px', boxSizing: 'border-box', zIndex: 22 })}>
+    <div style={abs(620, y, 300, 58, { opacity: a * (1 - out), transform: `translate(${30 * (1 - a)}px,0)`, background: SURF2, border: `1px solid ${LINE}`, borderRadius: 12, display: 'flex', alignItems: 'center', gap: 12, padding: '0 16px', boxSizing: 'border-box', zIndex: 22 })}>
       <div style={{ width: 10, height: 10, borderRadius: 5, background: accent, flexShrink: 0 }}></div>
       <div style={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
         <div style={{ fontFamily: FONT, fontSize: 14, fontWeight: 500, color: INK }}>{title}</div>
@@ -219,12 +219,7 @@ function Piece({ accent }: { accent: string }) {
   const D = CUES.Design, B = CUES.Build, S = CUES.SEO, C = CUES.Convert, O = CUES.Outro;
 
   // camera
-  const [cs, cx, cy] = kf(T, [
-    [D, 0.97, 0, 10], [D + 1.0, 1, 0, 0], [B - 0.1, 1.04, 0, 0],
-    [B + 0.8, 1, 30, 0], [S - 0.2, 1.03, 40, -10],
-    [S + 0.8, 1, -20, 0], [C - 0.1, 1.02, -30, 0],
-    [C + 1.0, 1.18, 150, 0], [C + 1.5, 1.18, 150, 0], [C + 2.3, 1, 0, 0], [O, 1.02, 0, 0], [O + 1, 0.97, 0, 10],
-  ]);
+  const cs = 1, cx = 0, cy = 0;
 
   // window
   const wIn = m.enter(D + 0.1, 0.8), wOut = m.draw(O + 0.25, 0.7);
@@ -260,10 +255,10 @@ function Piece({ accent }: { accent: string }) {
     <div style={{ position: 'absolute', inset: 0, overflow: 'hidden' }}>
       <div style={abs(0, 40, 1000, 1000, { transform: `translate(${cx}px, ${cy}px) scale(${cs})`, transformOrigin: '500px 500px' })}>
         {/* browser window */}
-        <div style={abs(110, 200, 780, 540, { opacity: wo, transform: `translateY(${24 * (1 - wIn)}px) scale(${0.95 + 0.05 * wIn - 0.03 * wOut})`, background: '#0F1216', border: `1px solid ${LINE}`, borderRadius: 14, overflow: 'hidden', boxShadow: '0 40px 80px rgba(0,0,0,0.6)' })}>
-          <div style={abs(0, 0, 780, 42, { borderBottom: `1px solid ${LINE}`, background: '#14181D' })}>
-            {[18, 36, 54].map((x) => <div key={x} style={abs(x, 16, 10, 10, { borderRadius: 5, background: 'rgba(255,255,255,0.16)' })}></div>)}
-            <div style={abs(200, 9, 380, 24, { borderRadius: 12, background: 'rgba(255,255,255,0.05)', fontFamily: MONO, fontSize: 12, color: DIM })}>
+        <div style={abs(110, 200, 780, 540, { opacity: wo, transform: `translateY(${24 * (1 - wIn)}px) scale(${0.95 + 0.05 * wIn - 0.03 * wOut})`, background: '#FFFFFF', border: `1px solid ${LINE}`, borderRadius: 14, overflow: 'hidden' })}>
+          <div style={abs(0, 0, 780, 42, { borderBottom: `1px solid ${LINE}`, background: '#F4F5F7' })}>
+            {[18, 36, 54].map((x) => <div key={x} style={abs(x, 16, 10, 10, { borderRadius: 5, background: 'rgba(0,0,0,0.16)' })}></div>)}
+            <div style={abs(200, 9, 380, 24, { borderRadius: 12, background: 'rgba(0,0,0,0.05)', fontFamily: MONO, fontSize: 12, color: DIM })}>
               <div style={abs(0, 0, 380, 24, { display: 'flex', alignItems: 'center', justifyContent: 'center', opacity: urlA })}>untitled — draft</div>
               <div style={abs(0, 0, 380, 24, { display: 'flex', alignItems: 'center', justifyContent: 'center', opacity: urlB })}>localhost:3000</div>
               <div style={abs(0, 0, 380, 24, { display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 6, opacity: urlC, color: INK })}>
@@ -284,7 +279,7 @@ function Piece({ accent }: { accent: string }) {
                 <span style={txt(13, 400, DIM)}>{l}</span>
               </Block>
             ))}
-            <Block x={680} y={15} w={70} h={28} r={14} appear={ap(2)} fill={fl(2)} color="rgba(255,255,255,0.1)" keepFill real={rl(1.0)}>
+            <Block x={680} y={15} w={70} h={28} r={14} appear={ap(2)} fill={fl(2)} color="rgba(0,0,0,0.1)" keepFill real={rl(1.0)}>
               <span style={txt(13, 500, INK, { width: '100%', textAlign: 'center' })}>Cart</span>
             </Block>
             <Block x={40} y={86} w={250} h={30} r={5} appear={ap(3)} fill={fl(3)} color={INK} real={rl(1.5)}>
@@ -301,11 +296,11 @@ function Piece({ accent }: { accent: string }) {
             </Block>
             <div style={abs(40, 230, 140, 42, { transform: `scale(${ctaPress})` })}>
               <Block x={0} y={0} w={140} h={42} r={21} appear={ap(6)} fill={fl(6)} color={accent} keepFill real={rl(3.0)}>
-                <span style={txt(15, 600, '#0A0C10', { width: '100%', textAlign: 'center' })}>Shop beans</span>
+                <span style={txt(15, 600, '#FFFFFF', { width: '100%', textAlign: 'center' })}>Shop beans</span>
               </Block>
               <div style={abs(-ripple * 30, -ripple * 30, 140 + ripple * 60, 42 + ripple * 60, { borderRadius: 60, border: `2px solid ${accent}`, opacity: ripple > 0 && ripple < 1 ? 1 - ripple : 0, boxSizing: 'border-box' })}></div>
             </div>
-            <Block x={196} y={241} w={86} h={20} r={4} appear={ap(6.5)} fill={fl(6.5)} color="rgba(255,255,255,0.06)" real={rl(3.0)}>
+            <Block x={196} y={241} w={86} h={20} r={4} appear={ap(6.5)} fill={fl(6.5)} color="rgba(0,0,0,0.06)" real={rl(3.0)}>
               <span style={txt(15, 500, INK, { width: '100%', textAlign: 'center' })}>Our story →</span>
             </Block>
             <Block x={410} y={78} w={330} h={214} r={12} appear={ap(7)} fill={fl(7)} color={SURF2} keepFill real={rl(2.6)}>
@@ -321,20 +316,20 @@ function Piece({ accent }: { accent: string }) {
                 <div style={abs(20, 20, 180, 100, { display: 'flex', flexDirection: 'column', gap: 10 })}>
                   <div style={{ width: 30, height: 30, borderRadius: 8, background: `color-mix(in oklch, ${accent} 22%, transparent)`, border: `1px solid color-mix(in oklch, ${accent} 55%, transparent)` }}></div>
                   <div style={txt(16, 600, INK)}>{l}</div>
-                  <div style={{ width: 150, height: 7, borderRadius: 3, background: 'rgba(255,255,255,0.1)' }}></div>
-                  <div style={{ width: 110, height: 7, borderRadius: 3, background: 'rgba(255,255,255,0.1)' }}></div>
+                  <div style={{ width: 150, height: 7, borderRadius: 3, background: 'rgba(0,0,0,0.1)' }}></div>
+                  <div style={{ width: 110, height: 7, borderRadius: 3, background: 'rgba(0,0,0,0.1)' }}></div>
                 </div>
               </Block>
             ))}
-            <div style={abs(0, 0, 780, 498, { background: '#05070A', opacity: dim, zIndex: 5 })}></div>
+            <div style={abs(0, 0, 780, 498, { background: '#FFFFFF', opacity: dim, zIndex: 5 })}></div>
           </div>
         </div>
 
         {/* style palette (design) */}
-        <div style={abs(840, 290, 132, 150, { opacity: c01(palIn) * (1 - palOut) * (1 - wOut), transform: `scale(${palIn})`, transformOrigin: 'left top', background: SURF2, border: `1px solid ${LINE}`, borderRadius: 12, boxShadow: '0 20px 40px rgba(0,0,0,0.5)', padding: 16, boxSizing: 'border-box', display: 'flex', flexDirection: 'column', gap: 12, zIndex: 15 })}>
+        <div style={abs(840, 290, 132, 150, { opacity: c01(palIn) * (1 - palOut) * (1 - wOut), transform: `scale(${palIn})`, transformOrigin: 'left top', background: SURF2, border: `1px solid ${LINE}`, borderRadius: 12, padding: 16, boxSizing: 'border-box', display: 'flex', flexDirection: 'column', gap: 12, zIndex: 15 })}>
           <div style={{ fontFamily: MONO, fontSize: 12, color: DIM, letterSpacing: '0.04em' }}>STYLES</div>
           <div style={{ display: 'flex', gap: 8 }}>
-            {[accent, INK, '#4A525C'].map((c, i) => <div key={i} style={{ width: 22, height: 22, borderRadius: 11, background: c, boxShadow: i === 0 && T > D + 2.6 && T < D + 3.5 ? `0 0 0 2px ${SURF2}, 0 0 0 4px ${accent}` : 'none' }}></div>)}
+            {[accent, INK, '#CDD2D8'].map((c, i) => <div key={i} style={{ width: 22, height: 22, borderRadius: 11, background: c, boxShadow: i === 0 && T > D + 2.6 && T < D + 3.5 ? `0 0 0 2px ${SURF2}, 0 0 0 4px ${accent}` : 'none' }}></div>)}
           </div>
           <div style={{ display: 'flex', alignItems: 'baseline', gap: 8 }}>
             <span style={txt(30, 600, INK)}>Aa</span>
@@ -349,7 +344,7 @@ function Piece({ accent }: { accent: string }) {
         <Toast y={150} a={t1} out={tOut} accent={accent} title="New order" sub="House Blend × 2" />
         <Toast y={218} a={t2} out={tOut} accent={accent} title="New subscriber" sub="Monthly roast box" />
 
-        {dragging ? <div style={abs(mx - 6, my + 14, 18, 18, { borderRadius: 9, background: accent, zIndex: 49, boxShadow: '0 4px 12px rgba(0,0,0,0.4)' })}></div> : null}
+        {dragging ? <div style={abs(mx - 6, my + 14, 18, 18, { borderRadius: 9, background: accent, zIndex: 49 })}></div> : null}
         <Cursor x={mx} y={my} o={c01(mo)} s={press} />
       </div>
     </div>
@@ -359,7 +354,7 @@ function Piece({ accent }: { accent: string }) {
 
 type HeroAnimationProps = { accent?: string; speed?: number; className?: string; style?: CSSProperties };
 
-export default function HeroAnimation({ accent = '#C6F36B', speed = 1, className, style }: HeroAnimationProps) {
+export default function HeroAnimation({ accent = '#2F6BFF', speed = 1, className, style }: HeroAnimationProps) {
   const wrapRef = useRef<HTMLDivElement>(null);
   const [T, setT] = useState(0);
   const [scale, setScale] = useState(1);
