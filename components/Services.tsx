@@ -6,7 +6,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 import ArrowIcon from "./ArrowIcon";
 import { ContactButton } from "./ContactPanel";
-import { container, h2Section, sectionY } from "./ui";
+import { container, h2Section } from "./ui";
 
 gsap.registerPlugin(ScrollTrigger, useGSAP);
 
@@ -98,7 +98,11 @@ export default function Services() {
   );
 
   return (
-    <section ref={root} id="who-i-work-with" className={`${container} ${sectionY}`}>
+    <section
+      ref={root}
+      id="who-i-work-with"
+      className={`${container} pb-[clamp(72px,8.5vw,116px)] pt-[clamp(52px,6.5vw,88px)]`}
+    >
       <h2 data-reveal className={`${h2Section} mb-[44px] text-center`}>
         Who do I work with?
       </h2>
