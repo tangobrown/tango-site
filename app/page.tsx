@@ -1,3 +1,4 @@
+import ApproachScroll from "@/components/ApproachScroll";
 import { ContactPanelProvider } from "@/components/ContactPanel";
 import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
@@ -15,19 +16,7 @@ export default function Home() {
       <main>
         <Hero />
         <Services />
-        <SplitBlock
-          id="approach"
-          title="Most small businesses don't need an agency. They need one person who takes real ownership."
-          paragraphs={[
-            "That's where I come in. I'll be your digital/website department who will take your success personally.",
-            "I'll work my a** off each month to ensure your website looks good, outperforms your competition and attracts new leads or sales for your business. You'll be dealing with me (not an account manager, or agency junior) and you won't pay agency fees that put off small businesses getting help with their marketing efforts.",
-          ]}
-          buttonLabel="Let's connect"
-          imageSrc="/about-2.jpg"
-          imageAlt="Tim Brown working with clients at a laptop"
-          imageSide="right"
-          className="pb-[clamp(28px,3.5vw,50px)] pt-[clamp(52px,6.5vw,88px)]"
-        />
+        <ApproachScroll />
         <SplitBlock
           id="about"
           title="Hi, I'm Tim"
@@ -36,8 +25,8 @@ export default function Home() {
             "A Kiwi by birth, I now live in Devon with my wife and son. When I'm not working, you'll find me watching rugby, cricket, American football or golf, or out exploring the South West countryside.",
           ]}
           buttonLabel="Start a project"
-          imageSrc="/about-1.jpg"
-          imageAlt="Portrait of Tim Brown"
+          imageSrc="/about-2.jpg"
+          imageAlt="Tim Brown working with clients at a laptop"
           imageSide="left"
           className="pb-[clamp(52px,6.5vw,88px)] pt-[clamp(28px,3.5vw,50px)]"
         />
