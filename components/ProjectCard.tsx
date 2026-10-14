@@ -9,7 +9,7 @@ export default function ProjectCard({ project, priority = false }: { project: Pr
   return (
     <Link
       href={`/work/${project.slug}`}
-      className="group relative flex aspect-[4/5] flex-col justify-end overflow-hidden rounded-[3px] bg-pine text-white outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2"
+      className="group relative flex aspect-[4/5] flex-col justify-end overflow-hidden rounded-[3px] bg-black text-white outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2"
     >
       <Image
         src={project.image}
@@ -24,7 +24,7 @@ export default function ProjectCard({ project, priority = false }: { project: Pr
         className="absolute inset-0"
         style={{
           background:
-            "linear-gradient(180deg, rgba(14,42,31,0) 35%, rgba(14,42,31,0.6) 62%, rgba(14,42,31,0.94) 100%)",
+            "linear-gradient(180deg, rgba(0,0,0,0) 35%, rgba(0,0,0,0.55) 62%, rgba(0,0,0,0.9) 100%)",
         }}
       />
 
