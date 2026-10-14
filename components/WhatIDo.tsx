@@ -1,42 +1,87 @@
-import type { ReactNode } from "react";
-import { AiAutomationIcon, SeoIcon, WebsiteBuildsIcon } from "./ServiceIcons";
+import ArrowIcon from "./ArrowIcon";
+import { ContactButton } from "./ContactPanel";
 import { container } from "./ui";
 
-const services: { title: string; text: string; icon: ReactNode }[] = [
+const columns = [
   {
-    title: "Website Builds",
-    text: "Beautiful, blazing fast websites and online shops, built to turn visitors into enquiries and sales.",
-    icon: <WebsiteBuildsIcon />,
+    label: "For service businesses",
+    title: "Service based companies wanting to get more leads",
+    intro:
+      "For builders, plumbers, electricians, cleaners, consultants, clinics and other local service businesses.",
+    points: [
+      "Bespoke websites that look stunning on all devices",
+      "Search engine optimisation for better rankings in search & AI",
+      "Built for converting browsers into leads in your inbox",
+    ],
+    cta: "Get a free website check",
   },
   {
-    title: "Optimisation",
-    text: "Optimising your site for search and conversions, so more of the right people find you and get in touch.",
-    icon: <SeoIcon />,
-  },
-  {
-    title: "AI & Automation",
-    text: "Integrating AI to take care of those boring tasks, from answering enquiries to the day-to-day admin.",
-    icon: <AiAutomationIcon />,
+    label: "For e-commerce stores",
+    title: "Online stores looking to modernise & level-up sales",
+    intro:
+      "Custom online stores for ambitious UK brands who want a super-fast site, built on modern technology.",
+    points: [
+      "Stunning online shops, built to convert users into buyers",
+      "Bespoke functionality to suit your business needs",
+      "Optimised to get more users to your website",
+    ],
+    cta: "Get a free store review",
   },
 ];
 
-// "What I do": three columns straight under the hero, divided by hairlines on
-// desktop, with a full-width rule along the bottom.
+function Tick() {
+  return (
+    <svg
+      width="18"
+      height="18"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="#14A85A"
+      strokeWidth={2.6}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className="mt-[4px] flex-none"
+      aria-hidden="true"
+    >
+      <path d="M5 12.5l4.5 4.5L19 7.5" />
+    </svg>
+  );
+}
+
+// Straight under the hero: who I work with, as two columns (service
+// businesses / online stores) divided by a hairline on desktop, with a
+// full-width rule along the bottom.
 export default function WhatIDo() {
   return (
-    <section id="services" aria-label="What I do" className="border-b border-ink/15 bg-[#effff7]">
-      <div className={`${container} grid grid-cols-1 divide-y divide-ink/15 lg:grid-cols-3 lg:divide-x lg:divide-y-0`}>
-        {services.map((s) => (
+    <section id="services" aria-label="Who I work with" className="border-b border-ink/15 bg-white">
+      <div className={`${container} grid grid-cols-1 divide-y divide-ink/15 lg:grid-cols-2 lg:divide-x lg:divide-y-0`}>
+        {columns.map((c) => (
           <div
-            key={s.title}
+            key={c.label}
             data-reveal
-            className="flex flex-col items-start gap-3 py-9 lg:px-[clamp(28px,3vw,48px)] lg:py-[clamp(44px,4.4vw,64px)] lg:first:pl-0 lg:last:pr-0"
+            className="flex flex-col items-start py-10 lg:px-[clamp(32px,4vw,64px)] lg:py-[clamp(48px,5vw,72px)] lg:first:pl-0 lg:last:pr-0"
           >
-            <div className="mb-4">{s.icon}</div>
-            <h2 className="m-0 text-[clamp(24px,2.1vw,30px)] font-semibold leading-[1.1] tracking-[-0.015em]">
-              {s.title}
+            <p className="m-0 text-[15px] font-semibold uppercase tracking-[0.08em] text-brand">
+              {c.label}
+            </p>
+            <h2 className="m-0 mb-4 mt-3 text-[clamp(28px,2.8vw,40px)] font-semibold leading-[1.08] tracking-[-0.015em]">
+              {c.title}
             </h2>
-            <p className="m-0 max-w-[40ch] text-[18px] leading-[1.47] text-ink-soft">{s.text}</p>
+            <p className="m-0 max-w-[46ch] text-[19px] leading-[1.47] text-ink-soft">{c.intro}</p>
+            <ul className="m-0 mt-6 flex w-full list-none flex-col gap-3 border-t border-ink/15 p-0 pt-6">
+              {c.points.map((point) => (
+                <li key={point} className="flex gap-3 text-[17px] font-medium leading-[1.4]">
+                  <Tick />
+                  <span>{point}</span>
+                </li>
+              ))}
+            </ul>
+            <ContactButton
+              preset="Website review for my business"
+              className="mt-7 inline-flex items-center gap-2 text-[16px] font-semibold text-brand transition-colors hover:text-brand-dark"
+            >
+              {c.cta} <ArrowIcon size={16} />
+            </ContactButton>
           </div>
         ))}
       </div>

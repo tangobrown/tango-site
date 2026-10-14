@@ -27,7 +27,7 @@ export default function PageHeader({
         <p className="m-0 text-[15px] font-semibold uppercase tracking-[0.08em] text-brand-bright">
           {eyebrow}
         </p>
-        <h1 className="m-0 max-w-[18ch] text-[clamp(38px,4.6vw,66px)] font-semibold leading-[1] tracking-[-0.025em]">
+        <h1 className="m-0 max-w-[18ch] text-balance text-[clamp(38px,4.6vw,66px)] font-semibold leading-[1] tracking-[-0.025em]">
           {title}
         </h1>
         {intro ? (

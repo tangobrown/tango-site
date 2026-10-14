@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import PageHeader from "@/components/PageHeader";
-import Services from "@/components/Services";
 import WhatIDo from "@/components/WhatIDo";
 
 export const metadata: Metadata = {
@@ -18,7 +17,6 @@ export default function ExpertisePage() {
         intro="Fast, good-looking websites that win you work, kept climbing in search and lightened with a little AI where it helps."
       />
       <WhatIDo />
-      <Services />
     </>
   );
 }
