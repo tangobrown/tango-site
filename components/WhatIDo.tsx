@@ -4,8 +4,7 @@ import { container } from "./ui";
 
 const columns = [
   {
-    label: "For service businesses",
-    title: "Service based companies wanting to get more leads",
+    title: "For service businesses",
     intro:
       "For builders, plumbers, electricians, cleaners, consultants, clinics and other local service businesses.",
     points: [
@@ -16,8 +15,7 @@ const columns = [
     cta: "Get a free website check",
   },
   {
-    label: "For e-commerce stores",
-    title: "Online stores looking to modernise & level-up sales",
+    title: "For e-commerce stores",
     intro:
       "Custom online stores for ambitious UK brands who want a super-fast site, built on modern technology.",
     points: [
@@ -57,14 +55,11 @@ export default function WhatIDo() {
       <div className={`${container} grid grid-cols-1 divide-y divide-ink/15 lg:grid-cols-2 lg:divide-x lg:divide-y-0`}>
         {columns.map((c) => (
           <div
-            key={c.label}
+            key={c.title}
             data-reveal
             className="flex flex-col items-start py-10 lg:px-[clamp(32px,4vw,64px)] lg:py-[clamp(48px,5vw,72px)] lg:first:pl-0 lg:last:pr-0"
           >
-            <p className="m-0 text-[15px] font-semibold uppercase tracking-[0.08em] text-brand">
-              {c.label}
-            </p>
-            <h2 className="m-0 mb-4 mt-3 text-[clamp(28px,2.8vw,40px)] font-semibold leading-[1.08] tracking-[-0.015em]">
+            <h2 className="m-0 mb-4 text-[clamp(28px,2.8vw,40px)] font-semibold leading-[1.08] tracking-[-0.015em]">
               {c.title}
             </h2>
             <p className="m-0 max-w-[46ch] text-[19px] leading-[1.47] text-ink-soft">{c.intro}</p>
