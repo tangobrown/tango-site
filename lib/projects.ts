@@ -44,7 +44,7 @@ export const projects: Project[] = [
     title: "IPJ London",
     category: "Furniture · London",
     services: "Branding & website",
-    summary: "Refreshed branding and a brand new website, showing off their stunning furniture consultancy portfolio from high-end clients in London.",
+    summary: "Refreshed branding and a new website, showcasing their stunning furniture consultancy portfolio in London.",
     url: "https://ipjlondon.com",
     cover: "/work/tablet/ipj.png",
     image: "/work/photos/ipj-london-website.jpg",
