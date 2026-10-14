@@ -12,6 +12,8 @@ export type Project = {
   cover: string;
   /** Background photo for the project's box (placeholder for now). */
   image: string;
+  /** The photo's pixel size, so its box can request a sharp enough version. */
+  imageSize: { width: number; height: number };
 };
 
 export const projects: Project[] = [
@@ -24,6 +26,7 @@ export const projects: Project[] = [
     url: "https://devonjoinery.co.uk",
     cover: "/work/tablet/w1.png",
     image: "/work/photos/devon-joinery-staircase.jpg",
+    imageSize: { width: 1000, height: 1000 },
   },
   {
     slug: "vowles-carpentry",
@@ -34,6 +37,7 @@ export const projects: Project[] = [
     url: "https://paulvowlescarpentry.co.uk",
     cover: "/work/tablet/w2.png",
     image: "/work/photos/vowles-carpentry-kitchen.jpg",
+    imageSize: { width: 1400, height: 900 },
   },
   {
     slug: "ipj-london",
@@ -44,6 +48,7 @@ export const projects: Project[] = [
     url: "https://ipjlondon.com",
     cover: "/work/tablet/ipj.png",
     image: "/work/photos/ipj-london-office.jpg",
+    imageSize: { width: 1300, height: 600 },
   },
   {
     slug: "old-fashioned-cocktail-co",
@@ -54,6 +59,7 @@ export const projects: Project[] = [
     url: "https://theoldfashionedcocktailco.com",
     cover: "/work/tablet/w3.png",
     image: "/about-1.jpg",
+    imageSize: { width: 800, height: 770 },
   },
   {
     slug: "world-bank-pim-pam",
@@ -64,6 +70,7 @@ export const projects: Project[] = [
     url: "https://pim-pam.net",
     cover: "/work/tablet/w4.png",
     image: "/about-1.jpg",
+    imageSize: { width: 800, height: 770 },
   },
   {
     slug: "torbay-sweeps",
@@ -74,6 +81,7 @@ export const projects: Project[] = [
     url: "https://torbaysweeps.co.uk",
     cover: "/work/tablet/torbay.png",
     image: "/about-1.jpg",
+    imageSize: { width: 800, height: 770 },
   },
   {
     slug: "highgrove-retirement-village",
@@ -84,6 +92,7 @@ export const projects: Project[] = [
     url: "https://highgrove.co.nz",
     cover: "/work/tablet/highgrove.png",
     image: "/about-1.jpg",
+    imageSize: { width: 800, height: 770 },
   },
 ];
 

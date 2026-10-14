@@ -1,5 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  images: {
+    // 85 is used for the photo-backed project boxes.
+    qualities: [75, 85],
+  },
   async redirects() {
     // Old sub-page URLs point at their expertise pages.
     return [
