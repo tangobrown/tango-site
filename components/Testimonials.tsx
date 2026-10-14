@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useRef, useState } from "react";
+import { useState } from "react";
 import { testimonials } from "@/lib/testimonials";
 import { container, h2Section } from "./ui";
 
@@ -10,28 +10,27 @@ const pad = (n: number) => String(n).padStart(2, "0");
 const roundBtn =
   "flex h-11 w-11 items-center justify-center rounded-[3px] border border-white/60 text-white transition-colors hover:border-white hover:bg-white hover:text-brand";
 
+// Each client's photo, listed once.
+const photos = [...new Set(testimonials.map((t) => t.logo).filter(Boolean))] as string[];
+
 // One testimonial at a time: photo on the left, green quote card on the right.
-// Changing slides fades out (180ms), swaps, then fades back in (220ms).
+// Every photo and quote stays mounted and stacked in place, so nothing
+// reloads and the card height never jumps. The new photo fades in over the
+// old one (which only disappears once it's covered); the old quote fades out
+// quickly before the new one rises in, so they never overlap.
 export default function Testimonials() {
   const [index, setIndex] = useState(0);
-  const [phase, setPhase] = useState<"in" | "out">("in");
-  const timer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const n = testimonials.length;
   const t = testimonials[index];
 
-  const go = (dir: number) => {
-    if (timer.current) clearTimeout(timer.current);
-    setPhase("out");
-    timer.current = setTimeout(() => {
-      setIndex((i) => (i + dir + n) % n);
-      setPhase("in");
-    }, 180);
-  };
+  const go = (dir: number) => setIndex((i) => (i + dir + n) % n);
 
-  const fade =
-    phase === "in"
-      ? "translate-y-0 opacity-100 duration-[220ms]"
-      : "translate-y-[6px] opacity-0 duration-[180ms]";
+  const layer = (active: boolean) =>
+    `col-start-1 row-start-1 transition-[opacity,transform] ease-[cubic-bezier(0.22,0.61,0.36,1)] ${
+      active
+        ? "translate-y-0 opacity-100 delay-150 duration-[450ms]"
+        : "pointer-events-none translate-y-[6px] opacity-0 delay-0 duration-200"
+    }`;
 
   return (
     <section className={`${container} pb-[clamp(52px,6.5vw,88px)]`}>
@@ -41,32 +40,51 @@ export default function Testimonials() {
 
       <div data-reveal className="flex flex-wrap gap-3">
         <div className="relative h-[260px] flex-[1_1_300px] overflow-hidden rounded-[3px] bg-surface-placeholder md:h-[clamp(300px,30vw,400px)]">
-          {t.logo ? (
+          {photos.map((src) => (
             <Image
-              src={t.logo}
-              alt={`${t.name}, ${t.company}`}
+              key={src}
+              src={src}
+              alt={src === t.logo ? `${t.name}, ${t.company}` : ""}
+              aria-hidden={src === t.logo ? undefined : true}
               fill
               sizes="(min-width: 768px) 420px, 100vw"
-              className={`object-cover transition-[opacity,transform] ${fade}`}
+              className={`object-cover transition-[opacity,transform] ease-[cubic-bezier(0.22,0.61,0.36,1)] ${
+                src === t.logo
+                  ? "z-10 scale-100 opacity-100 duration-700"
+                  : "z-0 scale-[1.04] opacity-0 delay-700 duration-0"
+              }`}
             />
-          ) : null}
+          ))}
         </div>
 
         <figure
           aria-live="polite"
           className="m-0 flex min-h-[320px] flex-[2_1_460px] flex-col justify-between gap-8 rounded-[3px] bg-brand p-[clamp(26px,3.4vw,44px)] text-white md:h-[clamp(300px,30vw,400px)] md:min-h-0"
         >
-          <blockquote
-            className={`m-0 max-w-[30ch] text-[clamp(20px,1.8vw,26px)] font-medium leading-[1.22] tracking-[-0.01em] transition-[opacity,transform] ${fade}`}
-          >
-            &ldquo;{t.quote}&rdquo;
-          </blockquote>
+          {/* All quotes share one grid cell, so the card fits the longest */}
+          <div className="grid">
+            {testimonials.map((q, i) => (
+              <blockquote
+                key={i}
+                aria-hidden={i !== index}
+                className={`m-0 max-w-[30ch] text-[clamp(20px,1.8vw,26px)] font-medium leading-[1.22] tracking-[-0.01em] ${layer(
+                  i === index,
+                )}`}
+              >
+                &ldquo;{q.quote}&rdquo;
+              </blockquote>
+            ))}
+          </div>
 
-          <div className="flex flex-wrap items-end justify-between gap-5">
-            <figcaption className={`flex flex-col gap-1 transition-[opacity,transform] ${fade}`}>
-              <span className="text-[18px] font-semibold">{t.name}</span>
-              <span className="text-[15px] font-medium opacity-[0.85]">{t.company}</span>
-            </figcaption>
+          <figcaption className="flex flex-wrap items-end justify-between gap-5">
+            <div className="grid">
+              {testimonials.map((q, i) => (
+                <div key={i} aria-hidden={i !== index} className={`flex flex-col gap-1 ${layer(i === index)}`}>
+                  <span className="text-[18px] font-semibold">{q.name}</span>
+                  <span className="text-[15px] font-medium opacity-[0.85]">{q.company}</span>
+                </div>
+              ))}
+            </div>
             <div className="flex items-center gap-3">
               <span className="text-[14px] font-semibold tabular-nums tracking-normal">
                 {pad(index + 1)} / {pad(n)}
@@ -82,7 +100,7 @@ export default function Testimonials() {
                 </svg>
               </button>
             </div>
-          </div>
+          </figcaption>
         </figure>
       </div>
     </section>
