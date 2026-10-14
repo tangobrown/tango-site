@@ -22,7 +22,7 @@ export const projects: Project[] = [
     title: "Devon Joinery",
     category: "Joinery · Devon",
     services: "Branding, website & SEO",
-    summary: "Rebuilt around the jobs they actually wanted. Fewer enquiries now — better ones.",
+    summary: "A brand new website for a joinery business in Exeter and ongoing SEO services which has led to a big increase in leads.",
     url: "https://devonjoinery.co.uk",
     cover: "/work/tablet/w1.png",
     image: "/work/photos/devon-joinery-website.jpg",

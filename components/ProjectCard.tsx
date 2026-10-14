@@ -30,8 +30,8 @@ export default function ProjectCard({ project, priority = false }: { project: Pr
           className="object-cover transition-transform duration-700 ease-[cubic-bezier(0.22,0.61,0.36,1)] group-hover:scale-[1.04]"
         />
       </div>
-      <div className="flex flex-col gap-2">
-        <h3 className="m-0 text-[clamp(24px,2.1vw,30px)] font-semibold leading-[1.1] tracking-[-0.015em] transition-colors group-hover:text-brand">
+      <div className="flex flex-col gap-2 transition-opacity duration-300 group-hover:opacity-70 group-focus-visible:opacity-70">
+        <h3 className="m-0 text-[clamp(24px,2.1vw,30px)] font-semibold leading-[1.1] tracking-[-0.015em]">
           {project.title}
         </h3>
         <p className="m-0 max-w-[52ch] text-[15px] font-normal leading-[1.5] text-ink-body">{project.summary}</p>
