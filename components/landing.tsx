@@ -55,7 +55,7 @@ export function CardsSection({
           >
             <span className="font-mono text-[15px] font-semibold text-brand">{pad(i)}</span>
             <h3 className="m-0 text-[24px] font-semibold leading-[1.1] tracking-[-0.01em]">{item.title}</h3>
-            <p className="m-0 text-[17px] leading-[1.5] text-ink-soft">{item.body}</p>
+            <p className="m-0 text-[16px] leading-[1.5] text-ink-soft">{item.body}</p>
           </div>
         ))}
       </div>
@@ -70,7 +70,7 @@ export function PointsGrid({ items }: { items: Item[] }) {
       {items.map((item) => (
         <div key={item.title} className="flex flex-col gap-2 border-t border-ink/15 pt-6">
           <h4 className="m-0 text-[22px] font-semibold leading-[1.15] tracking-[-0.01em]">{item.title}</h4>
-          <p className="m-0 text-[17px] leading-[1.5] text-ink-soft">{item.body}</p>
+          <p className="m-0 text-[16px] leading-[1.5] text-ink-soft">{item.body}</p>
         </div>
       ))}
     </div>
@@ -118,7 +118,7 @@ export function NumberedList({ items, dark = false }: { items: Item[]; dark?: bo
           </span>
           <div className="flex flex-col gap-2">
             <h3 className="m-0 text-[22px] font-semibold leading-[1.15] tracking-[-0.01em]">{item.title}</h3>
-            <p className={`m-0 text-[17px] leading-[1.5] ${dark ? "text-white/75" : "text-ink-soft"}`}>
+            <p className={`m-0 text-[16px] leading-[1.5] ${dark ? "text-white/75" : "text-ink-soft"}`}>
               {item.body}
             </p>
           </div>
@@ -153,7 +153,7 @@ export function SplitSection({
           <div data-reveal className="flex flex-col gap-4 lg:sticky lg:top-[120px] lg:self-start">
             <Eyebrow dark={dark}>{eyebrow}</Eyebrow>
             <h2 className={h2Section}>{title}</h2>
-            <p className={`m-0 text-[19px] leading-[1.47] ${dark ? "text-white/75" : "text-ink-soft"}`}>{intro}</p>
+            <p className={`m-0 text-[17px] leading-[1.5] ${dark ? "text-white/75" : "text-ink-soft"}`}>{intro}</p>
             {aside}
           </div>
           <div data-reveal>{children}</div>
@@ -166,7 +166,7 @@ export function SplitSection({
 
 export function Callout({ children }: { children: ReactNode }) {
   return (
-    <p className="m-0 mt-2 rounded-[14px] border-l-4 border-brand bg-[#effff7] py-4 pl-5 pr-4 text-[17px] leading-[1.5] text-ink">
+    <p className="m-0 mt-2 rounded-[14px] border-l-4 border-brand bg-[#effff7] py-4 pl-5 pr-4 text-[16px] leading-[1.5] text-ink">
       {children}
     </p>
   );
@@ -192,7 +192,7 @@ export function TickList({ items }: { items: string[] }) {
           >
             <path d="M5 12.5l4.5 4.5L19 7.5" />
           </svg>
-          <span className="text-[17px] leading-[1.5]">{line}</span>
+          <span className="text-[16px] leading-[1.5]">{line}</span>
         </li>
       ))}
     </ul>
@@ -216,7 +216,7 @@ export function StepsSection({ title, items }: { title: string; items: Item[] })
           >
             <span className="font-mono text-[15px] font-semibold text-brand">{pad(i)}</span>
             <h3 className="m-0 text-[22px] font-semibold leading-[1.15] tracking-[-0.01em]">{step.title}</h3>
-            <p className="m-0 text-[16px] leading-[1.5] text-ink-soft">{step.body}</p>
+            <p className="m-0 text-[15px] leading-[1.5] text-ink-soft">{step.body}</p>
           </li>
         ))}
       </ol>
@@ -276,7 +276,7 @@ export function PricingSection({
       >
         <div className="flex max-w-[640px] flex-col gap-4">
           <h2 className={h2Section}>{ctaTitle}</h2>
-          <p className="m-0 text-[19px] leading-[1.47] text-white/75">{ctaText}</p>
+          <p className="m-0 text-[17px] leading-[1.5] text-white/75">{ctaText}</p>
         </div>
         <ContactButton preset={preset} className={`${btnPrimary} self-start lg:self-auto`}>
           {ctaLabel} <ArrowIcon size={16} />

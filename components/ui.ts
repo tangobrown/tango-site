@@ -17,4 +17,4 @@ export const h2Section =
   "m-0 text-[clamp(35px,3.4vw,48px)] font-semibold leading-[1.08] tracking-[-0.015em]";
 
 /** Standard body paragraph. */
-export const bodyText = "m-0 text-[19px] leading-[1.47] tracking-normal text-ink-soft";
+export const bodyText = "m-0 text-[17px] leading-[1.5] tracking-normal text-ink-soft";

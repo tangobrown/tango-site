@@ -44,7 +44,7 @@ export default function Hero() {
             </span>{" "}
             working as hard <span className="whitespace-nowrap">as you do</span>
           </h1>
-          <p className="m-0 max-w-[46ch] text-[19px] leading-[1.37] tracking-normal text-footer-link">
+          <p className="m-0 max-w-[46ch] text-[17px] leading-[1.45] tracking-normal text-footer-link">
             I build, host and optimise blazing fast websites for companies in the UK that want to
             look good and grow online.
           </p>

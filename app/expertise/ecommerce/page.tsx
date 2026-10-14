@@ -233,7 +233,7 @@ export default function EcommercePage() {
                   {backEnd.map((row) => (
                     <div key={row.label} className="flex flex-col gap-1 border-t border-ink/15 px-5 py-4">
                       <dt className="text-[13px] font-semibold uppercase tracking-[0.08em] text-ink-muted">{row.label}</dt>
-                      <dd className="m-0 text-[16px] leading-[1.5] text-ink-soft">{row[key]}</dd>
+                      <dd className="m-0 text-[15px] leading-[1.5] text-ink-soft">{row[key]}</dd>
                     </div>
                   ))}
                 </dl>
@@ -243,7 +243,7 @@ export default function EcommercePage() {
 
           {/* Tablet / desktop: side-by-side table */}
           <div className="mt-6 hidden overflow-hidden rounded-[20px] border border-ink/15 bg-white md:block">
-            <table className="w-full border-collapse text-left text-[16px] leading-[1.5]">
+            <table className="w-full border-collapse text-left text-[15px] leading-[1.5]">
               <thead>
                 <tr className="bg-pine text-white">
                   <th className="w-[20%] p-5 font-normal" />
@@ -267,7 +267,7 @@ export default function EcommercePage() {
               </tbody>
             </table>
           </div>
-          <p className="m-0 mt-5 text-[17px] leading-[1.5] text-ink-soft">
+          <p className="m-0 mt-5 text-[16px] leading-[1.5] text-ink-soft">
             Not sure which is right for you? I&apos;ll recommend one in your{" "}
             <ContactButton
               preset="Website review for my business"

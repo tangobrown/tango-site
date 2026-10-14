@@ -39,7 +39,7 @@ export default function ProjectCard({ project, priority = false }: { project: Pr
         <h3 className="m-0 text-[clamp(24px,2.1vw,30px)] font-semibold leading-[1.1] tracking-[-0.015em]">
           {project.title}
         </h3>
-        <p className="m-0 text-[17px] leading-[1.45] text-white/80">{project.summary}</p>
+        <p className="m-0 text-[16px] leading-[1.45] text-white/80">{project.summary}</p>
       </div>
     </Link>
   );

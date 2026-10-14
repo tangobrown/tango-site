@@ -31,7 +31,7 @@ export default function PageHeader({
           {title}
         </h1>
         {intro ? (
-          <p className="m-0 max-w-[56ch] text-[19px] leading-[1.45] text-footer-link">{intro}</p>
+          <p className="m-0 max-w-[56ch] text-[17px] leading-[1.5] text-footer-link">{intro}</p>
         ) : null}
         {children}
       </div>
