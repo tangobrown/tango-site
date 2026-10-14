@@ -4,9 +4,9 @@ import { container } from "./ui";
 
 const columns = [
   {
-    title: "For service businesses",
+    title: "Service businesses",
     intro:
-      "For builders, plumbers, electricians, cleaners, consultants, clinics and other local service businesses.",
+      "Builders, plumbers, electricians, cleaners, consultants, clinics and other local service businesses.",
     points: [
       "Bespoke websites that look stunning on all devices",
       "Search engine optimisation for better rankings in search & AI",
@@ -15,7 +15,7 @@ const columns = [
     cta: "Get a free website check",
   },
   {
-    title: "For e-commerce stores",
+    title: "E-commerce stores",
     intro:
       "Custom online stores for ambitious UK brands who want a super-fast site, built on modern technology.",
     points: [

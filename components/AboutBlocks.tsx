@@ -2,7 +2,13 @@ import SplitBlock from "./SplitBlock";
 
 // The two text + photo blocks, shared by the home and about pages.
 
-export function ApproachBlock({ className = "" }: { className?: string }) {
+export function ApproachBlock({
+  className = "",
+  imageSide = "left",
+}: {
+  className?: string;
+  imageSide?: "left" | "right";
+}) {
   return (
     <SplitBlock
       id="approach"
@@ -14,7 +20,7 @@ export function ApproachBlock({ className = "" }: { className?: string }) {
       buttonLabel="Let's connect"
       imageSrc="/about-2.jpg"
       imageAlt="Tim Brown working with clients at a laptop"
-      imageSide="right"
+      imageSide={imageSide}
       className={className}
     />
   );

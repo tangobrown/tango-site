@@ -9,7 +9,7 @@ export default function Home() {
     <>
       <Hero />
       <WhatIDo />
-      <ApproachBlock className="pb-[clamp(52px,6.5vw,88px)] pt-[clamp(20px,2vw,28px)]" />
+      <ApproachBlock className="py-[clamp(52px,6.5vw,88px)]" />
       <WorkPreview />
       <Testimonials />
     </>
