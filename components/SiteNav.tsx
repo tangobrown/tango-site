@@ -43,7 +43,7 @@ function Chevron({ open }: { open: boolean }) {
 }
 
 const ctaClass =
-  "inline-flex shrink-0 items-center rounded-[3px] bg-pine px-5 py-3 text-[16px] font-semibold tracking-normal text-white transition-colors duration-200 hover:bg-brand";
+  "inline-flex shrink-0 items-center gap-[10px] rounded-[3px] bg-pine py-3 pl-5 pr-4 text-[16px] font-semibold tracking-normal text-white transition-colors duration-200 hover:bg-brand";
 
 // Floating white pill nav. Fixed so it stays reachable while scrolling.
 export default function SiteNav() {
@@ -216,7 +216,9 @@ export default function SiteNav() {
         </nav>
 
         <div className="flex items-center gap-2">
-          <ContactButton className={ctaClass}>Let&apos;s connect</ContactButton>
+          <ContactButton className={ctaClass}>
+            Get started <ArrowIcon size={18} />
+          </ContactButton>
           <button
             type="button"
             onClick={() => setMenuOpen(true)}
@@ -303,7 +305,9 @@ export default function SiteNav() {
             )}
           </nav>
           <div className="mt-auto" onClick={() => setMenuOpen(false)}>
-            <ContactButton className={`${ctaClass} h-[50px] px-6`}>Let&apos;s connect</ContactButton>
+            <ContactButton className={`${ctaClass} h-[50px] pl-6 pr-5`}>
+              Get started <ArrowIcon size={18} />
+            </ContactButton>
           </div>
         </div>
       )}

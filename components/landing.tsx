@@ -279,7 +279,7 @@ export function PricingSection({
           <p className="m-0 text-[17px] leading-[1.5] text-white/75">{ctaText}</p>
         </div>
         <ContactButton preset={preset} className={`${btnPrimary} self-start lg:self-auto`}>
-          {ctaLabel} <ArrowIcon size={16} />
+          {ctaLabel} <ArrowIcon size={18} />
         </ContactButton>
       </div>
     </section>
@@ -291,7 +291,7 @@ export function HeaderActions({ label, preset }: { label: string; preset: Enquir
   return (
     <div className="mt-3 flex flex-wrap gap-3">
       <ContactButton preset={preset} className={btnPrimary}>
-        {label} <ArrowIcon size={16} />
+        {label} <ArrowIcon size={18} />
       </ContactButton>
       <a
         href="#how-it-works"

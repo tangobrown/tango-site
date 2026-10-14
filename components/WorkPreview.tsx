@@ -20,7 +20,7 @@ export default function WorkPreview() {
       </div>
       <div className="mt-[clamp(32px,3.6vw,48px)] flex justify-center">
         <Link href="/work" className={btnPrimary}>
-          Show more <ArrowIcon size={16} />
+          Show more <ArrowIcon size={18} />
         </Link>
       </div>
     </section>

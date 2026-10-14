@@ -37,7 +37,7 @@ export default async function ProjectPage({ params }: { params: Promise<Params> 
         <div className="mt-3 flex flex-wrap gap-3">
           {project.url ? (
             <a href={project.url} target="_blank" rel="noreferrer" className={btnPrimary}>
-              Visit the live site <ArrowIcon size={16} />
+              Visit the live site <ArrowIcon size={18} />
             </a>
           ) : null}
           <Link href="/work" className={ghostBtn}>
@@ -78,7 +78,7 @@ export default async function ProjectPage({ params }: { params: Promise<Params> 
         <div className="mb-[clamp(28px,3vw,40px)] flex flex-wrap items-end justify-between gap-4">
           <h2 className={`${h2Section}`}>More work</h2>
           <ContactButton className={btnPrimary}>
-            Start a project <ArrowIcon size={16} />
+            Start a project <ArrowIcon size={18} />
           </ContactButton>
         </div>
         <div className="grid grid-cols-1 gap-x-6 gap-y-12 sm:grid-cols-2">

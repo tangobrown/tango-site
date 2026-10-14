@@ -52,7 +52,7 @@ export default function Hero() {
             look good and grow online.
           </p>
           <ContactButton className={`${btnPrimary} mt-2`}>
-            Get started <ArrowIcon size={16} />
+            Get started <ArrowIcon size={18} />
           </ContactButton>
         </div>
 

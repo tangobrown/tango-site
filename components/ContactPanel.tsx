@@ -90,7 +90,7 @@ function SubmitButton() {
   const { pending } = useFormStatus();
   return (
     <button type="submit" disabled={pending} className={`${btnPrimary} disabled:opacity-70`}>
-      {pending ? "Sending…" : "Send it over"} <ArrowIcon size={16} />
+      {pending ? "Sending…" : "Send it over"} <ArrowIcon size={18} />
     </button>
   );
 }
