@@ -19,31 +19,27 @@ export default function Hero() {
         className={`${container} relative grid grid-cols-1 items-center gap-10 pb-10 pt-[124px] lg:grid-cols-[minmax(0,1fr)_minmax(0,1.12fr)] lg:gap-8 lg:h-[80vh] lg:max-h-[760px] lg:min-h-[580px] lg:pb-4 lg:pt-[96px]`}
       >
         <div className="flex max-w-[560px] flex-col items-start gap-[30px] lg:max-w-[580px]">
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-[clamp(18px,2vw,28px)]">
             <Image
               src="/tim-avatar.jpg"
-              alt=""
-              width={240}
-              height={240}
+              alt="Tim Brown"
+              width={340}
+              height={340}
               priority
-              className="h-[clamp(44px,4vw,60px)] w-[clamp(44px,4vw,60px)] shrink-0 rounded-full object-cover"
+              className="h-[clamp(96px,10vw,148px)] w-[clamp(96px,10vw,148px)] shrink-0 rounded-[3px] object-cover"
             />
-            <p className="m-0 font-sans text-[15px] font-medium leading-[1.3] text-footer-link sm:text-[17px]">
-              <span className="font-semibold text-white">Tim Brown</span> - Website Growth Consultant
-            </p>
+            <div className="flex flex-col gap-1">
+              <h1 className="m-0 text-[clamp(32px,3.4vw,50px)] font-semibold leading-[1.02] tracking-[-0.025em]">
+                Tim Brown
+              </h1>
+              <p className="m-0 font-sans text-[clamp(17px,1.5vw,21px)] font-medium leading-[1.3] text-brand-bright">
+                Digital Growth Consultant
+              </p>
+              <p className="m-0 font-sans text-[clamp(16px,1.3vw,18px)] font-medium leading-[1.3] text-footer-link">
+                Based in Exeter, Devon
+              </p>
+            </div>
           </div>
-          <h1 className="m-0 text-[clamp(36px,4.4vw,64px)] font-semibold leading-[0.96] tracking-[-0.025em]">
-            Get your{" "}
-            <span className="whitespace-nowrap">
-              website{" "}
-              <span className="inline-block align-[-0.06em] text-brand-bright" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="currentColor" className="h-[0.85em] w-[0.85em]">
-                  <path d="M16.0037 9.41421L7.39712 18.0208L5.98291 16.6066L14.5895 8H7.00373V6H18.0037V17H16.0037V9.41421Z" />
-                </svg>
-              </span>
-            </span>{" "}
-            working as hard <span className="whitespace-nowrap">as you do</span>
-          </h1>
           <p className="m-0 max-w-[46ch] text-[17px] leading-[1.45] tracking-normal text-footer-link">
             I build, host and optimise blazing fast websites for companies in the UK that want to
             look good and grow online.
