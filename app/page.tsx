@@ -1,4 +1,4 @@
-import { AboutBlock, ApproachBlock } from "@/components/AboutBlocks";
+import { ApproachBlock } from "@/components/AboutBlocks";
 import Hero from "@/components/Hero";
 import Services from "@/components/Services";
 import Testimonials from "@/components/Testimonials";
@@ -11,8 +11,7 @@ export default function Home() {
       <Hero />
       <WhatIDo />
       <Services />
-      <ApproachBlock className="pb-[clamp(28px,3.5vw,50px)] pt-[clamp(20px,2vw,28px)]" />
-      <AboutBlock className="pb-[clamp(52px,6.5vw,88px)] pt-[clamp(28px,3.5vw,50px)]" />
+      <ApproachBlock className="pb-[clamp(52px,6.5vw,88px)] pt-[clamp(20px,2vw,28px)]" />
       <WorkPreview />
       <Testimonials />
     </>
