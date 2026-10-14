@@ -47,8 +47,8 @@ export const projects: Project[] = [
     summary: "A quiet, confident site that confirms the referral in ten seconds.",
     url: "https://ipjlondon.com",
     cover: "/work/tablet/ipj.png",
-    image: "/work/photos/ipj-london-office.jpg",
-    imageSize: { width: 1300, height: 600 },
+    image: "/work/photos/ipj-london-website.jpg",
+    imageSize: { width: 1300, height: 975 },
   },
   {
     slug: "old-fashioned-cocktail-co",
