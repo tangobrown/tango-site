@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono, Onest } from "next/font/google";
+import localFont from "next/font/local";
 import { ContactPanelProvider } from "@/components/ContactPanel";
 import Footer from "@/components/Footer";
 import ScrollReveal from "@/components/ScrollReveal";
@@ -11,6 +12,15 @@ const onest = Onest({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
   variable: "--font-onest",
+  display: "swap",
+});
+
+// BDO Grotesk (self-hosted, SIL OFL — see fonts/BDOGrotesk-OFL.txt) for
+// paragraph text.
+const bdo = localFont({
+  src: "./fonts/BDOGrotesk-VF.woff2",
+  weight: "300 900",
+  variable: "--font-bdo",
   display: "swap",
 });
 
@@ -83,7 +93,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en-GB" className={`${onest.variable} ${geist.variable} ${geistMono.variable}`}>
+    <html lang="en-GB" className={`${onest.variable} ${bdo.variable} ${geist.variable} ${geistMono.variable}`}>
       <body>
         <script
           type="application/ld+json"

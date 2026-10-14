@@ -298,7 +298,7 @@ export default function EcommercePage() {
             data-reveal
             className="m-0 mt-[clamp(48px,6vw,88px)] border-t border-white/15 pt-[clamp(40px,5vw,64px)] text-center"
           >
-            <p className="m-0 mx-auto max-w-[26ch] text-pretty text-[clamp(28px,3.2vw,44px)] font-semibold leading-[1.15] tracking-[-0.015em]">
+            <p className="m-0 mx-auto max-w-[26ch] text-pretty font-sans text-[clamp(28px,3.2vw,44px)] font-semibold leading-[1.15] tracking-[-0.015em]">
               <span className="text-brand-bright">&ldquo;</span>Small, steady improvements every month
               add up to a store that sells noticeably more.
               <span className="text-brand-bright">&rdquo;</span>

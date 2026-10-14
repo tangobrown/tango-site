@@ -28,7 +28,7 @@ export default function Hero() {
               priority
               className="h-[clamp(44px,4vw,60px)] w-[clamp(44px,4vw,60px)] shrink-0 rounded-full object-cover"
             />
-            <p className="m-0 text-[15px] font-medium leading-[1.3] text-footer-link sm:text-[17px]">
+            <p className="m-0 font-sans text-[15px] font-medium leading-[1.3] text-footer-link sm:text-[17px]">
               <span className="font-semibold text-white">Tim Brown</span> - Website Growth Consultant
             </p>
           </div>

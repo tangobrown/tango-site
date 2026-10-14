@@ -24,7 +24,7 @@ export default function PageHeader({
       <div
         className={`${container} relative flex flex-col items-start gap-5 pb-[clamp(48px,6vw,88px)] pt-[clamp(132px,13vw,184px)]`}
       >
-        <p className="m-0 text-[15px] font-semibold uppercase tracking-[0.08em] text-brand-bright">
+        <p className="m-0 font-sans text-[15px] font-semibold uppercase tracking-[0.08em] text-brand-bright">
           {eyebrow}
         </p>
         <h1 className="m-0 max-w-[18ch] text-balance text-[clamp(38px,4.6vw,66px)] font-semibold leading-[1] tracking-[-0.025em]">

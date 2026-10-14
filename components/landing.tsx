@@ -15,7 +15,7 @@ const pad = (i: number) => String(i + 1).padStart(2, "0");
 export function Eyebrow({ children, dark = false }: { children: ReactNode; dark?: boolean }) {
   return (
     <p
-      className={`m-0 text-[15px] font-semibold uppercase tracking-[0.08em] ${
+      className={`m-0 font-sans text-[15px] font-semibold uppercase tracking-[0.08em] ${
         dark ? "text-brand-bright" : "text-brand"
       }`}
     >

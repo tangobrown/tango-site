@@ -23,6 +23,22 @@
     overflow-x: clip; /* prevent horizontal scroll without breaking position: sticky */
   }
 
+  /* Paragraph text in BDO Grotesk. Add `font-sans` to keep a label in Onest. */
+  p,
+  li,
+  blockquote,
+  dd,
+  td {
+    font-family: var(--font-bdo), system-ui, sans-serif;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-onest), system-ui, sans-serif;
+  }
+
   h1,
   h2,
   h3 {
