@@ -4,7 +4,7 @@ import type { Project } from "@/lib/projects";
 import ArrowIcon from "./ArrowIcon";
 
 // A project box: background photo, title and short description along the
-// bottom, and an arrow in the corner. The whole box links to the project page.
+// bottom, and a large arrow in the corner. The whole box links to the project page.
 export default function ProjectCard({ project, priority = false }: { project: Project; priority?: boolean }) {
   return (
     <Link
@@ -30,15 +30,12 @@ export default function ProjectCard({ project, priority = false }: { project: Pr
 
       <span
         aria-hidden="true"
-        className="absolute right-5 top-5 flex h-12 w-12 items-center justify-center rounded-full bg-white text-pine transition-colors duration-300 group-hover:bg-brand-bright"
+        className="absolute right-3 top-3 text-white drop-shadow-[0_1px_6px_rgba(0,0,0,0.35)] transition-[color,transform] duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-brand-bright"
       >
-        <ArrowIcon size={18} />
+        <ArrowIcon size={60} />
       </span>
 
       <div className="relative flex flex-col gap-2 p-[clamp(22px,2.4vw,32px)]">
-        <p className="m-0 text-[14px] font-semibold uppercase tracking-[0.08em] text-brand-bright">
-          {project.category}
-        </p>
         <h3 className="m-0 text-[clamp(24px,2.1vw,30px)] font-semibold leading-[1.1] tracking-[-0.015em]">
           {project.title}
         </h3>
