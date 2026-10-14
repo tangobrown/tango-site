@@ -225,7 +225,7 @@ export default function EcommercePage() {
           {/* Mobile: one card per platform */}
           <div className="mt-6 flex flex-col gap-4 md:hidden">
             {(["shopify", "medusa"] as const).map((key) => (
-              <div key={key} className="overflow-hidden rounded-[20px] border border-ink/15 bg-white">
+              <div key={key} className="overflow-hidden rounded-[3px] border border-ink/15 bg-white">
                 <div className="bg-pine px-5 py-4 text-[20px] font-semibold text-white">
                   {key === "shopify" ? "Shopify" : "Medusa"}
                 </div>
@@ -242,7 +242,7 @@ export default function EcommercePage() {
           </div>
 
           {/* Tablet / desktop: side-by-side table */}
-          <div className="mt-6 hidden overflow-hidden rounded-[20px] border border-ink/15 bg-white md:block">
+          <div className="mt-6 hidden overflow-hidden rounded-[3px] border border-ink/15 bg-white md:block">
             <table className="w-full border-collapse text-left text-[15px] leading-[1.5]">
               <thead>
                 <tr className="bg-pine text-white">

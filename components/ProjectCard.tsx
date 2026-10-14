@@ -9,7 +9,7 @@ export default function ProjectCard({ project, priority = false }: { project: Pr
   return (
     <Link
       href={`/work/${project.slug}`}
-      className="group relative flex aspect-[4/5] flex-col justify-end overflow-hidden rounded-[20px] bg-pine text-white outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2"
+      className="group relative flex aspect-[4/5] flex-col justify-end overflow-hidden rounded-[3px] bg-pine text-white outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2"
     >
       <Image
         src={project.image}

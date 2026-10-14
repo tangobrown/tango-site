@@ -51,7 +51,7 @@ export function CardsSection({
             key={item.title}
             data-reveal
             style={{ transitionDelay: `${i * 80}ms` }}
-            className="flex flex-col gap-3 rounded-[20px] bg-[#effff7] p-[clamp(24px,2.4vw,32px)]"
+            className="flex flex-col gap-3 rounded-[3px] bg-[#effff7] p-[clamp(24px,2.4vw,32px)]"
           >
             <span className="font-mono text-[15px] font-semibold text-brand">{pad(i)}</span>
             <h3 className="m-0 text-[24px] font-semibold leading-[1.1] tracking-[-0.01em]">{item.title}</h3>
@@ -166,7 +166,7 @@ export function SplitSection({
 
 export function Callout({ children }: { children: ReactNode }) {
   return (
-    <p className="m-0 mt-2 rounded-[14px] border-l-4 border-brand bg-[#effff7] py-4 pl-5 pr-4 text-[16px] leading-[1.5] text-ink">
+    <p className="m-0 mt-2 rounded-[3px] border-l-4 border-brand bg-[#effff7] py-4 pl-5 pr-4 text-[16px] leading-[1.5] text-ink">
       {children}
     </p>
   );
@@ -175,7 +175,7 @@ export function Callout({ children }: { children: ReactNode }) {
 // Ticked list in a white card.
 export function TickList({ items }: { items: string[] }) {
   return (
-    <ul className="m-0 flex list-none flex-col overflow-hidden rounded-[20px] border border-ink/15 bg-white p-0">
+    <ul className="m-0 flex list-none flex-col overflow-hidden rounded-[3px] border border-ink/15 bg-white p-0">
       {items.map((line, i) => (
         <li key={line} className={`flex items-start gap-4 px-6 py-5 lg:px-8 ${i ? "border-t border-ink/15" : ""}`}>
           <svg
@@ -252,7 +252,7 @@ export function PricingSection({
           <p className={bodyText}>{intro}</p>
         </div>
         <div data-reveal>
-          <div className="overflow-hidden rounded-[20px] border border-ink/15">
+          <div className="overflow-hidden rounded-[3px] border border-ink/15">
             {rows.map((row, i) => (
               <div
                 key={row.service}
@@ -272,7 +272,7 @@ export function PricingSection({
 
       <div
         data-reveal
-        className="mt-[clamp(52px,6vw,88px)] flex flex-col gap-8 rounded-[24px] bg-pine p-[clamp(28px,4vw,56px)] text-white lg:flex-row lg:items-end lg:justify-between lg:gap-16"
+        className="mt-[clamp(52px,6vw,88px)] flex flex-col gap-8 rounded-[3px] bg-pine p-[clamp(28px,4vw,56px)] text-white lg:flex-row lg:items-end lg:justify-between lg:gap-16"
       >
         <div className="flex max-w-[640px] flex-col gap-4">
           <h2 className={h2Section}>{ctaTitle}</h2>
@@ -295,7 +295,7 @@ export function HeaderActions({ label, preset }: { label: string; preset: Enquir
       </ContactButton>
       <a
         href="#how-it-works"
-        className="inline-flex h-[48px] items-center rounded-full border border-white/30 px-[22px] text-[16px] font-semibold text-white transition-colors hover:border-white hover:bg-white hover:text-pine"
+        className="inline-flex h-[48px] items-center rounded-[3px] border border-white/30 px-[22px] text-[16px] font-semibold text-white transition-colors hover:border-white hover:bg-white hover:text-pine"
       >
         See how it works
       </a>

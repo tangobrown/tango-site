@@ -22,7 +22,7 @@ export async function generateMetadata({ params }: { params: Promise<Params> }):
 }
 
 const ghostBtn =
-  "inline-flex h-[48px] items-center gap-[10px] rounded-full border border-white/30 px-[22px] text-[16px] font-semibold text-white transition-colors hover:border-white hover:bg-white hover:text-pine";
+  "inline-flex h-[48px] items-center gap-[10px] rounded-[3px] border border-white/30 px-[22px] text-[16px] font-semibold text-white transition-colors hover:border-white hover:bg-white hover:text-pine";
 
 export default async function ProjectPage({ params }: { params: Promise<Params> }) {
   const project = getProject((await params).slug);
@@ -47,7 +47,7 @@ export default async function ProjectPage({ params }: { params: Promise<Params> 
       </PageHeader>
 
       <section className={`${container} pt-[clamp(40px,5vw,72px)]`}>
-        <div data-reveal className="relative aspect-[1196/872] overflow-hidden rounded-[24px] bg-[#effff7] lg:aspect-[16/9]">
+        <div data-reveal className="relative aspect-[1196/872] overflow-hidden rounded-[3px] bg-[#effff7] lg:aspect-[16/9]">
           <Image
             src={project.cover}
             alt={`${project.title} website shown on a tablet`}

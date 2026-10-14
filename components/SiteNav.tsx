@@ -43,7 +43,7 @@ function Chevron({ open }: { open: boolean }) {
 }
 
 const ctaClass =
-  "inline-flex shrink-0 items-center rounded-full bg-pine px-5 py-3 text-[16px] font-semibold tracking-normal text-white transition-colors duration-200 hover:bg-brand";
+  "inline-flex shrink-0 items-center rounded-[3px] bg-pine px-5 py-3 text-[16px] font-semibold tracking-normal text-white transition-colors duration-200 hover:bg-brand";
 
 // Floating white pill nav. Fixed so it stays reachable while scrolling.
 export default function SiteNav() {
@@ -117,7 +117,7 @@ export default function SiteNav() {
   return (
     <>
       <header
-        className={`fixed left-1/2 z-30 flex w-[min(1300px,calc(100%-40px))] -translate-x-1/2 items-center justify-between gap-4 rounded-full bg-white py-2 pl-[26px] pr-2 shadow-nav transition-[top] duration-300 ${
+        className={`fixed left-1/2 z-30 flex w-[min(1300px,calc(100%-40px))] -translate-x-1/2 items-center justify-between gap-4 rounded-[3px] bg-white py-2 pl-[26px] pr-2 shadow-nav transition-[top] duration-300 ${
           scrolled ? "top-[10px]" : "top-[14px]"
         }`}
       >
@@ -164,7 +164,7 @@ export default function SiteNav() {
                   hidden={!megaOpen}
                   className="absolute inset-x-0 top-full pt-3"
                 >
-                  <div className="grid grid-cols-2 gap-3 rounded-[28px] bg-white p-3 shadow-nav lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)_minmax(0,0.85fr)]">
+                  <div className="grid grid-cols-2 gap-3 rounded-[3px] bg-white p-3 shadow-nav lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)_minmax(0,0.85fr)]">
                     {expertiseLinks.map((item) => {
                       const Icon = megaIcon[item.key];
                       return (
@@ -172,7 +172,7 @@ export default function SiteNav() {
                           key={item.href}
                           href={item.href}
                           aria-current={pathname === item.href ? "page" : undefined}
-                          className="group flex flex-col items-start gap-4 rounded-[20px] p-5 lg:flex-row lg:gap-5 transition-colors hover:bg-[#effff7] focus-visible:bg-[#effff7] focus-visible:outline-none"
+                          className="group flex flex-col items-start gap-4 rounded-[3px] p-5 lg:flex-row lg:gap-5 transition-colors hover:bg-[#effff7] focus-visible:bg-[#effff7] focus-visible:outline-none"
                         >
                           <Icon className="h-14 w-14 flex-none" />
                           <span className="flex flex-col gap-1.5">
@@ -188,7 +188,7 @@ export default function SiteNav() {
                     })}
                     <Link
                       href="/expertise"
-                      className="hidden flex-col justify-between gap-4 rounded-[20px] bg-pine p-5 text-white transition-colors hover:bg-[#16392B] lg:flex"
+                      className="hidden flex-col justify-between gap-4 rounded-[3px] bg-pine p-5 text-white transition-colors hover:bg-[#16392B] lg:flex"
                     >
                       <span className="text-[15px] font-semibold uppercase tracking-[0.08em] text-brand-bright">
                         Expertise
@@ -222,7 +222,7 @@ export default function SiteNav() {
             onClick={() => setMenuOpen(true)}
             aria-label="Open menu"
             aria-expanded={menuOpen}
-            className="flex h-11 w-11 flex-col items-center justify-center gap-[5px] rounded-full border border-rule md:hidden"
+            className="flex h-11 w-11 flex-col items-center justify-center gap-[5px] rounded-[3px] border border-rule md:hidden"
           >
             <span className="block h-[1.5px] w-[18px] bg-ink" />
             <span className="block h-[1.5px] w-[18px] bg-ink" />
@@ -248,7 +248,7 @@ export default function SiteNav() {
               onClick={() => setMenuOpen(false)}
               aria-label="Close menu"
               autoFocus
-              className="flex h-11 w-11 items-center justify-center rounded-full border border-rule text-[18px] text-ink"
+              className="flex h-11 w-11 items-center justify-center rounded-[3px] border border-rule text-[18px] text-ink"
             >
               ✕
             </button>
@@ -278,7 +278,7 @@ export default function SiteNav() {
                           href={item.href}
                           onClick={() => setMenuOpen(false)}
                           aria-current={pathname === item.href ? "page" : undefined}
-                          className="flex items-center gap-4 rounded-[16px] bg-[#effff7] p-3 text-[19px] font-semibold text-ink"
+                          className="flex items-center gap-4 rounded-[3px] bg-[#effff7] p-3 text-[19px] font-semibold text-ink"
                         >
                           <Icon className="h-11 w-11 flex-none" />
                           {item.label}

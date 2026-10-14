@@ -84,7 +84,7 @@ export function ContactPanelProvider({ children }: { children: ReactNode }) {
 }
 
 const inputClass =
-  "w-full rounded-md border border-rule bg-white px-4 py-[14px] text-[16px] font-medium tracking-normal text-ink outline-none transition-colors placeholder:text-footer-muted focus:border-brand";
+  "w-full rounded-[3px] border border-rule bg-white px-4 py-[14px] text-[16px] font-medium tracking-normal text-ink outline-none transition-colors placeholder:text-footer-muted focus:border-brand";
 
 function SubmitButton() {
   const { pending } = useFormStatus();
@@ -179,7 +179,7 @@ function ContactPanel({
           type="button"
           onClick={onClose}
           aria-label="Close contact panel"
-          className="flex h-11 w-11 items-center justify-center rounded-full border border-rule bg-white text-[18px] text-ink transition-colors hover:border-ink hover:bg-ink hover:text-white"
+          className="flex h-11 w-11 items-center justify-center rounded-[3px] border border-rule bg-white text-[18px] text-ink transition-colors hover:border-ink hover:bg-ink hover:text-white"
         >
           ✕
         </button>

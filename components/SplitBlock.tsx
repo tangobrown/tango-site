@@ -48,7 +48,7 @@ export default function SplitBlock({
 
       <div
         data-reveal
-        className={`relative order-first aspect-square overflow-hidden rounded-md bg-surface-placeholder ${
+        className={`relative order-first aspect-square overflow-hidden rounded-[3px] bg-surface-placeholder ${
           imageSide === "left" ? "md:order-1" : "md:order-2"
         }`}
       >

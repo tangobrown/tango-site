@@ -8,7 +8,7 @@ import { container, h2Section } from "./ui";
 const pad = (n: number) => String(n).padStart(2, "0");
 
 const roundBtn =
-  "flex h-11 w-11 items-center justify-center rounded-full border border-white/60 text-white transition-colors hover:border-white hover:bg-white hover:text-brand";
+  "flex h-11 w-11 items-center justify-center rounded-[3px] border border-white/60 text-white transition-colors hover:border-white hover:bg-white hover:text-brand";
 
 // One testimonial at a time: photo on the left, green quote card on the right.
 // Changing slides fades out (180ms), swaps, then fades back in (220ms).
@@ -40,7 +40,7 @@ export default function Testimonials() {
       </h2>
 
       <div data-reveal className="flex flex-wrap gap-3">
-        <div className="relative h-[260px] flex-[1_1_300px] overflow-hidden rounded-md bg-surface-placeholder md:h-[clamp(300px,30vw,400px)]">
+        <div className="relative h-[260px] flex-[1_1_300px] overflow-hidden rounded-[3px] bg-surface-placeholder md:h-[clamp(300px,30vw,400px)]">
           {t.logo ? (
             <Image
               src={t.logo}
@@ -54,7 +54,7 @@ export default function Testimonials() {
 
         <figure
           aria-live="polite"
-          className="m-0 flex min-h-[320px] flex-[2_1_460px] flex-col justify-between gap-8 rounded-md bg-brand p-[clamp(26px,3.4vw,44px)] text-white md:h-[clamp(300px,30vw,400px)] md:min-h-0"
+          className="m-0 flex min-h-[320px] flex-[2_1_460px] flex-col justify-between gap-8 rounded-[3px] bg-brand p-[clamp(26px,3.4vw,44px)] text-white md:h-[clamp(300px,30vw,400px)] md:min-h-0"
         >
           <blockquote
             className={`m-0 max-w-[30ch] text-[clamp(20px,1.8vw,26px)] font-medium leading-[1.22] tracking-[-0.01em] transition-[opacity,transform] ${fade}`}
