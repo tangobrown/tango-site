@@ -22,3 +22,19 @@ export const enquiryTypes = [
   "Quote for a website build",
   "Something else",
 ] as const;
+
+// The Expertise mega menu.
+export const expertiseLinks = [
+  {
+    key: "service",
+    label: "Service businesses",
+    href: "/expertise/service-businesses",
+    blurb: "Websites and local SEO that get trades and local businesses more calls and quote requests.",
+  },
+  {
+    key: "ecommerce",
+    label: "E-commerce stores",
+    href: "/expertise/ecommerce",
+    blurb: "Fast custom stores on Shopify or Medusa, with SEO, CRO and AI to sell more.",
+  },
+] as const;
