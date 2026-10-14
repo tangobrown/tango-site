@@ -23,7 +23,7 @@ export const projects: Project[] = [
     summary: "Rebuilt around the jobs they actually wanted. Fewer enquiries now — better ones.",
     url: "https://devonjoinery.co.uk",
     cover: "/work/tablet/w1.png",
-    image: "/about-1.jpg",
+    image: "/work/photos/devon-joinery-staircase.jpg",
   },
   {
     slug: "vowles-carpentry",
@@ -33,7 +33,7 @@ export const projects: Project[] = [
     summary: "A portfolio the team updates from a phone, on site, with muddy hands.",
     url: "https://paulvowlescarpentry.co.uk",
     cover: "/work/tablet/w2.png",
-    image: "/about-1.jpg",
+    image: "/work/photos/vowles-carpentry-kitchen.jpg",
   },
   {
     slug: "ipj-london",
@@ -43,7 +43,7 @@ export const projects: Project[] = [
     summary: "A quiet, confident site that confirms the referral in ten seconds.",
     url: "https://ipjlondon.com",
     cover: "/work/tablet/ipj.png",
-    image: "/about-1.jpg",
+    image: "/work/photos/ipj-london-office.jpg",
   },
   {
     slug: "old-fashioned-cocktail-co",
