@@ -32,7 +32,7 @@ export default function ProjectCard({ project, priority = false }: { project: Pr
         aria-hidden="true"
         className="absolute right-3 top-3 text-white drop-shadow-[0_1px_6px_rgba(0,0,0,0.35)] transition-[color,transform] duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-brand-bright"
       >
-        <ArrowIcon size={60} />
+        <ArrowIcon size={50} />
       </span>
 
       <div className="relative flex flex-col gap-2 p-[clamp(22px,2.4vw,32px)]">
