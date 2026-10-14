@@ -1,79 +1,90 @@
-// Selected work, in display order. `category` is the pill on the card;
-// `services` and `summary` show on the green hover overlay.
+// Selected work, in display order. Each project has its own page at
+// /work/<slug>. `image` is the photo behind its box on the home and work pages.
 
 export type Project = {
-  id: string;
+  slug: string;
   title: string;
   category: string;
   services: string;
   summary: string;
   url: string | null;
-  /** Transparent device-frame mock shown on the card. */
+  /** Transparent device-frame mock shown on the project page. */
   cover: string;
+  /** Background photo for the project's box (placeholder for now). */
+  image: string;
 };
 
 export const projects: Project[] = [
   {
-    id: "devon-joinery",
+    slug: "devon-joinery",
     title: "Devon Joinery",
     category: "Joinery · Devon",
     services: "Branding, website & SEO",
     summary: "Rebuilt around the jobs they actually wanted. Fewer enquiries now — better ones.",
     url: "https://devonjoinery.co.uk",
     cover: "/work/tablet/w1.png",
+    image: "/about-1.jpg",
   },
   {
-    id: "vowles",
+    slug: "vowles-carpentry",
     title: "Vowles Carpentry",
     category: "Carpentry · Devon",
     services: "Branding, website & SEO",
     summary: "A portfolio the team updates from a phone, on site, with muddy hands.",
     url: "https://paulvowlescarpentry.co.uk",
     cover: "/work/tablet/w2.png",
+    image: "/about-1.jpg",
   },
   {
-    id: "ipj",
+    slug: "ipj-london",
     title: "IPJ London",
     category: "Furniture · London",
     services: "Branding & website",
     summary: "A quiet, confident site that confirms the referral in ten seconds.",
     url: "https://ipjlondon.com",
     cover: "/work/tablet/ipj.png",
+    image: "/about-1.jpg",
   },
   {
-    id: "old-fashioned",
+    slug: "old-fashioned-cocktail-co",
     title: "The Old Fashioned Cocktail Co.",
     category: "Mobile bar · New York",
     services: "Branding, website & SEO",
     summary: "A brand-led site for a mobile cocktail bar, built to turn browsers into bookings.",
     url: "https://theoldfashionedcocktailco.com",
     cover: "/work/tablet/w3.png",
+    image: "/about-1.jpg",
   },
   {
-    id: "pim-pam",
+    slug: "world-bank-pim-pam",
     title: "World Bank",
     category: "PIM-PAM",
     services: "Branding & website",
     summary: "The public home of a World Bank programme on smarter public investment.",
     url: "https://pim-pam.net",
     cover: "/work/tablet/w4.png",
+    image: "/about-1.jpg",
   },
   {
-    id: "torbay",
+    slug: "torbay-sweeps",
     title: "Torbay Sweeps",
     category: "Chimney sweep · Torbay",
     services: "Website build",
     summary: "A fast, trustworthy site built around the local searches that turn into bookings.",
     url: "https://torbaysweeps.co.uk",
     cover: "/work/tablet/torbay.png",
+    image: "/about-1.jpg",
   },
   {
-    id: "highgrove",
+    slug: "highgrove-retirement-village",
     title: "Highgrove Retirement Village",
     category: "Retirement village · NZ",
     services: "Website & SEO",
     summary: "Warm, unhurried pages that reassure residents and the families helping them decide.",
     url: "https://highgrove.co.nz",
     cover: "/work/tablet/highgrove.png",
+    image: "/about-1.jpg",
   },
 ];
+
+export const getProject = (slug: string) => projects.find((p) => p.slug === slug);

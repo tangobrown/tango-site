@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { site } from "@/lib/site";
 import { container } from "./ui";
 
@@ -29,25 +30,28 @@ export default function Footer() {
 
           <div className="flex flex-col md:flex-[1_1_140px] items-start gap-[9px]">
             <p className="m-0 mb-1 text-[17px] font-semibold">Services</p>
-            <a href="#services" className={colLink}>
-              Web design
-            </a>
-            <a href="#services" className={colLink}>
-              SEO
-            </a>
-            <a href="#services" className={colLink}>
+            <Link href="/expertise" className={colLink}>
+              Website builds
+            </Link>
+            <Link href="/expertise" className={colLink}>
+              Optimisation
+            </Link>
+            <Link href="/expertise" className={colLink}>
               AI &amp; automation
-            </a>
+            </Link>
           </div>
 
           <div className="flex flex-col md:flex-[1_1_140px] items-start gap-[9px]">
             <p className="m-0 mb-1 text-[17px] font-semibold">More</p>
-            <a href="#work" className={colLink}>
-              Work
-            </a>
-            <a href="#about" className={colLink}>
+            <Link href="/about" className={colLink}>
               About
-            </a>
+            </Link>
+            <Link href="/work" className={colLink}>
+              Work
+            </Link>
+            <Link href="/contact" className={colLink}>
+              Contact
+            </Link>
             <a href={site.linkedin} target="_blank" rel="noreferrer" className={colLink}>
               LinkedIn
             </a>

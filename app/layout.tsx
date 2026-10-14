@@ -1,5 +1,9 @@
 import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono, Onest } from "next/font/google";
+import { ContactPanelProvider } from "@/components/ContactPanel";
+import Footer from "@/components/Footer";
+import ScrollReveal from "@/components/ScrollReveal";
+import SiteNav from "@/components/SiteNav";
 import "./globals.css";
 
 // Onest — the one family for everything (headings 600, body 500).
@@ -29,7 +33,10 @@ const SITE_URL = "https://timbrown.co";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
-  title: "Tim Brown | Digital Growth Expert for UK Small Businesses",
+  title: {
+    default: "Tim Brown | Digital Growth Expert for UK Small Businesses",
+    template: "%s | Tim Brown",
+  },
   description:
     "Freelance web design, SEO and AI workflows, built by one person who answers the phone. Based in Devon, working with clients anywhere.",
   openGraph: {
@@ -82,7 +89,12 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
-        {children}
+        <ContactPanelProvider>
+          <SiteNav />
+          <main>{children}</main>
+          <Footer />
+          <ScrollReveal />
+        </ContactPanelProvider>
       </body>
     </html>
   );

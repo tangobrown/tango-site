@@ -110,26 +110,6 @@ function ContactPanel({
 }) {
   const panelRef = useRef<HTMLElement>(null);
   const closeRef = useRef<HTMLButtonElement>(null);
-  const formRef = useRef<HTMLFormElement>(null);
-  const [state, formAction] = useActionState(submitContact, initialState);
-  const [enquiryType, setEnquiryType] = useState<string>("");
-  // Time the form became available — used server-side to reject instant (bot) submits.
-  const [loadedAt, setLoadedAt] = useState("");
-  useEffect(() => setLoadedAt(String(Date.now())), []);
-
-  // Apply a preselected request type each time a CTA opens the panel with one.
-  useEffect(() => {
-    if (presetKey) setEnquiryType(preset);
-  }, [preset, presetKey]);
-
-  // Clear the form after a successful send.
-  useEffect(() => {
-    if (state.status === "success") {
-      formRef.current?.reset();
-      setEnquiryType("");
-    }
-  }, [state]);
-
   // Focus, Escape, focus trap, scroll lock and click-outside while open.
   useEffect(() => {
     if (!isOpen) return;
@@ -217,126 +197,166 @@ function ContactPanel({
           </p>
         </div>
 
-        <form ref={formRef} action={formAction} className="relative flex flex-col gap-3">
-          {/* Honeypot — hidden from people, tempting to bots. Leave it empty. */}
-          <div
-            aria-hidden="true"
-            className="pointer-events-none absolute left-[-9999px] h-0 w-0 overflow-hidden"
-          >
-            <label>
-              Company website
-              <input type="text" name="company_website" tabIndex={-1} autoComplete="off" />
-            </label>
-          </div>
-          <input type="hidden" name="loaded_at" value={loadedAt} readOnly />
+        <ContactForm preset={preset} presetKey={presetKey} />
 
-          <input
-            type="text"
-            name="name"
-            placeholder="Your name"
-            aria-label="Your name"
-            autoComplete="name"
-            className={inputClass}
-          />
-          <input
-            type="email"
-            name="email"
-            placeholder="Email address"
-            aria-label="Email address"
-            autoComplete="email"
-            className={inputClass}
-          />
-          <input
-            type="text"
-            name="business"
-            placeholder="Business name or website (optional)"
-            aria-label="Business name or website (optional)"
-            autoComplete="organization"
-            className={inputClass}
-          />
-          <span className="relative block">
-            <select
-              name="enquiry_type"
-              aria-label="What are you after?"
-              required
-              value={enquiryType}
-              onChange={(e) => setEnquiryType(e.target.value)}
-              className={`${inputClass} cursor-pointer appearance-none pr-11 ${
-                enquiryType ? "" : "text-footer-muted"
-              }`}
-            >
-              <option value="" disabled>
-                What are you after?
-              </option>
-              {enquiryTypes.map((type) => (
-                <option key={type} value={type} className="text-ink">
-                  {type}
-                </option>
-              ))}
-            </select>
-            <svg
-              width="16"
-              height="16"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth={2}
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              className="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 text-ink-muted"
-              aria-hidden="true"
-            >
-              <path d="M6 9l6 6 6-6" />
-            </svg>
-          </span>
-          <textarea
-            name="message"
-            rows={4}
-            placeholder="What do you need? A new site, better rankings, less admin…"
-            aria-label="Please provide details"
-            className={`${inputClass} resize-y`}
-          />
-
-          <div className="mt-1 flex flex-wrap items-center gap-x-4 gap-y-2">
-            <SubmitButton />
-            <p aria-live="polite" className="m-0 text-[15px] font-medium">
-              {state.status === "success" && (
-                <span className="text-brand">Thanks — that&apos;s with me.</span>
-              )}
-              {state.status === "error" && <span className="text-[#B3261E]">{state.message}</span>}
-            </p>
-          </div>
-        </form>
-
-        {/* Details */}
-        <dl className="m-0 border-t border-rule-light">
-          {[
-            { label: "Email", value: site.email, href: `mailto:${site.email}` },
-            { label: "LinkedIn", value: "Tim Brown", href: site.linkedin, external: true },
-            { label: "Based in", value: "Devon, UK" },
-          ].map((row) => (
-            <div
-              key={row.label}
-              className="flex items-center justify-between gap-4 border-b border-rule-light py-4"
-            >
-              <dt className="text-[14px] text-ink-muted">{row.label}</dt>
-              <dd className="m-0 text-right text-[17px] font-medium">
-                {row.href ? (
-                  <a
-                    href={row.href}
-                    {...(row.external ? { target: "_blank", rel: "noreferrer" } : {})}
-                    className="text-ink transition-colors hover:text-brand"
-                  >
-                    {row.value}
-                  </a>
-                ) : (
-                  row.value
-                )}
-              </dd>
-            </div>
-          ))}
-        </dl>
+        <ContactDetails />
       </div>
     </aside>
+  );
+}
+
+// The enquiry form, used in the slide-out panel and on the contact page.
+// `preset`/`presetKey` let a CTA preselect "What are you after?".
+export function ContactForm({
+  preset = "",
+  presetKey = 0,
+}: {
+  preset?: EnquiryType | "";
+  presetKey?: number;
+}) {
+  const formRef = useRef<HTMLFormElement>(null);
+  const [state, formAction] = useActionState(submitContact, initialState);
+  const [enquiryType, setEnquiryType] = useState<string>("");
+  // Time the form became available — used server-side to reject instant (bot) submits.
+  const [loadedAt, setLoadedAt] = useState("");
+  useEffect(() => setLoadedAt(String(Date.now())), []);
+
+  // Apply a preselected request type each time a CTA opens the panel with one.
+  useEffect(() => {
+    if (presetKey) setEnquiryType(preset);
+  }, [preset, presetKey]);
+
+  // Clear the form after a successful send.
+  useEffect(() => {
+    if (state.status === "success") {
+      formRef.current?.reset();
+      setEnquiryType("");
+    }
+  }, [state]);
+
+  return (
+    <form ref={formRef} action={formAction} className="relative flex flex-col gap-3">
+      {/* Honeypot — hidden from people, tempting to bots. Leave it empty. */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute left-[-9999px] h-0 w-0 overflow-hidden"
+      >
+        <label>
+          Company website
+          <input type="text" name="company_website" tabIndex={-1} autoComplete="off" />
+        </label>
+      </div>
+      <input type="hidden" name="loaded_at" value={loadedAt} readOnly />
+
+      <input
+        type="text"
+        name="name"
+        placeholder="Your name"
+        aria-label="Your name"
+        autoComplete="name"
+        className={inputClass}
+      />
+      <input
+        type="email"
+        name="email"
+        placeholder="Email address"
+        aria-label="Email address"
+        autoComplete="email"
+        className={inputClass}
+      />
+      <input
+        type="text"
+        name="business"
+        placeholder="Business name or website (optional)"
+        aria-label="Business name or website (optional)"
+        autoComplete="organization"
+        className={inputClass}
+      />
+      <span className="relative block">
+        <select
+          name="enquiry_type"
+          aria-label="What are you after?"
+          required
+          value={enquiryType}
+          onChange={(e) => setEnquiryType(e.target.value)}
+          className={`${inputClass} cursor-pointer appearance-none pr-11 ${
+            enquiryType ? "" : "text-footer-muted"
+          }`}
+        >
+          <option value="" disabled>
+            What are you after?
+          </option>
+          {enquiryTypes.map((type) => (
+            <option key={type} value={type} className="text-ink">
+              {type}
+            </option>
+          ))}
+        </select>
+        <svg
+          width="16"
+          height="16"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth={2}
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          className="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 text-ink-muted"
+          aria-hidden="true"
+        >
+          <path d="M6 9l6 6 6-6" />
+        </svg>
+      </span>
+      <textarea
+        name="message"
+        rows={4}
+        placeholder="What do you need? A new site, better rankings, less admin…"
+        aria-label="Please provide details"
+        className={`${inputClass} resize-y`}
+      />
+
+      <div className="mt-1 flex flex-wrap items-center gap-x-4 gap-y-2">
+        <SubmitButton />
+        <p aria-live="polite" className="m-0 text-[15px] font-medium">
+          {state.status === "success" && (
+            <span className="text-brand">Thanks — that&apos;s with me.</span>
+          )}
+          {state.status === "error" && <span className="text-[#B3261E]">{state.message}</span>}
+        </p>
+      </div>
+    </form>
+  );
+}
+
+// Email / LinkedIn / location rows.
+export function ContactDetails() {
+  return (
+    <dl className="m-0 border-t border-rule-light">
+      {[
+        { label: "Email", value: site.email, href: `mailto:${site.email}` },
+        { label: "LinkedIn", value: "Tim Brown", href: site.linkedin, external: true },
+        { label: "Based in", value: "Devon, UK" },
+      ].map((row) => (
+        <div
+          key={row.label}
+          className="flex items-center justify-between gap-4 border-b border-rule-light py-4"
+        >
+          <dt className="text-[14px] text-ink-muted">{row.label}</dt>
+          <dd className="m-0 text-right text-[17px] font-medium">
+            {row.href ? (
+              <a
+                href={row.href}
+                {...(row.external ? { target: "_blank", rel: "noreferrer" } : {})}
+                className="text-ink transition-colors hover:text-brand"
+              >
+                {row.value}
+              </a>
+            ) : (
+              row.value
+            )}
+          </dd>
+        </div>
+      ))}
+    </dl>
   );
 }

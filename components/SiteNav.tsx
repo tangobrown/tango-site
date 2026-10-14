@@ -1,5 +1,7 @@
 "use client";
 
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { navLinks } from "@/lib/site";
 import { ContactButton } from "./ContactPanel";
@@ -24,6 +26,12 @@ const ctaClass =
 export default function SiteNav() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const pathname = usePathname();
+  const isActive = (href: string) =>
+    href === "/" ? pathname === "/" : pathname === href || pathname.startsWith(`${href}/`);
+
+  // Close the mobile menu after navigating.
+  useEffect(() => setMenuOpen(false), [pathname]);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -52,19 +60,22 @@ export default function SiteNav() {
           scrolled ? "top-[10px]" : "top-[14px]"
         }`}
       >
-        <a href="#top" aria-label="Tim Brown — home">
+        <Link href="/" aria-label="Tim Brown — home">
           <Wordmark />
-        </a>
+        </Link>
 
         <nav className="hidden items-center gap-[clamp(16px,2.6vw,34px)] md:flex" aria-label="Main">
           {navLinks.map((link) => (
-            <a
+            <Link
               key={link.href}
               href={link.href}
-              className="text-[17px] font-semibold text-ink transition-colors hover:text-brand"
+              aria-current={isActive(link.href) ? "page" : undefined}
+              className={`text-[17px] font-semibold transition-colors hover:text-brand ${
+                isActive(link.href) ? "text-brand" : "text-ink"
+              }`}
             >
               {link.label}
-            </a>
+            </Link>
           ))}
         </nav>
 
@@ -93,9 +104,9 @@ export default function SiteNav() {
           className="fixed inset-0 z-40 flex flex-col bg-white px-[26px] pb-10 pt-[22px] md:hidden"
         >
           <div className="flex items-center justify-between">
-            <a href="#top" aria-label="Tim Brown — home" onClick={() => setMenuOpen(false)}>
+            <Link href="/" aria-label="Tim Brown — home" onClick={() => setMenuOpen(false)}>
               <Wordmark />
-            </a>
+            </Link>
             <button
               type="button"
               onClick={() => setMenuOpen(false)}
@@ -108,14 +119,17 @@ export default function SiteNav() {
           </div>
           <nav className="mt-12 flex flex-col gap-5" aria-label="Main">
             {navLinks.map((link) => (
-              <a
+              <Link
                 key={link.href}
                 href={link.href}
                 onClick={() => setMenuOpen(false)}
-                className="text-[32px] font-semibold tracking-[-0.01em] text-ink"
+                aria-current={isActive(link.href) ? "page" : undefined}
+                className={`text-[32px] font-semibold tracking-[-0.01em] ${
+                  isActive(link.href) ? "text-brand" : "text-ink"
+                }`}
               >
                 {link.label}
-              </a>
+              </Link>
             ))}
           </nav>
           <div className="mt-auto" onClick={() => setMenuOpen(false)}>

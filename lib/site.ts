@@ -9,10 +9,11 @@ export const site = {
 } as const;
 
 export const navLinks = [
-  { label: "Services", href: "#services" },
-  { label: "Approach", href: "#approach" },
-  { label: "Work", href: "#work" },
-  { label: "About", href: "#about" },
+  { label: "Home", href: "/" },
+  { label: "About", href: "/about" },
+  { label: "Expertise", href: "/expertise" },
+  { label: "Work", href: "/work" },
+  { label: "Contact", href: "/contact" },
 ] as const;
 
 // Options for the contact form's "What are you after?" field.

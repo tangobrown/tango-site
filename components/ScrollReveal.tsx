@@ -1,12 +1,16 @@
 "use client";
 
+import { usePathname } from "next/navigation";
 import { useEffect } from "react";
 
 // Mount once. Fades/rises any element marked with `data-reveal` as it scrolls
 // into view. Adds `reveal-ready` to <html> so the hidden state only applies
 // when JS is running (no-JS falls back to fully visible), and honours
 // prefers-reduced-motion by showing everything immediately.
+// Re-runs on every route change so each page's elements get picked up.
 export default function ScrollReveal() {
+  const pathname = usePathname();
+
   useEffect(() => {
     const els = Array.from(document.querySelectorAll<HTMLElement>("[data-reveal]"));
     if (!els.length) return;
@@ -34,7 +38,7 @@ export default function ScrollReveal() {
 
     els.forEach((el) => io.observe(el));
     return () => io.disconnect();
-  }, []);
+  }, [pathname]);
 
   return null;
 }
