@@ -1,10 +1,19 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   async redirects() {
-    // The site is one page; retired sub-page URLs point back home.
-    return ["/ecommerce", "/ecommerce-websites", "/websites-for-trades", "/service-websites"].map(
-      (source) => ({ source, destination: "/", permanent: true }),
-    );
+    // Old sub-page URLs point at their expertise pages.
+    return [
+      ...["/ecommerce", "/ecommerce-websites"].map((source) => ({
+        source,
+        destination: "/expertise/ecommerce",
+        permanent: true,
+      })),
+      ...["/websites-for-trades", "/service-websites"].map((source) => ({
+        source,
+        destination: "/expertise/service-businesses",
+        permanent: true,
+      })),
+    ];
   },
 };
 

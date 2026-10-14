@@ -1,5 +1,5 @@
+import Link from "next/link";
 import ArrowIcon from "./ArrowIcon";
-import { ContactButton } from "./ContactPanel";
 import type { ReactNode } from "react";
 import { container } from "./ui";
 
@@ -35,9 +35,10 @@ function EcommerceIcon() {
   );
 }
 
-const columns: { title: string; icon: ReactNode; intro: string; points: string[]; cta: string }[] = [
+const columns: { title: string; href: string; icon: ReactNode; intro: string; points: string[]; cta: string }[] = [
   {
     title: "Service businesses",
+    href: "/expertise/service-businesses",
     icon: <ServiceIcon />,
     intro:
       "Builders, plumbers, electricians, cleaners, consultants, clinics and other local service businesses.",
@@ -46,10 +47,11 @@ const columns: { title: string; icon: ReactNode; intro: string; points: string[]
       "Search engine optimisation for better rankings in search & AI",
       "Built for converting browsers into leads in your inbox",
     ],
-    cta: "Get a free website check",
+    cta: "Websites for service businesses",
   },
   {
     title: "E-commerce stores",
+    href: "/expertise/ecommerce",
     icon: <EcommerceIcon />,
     intro:
       "Custom online stores for ambitious UK brands who want a super-fast site, built on modern technology.",
@@ -58,7 +60,7 @@ const columns: { title: string; icon: ReactNode; intro: string; points: string[]
       "Bespoke functionality to suit your business needs",
       "Optimised to get more users to your website",
     ],
-    cta: "Get a free store review",
+    cta: "Websites for online stores",
   },
 ];
 
@@ -96,7 +98,9 @@ export default function WhatIDo() {
           >
             {c.icon}
             <h2 className="m-0 mb-4 text-[clamp(28px,2.8vw,40px)] font-semibold leading-[1.08] tracking-[-0.015em]">
-              {c.title}
+              <Link href={c.href} className="transition-colors hover:text-brand">
+                {c.title}
+              </Link>
             </h2>
             <p className="m-0 max-w-[46ch] text-[19px] leading-[1.47] text-ink-soft">{c.intro}</p>
             <ul className="m-0 mt-6 flex w-full list-none flex-col gap-3 border-t border-ink/15 p-0 pt-6">
@@ -107,12 +111,12 @@ export default function WhatIDo() {
                 </li>
               ))}
             </ul>
-            <ContactButton
-              preset="Website review for my business"
+            <Link
+              href={c.href}
               className="mt-7 inline-flex items-center gap-2 text-[16px] font-semibold text-brand transition-colors hover:text-brand-dark"
             >
               {c.cta} <ArrowIcon size={16} />
-            </ContactButton>
+            </Link>
           </div>
         ))}
       </div>

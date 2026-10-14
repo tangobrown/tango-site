@@ -14,7 +14,7 @@ export default function ExpertisePage() {
       <PageHeader
         eyebrow="Expertise"
         title="What I do, and who I do it for"
-        intro="Fast, good-looking websites that win you work, kept climbing in search and lightened with a little AI where it helps."
+        intro="Fast, good-looking websites that win you work, kept climbing in search and lightened with a little AI where it helps. Choose the one that fits your business."
       />
       <WhatIDo />
     </>

@@ -30,14 +30,11 @@ export default function Footer() {
 
           <div className="flex flex-col md:flex-[1_1_140px] items-start gap-[9px]">
             <p className="m-0 mb-1 text-[17px] font-semibold">Services</p>
-            <Link href="/expertise" className={colLink}>
-              Website builds
+            <Link href="/expertise/service-businesses" className={colLink}>
+              Service businesses
             </Link>
-            <Link href="/expertise" className={colLink}>
-              Optimisation
-            </Link>
-            <Link href="/expertise" className={colLink}>
-              AI &amp; automation
+            <Link href="/expertise/ecommerce" className={colLink}>
+              E-commerce stores
             </Link>
           </div>
 
