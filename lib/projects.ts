@@ -25,7 +25,7 @@ export const projects: Project[] = [
     summary: "Rebuilt around the jobs they actually wanted. Fewer enquiries now — better ones.",
     url: "https://devonjoinery.co.uk",
     cover: "/work/tablet/w1.png",
-    image: "/work/photos/devon-joinery-site.jpg",
+    image: "/work/photos/devon-joinery-website.jpg",
     imageSize: { width: 1300, height: 975 },
   },
   {
@@ -36,8 +36,8 @@ export const projects: Project[] = [
     summary: "A portfolio the team updates from a phone, on site, with muddy hands.",
     url: "https://paulvowlescarpentry.co.uk",
     cover: "/work/tablet/w2.png",
-    image: "/work/photos/vowles-carpentry-kitchen.jpg",
-    imageSize: { width: 1400, height: 900 },
+    image: "/work/photos/vowles-carpentry-website.jpg",
+    imageSize: { width: 1300, height: 975 },
   },
   {
     slug: "ipj-london",
