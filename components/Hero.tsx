@@ -31,7 +31,7 @@ export default function Hero() {
             <p className="m-0 flex flex-col gap-0.5 font-sans leading-[1.25]">
               <span className="text-[17px] font-semibold text-white sm:text-[19px]">Tim Brown</span>
               <span className="text-[15px] font-medium text-footer-link sm:text-[17px]">
-                Digital Growth Consultant
+                Website Growth Expert
               </span>
             </p>
           </div>
