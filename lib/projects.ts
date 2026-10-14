@@ -58,8 +58,8 @@ export const projects: Project[] = [
     summary: "A brand-led site for a mobile cocktail bar, built to turn browsers into bookings.",
     url: "https://theoldfashionedcocktailco.com",
     cover: "/work/tablet/w3.png",
-    image: "/about-1.jpg",
-    imageSize: { width: 800, height: 770 },
+    image: "/work/photos/old-fashioned-cocktail-co-website.jpg",
+    imageSize: { width: 1300, height: 975 },
   },
   {
     slug: "world-bank-pim-pam",
