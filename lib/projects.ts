@@ -25,8 +25,8 @@ export const projects: Project[] = [
     summary: "Rebuilt around the jobs they actually wanted. Fewer enquiries now — better ones.",
     url: "https://devonjoinery.co.uk",
     cover: "/work/tablet/w1.png",
-    image: "/work/photos/devon-joinery-staircase.jpg",
-    imageSize: { width: 1000, height: 1000 },
+    image: "/work/photos/devon-joinery-site.jpg",
+    imageSize: { width: 1300, height: 975 },
   },
   {
     slug: "vowles-carpentry",
