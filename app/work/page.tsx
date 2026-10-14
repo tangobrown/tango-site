@@ -18,10 +18,10 @@ export default function WorkPage() {
         intro="Websites for trades, retailers, hospitality and the public sector, each built to look good and bring in the right enquiries."
       />
       <section className={`${container} py-[clamp(52px,6.5vw,88px)]`}>
-        <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid grid-cols-1 gap-x-6 gap-y-12 sm:grid-cols-2">
           {projects.map((p, i) => (
-            <div key={p.slug} data-reveal style={{ transitionDelay: `${(i % 3) * 80}ms` }}>
-              <ProjectCard project={p} priority={i < 3} />
+            <div key={p.slug} data-reveal style={{ transitionDelay: `${(i % 2) * 80}ms` }}>
+              <ProjectCard project={p} priority={i < 2} />
             </div>
           ))}
         </div>

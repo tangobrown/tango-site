@@ -29,7 +29,7 @@ export default async function ProjectPage({ params }: { params: Promise<Params> 
   if (!project) notFound();
 
   const index = projects.indexOf(project);
-  const more = [1, 2, 3].map((n) => projects[(index + n) % projects.length]);
+  const more = [1, 2].map((n) => projects[(index + n) % projects.length]);
 
   return (
     <>
@@ -81,7 +81,7 @@ export default async function ProjectPage({ params }: { params: Promise<Params> 
             Start a project <ArrowIcon size={16} />
           </ContactButton>
         </div>
-        <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid grid-cols-1 gap-x-6 gap-y-12 sm:grid-cols-2">
           {more.map((p) => (
             <ProjectCard key={p.slug} project={p} />
           ))}

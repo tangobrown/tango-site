@@ -4,16 +4,16 @@ import ArrowIcon from "./ArrowIcon";
 import ProjectCard from "./ProjectCard";
 import { btnPrimary, container, h2Section } from "./ui";
 
-// Home page: the first three projects and a link through to /work.
+// Home page: the first four projects (two rows of two) and a link to /work.
 export default function WorkPreview() {
   return (
     <section id="work" className={`${container} pb-[clamp(52px,6.5vw,88px)]`}>
       <h2 data-reveal className={`${h2Section} mb-[clamp(36px,4vw,56px)] text-center`}>
         Selected work
       </h2>
-      <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
-        {projects.slice(0, 3).map((p, i) => (
-          <div key={p.slug} data-reveal style={{ transitionDelay: `${i * 80}ms` }}>
+      <div className="grid grid-cols-1 gap-x-6 gap-y-12 sm:grid-cols-2">
+        {projects.slice(0, 4).map((p, i) => (
+          <div key={p.slug} data-reveal style={{ transitionDelay: `${(i % 2) * 80}ms` }}>
             <ProjectCard project={p} />
           </div>
         ))}
