@@ -55,7 +55,7 @@ export function CardsSection({
           >
             <span className="font-mono text-[15px] font-semibold text-brand">{pad(i)}</span>
             <h3 className="m-0 text-[24px] font-semibold leading-[1.1] tracking-[-0.01em]">{item.title}</h3>
-            <p className="m-0 text-[16px] leading-[1.5] text-ink-soft">{item.body}</p>
+            <p className="m-0 text-[16px] leading-[1.5] text-ink-body">{item.body}</p>
           </div>
         ))}
       </div>
@@ -70,7 +70,7 @@ export function PointsGrid({ items }: { items: Item[] }) {
       {items.map((item) => (
         <div key={item.title} className="flex flex-col gap-2 border-t border-ink/15 pt-6">
           <h4 className="m-0 text-[22px] font-semibold leading-[1.15] tracking-[-0.01em]">{item.title}</h4>
-          <p className="m-0 text-[16px] leading-[1.5] text-ink-soft">{item.body}</p>
+          <p className="m-0 text-[16px] leading-[1.5] text-ink-body">{item.body}</p>
         </div>
       ))}
     </div>
@@ -118,7 +118,7 @@ export function NumberedList({ items, dark = false }: { items: Item[]; dark?: bo
           </span>
           <div className="flex flex-col gap-2">
             <h3 className="m-0 text-[22px] font-semibold leading-[1.15] tracking-[-0.01em]">{item.title}</h3>
-            <p className={`m-0 text-[16px] leading-[1.5] ${dark ? "text-white/75" : "text-ink-soft"}`}>
+            <p className={`m-0 text-[16px] leading-[1.5] ${dark ? "text-white/75" : "text-ink-body"}`}>
               {item.body}
             </p>
           </div>
@@ -153,7 +153,7 @@ export function SplitSection({
           <div data-reveal className="flex flex-col gap-4 lg:sticky lg:top-[120px] lg:self-start">
             <Eyebrow dark={dark}>{eyebrow}</Eyebrow>
             <h2 className={h2Section}>{title}</h2>
-            <p className={`m-0 text-[17px] leading-[1.5] ${dark ? "text-white/75" : "text-ink-soft"}`}>{intro}</p>
+            <p className={`m-0 text-[17px] leading-[1.5] ${dark ? "text-white/75" : "text-ink-body"}`}>{intro}</p>
             {aside}
           </div>
           <div data-reveal>{children}</div>
@@ -216,7 +216,7 @@ export function StepsSection({ title, items }: { title: string; items: Item[] })
           >
             <span className="font-mono text-[15px] font-semibold text-brand">{pad(i)}</span>
             <h3 className="m-0 text-[22px] font-semibold leading-[1.15] tracking-[-0.01em]">{step.title}</h3>
-            <p className="m-0 text-[15px] leading-[1.5] text-ink-soft">{step.body}</p>
+            <p className="m-0 text-[15px] leading-[1.5] text-ink-body">{step.body}</p>
           </li>
         ))}
       </ol>
@@ -266,7 +266,7 @@ export function PricingSection({
               </div>
             ))}
           </div>
-          {note ? <p className="m-0 mt-4 text-[15px] leading-[1.5] text-ink-muted">{note}</p> : null}
+          {note ? <p className="m-0 mt-4 text-[15px] leading-[1.5] text-ink-body">{note}</p> : null}
         </div>
       </div>
 

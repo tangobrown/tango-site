@@ -102,7 +102,7 @@ export default function WhatIDo() {
                 {c.title}
               </Link>
             </h2>
-            <p className="m-0 max-w-[46ch] text-[17px] leading-[1.5] text-ink-soft">{c.intro}</p>
+            <p className="m-0 max-w-[46ch] text-[17px] leading-[1.5] text-ink-body">{c.intro}</p>
             <ul className="m-0 mt-6 flex w-full list-none flex-col gap-3 border-t border-ink/15 p-0 pt-6">
               {c.points.map((point) => (
                 <li key={point} className="flex gap-3 text-[16px] font-medium leading-[1.45]">

@@ -191,7 +191,7 @@ function ContactPanel({
           <h2 className="m-0 mb-2 text-[40px] font-semibold leading-[1.02] tracking-[-0.02em]">
             Let&apos;s talk
           </h2>
-          <p className="m-0 text-[16px] leading-[1.5] text-ink-soft">
+          <p className="m-0 text-[16px] leading-[1.5] text-ink-body">
             A sentence is plenty to start. I&apos;ll tell you honestly if I&apos;m not the right
             person.
           </p>

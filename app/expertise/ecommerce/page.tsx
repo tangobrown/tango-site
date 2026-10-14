@@ -233,7 +233,7 @@ export default function EcommercePage() {
                   {backEnd.map((row) => (
                     <div key={row.label} className="flex flex-col gap-1 border-t border-ink/15 px-5 py-4">
                       <dt className="text-[13px] font-semibold uppercase tracking-[0.08em] text-ink-muted">{row.label}</dt>
-                      <dd className="m-0 text-[15px] leading-[1.5] text-ink-soft">{row[key]}</dd>
+                      <dd className="m-0 text-[15px] leading-[1.5] text-ink-body">{row[key]}</dd>
                     </div>
                   ))}
                 </dl>
@@ -260,14 +260,14 @@ export default function EcommercePage() {
                     >
                       {row.label}
                     </th>
-                    <td className="border-t border-ink/15 p-5 align-top text-ink-soft">{row.shopify}</td>
-                    <td className="border-t border-ink/15 p-5 align-top text-ink-soft">{row.medusa}</td>
+                    <td className="border-t border-ink/15 p-5 align-top text-ink-body">{row.shopify}</td>
+                    <td className="border-t border-ink/15 p-5 align-top text-ink-body">{row.medusa}</td>
                   </tr>
                 ))}
               </tbody>
             </table>
           </div>
-          <p className="m-0 mt-5 text-[16px] leading-[1.5] text-ink-soft">
+          <p className="m-0 mt-5 text-[16px] leading-[1.5] text-ink-body">
             Not sure which is right for you? I&apos;ll recommend one in your{" "}
             <ContactButton
               preset="Website review for my business"
