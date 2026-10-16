@@ -10,6 +10,19 @@ const pad = (n: number) => String(n).padStart(2, "0");
 const roundBtn =
   "flex h-11 w-11 items-center justify-center rounded-[3px] border border-white/60 text-white transition-colors hover:border-white hover:bg-white hover:text-brand";
 
+// Five-star rating shown above every quote.
+function Stars() {
+  return (
+    <div role="img" aria-label="Rated 5 out of 5" className="flex gap-1 text-[#FFC83D]">
+      {Array.from({ length: 5 }, (_, i) => (
+        <svg key={i} width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M12 2.5l2.94 5.96 6.56.95-4.75 4.63 1.12 6.54L12 17.5l-5.87 3.08 1.12-6.54L2.5 9.41l6.56-.95L12 2.5z" />
+        </svg>
+      ))}
+    </div>
+  );
+}
+
 // Each client's photo, listed once.
 const photos = [...new Set(testimonials.map((t) => t.logo).filter(Boolean))] as string[];
 
@@ -67,19 +80,22 @@ export default function Testimonials({ className = "" }: { className?: string })
           aria-live="polite"
           className="m-0 flex min-h-[320px] flex-[2_1_460px] flex-col justify-between gap-8 rounded-[3px] bg-brand p-[clamp(26px,3.4vw,44px)] text-white md:h-[clamp(300px,30vw,400px)] md:min-h-0"
         >
-          {/* All quotes share one grid cell, so the card fits the longest */}
-          <div className="grid">
-            {testimonials.map((q, i) => (
-              <blockquote
-                key={i}
-                aria-hidden={i !== index}
-                className={`m-0 max-w-[30ch] text-[clamp(20px,1.8vw,26px)] font-medium leading-[1.22] tracking-[-0.01em] ${layer(
-                  i === index,
-                )}`}
-              >
-                &ldquo;{q.quote}&rdquo;
-              </blockquote>
-            ))}
+          <div className="flex flex-col gap-4">
+            <Stars />
+            {/* All quotes share one grid cell, so the card fits the longest */}
+            <div className="grid">
+              {testimonials.map((q, i) => (
+                <blockquote
+                  key={i}
+                  aria-hidden={i !== index}
+                  className={`m-0 max-w-[30ch] text-[clamp(20px,1.8vw,26px)] font-medium leading-[1.22] tracking-[-0.01em] ${layer(
+                    i === index,
+                  )}`}
+                >
+                  &ldquo;{q.quote}&rdquo;
+                </blockquote>
+              ))}
+            </div>
           </div>
 
           <figcaption className="flex flex-wrap items-end justify-between gap-5">
