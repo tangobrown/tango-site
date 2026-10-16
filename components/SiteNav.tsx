@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
@@ -164,7 +165,7 @@ export default function SiteNav() {
                   hidden={!megaOpen}
                   className="absolute inset-x-0 top-full pt-3"
                 >
-                  <div className="grid grid-cols-2 gap-3 rounded-[3px] bg-white p-3 shadow-nav lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)_minmax(0,0.85fr)]">
+                  <div className="grid grid-cols-2 gap-3 rounded-[3px] bg-white p-3 shadow-nav lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)_minmax(0,0.95fr)]">
                     {expertiseLinks.map((item) => {
                       const Icon = megaIcon[item.key];
                       return (
@@ -186,17 +187,42 @@ export default function SiteNav() {
                         </Link>
                       );
                     })}
-                    <Link
-                      href="/expertise"
-                      className="hidden flex-col justify-between gap-4 rounded-[3px] bg-pine p-5 text-white transition-colors hover:bg-[#16392B] lg:flex"
-                    >
-                      <span className="text-[15px] font-semibold uppercase tracking-[0.08em] text-brand-bright">
-                        Expertise
+                    {/* Call to action: a free review, booked straight from the menu */}
+                    <div className="relative col-span-2 flex flex-col items-start gap-4 overflow-hidden rounded-[3px] bg-pine p-6 text-white lg:col-span-1">
+                      <div
+                        aria-hidden="true"
+                        className="pointer-events-none absolute -right-24 -top-24 h-64 w-64 rounded-full"
+                        style={{ background: "radial-gradient(closest-side, rgba(20,168,90,0.35), rgba(20,168,90,0))" }}
+                      />
+                      <div className="relative flex items-center gap-3">
+                        <Image
+                          src="/tim-avatar.jpg"
+                          alt=""
+                          width={96}
+                          height={96}
+                          className="h-12 w-12 flex-none rounded-full object-cover"
+                        />
+                        <span className="text-[13px] font-semibold uppercase tracking-[0.08em] text-brand-bright">
+                          Free website review
+                        </span>
+                      </div>
+                      <span className="relative flex flex-col gap-1.5">
+                        <span className="text-[21px] font-semibold leading-[1.15] tracking-[-0.01em]">
+                          Not sure where to start?
+                        </span>
+                        <span className="font-[family-name:var(--font-bdo)] text-[15px] leading-[1.45] text-white/75">
+                          I&apos;ll look at your current site and show you what would bring in more work.
+                        </span>
                       </span>
-                      <span className="flex items-center gap-2 text-[17px] font-semibold">
-                        Not sure which? Compare both <ArrowIcon size={16} />
+                      <span className="relative mt-auto" onClick={() => setMegaOpen(false)}>
+                        <ContactButton
+                          preset="Website review for my business"
+                          className="inline-flex h-[44px] items-center gap-[10px] rounded-[3px] bg-brand pl-5 pr-4 text-[15px] font-semibold text-white transition-colors hover:bg-brand-dark"
+                        >
+                          Book a free review <ArrowIcon size={18} />
+                        </ContactButton>
                       </span>
-                    </Link>
+                    </div>
                   </div>
                 </div>
               </div>

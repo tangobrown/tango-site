@@ -7,6 +7,8 @@ const nextConfig = {
   async redirects() {
     // Old sub-page URLs point at their expertise pages.
     return [
+      // There's no overview page; the home page covers both audiences.
+      { source: "/expertise", destination: "/#services", permanent: false },
       ...["/ecommerce", "/ecommerce-websites"].map((source) => ({
         source,
         destination: "/expertise/ecommerce",
