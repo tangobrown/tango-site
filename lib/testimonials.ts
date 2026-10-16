@@ -21,21 +21,21 @@ export const testimonialsRow1: Testimonial[] = [
       "His SEO work has lead to us to grow as a company quicker than expected.",
     name: "Nathan Dallow",
     company: "Owner of Torbay Composite",
-    logo: "/testimonials/torbay-composite.jpg",
+    logo: "/testimonials/torbay-composite.png",
   },
   {
     quote:
       "Myself and Craig would like to thank you for your hard work building our new website. Your expertise made it easy and stress free for us.",
     name: "Karen Cargill",
     company: "Owner of Heatsavers",
-    logo: "/testimonials/heatsavers.jpg",
+    logo: "/testimonials/heatsavers.png",
   },
   {
     quote:
       "Tim has been an amazing support setting up my website and giving my business the boost it needed to get things off the ground.",
     name: "Peter Hawes",
     company: "Owner of Torbay Sweeps",
-    logo: "/testimonials/torbay-sweeps.jpg",
+    logo: "/testimonials/torbay-sweeps.png",
   },
   {
     quote:
@@ -73,21 +73,21 @@ export const testimonialsRow2: Testimonial[] = [
       "I spoke to Tim about SEO and since that conversation I am inundated with enquiries in the specific area that we spoke about.",
     name: "Nathan Dallow",
     company: "Owner of Torbay Composite",
-    logo: "/testimonials/torbay-composite.jpg",
+    logo: "/testimonials/torbay-composite.png",
   },
   {
     quote:
       "We are so proud of our website and couldn't have done it without you. We will also be in touch soon so you can assist us with SEO work.",
     name: "Karen Cargill",
     company: "Owner of Heatsavers",
-    logo: "/testimonials/heatsavers.jpg",
+    logo: "/testimonials/heatsavers.png",
   },
   {
     quote:
       "Nothing is too much trouble and is great at guiding you on what works best for the website and the business as a whole.",
     name: "Peter Hawes",
     company: "Owner of Torbay Sweeps",
-    logo: "/testimonials/torbay-sweeps.jpg",
+    logo: "/testimonials/torbay-sweeps.png",
   },
   {
     quote:
