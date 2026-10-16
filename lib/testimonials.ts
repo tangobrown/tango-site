@@ -14,7 +14,7 @@ export const testimonialsRow1: Testimonial[] = [
       "Tim is a crisp designer with a great eye for a client's needs. He was prompt and responsive to our requests, and made every effort to ensure that he fulfilled the brief.",
     name: "Alex Barnes",
     company: "CEO of Lanterne",
-    logo: "/testimonials/lanterne.jpg",
+    logo: "/testimonials/lanterne-logo.jpg",
   },
   {
     quote:
@@ -66,7 +66,7 @@ export const testimonialsRow2: Testimonial[] = [
       "His designs are great, whether for pitch decks, t shirts or the website.",
     name: "Alex Barnes",
     company: "CEO of Lanterne",
-    logo: "/testimonials/lanterne.jpg",
+    logo: "/testimonials/lanterne-logo.jpg",
   },
   {
     quote:
