@@ -56,7 +56,7 @@ export const testimonialsRow1: Testimonial[] = [
       "Tim implemented Google Ads and SEO which have seen our business grow beyond expectations!",
     name: "Damian Conolly",
     company: "Founder of Moving Maids",
-    logo: "/testimonials/moving-maids.jpg",
+    logo: "/testimonials/moving-maids-testimonial.jpg",
   },
 ];
 
@@ -108,7 +108,7 @@ export const testimonialsRow2: Testimonial[] = [
       "Tim created our entire brand and our website, which we are absolutely stoked with. A clean, professional look that we're proud of.",
     name: "Damian Conolly",
     company: "Founder of Moving Maids",
-    logo: "/testimonials/moving-maids.jpg",
+    logo: "/testimonials/moving-maids-testimonial.jpg",
   },
 ];
 
