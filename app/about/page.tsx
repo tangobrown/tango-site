@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import { AboutBlock, ApproachBlock } from "@/components/AboutBlocks";
+import { AboutBlock } from "@/components/AboutBlocks";
+import HowIWork from "@/components/HowIWork";
 import PageHeader from "@/components/PageHeader";
 import Testimonials from "@/components/Testimonials";
 
@@ -18,7 +19,7 @@ export default function AboutPage() {
         intro="Designing websites and running marketing since 2010. Based in Exeter, working with businesses all over the UK."
       />
       <AboutBlock title="Who am I?" className="pb-[clamp(28px,3.5vw,50px)] pt-[clamp(52px,6.5vw,88px)]" />
-      <ApproachBlock title="How do I work?" imageSide="right" className="pb-[clamp(52px,6.5vw,88px)] pt-[clamp(28px,3.5vw,50px)]" />
+      <HowIWork className="pb-[clamp(52px,6.5vw,88px)] pt-[clamp(28px,3.5vw,50px)]" />
       <Testimonials />
     </>
   );
