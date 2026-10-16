@@ -47,7 +47,10 @@ export default function Testimonials({ className = "" }: { className?: string })
               alt={src === t.logo ? `${t.name}, ${t.company}` : ""}
               aria-hidden={src === t.logo ? undefined : true}
               fill
-              sizes="(min-width: 768px) 420px, 100vw"
+              // The box is up to ~480×400 and the 4:3 photo covers it, so it's
+              // drawn ~540px wide. Higher quality keeps logo edges crisp.
+              sizes="(min-width: 768px) 540px, 100vw"
+              quality={90}
               className={`object-cover transition-[opacity,transform] ease-[cubic-bezier(0.22,0.61,0.36,1)] ${
                 src === t.logo
                   ? "z-10 scale-100 opacity-100 duration-700"

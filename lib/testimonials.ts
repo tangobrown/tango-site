@@ -14,7 +14,7 @@ export const testimonialsRow1: Testimonial[] = [
       "Tim is a crisp designer with a great eye for a client's needs. He was prompt and responsive to our requests, and made every effort to ensure that he fulfilled the brief.",
     name: "Alex Barnes",
     company: "CEO of Lanterne",
-    logo: "/testimonials/lanterne-testimonial.jpg",
+    logo: "/testimonials/lanterne-testimonial.png",
   },
   {
     quote:
@@ -49,14 +49,14 @@ export const testimonialsRow1: Testimonial[] = [
       "Tim's experience has ensured a relevant website and content delivering excellent enquiries and conversion. Experienced, Affordable, and Timely.",
     name: "Deb Mayo",
     company: "Owner of Kombined Experience",
-    logo: "/testimonials/kombined-experience-testimonial.jpg",
+    logo: "/testimonials/kombined-experience-testimonial.png",
   },
   {
     quote:
       "Tim implemented Google Ads and SEO which have seen our business grow beyond expectations!",
     name: "Damian Conolly",
     company: "Founder of Moving Maids",
-    logo: "/testimonials/moving-maids-testimonial.jpg",
+    logo: "/testimonials/moving-maids-testimonial.png",
   },
 ];
 
@@ -66,7 +66,7 @@ export const testimonialsRow2: Testimonial[] = [
       "His designs are great, whether for pitch decks, t shirts or the website.",
     name: "Alex Barnes",
     company: "CEO of Lanterne",
-    logo: "/testimonials/lanterne-testimonial.jpg",
+    logo: "/testimonials/lanterne-testimonial.png",
   },
   {
     quote:
@@ -101,14 +101,14 @@ export const testimonialsRow2: Testimonial[] = [
       "Tim Brown recently built a new website for Kombined Experience and I am thrilled with the result.",
     name: "Deb Mayo",
     company: "Owner of Kombined Experience",
-    logo: "/testimonials/kombined-experience-testimonial.jpg",
+    logo: "/testimonials/kombined-experience-testimonial.png",
   },
   {
     quote:
       "Tim created our entire brand and our website, which we are absolutely stoked with. A clean, professional look that we're proud of.",
     name: "Damian Conolly",
     company: "Founder of Moving Maids",
-    logo: "/testimonials/moving-maids-testimonial.jpg",
+    logo: "/testimonials/moving-maids-testimonial.png",
   },
 ];
 
