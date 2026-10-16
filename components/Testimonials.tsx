@@ -18,6 +18,9 @@ const photos = [...new Set(testimonials.map((t) => t.logo).filter(Boolean))] as 
 // reloads and the card height never jumps. The new photo fades in over the
 // old one (which only disappears once it's covered); the old quote fades out
 // quickly before the new one rises in, so they never overlap.
+// Photos and quotes keep their own compositing layer (will-change) all the
+// time, so the browser doesn't re-draw them when an animation ends; that
+// re-draw is what made each change visibly "click" into place.
 export default function Testimonials({ className = "" }: { className?: string }) {
   const [index, setIndex] = useState(0);
   const n = testimonials.length;
@@ -26,10 +29,10 @@ export default function Testimonials({ className = "" }: { className?: string })
   const go = (dir: number) => setIndex((i) => (i + dir + n) % n);
 
   const layer = (active: boolean) =>
-    `col-start-1 row-start-1 transition-[opacity,transform] ease-[cubic-bezier(0.22,0.61,0.36,1)] ${
+    `col-start-1 row-start-1 transition-[opacity,transform] ease-[cubic-bezier(0.4,0,0.2,1)] will-change-[opacity,transform] ${
       active
-        ? "translate-y-0 opacity-100 delay-150 duration-[450ms]"
-        : "pointer-events-none translate-y-[6px] opacity-0 delay-0 duration-200"
+        ? "translate-y-0 opacity-100 delay-200 duration-[600ms]"
+        : "pointer-events-none translate-y-[4px] opacity-0 delay-0 duration-200"
     }`;
 
   return (
@@ -51,10 +54,10 @@ export default function Testimonials({ className = "" }: { className?: string })
               // drawn ~540px wide. Higher quality keeps logo edges crisp.
               sizes="(min-width: 768px) 540px, 100vw"
               quality={90}
-              className={`object-cover transition-[opacity,transform] ease-[cubic-bezier(0.22,0.61,0.36,1)] ${
+              className={`object-cover transition-[opacity,transform] ease-[cubic-bezier(0.4,0,0.2,1)] will-change-[opacity,transform] [backface-visibility:hidden] ${
                 src === t.logo
-                  ? "z-10 scale-100 opacity-100 duration-700"
-                  : "z-0 scale-[1.04] opacity-0 delay-700 duration-0"
+                  ? "z-10 scale-100 opacity-100 duration-[900ms]"
+                  : "z-0 scale-[1.025] opacity-0 delay-[950ms] duration-0"
               }`}
             />
           ))}
