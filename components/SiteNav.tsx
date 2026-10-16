@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
@@ -194,18 +193,6 @@ export default function SiteNav() {
                         className="pointer-events-none absolute -right-24 -top-24 h-64 w-64 rounded-full"
                         style={{ background: "radial-gradient(closest-side, rgba(20,168,90,0.35), rgba(20,168,90,0))" }}
                       />
-                      <div className="relative flex items-center gap-3">
-                        <Image
-                          src="/tim-avatar.jpg"
-                          alt=""
-                          width={96}
-                          height={96}
-                          className="h-12 w-12 flex-none rounded-full object-cover"
-                        />
-                        <span className="text-[13px] font-semibold uppercase tracking-[0.08em] text-brand-bright">
-                          Free website review
-                        </span>
-                      </div>
                       <span className="relative flex flex-col gap-1.5">
                         <span className="text-[21px] font-semibold leading-[1.15] tracking-[-0.01em]">
                           Not sure where to start?
