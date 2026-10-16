@@ -13,7 +13,6 @@ import { bodyText, btnPrimary, container, h2Section, sectionY } from "./ui";
 
 export type Item = { title: string; body: string };
 export type Feature = Item & { icon: FeatureIconName };
-export type PriceRow = { service: string; price: string; was?: string };
 type Enquiry = (typeof enquiryTypes)[number];
 
 const pad = (i: number) => String(i + 1).padStart(2, "0");
@@ -63,11 +62,11 @@ export function FeatureCards({ eyebrow, title, items }: { eyebrow: string; title
             key={item.title}
             data-reveal
             style={{ transitionDelay: `${i * 80}ms` }}
-            className="flex flex-col gap-3 rounded-[3px] bg-[#effff7] p-[clamp(24px,2.4vw,32px)]"
+            className="flex flex-col gap-3 rounded-[3px] bg-pine p-[clamp(24px,2.4vw,32px)] text-white"
           >
-            <FeatureIcon name={item.icon} className="mb-3" />
+            <FeatureIcon name={item.icon} onDark className="mb-3" />
             <h3 className="m-0 text-[24px] font-semibold leading-[1.1] tracking-[-0.01em]">{item.title}</h3>
-            <p className="m-0 text-[16px] leading-[1.5] text-ink-body">{item.body}</p>
+            <p className="m-0 text-[16px] leading-[1.5] text-white/75">{item.body}</p>
           </div>
         ))}
       </div>
@@ -103,6 +102,7 @@ export function WorkSection({ title, slugs }: { title: string; slugs: string[] }
 }
 
 // Photo on one side; heading, a short intro and ticked points on the other.
+// It and StepsSection follow another white section, so they only pad below.
 export function PhotoSplit({
   eyebrow,
   title,
@@ -125,7 +125,7 @@ export function PhotoSplit({
 }) {
   return (
     <section
-      className={`${container} ${sectionY} grid grid-cols-1 items-center gap-x-[clamp(40px,6vw,80px)] gap-y-10 md:grid-cols-2`}
+      className={`${container} pb-[clamp(52px,6.5vw,88px)] grid grid-cols-1 items-center gap-x-[clamp(40px,6vw,80px)] gap-y-10 md:grid-cols-2`}
     >
       <div data-reveal className="relative aspect-square overflow-hidden rounded-[3px] bg-surface-placeholder">
         <Image
@@ -157,7 +157,7 @@ export function PhotoSplit({
 
 export function StepsSection({ title, items }: { title: string; items: Item[] }) {
   return (
-    <section id="how-it-works" className={`${container} ${sectionY} scroll-mt-[100px]`}>
+    <section id="how-it-works" className={`${container} pb-[clamp(52px,6.5vw,88px)] scroll-mt-[100px]`}>
       <div data-reveal className="flex max-w-[760px] flex-col gap-3">
         <Eyebrow>How it works</Eyebrow>
         <h2 className={h2Section}>{title}</h2>
@@ -180,62 +180,30 @@ export function StepsSection({ title, items }: { title: string; items: Item[] })
   );
 }
 
-export function PricingSection({
+// Closing call to action: dark green band with a button to the contact form.
+export function CtaBand({
   title,
-  intro,
-  rows,
-  note,
-  ctaTitle,
-  ctaText,
-  ctaLabel,
+  text,
+  label,
   preset,
 }: {
   title: string;
-  intro: string;
-  rows: PriceRow[];
-  note?: string;
-  ctaTitle: string;
-  ctaText: string;
-  ctaLabel: string;
+  text: string;
+  label: string;
   preset: Enquiry;
 }) {
   return (
     <section className={`${container} pb-[clamp(52px,6.5vw,88px)]`}>
-      <div className="grid grid-cols-1 gap-10 lg:grid-cols-[1fr_1.15fr] lg:gap-[clamp(40px,6vw,96px)]">
-        <div data-reveal className="flex flex-col gap-4">
-          <Eyebrow>Pricing</Eyebrow>
-          <h2 className={h2Section}>{title}</h2>
-          <p className={bodyText}>{intro}</p>
-        </div>
-        <div data-reveal>
-          <div className="overflow-hidden rounded-[3px] border border-ink/15">
-            {rows.map((row, i) => (
-              <div
-                key={row.service}
-                className={`flex items-baseline justify-between gap-6 px-6 py-5 lg:px-8 ${i ? "border-t border-ink/15" : ""}`}
-              >
-                <span className="text-[17px]">{row.service}</span>
-                <span className="flex-none text-right">
-                  <span className="text-[20px] font-semibold">{row.price}</span>
-                  {row.was ? <span className="ml-2 text-[14px] text-ink-muted line-through">{row.was}</span> : null}
-                </span>
-              </div>
-            ))}
-          </div>
-          {note ? <p className="m-0 mt-4 text-[15px] leading-[1.5] text-ink-body">{note}</p> : null}
-        </div>
-      </div>
-
       <div
         data-reveal
-        className="mt-[clamp(52px,6vw,88px)] flex flex-col gap-8 rounded-[3px] bg-pine p-[clamp(28px,4vw,56px)] text-white lg:flex-row lg:items-end lg:justify-between lg:gap-16"
+        className="flex flex-col gap-8 rounded-[3px] bg-pine p-[clamp(28px,4vw,56px)] text-white lg:flex-row lg:items-end lg:justify-between lg:gap-16"
       >
         <div className="flex max-w-[640px] flex-col gap-4">
-          <h2 className={h2Section}>{ctaTitle}</h2>
-          <p className="m-0 text-[17px] leading-[1.5] text-white/75">{ctaText}</p>
+          <h2 className={h2Section}>{title}</h2>
+          <p className="m-0 text-[17px] leading-[1.5] text-white/75">{text}</p>
         </div>
         <ContactButton preset={preset} className={`${btnPrimary} self-start lg:self-auto`}>
-          {ctaLabel} <ArrowIcon size={18} />
+          {label} <ArrowIcon size={18} />
         </ContactButton>
       </div>
     </section>

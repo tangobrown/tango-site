@@ -2,11 +2,11 @@
 // a dark green tile, to match the audience icons.
 import type { ReactNode } from "react";
 
-function Tile({ children, className = "" }: { children: ReactNode; className?: string }) {
+function Tile({ children, className = "", onDark = false }: { children: ReactNode; className?: string; onDark?: boolean }) {
   return (
     <span
       aria-hidden="true"
-      className={`flex h-14 w-14 flex-none items-center justify-center rounded-[3px] bg-pine text-brand-bright ${className}`}
+      className={`flex h-14 w-14 flex-none items-center justify-center rounded-[3px] text-brand-bright ${onDark ? "bg-white/10" : "bg-pine"} ${className}`}
     >
       <svg
         width="28"
@@ -83,6 +83,19 @@ const glyphs = {
 
 export type FeatureIconName = keyof typeof glyphs;
 
-export function FeatureIcon({ name, className }: { name: FeatureIconName; className?: string }) {
-  return <Tile className={className}>{glyphs[name]}</Tile>;
+export function FeatureIcon({
+  name,
+  className,
+  onDark,
+}: {
+  name: FeatureIconName;
+  className?: string;
+  /** Use a translucent tile so it shows up on a dark green card. */
+  onDark?: boolean;
+}) {
+  return (
+    <Tile className={className} onDark={onDark}>
+      {glyphs[name]}
+    </Tile>
+  );
 }

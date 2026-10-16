@@ -1,15 +1,14 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import {
+  CtaBand,
   FeatureCards,
   HeaderActions,
   PhotoSplit,
-  PricingSection,
   StepsSection,
   WorkSection,
   type Feature,
   type Item,
-  type PriceRow,
 } from "@/components/landing";
 import PageHeader from "@/components/PageHeader";
 import Testimonials from "@/components/Testimonials";
@@ -50,14 +49,6 @@ const steps: Item[] = [
   { title: "Keep growing", body: "I host it, make your updates and keep bringing in more local customers." },
 ];
 
-// Prices still to be confirmed.
-const pricing: PriceRow[] = [
-  { service: "Website check", price: "Free" },
-  { service: "Website build", price: "Price on request" },
-  { service: "Hosting and care", price: "Price on request" },
-  { service: "Local SEO, hosting included", price: "Price on request" },
-];
-
 export default function ServiceBusinessesPage() {
   return (
     <>
@@ -82,8 +73,6 @@ export default function ServiceBusinessesPage() {
 
       <FeatureCards eyebrow="What I do" title="Your website, sorted" items={features} />
 
-      <WorkSection title="Websites that win local work" slugs={["devon-joinery", "vowles-carpentry"]} />
-
       <PhotoSplit
         eyebrow="Why it works"
         title="You're busy on site. I'll handle the website."
@@ -101,15 +90,14 @@ export default function ServiceBusinessesPage() {
 
       <StepsSection title="Simple from start to finish" items={steps} />
 
-      <Testimonials />
+      <WorkSection title="Websites that win local work" slugs={["devon-joinery", "vowles-carpentry"]} />
 
-      <PricingSection
-        title="Straightforward pricing"
-        intro="No jargon, no hidden extras. You'll know exactly what you're paying before we start."
-        rows={pricing}
-        ctaTitle="Ready for more calls and quote requests?"
-        ctaText="Book your free website check and I'll show you what would bring in more work, with no obligation."
-        ctaLabel="Get your free website check"
+      <Testimonials className="pt-[clamp(52px,6.5vw,88px)]" />
+
+      <CtaBand
+        title="Ready for more calls and quote requests?"
+        text="Book your free website check and I'll show you what would bring in more work, with no obligation."
+        label="Get your free website check"
         preset="Website review for my business"
       />
     </>

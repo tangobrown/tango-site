@@ -18,7 +18,7 @@ const photos = [...new Set(testimonials.map((t) => t.logo).filter(Boolean))] as 
 // reloads and the card height never jumps. The new photo fades in over the
 // old one (which only disappears once it's covered); the old quote fades out
 // quickly before the new one rises in, so they never overlap.
-export default function Testimonials() {
+export default function Testimonials({ className = "" }: { className?: string }) {
   const [index, setIndex] = useState(0);
   const n = testimonials.length;
   const t = testimonials[index];
@@ -33,7 +33,7 @@ export default function Testimonials() {
     }`;
 
   return (
-    <section className={`${container} pb-[clamp(52px,6.5vw,88px)]`}>
+    <section className={`${container} pb-[clamp(52px,6.5vw,88px)] ${className}`}>
       <h2 data-reveal className={`${h2Section} mb-[52px]`}>
         See what people say about me
       </h2>

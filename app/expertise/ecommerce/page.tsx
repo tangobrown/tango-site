@@ -1,15 +1,14 @@
 import type { Metadata } from "next";
 import HeroAnimation from "@/components/HeroAnimation";
 import {
+  CtaBand,
   FeatureCards,
   HeaderActions,
   PhotoSplit,
-  PricingSection,
   StepsSection,
   WorkSection,
   type Feature,
   type Item,
-  type PriceRow,
 } from "@/components/landing";
 import PageHeader from "@/components/PageHeader";
 import Testimonials from "@/components/Testimonials";
@@ -55,14 +54,6 @@ const steps: Item[] = [
   { title: "Grow every month", body: "Ongoing SEO, conversion improvements and a clear monthly report." },
 ];
 
-const pricing: PriceRow[] = [
-  { service: "Store review", price: "Free", was: "usually £395" },
-  { service: "Custom store build", price: "From £2,800" },
-  { service: "Hosting and care", price: "From £80/month" },
-  { service: "SEO, hosting included", price: "From £290/month" },
-  { service: "SEO + CRO, hosting included", price: "From £390/month" },
-];
-
 export default function EcommercePage() {
   return (
     <>
@@ -81,8 +72,6 @@ export default function EcommercePage() {
       </PageHeader>
 
       <FeatureCards eyebrow="What I do" title="One person for your whole online store" items={features} />
-
-      <WorkSection title="Brands I've helped grow online" slugs={["ipj-london", "old-fashioned-cocktail-co"]} />
 
       <PhotoSplit
         eyebrow="The stack"
@@ -109,16 +98,14 @@ export default function EcommercePage() {
 
       <StepsSection title="Simple, from first chat to ongoing growth" items={steps} />
 
-      <Testimonials />
+      <WorkSection title="Brands I've helped grow online" slugs={["ipj-london", "old-fashioned-cocktail-co"]} />
 
-      <PricingSection
-        title="Affordable, clear pricing"
-        intro="Big-agency results without big-agency prices. Every project is quoted clearly up front."
-        rows={pricing}
-        note="Discounted builds are available when you join an SEO or SEO + CRO plan."
-        ctaTitle="Ready to sell more online?"
-        ctaText="Book your free store review and I'll show you where your store could be faster, easier to find and better at converting."
-        ctaLabel="Get your free store review"
+      <Testimonials className="pt-[clamp(52px,6.5vw,88px)]" />
+
+      <CtaBand
+        title="Ready to sell more online?"
+        text="Book your free store review and I'll show you where your store could be faster, easier to find and better at converting."
+        label="Get your free store review"
         preset="Website review for my business"
       />
     </>
