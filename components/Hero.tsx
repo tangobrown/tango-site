@@ -36,16 +36,7 @@ export default function Hero() {
             </p>
           </div>
           <h1 className="m-0 text-[clamp(36px,4.4vw,64px)] font-semibold leading-[0.96] tracking-[-0.025em]">
-            Get your{" "}
-            <span className="whitespace-nowrap">
-              website{" "}
-              <span className="inline-block align-[-0.06em] text-brand-bright" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="currentColor" className="h-[0.85em] w-[0.85em]">
-                  <path d="M16.0037 9.41421L7.39712 18.0208L5.98291 16.6066L14.5895 8H7.00373V6H18.0037V17H16.0037V9.41421Z" />
-                </svg>
-              </span>
-            </span>{" "}
-            working as hard <span className="whitespace-nowrap">as you do</span>
+            Look good &amp; dominate your industry online.
           </h1>
           <p className="m-0 max-w-[46ch] text-[17px] leading-[1.45] tracking-normal text-footer-link">
             I build, host and optimise blazing fast websites for companies in the UK that want to
