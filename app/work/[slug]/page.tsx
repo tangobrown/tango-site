@@ -28,13 +28,13 @@ const ghostBtn =
 const contentWidth = "min(100vw - 40px, 1300px)";
 const overlap = `calc(${contentWidth} * 0.3)`;
 
-// Portrait (4:5) image beside the challenge / result text. A plain mint
+// Square image beside the challenge / result text. A plain mint
 // placeholder until the project's images are supplied.
 function StoryImage({ src, alt, className = "" }: { src?: string; alt: string; className?: string }) {
   return (
     <div
       data-reveal
-      className={`relative aspect-[4/5] overflow-hidden rounded-[3px] bg-[#effff7] ${className}`}
+      className={`relative aspect-square overflow-hidden rounded-[3px] bg-[#effff7] ${className}`}
     >
       {src ? (
         <Image src={src} alt={alt} fill sizes="(min-width: 768px) 650px, 100vw" quality={85} className="object-cover" />

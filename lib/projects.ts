@@ -21,7 +21,7 @@ export type Project = {
   result: string;
   /**
    * Project page images: a wide hero (2:1, e.g. 2400×1200) then two
-   * portraits (4:5, e.g. 1600×2000). Until they're supplied, the page shows
+   * squares (e.g. 1600×1600). Until they're supplied, the page shows
    * the tablet mock-up and plain placeholders.
    */
   gallery?: [hero: string, second: string, third: string];
