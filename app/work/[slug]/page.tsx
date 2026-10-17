@@ -64,7 +64,7 @@ function Hero({ project }: { project: Project }) {
             fill
             priority
             sizes="(min-width: 1340px) 1300px, 100vw"
-            quality={85}
+            quality={90}
             className="object-cover"
           />
         ) : (
