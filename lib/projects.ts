@@ -70,6 +70,7 @@ export const projects: Project[] = [
     cover: "/work/tablet/ipj.png",
     image: "/work/photos/ipj-london-website.jpg",
     imageSize: { width: 1300, height: 975 },
+    gallery: { hero: "/work/projects/ipj-london-laptop-mockup.jpg" },
     challenge:
       "IPJ London is a furniture consultancy working on commercial and residential spaces. Their brand and website needed a refresh to do justice to an impressive portfolio of projects.",
     result:
