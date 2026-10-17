@@ -55,6 +55,7 @@ export const projects: Project[] = [
     cover: "/work/tablet/w2.png",
     image: "/work/photos/vowles-carpentry-website.jpg",
     imageSize: { width: 1300, height: 975 },
+    gallery: { hero: "/work/projects/vowles-carpentry-laptop-mockup.jpg" },
     challenge:
       "Vowles Carpentry is a carpenter based in Torbay, Devon. The business needed a brand that matched the quality of its work, used consistently across the van, printed material and online.",
     result:
