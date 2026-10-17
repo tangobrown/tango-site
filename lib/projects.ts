@@ -20,11 +20,12 @@ export type Project = {
   challenge: string;
   result: string;
   /**
-   * Project page images: a wide hero (2:1, e.g. 2400×1200) then two
-   * squares (e.g. 1600×1600). Until they're supplied, the page shows
-   * the tablet mock-up and plain placeholders.
+   * Project page images: a wide hero (2:1, e.g. 2400×1200),
+   * then two squares (e.g. 1600×1600) beside the challenge and the result.
+   * Any that aren't supplied yet fall back to the tablet mock-up (hero) or a
+   * plain placeholder.
    */
-  gallery?: [hero: string, second: string, third: string];
+  gallery?: { hero?: string; challenge?: string; result?: string };
 };
 
 export const projects: Project[] = [
@@ -38,6 +39,7 @@ export const projects: Project[] = [
     cover: "/work/tablet/w1.png",
     image: "/work/photos/devon-joinery-website.jpg",
     imageSize: { width: 1300, height: 975 },
+    gallery: { hero: "/work/projects/devon-joinery-hero.jpg" },
     challenge:
       "Devon Joinery is a family-run workshop crafting bespoke kitchens, wardrobes, doors and architectural joinery across Exeter. Their old site didn't reflect the quality of the work, and most enquiries were coming through word of mouth alone.",
     result:

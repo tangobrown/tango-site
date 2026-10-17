@@ -53,7 +53,7 @@ function StoryText({ label, text }: { label: string; text: string }) {
 }
 
 function Hero({ project }: { project: Project }) {
-  const src = project.gallery?.[0];
+  const src = project.gallery?.hero;
   return (
     <div className={`${container} relative`} style={{ marginTop: `calc(${overlap} * -1)` }}>
       <div className="relative aspect-[3/2] overflow-hidden rounded-[3px] bg-[#effff7] md:aspect-[2/1]">
@@ -88,7 +88,6 @@ export default async function ProjectPage({ params }: { params: Promise<Params> 
 
   const index = projects.indexOf(project);
   const more = [1, 2].map((n) => projects[(index + n) % projects.length]);
-  const [, second, third] = project.gallery ?? [];
 
   const facts = [
     { label: "Client", value: project.title },
@@ -152,10 +151,10 @@ export default async function ProjectPage({ params }: { params: Promise<Params> 
       <section className={`${container} flex flex-col gap-[clamp(56px,7vw,104px)] pt-[clamp(56px,7vw,104px)]`}>
         <div className="grid grid-cols-1 items-center gap-x-[clamp(40px,6vw,96px)] gap-y-8 md:grid-cols-2">
           <StoryText label="The challenge" text={project.challenge} />
-          <StoryImage src={second} alt={`${project.title} project detail`} className="order-first md:order-none" />
+          <StoryImage src={project.gallery?.challenge} alt={`${project.title} project detail`} className="order-first md:order-none" />
         </div>
         <div className="grid grid-cols-1 items-center gap-x-[clamp(40px,6vw,96px)] gap-y-8 md:grid-cols-2">
-          <StoryImage src={third} alt={`${project.title} project detail`} />
+          <StoryImage src={project.gallery?.result} alt={`${project.title} project detail`} />
           <StoryText label="The result" text={project.result} />
         </div>
       </section>
