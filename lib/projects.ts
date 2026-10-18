@@ -119,6 +119,10 @@ export const projects: Project[] = [
     cover: "/work/tablet/w4.png",
     image: "/work/photos/world-bank-pim-pam-website.jpg",
     imageSize: { width: 1300, height: 975 },
+    gallery: {
+      challenge: "/work/projects/world-bank-pim-pam-data-network.jpg",
+      result: "/work/projects/world-bank-pim-pam-tablet-mockup.jpg",
+    },
     challenge:
       "The World Bank's PIM-PAM programme develops digital tools that help government officials make better policy decisions. They needed one place to present the whole range clearly.",
     result:
