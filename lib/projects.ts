@@ -127,6 +127,7 @@ export const projects: Project[] = [
     imageSize: { width: 1300, height: 975 },
     gallery: {
       hero: "/work/projects/sanwei-asia-desktop-mockup.jpg",
+      challenge: "/work/projects/sanwei-asia-cad-workstation.jpg",
       result: "/work/projects/sanwei-asia-tablet-mockup.jpg",
     },
     challenge:
