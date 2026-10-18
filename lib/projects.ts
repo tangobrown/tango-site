@@ -99,7 +99,11 @@ export const projects: Project[] = [
     cover: "/work/tablet/w3.png",
     image: "/work/photos/old-fashioned-cocktail-co-website.jpg",
     imageSize: { width: 1300, height: 975 },
-    gallery: { hero: "/work/projects/old-fashioned-cocktail-co-desktop-mockup.jpg" },
+    gallery: {
+      hero: "/work/projects/old-fashioned-cocktail-co-desktop-mockup.jpg",
+      challenge: "/work/projects/old-fashioned-cocktail-co-bar-truck.jpg",
+      result: "/work/projects/old-fashioned-cocktail-co-tablet-mockup.jpg",
+    },
     challenge:
       "The Old Fashioned Cocktail Co. is a mobile cocktail bar in New York. They needed a brand and website with as much style as their events, and a clear way for people to book.",
     result:
