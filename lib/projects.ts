@@ -115,7 +115,7 @@ export const projects: Project[] = [
     services: "Website",
     summary: "A new website for a sourcing and manufacturing partner in Asia, helping businesses find the missing pieces of their supply chain.",
     url: null,
-    image: "/work/photos/sanwei-asia-website.jpg",
+    image: "/work/photos/sanwei-asia-website-browser.jpg",
     imageSize: { width: 1300, height: 975 },
     gallery: { hero: "/work/projects/sanwei-asia-desktop-mockup.jpg" },
     challenge:
@@ -146,7 +146,7 @@ export const projects: Project[] = [
     summary: "Warm, unhurried pages that reassure residents and the families helping them decide.",
     url: "https://highgrove.co.nz",
     cover: "/work/tablet/highgrove.png",
-    image: "/work/photos/highgrove-retirement-village-website.jpg",
+    image: "/work/photos/highgrove-retirement-village-website-browser.jpg",
     imageSize: { width: 1300, height: 975 },
     gallery: { hero: "/work/projects/highgrove-retirement-village-desktop-mockup.jpg" },
     challenge:
