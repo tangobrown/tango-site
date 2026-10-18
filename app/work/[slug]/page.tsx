@@ -67,7 +67,7 @@ function Hero({ project }: { project: Project }) {
             quality={90}
             className="object-cover"
           />
-        ) : (
+        ) : project.cover ? (
           <Image
             src={project.cover}
             alt={`The ${project.title} website shown on a tablet`}
@@ -76,7 +76,7 @@ function Hero({ project }: { project: Project }) {
             sizes="(min-width: 1340px) 1300px, 100vw"
             className="object-contain p-[4%]"
           />
-        )}
+        ) : null}
       </div>
     </div>
   );

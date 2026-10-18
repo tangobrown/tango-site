@@ -10,8 +10,8 @@ export type Project = {
   services: string;
   summary: string;
   url: string | null;
-  /** Transparent device-frame mock shown on the project page. */
-  cover: string;
+  /** Transparent tablet mock-up, shown on the project page until a hero image is supplied. */
+  cover?: string;
   /** Background photo for the project's box (placeholder for now). */
   image: string;
   /** The photo's pixel size, so its box can request a sharp enough version. */
@@ -109,6 +109,21 @@ export const projects: Project[] = [
       "I designed the branding and built a new website that showcases each tool and explains it in plain terms, so officials can quickly find what they need.",
   },
   {
+    slug: "sanwei-asia",
+    title: "Sanwei Asia",
+    category: "Sourcing & manufacturing · Asia",
+    services: "Website",
+    summary: "A new website for a sourcing and manufacturing partner in Asia, helping businesses find the missing pieces of their supply chain.",
+    url: null,
+    image: "/work/photos/sanwei-asia-website.jpg",
+    imageSize: { width: 1300, height: 975 },
+    gallery: { hero: "/work/projects/sanwei-asia-desktop-mockup.jpg" },
+    challenge:
+      "Sanwei Asia sources and manufactures assemblies, components and proprietary parts in Asia, and manages the project from start to finish. They needed a website that explains a complex service simply and gives buyers the confidence to get in touch.",
+    result:
+      "I built a clean, editorial website that sets out their sourcing, manufacturing and project management services clearly, with a straightforward route to start a conversation.",
+  },
+  {
     slug: "torbay-sweeps",
     title: "Torbay Sweeps",
     category: "Chimney sweep · Torbay",
@@ -131,8 +146,9 @@ export const projects: Project[] = [
     summary: "Warm, unhurried pages that reassure residents and the families helping them decide.",
     url: "https://highgrove.co.nz",
     cover: "/work/tablet/highgrove.png",
-    image: "/about-1.jpg",
-    imageSize: { width: 800, height: 770 },
+    image: "/work/photos/highgrove-retirement-village-website.jpg",
+    imageSize: { width: 1300, height: 975 },
+    gallery: { hero: "/work/projects/highgrove-retirement-village-desktop-mockup.jpg" },
     challenge:
       "Highgrove is a retirement village in New Zealand. Choosing a retirement home is a big decision, often made with family, so the website needed to feel warm and reassuring.",
     result:
