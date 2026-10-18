@@ -120,6 +120,7 @@ export const projects: Project[] = [
     image: "/work/photos/world-bank-pim-pam-website.jpg",
     imageSize: { width: 1300, height: 975 },
     gallery: {
+      hero: "/work/projects/world-bank-pim-pam-desktop-mockup.jpg",
       challenge: "/work/projects/world-bank-pim-pam-data-network.jpg",
       result: "/work/projects/world-bank-pim-pam-tablet-mockup.jpg",
     },
