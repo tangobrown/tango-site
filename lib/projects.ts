@@ -125,7 +125,10 @@ export const projects: Project[] = [
     url: null,
     image: "/work/photos/sanwei-asia-website-browser.jpg",
     imageSize: { width: 1300, height: 975 },
-    gallery: { hero: "/work/projects/sanwei-asia-desktop-mockup.jpg" },
+    gallery: {
+      hero: "/work/projects/sanwei-asia-desktop-mockup.jpg",
+      result: "/work/projects/sanwei-asia-tablet-mockup.jpg",
+    },
     challenge:
       "Sanwei Asia sources and manufactures assemblies, components and proprietary parts in Asia, and manages the project from start to finish. They needed a website that explains a complex service simply and gives buyers the confidence to get in touch.",
     result:
