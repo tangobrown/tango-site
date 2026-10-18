@@ -39,7 +39,11 @@ export const projects: Project[] = [
     cover: "/work/tablet/w1.png",
     image: "/work/photos/devon-joinery-website.jpg",
     imageSize: { width: 1300, height: 975 },
-    gallery: { hero: "/work/projects/devon-joinery-laptop-mockup.jpg" },
+    gallery: {
+      hero: "/work/projects/devon-joinery-laptop-mockup.jpg",
+      challenge: "/work/projects/devon-joinery-staircase-balustrade.jpg",
+      result: "/work/projects/devon-joinery-tablet-mockup.jpg",
+    },
     challenge:
       "Devon Joinery is a family-run workshop crafting bespoke kitchens, wardrobes, doors and architectural joinery across Exeter. Their old site didn't reflect the quality of the work, and most enquiries were coming through word of mouth alone.",
     result:
