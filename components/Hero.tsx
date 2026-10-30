@@ -32,7 +32,7 @@ export default function Hero() {
             <em className="font-serif font-normal normal-case tracking-normal">get found</em> ONLINE
           </span>
         </h1>
-        <p className="m-0 max-w-[460px] text-balance text-[20px] leading-[1.35] text-sand">
+        <p className="m-0 max-w-[520px] text-balance text-[clamp(21px,1.7vw,24px)] leading-[1.35] text-sand">
           Blazing fast websites, built, hosted and optimised for UK companies that want to grow.
         </p>
       </div>
