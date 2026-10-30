@@ -1,24 +1,29 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    // 85 for the project photos, 90 for the testimonial logo images.
+    // 85 for the project photos, 90 for higher-detail images.
     qualities: [75, 85, 90],
   },
   async redirects() {
-    // Old sub-page URLs point at their expertise pages.
+    // The site is a single page: old sub-page URLs go to the matching section.
+    const toSection = (sources, section) =>
+      sources.map((source) => ({ source, destination: `/#${section}`, permanent: false }));
     return [
-      // There's no overview page; the home page covers both audiences.
-      { source: "/expertise", destination: "/#services", permanent: false },
-      ...["/ecommerce", "/ecommerce-websites"].map((source) => ({
-        source,
-        destination: "/expertise/ecommerce",
-        permanent: true,
-      })),
-      ...["/websites-for-trades", "/service-websites"].map((source) => ({
-        source,
-        destination: "/expertise/service-businesses",
-        permanent: true,
-      })),
+      ...toSection(["/about"], "about-me"),
+      ...toSection(
+        [
+          "/expertise",
+          "/expertise/:path*",
+          "/ecommerce",
+          "/ecommerce-websites",
+          "/websites-for-trades",
+          "/service-websites",
+        ],
+        "make",
+      ),
+      // One segment only, so images under /public/work/… aren't redirected.
+      ...toSection(["/work", "/work/:slug"], "work"),
+      ...toSection(["/contact"], "contact"),
     ];
   },
 };

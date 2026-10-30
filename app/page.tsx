@@ -1,17 +1,27 @@
-import { ApproachBlock } from "@/components/AboutBlocks";
+import AboutMe from "@/components/AboutMe";
+import Approach from "@/components/Approach";
+import Build from "@/components/Build";
+import Cta from "@/components/Cta";
+import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
-import Testimonials from "@/components/Testimonials";
-import WhatIDo from "@/components/WhatIDo";
-import WorkPreview from "@/components/WorkPreview";
+import Principles from "@/components/Principles";
+import Testimonial from "@/components/Testimonial";
+import Work from "@/components/Work";
 
 export default function Home() {
   return (
     <>
-      <Hero />
-      <WhatIDo />
-      <ApproachBlock className="py-[clamp(52px,6.5vw,88px)]" />
-      <WorkPreview />
-      <Testimonials />
+      <main>
+        <Hero />
+        <Approach />
+        <Work />
+        <Build />
+        <AboutMe />
+        <Principles />
+        <Testimonial />
+        <Cta />
+      </main>
+      <Footer />
     </>
   );
 }

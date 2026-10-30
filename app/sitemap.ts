@@ -1,12 +1,8 @@
 import type { MetadataRoute } from "next";
-import { projects } from "@/lib/projects";
 
 const SITE_URL = "https://timbrown.co";
 
+// The site is a single page.
 export default function sitemap(): MetadataRoute.Sitemap {
-  const pages = ["", "/about", "/expertise/service-businesses", "/expertise/ecommerce", "/work", "/contact"].map((path) => ({
-    url: `${SITE_URL}${path}`,
-  }));
-  const work = projects.map((p) => ({ url: `${SITE_URL}/work/${p.slug}` }));
-  return [...pages, ...work];
+  return [{ url: SITE_URL }];
 }

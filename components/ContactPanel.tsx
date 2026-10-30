@@ -13,8 +13,7 @@ import {
 import { useFormStatus } from "react-dom";
 import { submitContact, type ContactState } from "@/app/actions/contact";
 import { enquiryTypes, site } from "@/lib/site";
-import ArrowIcon from "./ArrowIcon";
-import { btnPrimary } from "./ui";
+import { btnLight } from "./styles";
 
 // Slide-out contact panel. Every "contact" CTA on the page is a
 // <ContactButton>, which opens this panel (optionally with the
@@ -84,13 +83,13 @@ export function ContactPanelProvider({ children }: { children: ReactNode }) {
 }
 
 const inputClass =
-  "w-full rounded-[3px] border border-rule bg-white px-4 py-[14px] text-[16px] font-medium tracking-normal text-ink outline-none transition-colors placeholder:text-footer-muted focus:border-brand";
+  "w-full border border-line bg-transparent px-4 py-3.5 font-serif text-[18px] text-bone outline-none transition-colors placeholder:text-ash focus:border-ember";
 
 function SubmitButton() {
   const { pending } = useFormStatus();
   return (
-    <button type="submit" disabled={pending} className={`${btnPrimary} disabled:opacity-70`}>
-      {pending ? "Sending…" : "Send it over"} <ArrowIcon size={18} />
+    <button type="submit" disabled={pending} className={`${btnLight} disabled:opacity-70`}>
+      {pending ? "SENDING…" : "SEND IT OVER →"}
     </button>
   );
 }
@@ -162,24 +161,21 @@ function ContactPanel({
       inert={!isOpen}
       // Opening: become visible instantly (so focus can move in) and slide.
       // Closing: slide out, then hide once the transition ends.
-      className={`fixed inset-y-0 right-0 z-[41] flex w-[min(520px,100vw)] flex-col bg-surface-panel shadow-panel duration-[420ms] ease-[cubic-bezier(0.22,0.61,0.36,1)] ${
+      className={`fixed inset-y-0 right-0 z-[41] flex w-[min(520px,100vw)] flex-col border-l border-line bg-ink text-bone duration-[420ms] ease-[cubic-bezier(0.22,0.61,0.36,1)] ${
         isOpen
           ? "visible translate-x-0 transition-transform"
           : "invisible translate-x-full transition-[transform,visibility]"
       }`}
     >
       {/* Header bar */}
-      <div className="flex flex-none items-center justify-between border-b border-rule-light px-[clamp(22px,4vw,36px)] py-[18px]">
-        <span className="flex items-center gap-2 text-[14px] font-semibold">
-          <span className="h-2 w-2 rounded-full bg-brand" aria-hidden="true" />
-          Replies within a day
-        </span>
+      <div className="flex flex-none items-center justify-between border-b border-line px-[clamp(22px,4vw,36px)] py-[18px]">
+        <span className="font-display text-[11px] tracking-[0.16em] text-ash">REPLIES WITHIN A DAY</span>
         <button
           ref={closeRef}
           type="button"
           onClick={onClose}
           aria-label="Close contact panel"
-          className="flex h-11 w-11 items-center justify-center rounded-[3px] border border-rule bg-white text-[18px] text-ink transition-colors hover:border-ink hover:bg-ink hover:text-white"
+          className="flex h-11 w-11 items-center justify-center border border-line2 bg-transparent text-[16px] text-bone transition-colors hover:border-bone"
         >
           ✕
         </button>
@@ -188,10 +184,10 @@ function ContactPanel({
       {/* Body */}
       <div className="flex flex-1 flex-col gap-7 overflow-y-auto px-[clamp(22px,4vw,36px)] pb-10 pt-8">
         <div className="flex flex-col gap-3">
-          <h2 className="m-0 mb-2 text-[40px] font-semibold leading-[1.02] tracking-[-0.02em]">
-            Let&apos;s talk
+          <h2 className="m-0 mb-1 font-display text-[clamp(44px,6vw,64px)] font-light leading-[0.95]">
+            LET&apos;S <em className="font-serif font-normal text-ash">talk</em>
           </h2>
-          <p className="m-0 text-[16px] leading-[1.5] text-ink-body">
+          <p className="m-0 text-[19px] leading-[1.45] text-stone">
             A sentence is plenty to start. I&apos;ll tell you honestly if I&apos;m not the right
             person.
           </p>
@@ -205,7 +201,7 @@ function ContactPanel({
   );
 }
 
-// The enquiry form, used in the slide-out panel and on the contact page.
+// The enquiry form inside the slide-out panel.
 // `preset`/`presetKey` let a CTA preselect "What are you after?".
 export function ContactForm({
   preset = "",
@@ -279,15 +275,13 @@ export function ContactForm({
           required
           value={enquiryType}
           onChange={(e) => setEnquiryType(e.target.value)}
-          className={`${inputClass} cursor-pointer appearance-none pr-11 ${
-            enquiryType ? "" : "text-footer-muted"
-          }`}
+          className={`${inputClass} cursor-pointer appearance-none pr-11 ${enquiryType ? "" : "text-ash"}`}
         >
-          <option value="" disabled>
+          <option value="" disabled className="bg-ink">
             What are you after?
           </option>
           {enquiryTypes.map((type) => (
-            <option key={type} value={type} className="text-ink">
+            <option key={type} value={type} className="bg-ink text-bone">
               {type}
             </option>
           ))}
@@ -301,7 +295,7 @@ export function ContactForm({
           strokeWidth={2}
           strokeLinecap="round"
           strokeLinejoin="round"
-          className="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 text-ink-muted"
+          className="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 text-ash"
           aria-hidden="true"
         >
           <path d="M6 9l6 6 6-6" />
@@ -317,11 +311,9 @@ export function ContactForm({
 
       <div className="mt-1 flex flex-wrap items-center gap-x-4 gap-y-2">
         <SubmitButton />
-        <p aria-live="polite" className="m-0 text-[15px] font-medium">
-          {state.status === "success" && (
-            <span className="text-brand">Thanks — that&apos;s with me.</span>
-          )}
-          {state.status === "error" && <span className="text-[#B3261E]">{state.message}</span>}
+        <p aria-live="polite" className="m-0 text-[17px]">
+          {state.status === "success" && <span className="text-ember">Thanks — that&apos;s with me.</span>}
+          {state.status === "error" && <span className="text-[#e08a7a]">{state.message}</span>}
         </p>
       </div>
     </form>
@@ -331,7 +323,7 @@ export function ContactForm({
 // Email / LinkedIn / location rows.
 export function ContactDetails() {
   return (
-    <dl className="m-0 border-t border-rule-light">
+    <dl className="m-0 border-t border-line">
       {[
         { label: "Email", value: site.email, href: `mailto:${site.email}` },
         { label: "LinkedIn", value: "Tim Brown", href: site.linkedin, external: true },
@@ -339,15 +331,15 @@ export function ContactDetails() {
       ].map((row) => (
         <div
           key={row.label}
-          className="flex items-center justify-between gap-4 border-b border-rule-light py-4"
+          className="flex items-center justify-between gap-4 border-b border-line py-4"
         >
-          <dt className="text-[14px] text-ink-muted">{row.label}</dt>
-          <dd className="m-0 text-right text-[17px] font-medium">
+          <dt className="font-display text-[11px] uppercase tracking-[0.16em] text-ember">{row.label}</dt>
+          <dd className="m-0 text-right text-[17px]">
             {row.href ? (
               <a
                 href={row.href}
                 {...(row.external ? { target: "_blank", rel: "noreferrer" } : {})}
-                className="text-ink transition-colors hover:text-brand"
+                className="transition-colors"
               >
                 {row.value}
               </a>

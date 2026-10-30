@@ -1,34 +1,28 @@
 import type { Config } from "tailwindcss";
 
-// v4 visual refresh tokens (design_handoff_v4_refresh/README.md → "Design tokens").
+// Tokens from design_handoff_tim_brown_home/README.md ("Design Tokens").
 const config: Config = {
   content: ["./app/**/*.{ts,tsx}", "./components/**/*.{ts,tsx}", "./lib/**/*.{ts,tsx}"],
   theme: {
+    // No border radius anywhere.
+    borderRadius: { none: "0", DEFAULT: "0" },
     extend: {
       colors: {
-        brand: { DEFAULT: "#14A85A", dark: "#0F8A49", bright: "#2FD07A" },
-        // Dark green for the hero, footer and dark buttons.
-        pine: { DEFAULT: "#0E2A1F", light: "#16392B" },
-        ink: { DEFAULT: "#141414", body: "#131313", soft: "#3E3E3E", muted: "#6B6B6B" },
-        surface: {
-          panel: "#F2F4F2",
-          placeholder: "#EAECEA",
-          card: "#DADDDA",
-          hero: "#2B2F2C",
-        },
-        rule: { DEFAULT: "#DCE0DC", light: "#E2E4E2" },
-        footer: { link: "#CFCFCF", muted: "#9A9A9A", legal: "#8A8A8A" },
+        ink: "#110f0d", // page background
+        bone: "#ece6dc", // primary text / light buttons
+        sand: "#cfc7bb", // hero subtitle
+        stone: "#a69d91", // body copy (secondary)
+        ash: "#8a8278", // muted labels, serif accents
+        smoke: "#5e5850", // tertiary text
+        ember: "#c8743a", // accent (eyebrows, numerals, hover)
+        line: "rgba(236,230,220,0.14)", // hairline dividers / borders
+        line2: "rgba(236,230,220,0.25)", // stronger outline (icon buttons)
       },
       fontFamily: {
-        sans: ["var(--font-onest)", "system-ui", "sans-serif"],
+        display: ["var(--font-antonio)", "sans-serif"],
+        serif: ["var(--font-serif)", "Georgia", "serif"],
       },
-      maxWidth: {
-        content: "1240px",
-      },
-      boxShadow: {
-        nav: "0 6px 24px rgba(0,0,0,0.12)",
-        panel: "-20px 0 60px rgba(0,0,0,0.18)",
-      },
+      maxWidth: { page: "1280px", wide: "1440px" },
     },
   },
   plugins: [],

@@ -1,5 +1,5 @@
-// Selected work, in display order. Each project has its own page at
-// /work/<slug>. `image` is the photo behind its box on the home and work pages.
+// Selected work, in display order. `image` is the card photo in the Work
+// section; `gallery`, `challenge` and `result` are kept for case study pages.
 // The Devon Joinery challenge/result copy is Tim's; the rest is draft copy
 // written from each project's summary, to be reviewed.
 
@@ -8,9 +8,13 @@ export type Project = {
   title: string;
   category: string;
   services: string;
+  /** Short uppercase tag shown beside the title, e.g. "WEB · SEO". */
+  tag: string;
+  /** Leave out of the Work section (e.g. no project image yet). */
+  hidden?: boolean;
   summary: string;
   url: string | null;
-  /** Transparent tablet mock-up, shown on the project page until a hero image is supplied. */
+  /** Transparent tablet mock-up (older artwork). */
   cover?: string;
   /** Background photo for the project's box (placeholder for now). */
   image: string;
@@ -34,6 +38,7 @@ export const projects: Project[] = [
     title: "Devon Joinery",
     category: "Joinery · Devon",
     services: "Branding, website & SEO",
+    tag: "WEB · SEO",
     summary: "A brand new website for a joinery business in Exeter and ongoing SEO services which has led to a big increase in leads.",
     url: "https://devonjoinery.co.uk",
     cover: "/work/tablet/w1.png",
@@ -54,6 +59,7 @@ export const projects: Project[] = [
     title: "Vowles Carpentry",
     category: "Carpentry · Devon",
     services: "Branding, website & SEO",
+    tag: "BRAND · WEB",
     summary: "New branding design (logo, van graphics, marketing material) and website build for a carpenter based in Torbay, Devon.",
     url: "https://paulvowlescarpentry.co.uk",
     cover: "/work/tablet/w2.png",
@@ -74,6 +80,7 @@ export const projects: Project[] = [
     title: "IPJ London",
     category: "Furniture · London",
     services: "Branding & website",
+    tag: "BRAND · WEB",
     summary: "Refreshed branding and a new website, showcasing their stunning furniture consultancy portfolio in London.",
     url: "https://ipjlondon.com",
     cover: "/work/tablet/ipj.png",
@@ -94,6 +101,7 @@ export const projects: Project[] = [
     title: "The Old Fashioned Cocktail Co.",
     category: "Mobile bar · New York",
     services: "Branding, website & SEO",
+    tag: "BRAND · WEB",
     summary: "Branding refresh and a new website built for a mobile cocktail bar in New York, showcasing their services and driving new leads.",
     url: "https://theoldfashionedcocktailco.com",
     cover: "/work/tablet/w3.png",
@@ -114,6 +122,7 @@ export const projects: Project[] = [
     title: "World Bank",
     category: "PIM-PAM",
     services: "Branding & website",
+    tag: "BRAND · WEB",
     summary: "A new website build, showcasing a range of digital tools developed to help government officials make better policy decisions.",
     url: "https://pim-pam.net",
     cover: "/work/tablet/w4.png",
@@ -134,6 +143,7 @@ export const projects: Project[] = [
     title: "Sanwei Asia",
     category: "Sourcing & manufacturing · Asia",
     services: "Website",
+    tag: "WEB",
     summary: "A new website for a sourcing and manufacturing partner in Asia, helping businesses find the missing pieces of their supply chain.",
     url: null,
     image: "/work/photos/sanwei-asia-website-browser.jpg",
@@ -153,6 +163,8 @@ export const projects: Project[] = [
     title: "Torbay Sweeps",
     category: "Chimney sweep · Torbay",
     services: "Website build",
+    tag: "WEB",
+    hidden: true,
     summary: "A fast, trustworthy site built around the local searches that turn into bookings.",
     url: "https://torbaysweeps.co.uk",
     cover: "/work/tablet/torbay.png",
@@ -168,6 +180,7 @@ export const projects: Project[] = [
     title: "Highgrove Retirement Village",
     category: "Retirement village · NZ",
     services: "Website & SEO",
+    tag: "WEB · SEO",
     summary: "Warm, unhurried pages that reassure residents and the families helping them decide.",
     url: "https://highgrove.co.nz",
     cover: "/work/tablet/highgrove.png",
@@ -181,4 +194,3 @@ export const projects: Project[] = [
   },
 ];
 
-export const getProject = (slug: string) => projects.find((p) => p.slug === slug);

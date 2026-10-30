@@ -1,66 +1,45 @@
-import Link from "next/link";
+import Image from "next/image";
 import { site } from "@/lib/site";
-import { container } from "./ui";
+import { container } from "./styles";
 
-const colLink = "text-[15px] text-footer-link transition-colors hover:text-white";
+const meta = "font-display text-[11px] tracking-[0.16em]";
 
 export default function Footer() {
   return (
-    <footer className="bg-pine text-white">
-      <div className={`${container} pb-[26px] pt-[clamp(56px,7vw,80px)]`}>
-        <div className="flex flex-col gap-x-8 gap-y-10 md:flex-row md:flex-wrap">
-          <div className="flex flex-col md:flex-[2_1_260px] items-start gap-[10px]">
-            <p className="m-0 font-sans text-[20px] font-medium">Prefer to talk?</p>
-            <a
-              href={`mailto:${site.email}`}
-              className="text-[17px] text-white transition-colors hover:text-brand-bright"
-            >
-              {site.email}
-            </a>
-            <a
-              href={site.linkedin}
-              target="_blank"
-              rel="noreferrer"
-              className="text-[17px] text-white transition-colors hover:text-brand-bright"
-            >
-              Connect on LinkedIn
-            </a>
-            <p className="m-0 text-[15px] text-footer-muted">{site.location}</p>
-          </div>
-
-          <div className="flex flex-col md:flex-[1_1_140px] items-start gap-[9px]">
-            <p className="m-0 mb-1 font-sans text-[17px] font-semibold">Services</p>
-            <Link href="/expertise/service-businesses" className={colLink}>
-              Service businesses
-            </Link>
-            <Link href="/expertise/ecommerce" className={colLink}>
-              E-commerce stores
-            </Link>
-          </div>
-
-          <div className="flex flex-col md:flex-[1_1_140px] items-start gap-[9px]">
-            <p className="m-0 mb-1 font-sans text-[17px] font-semibold">More</p>
-            <Link href="/about" className={colLink}>
-              About
-            </Link>
-            <Link href="/work" className={colLink}>
-              Work
-            </Link>
-            <Link href="/contact" className={colLink}>
-              Contact
-            </Link>
-            <a href={site.linkedin} target="_blank" rel="noreferrer" className={colLink}>
-              LinkedIn
-            </a>
-          </div>
+    <footer className={`${container} flex flex-col gap-12 pb-8`}>
+      <div className="grid items-end gap-12 [grid-template-columns:repeat(auto-fit,minmax(min(100%,360px),1fr))]">
+        <div className="relative aspect-[3/2] w-full max-w-[440px] overflow-hidden">
+          <Image
+            src="/work/projects/ipj-london-laptop-mockup.jpg"
+            alt="A laptop on a desk showing a website Tim built"
+            fill
+            sizes="440px"
+            className="object-cover"
+          />
         </div>
-
-        <div className="mt-[clamp(60px,8vw,110px)] flex flex-col gap-3 text-[12px] tracking-normal text-footer-legal md:flex-row md:justify-between">
-          <span>{site.copyright} | All rights reserved</span>
-          <a href="#top" className="transition-colors hover:text-white">
-            Back to top
-          </a>
+        <div className="flex flex-wrap items-end justify-between gap-8">
+          <div className={`${meta} flex flex-col gap-2 text-ash`}>
+            <a href={`mailto:${site.email}`} className="text-bone">
+              {site.email.toUpperCase()}
+            </a>
+            <a href={site.linkedin} target="_blank" rel="noreferrer">
+              LINKEDIN
+            </a>
+            <span>DEVON, UK</span>
+          </div>
+          <nav
+            aria-label="Footer"
+            className="flex flex-col items-end font-display text-[clamp(44px,5vw,72px)] font-light leading-[0.95]"
+          >
+            <a href="#work">WORK</a>
+            <a href="#about">ABOUT</a>
+            <a href="#contact">CONTACT</a>
+          </nav>
         </div>
+      </div>
+      <div className={`${meta} flex flex-wrap justify-between gap-4 border-t border-line pt-5 text-smoke`}>
+        <span>© {new Date().getFullYear()} TIM BROWN</span>
+        <a href="#top">BACK TO TOP ↑</a>
       </div>
     </footer>
   );

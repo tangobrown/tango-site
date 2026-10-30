@@ -7,92 +7,47 @@
     scroll-behavior: smooth;
   }
 
-  /* Keep anchored sections clear of the floating nav pill. */
-  section[id] {
-    scroll-margin-top: 88px;
+  /* Keep anchored sections clear of the top of the window. */
+  [id] {
+    scroll-margin-top: 96px;
   }
 
   body {
     margin: 0;
-    background: #ffffff;
-    color: #141414;
-    font-family: var(--font-onest), system-ui, sans-serif;
-    font-weight: 500;
-    letter-spacing: 0;
+    background: #110f0d;
+    color: #ece6dc;
+    font-family: var(--font-serif), Georgia, serif;
     -webkit-font-smoothing: antialiased;
-    overflow-x: clip; /* prevent horizontal scroll without breaking position: sticky */
+    overflow-x: clip; /* no horizontal scroll, without breaking position: sticky */
   }
 
-  /* Paragraph text in BDO Grotesk. Add `font-sans` to keep a label in Onest. */
-  p,
-  li,
-  blockquote,
-  dd,
-  td {
-    font-family: var(--font-bdo), system-ui, sans-serif;
+  a {
+    color: inherit;
+    text-decoration: none;
+    transition: color 150ms;
   }
 
-  h1,
-  h2,
-  h3,
-  h4 {
-    font-family: var(--font-onest), system-ui, sans-serif;
+  a:hover {
+    color: #c8743a;
   }
 
-  h1,
-  h2,
-  h3 {
-    font-weight: 600;
+  p {
+    text-wrap: pretty;
   }
 
   ::selection {
-    background: #14a85a;
-    color: #ffffff;
+    background: #c8743a;
+    color: #110f0d;
   }
 }
 
-@layer components {
-  /* Horizontal scroll rail with the scrollbar hidden. */
-  .no-scrollbar {
-    scrollbar-width: none;
-  }
-  .no-scrollbar::-webkit-scrollbar {
-    height: 0;
-    width: 0;
-  }
-}
-
-/* Scroll-in reveal. Hidden state only applies once JS marks the page ready,
-   so no-JS shows everything. ScrollReveal.tsx toggles `.is-visible`. */
-.reveal-ready [data-reveal] {
-  opacity: 0;
-  transform: translateY(22px);
-  transition:
-    opacity 0.7s cubic-bezier(0.22, 0.61, 0.36, 1),
-    transform 0.7s cubic-bezier(0.22, 0.61, 0.36, 1);
-}
-
-.reveal-ready [data-reveal].is-visible {
-  opacity: 1;
-  transform: none;
-}
-
-/* Reduced motion: make every transition instant. */
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
   }
-
   *,
   *::before,
   *::after {
     transition-duration: 0.01ms !important;
-    animation-duration: 0.01ms !important;
-  }
-
-
-  .reveal-ready [data-reveal] {
-    opacity: 1 !important;
-    transform: none !important;
   }
 }

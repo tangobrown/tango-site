@@ -1,110 +1,72 @@
 import type { Metadata, Viewport } from "next";
-import { Geist, Geist_Mono, Onest } from "next/font/google";
-import localFont from "next/font/local";
+import { Antonio, Instrument_Serif } from "next/font/google";
 import { ContactPanelProvider } from "@/components/ContactPanel";
-import Footer from "@/components/Footer";
-import ScrollReveal from "@/components/ScrollReveal";
-import SiteNav from "@/components/SiteNav";
 import "./globals.css";
 
-// Onest — the one family for everything (headings 600, body 500).
-const onest = Onest({
+// Antonio (uppercase, light) for display type and labels; Instrument Serif
+// for body copy and italic accents.
+const antonio = Antonio({
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  variable: "--font-onest",
+  weight: ["200", "300", "400", "500"],
+  variable: "--font-antonio",
   display: "swap",
 });
 
-// BDO Grotesk (self-hosted, SIL OFL — see fonts/BDOGrotesk-OFL.txt) for
-// paragraph text.
-const bdo = localFont({
-  src: "./fonts/BDOGrotesk-VF.woff2",
-  weight: "300 900",
-  variable: "--font-bdo",
-  display: "swap",
-});
-
-// Geist + Geist Mono are only used inside the hero animation.
-const geist = Geist({
+const serif = Instrument_Serif({
   subsets: ["latin"],
-  weight: ["400", "500", "600"],
-  variable: "--font-geist",
-  display: "swap",
-});
-
-const geistMono = Geist_Mono({
-  subsets: ["latin"],
-  weight: ["400", "600"],
-  variable: "--font-geist-mono",
+  weight: "400",
+  style: ["normal", "italic"],
+  variable: "--font-serif",
   display: "swap",
 });
 
 const SITE_URL = "https://timbrown.co";
+const TITLE = "Tim Brown | Website Growth Expert";
+const DESCRIPTION =
+  "Blazing fast websites, built, hosted and optimised for UK companies that want to grow. Based in Devon, working with clients anywhere.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
-  title: {
-    default: "Tim Brown | Digital Growth Expert for UK Small Businesses",
-    template: "%s | Tim Brown",
-  },
-  description:
-    "Freelance web design, SEO and AI workflows, built by one person who answers the phone. Based in Devon, working with clients anywhere.",
+  title: TITLE,
+  description: DESCRIPTION,
   openGraph: {
-    title: "Tim Brown | Digital Growth Expert for UK Small Businesses",
-    description:
-      "Websites, search and quiet automation — built by one person who answers the phone.",
+    title: TITLE,
+    description: DESCRIPTION,
     url: SITE_URL,
     siteName: "Tim Brown",
     locale: "en_GB",
     type: "website",
   },
-  twitter: {
-    card: "summary_large_image",
-    title: "Tim Brown | Digital Growth Expert for UK Small Businesses",
-    description:
-      "Websites, search and quiet automation — built by one person who answers the phone.",
-  },
+  twitter: { card: "summary_large_image", title: TITLE, description: DESCRIPTION },
 };
 
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
+  themeColor: "#110f0d",
 };
 
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Person",
   name: "Tim Brown",
-  jobTitle: "Freelance web designer",
-  description:
-    "Freelance web design, SEO and AI automation, based in Devon, UK.",
+  jobTitle: "Website growth expert",
+  description: DESCRIPTION,
   url: SITE_URL,
   address: { "@type": "PostalAddress", addressRegion: "Devon", addressCountry: "GB" },
   makesOffer: [
-    { "@type": "Offer", itemOffered: { "@type": "Service", name: "Web design" } },
-    { "@type": "Offer", itemOffered: { "@type": "Service", name: "SEO & optimisation" } },
-    { "@type": "Offer", itemOffered: { "@type": "Service", name: "AI & automation" } },
+    { "@type": "Offer", itemOffered: { "@type": "Service", name: "Websites for service businesses" } },
+    { "@type": "Offer", itemOffered: { "@type": "Service", name: "E-commerce websites" } },
+    { "@type": "Offer", itemOffered: { "@type": "Service", name: "AI services" } },
   ],
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en-GB" className={`${onest.variable} ${bdo.variable} ${geist.variable} ${geistMono.variable}`}>
+    <html lang="en-GB" className={`${antonio.variable} ${serif.variable}`}>
       <body>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
-        <ContactPanelProvider>
-          <SiteNav />
-          <main>{children}</main>
-          <Footer />
-          <ScrollReveal />
-        </ContactPanelProvider>
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+        <ContactPanelProvider>{children}</ContactPanelProvider>
       </body>
     </html>
   );
