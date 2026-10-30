@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import { ContactButton, useContactPanel } from "./ContactPanel";
 
@@ -40,11 +41,12 @@ export default function Header() {
 
   return (
     <div ref={wrapRef} className="contents">
-      <header className="fixed left-1/2 top-6 z-30 flex -translate-x-1/2 items-center gap-2 border border-line bg-[rgba(17,15,13,0.85)] py-1.5 pl-[22px] pr-1.5 backdrop-blur-[8px]">
+      <header className="fixed left-1/2 top-6 z-30 flex -translate-x-1/2 items-center gap-2 border border-line bg-[rgba(17,15,13,0.85)] py-1.5 pl-[18px] pr-1.5 backdrop-blur-[8px] sm:pl-6">
         <a
           href="#top"
-          className="mr-6 whitespace-nowrap font-display text-[15px] font-medium tracking-[0.08em] min-[400px]:mr-[72px]"
+          className="mr-5 flex items-center gap-2.5 whitespace-nowrap font-display text-[15px] font-medium tracking-[0.08em] min-[400px]:mr-[72px] sm:mr-[112px]"
         >
+          <Image src="/logo-mark.png" alt="" width={124} height={96} priority className="h-[18px] w-auto" />
           TIM BROWN
         </a>
         <ContactButton className="whitespace-nowrap bg-bone px-4 py-[11px] font-display text-[12px] tracking-[0.12em] text-ink transition-colors hover:text-ember">
