@@ -25,7 +25,7 @@ export default function Hero() {
         }}
       />
 
-      <div className="pointer-events-none absolute inset-0 flex flex-col items-center justify-center gap-7 px-6 text-center">
+      <div className="absolute inset-0 flex flex-col items-center justify-center gap-7 px-6 text-center">
         <h1 className="m-0 flex flex-col items-center font-display text-[clamp(48px,8vw,112px)] font-light leading-[0.95] tracking-[-0.01em]">
           <span>LOOK GOOD &amp;</span>
           <span>
@@ -37,7 +37,7 @@ export default function Hero() {
         </p>
       </div>
 
-      <div className="pointer-events-none absolute bottom-7 left-8 right-8 flex justify-between gap-4 font-display text-[11px] tracking-[0.16em] text-ash">
+      <div className="absolute bottom-7 left-8 flex flex-col gap-1.5 font-display text-[11px] tracking-[0.16em] text-ash">
         <span>WEBSITE GROWTH EXPERT</span>
         <span>DEVON, UK</span>
       </div>

@@ -5,9 +5,9 @@ import { useEffect, useRef, useState } from "react";
 import { ContactButton, useContactPanel } from "./ContactPanel";
 
 const menuLinks = [
-  { label: "ABOUT", href: "#about" },
-  { label: "EXPERTISE", href: "#make" },
   { label: "WORK", href: "#work" },
+  { label: "EXPERTISE", href: "#make" },
+  { label: "ABOUT", href: "#about-me" },
 ];
 
 // Floating nav pill, fixed to the top of the window, with a burger that opens

@@ -34,7 +34,7 @@ export default function Footer() {
             className="flex flex-col items-end font-display text-[clamp(44px,5vw,72px)] font-light leading-[0.95]"
           >
             <a href="#work">WORK</a>
-            <a href="#about">ABOUT</a>
+            <a href="#about-me">ABOUT</a>
             <ContactButton className="transition-colors hover:text-ember">CONTACT</ContactButton>
           </nav>
         </div>
