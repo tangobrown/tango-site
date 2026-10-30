@@ -29,7 +29,7 @@ export default function Hero() {
         <h1 className="m-0 flex flex-col items-center font-display text-[clamp(48px,8vw,112px)] font-light leading-[0.95] tracking-[-0.01em]">
           <span>LOOK GOOD &amp;</span>
           <span>
-            <em className="font-serif font-normal normal-case tracking-normal">dominate</em> ONLINE
+            <em className="font-serif font-normal normal-case tracking-normal">get found</em> ONLINE
           </span>
         </h1>
         <p className="m-0 max-w-[460px] text-balance text-[20px] leading-[1.35] text-sand">
