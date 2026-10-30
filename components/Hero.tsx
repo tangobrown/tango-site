@@ -13,8 +13,7 @@ export default function Hero() {
         priority
         sizes="100vw"
         quality={85}
-        // Keep Tim in frame when the photo is cropped on narrow screens.
-        className="object-cover object-[64%_center]"
+        className="object-cover object-right-top"
       />
       <div
         aria-hidden="true"
