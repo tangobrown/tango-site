@@ -20,7 +20,7 @@ export default function Footer() {
           />
         </div>
         <div className="flex flex-wrap items-end justify-between gap-8">
-          <div className={`${meta} flex flex-col gap-2 text-ash`}>
+          <div className="flex flex-col gap-2.5 font-display text-[15px] tracking-[0.12em] text-ash">
             <a href={`mailto:${site.email}`} className="text-bone">
               {site.email.toUpperCase()}
             </a>

@@ -7,7 +7,7 @@ export const container = "mx-auto w-full max-w-page px-8";
 export const eyebrow = "font-display text-[11px] tracking-[0.16em] text-ember";
 
 /** Uppercase text link / button label (with a trailing <Arrow />). */
-export const linkLabel = "inline-flex items-center gap-1.5 font-display text-[12px] tracking-[0.16em]";
+export const linkLabel = "inline-flex items-center gap-1.5 font-display text-[14px] tracking-[0.14em]";
 
 /** Filled light button (GET STARTED). */
 export const btnLight =

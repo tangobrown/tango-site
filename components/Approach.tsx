@@ -29,7 +29,7 @@ export default function Approach() {
         />
       </div>
       <div className="flex max-w-[520px] flex-col items-start gap-7 self-end">
-        <p className="m-0 text-[19px] leading-[1.45] text-stone">
+        <p className="m-0 text-[clamp(20px,1.8vw,24px)] leading-[1.4] text-stone">
           Each month I work to make sure your website looks good, outperforms your competition and
           brings in new leads or sales. You deal with me — not an account manager or an agency
           junior — and you don&apos;t pay agency fees.

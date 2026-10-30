@@ -16,12 +16,12 @@ function Card({ project }: { project: Project }) {
         />
       </div>
       <div className="flex items-baseline justify-between gap-4">
-        <em className="text-[20px]">{project.title}</em>
+        <em className="text-[clamp(22px,2vw,28px)] leading-[1.15]">{project.title}</em>
         <span className="whitespace-nowrap font-display text-[11px] tracking-[0.16em] text-ash">
           {project.tag}
         </span>
       </div>
-      <p className="m-0 max-w-[560px] text-[17px] leading-[1.45] text-ash">{project.summary}</p>
+      <p className="m-0 max-w-[600px] text-[clamp(18px,1.5vw,20px)] leading-[1.45] text-ash">{project.summary}</p>
     </>
   );
 
