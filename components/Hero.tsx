@@ -1,8 +1,7 @@
 import Image from "next/image";
-import Header from "./Header";
 
-// Full-viewport hero: full-bleed photo, dark gradient, floating nav pill,
-// centred headline and a meta row along the bottom.
+// Full-viewport hero: full-bleed photo, dark gradient, centred headline and
+// a meta row along the bottom. (The nav pill is fixed above it; see Header.)
 export default function Hero() {
   return (
     <section id="top" className="relative h-screen min-h-[640px] overflow-hidden">
@@ -25,8 +24,6 @@ export default function Hero() {
             "linear-gradient(180deg, rgba(17,15,13,0.35) 0%, rgba(17,15,13,0.2) 50%, #110f0d 100%)",
         }}
       />
-
-      <Header />
 
       <div className="pointer-events-none absolute inset-0 flex flex-col items-center justify-center gap-7 px-6 text-center">
         <h1 className="m-0 flex flex-col items-center font-display text-[clamp(48px,8vw,112px)] font-light leading-[0.95] tracking-[-0.01em]">
