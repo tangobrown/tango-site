@@ -14,7 +14,9 @@ export default function Hero() {
         priority
         sizes="100vw"
         quality={90}
-        className="object-cover object-right-top"
+        // Anchored to the top and centred on Tim, so narrow screens (which crop
+        // the sides) keep him in frame. Wide screens don't crop the sides.
+        className="object-cover object-[66%_top]"
       />
       <div
         aria-hidden="true"
