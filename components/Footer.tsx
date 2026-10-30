@@ -12,10 +12,11 @@ export default function Footer() {
       <div className="grid items-end gap-12 [grid-template-columns:repeat(auto-fit,minmax(min(100%,360px),1fr))]">
         <div className="relative aspect-[3/2] w-full max-w-[440px] overflow-hidden">
           <Image
-            src="/work/projects/ipj-london-laptop-mockup.jpg"
-            alt="A laptop on a desk showing a website Tim built"
+            src="/work/projects/torbay-composite-desktop-mockup.jpg"
+            alt="Two people at a desk looking at the Torbay Composite website Tim built"
             fill
             sizes="440px"
+            quality={90}
             className="object-cover"
           />
         </div>
