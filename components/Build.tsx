@@ -1,4 +1,5 @@
 import type { enquiryTypes } from "@/lib/site";
+import Arrow from "./Arrow";
 import { ContactButton } from "./ContactPanel";
 import { container, displayWord, leadIn, linkLabel } from "./styles";
 
@@ -79,7 +80,7 @@ export default function Build() {
               ))}
             </ul>
             <ContactButton preset={a.preset} className={`${linkLabel} text-left transition-colors hover:text-ember`}>
-              {a.link} →
+              {a.link} <Arrow />
             </ContactButton>
           </div>
         ))}

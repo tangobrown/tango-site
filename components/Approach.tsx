@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Arrow from "./Arrow";
 import { ContactButton } from "./ContactPanel";
 import { container, eyebrow, linkLabel, statement } from "./styles";
 
@@ -34,7 +35,7 @@ export default function Approach() {
           junior — and you don&apos;t pay agency fees.
         </p>
         <ContactButton className={`${linkLabel} transition-colors hover:text-ember`}>
-          LET&apos;S CONNECT →
+          LET&apos;S CONNECT <Arrow />
         </ContactButton>
       </div>
     </section>

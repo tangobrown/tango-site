@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { useState } from "react";
 import { testimonials } from "@/lib/testimonials";
+import Arrow from "./Arrow";
 
 const pad = (n: number) => String(n).padStart(2, "0");
 
@@ -65,17 +66,17 @@ export default function Testimonial() {
                   type="button"
                   onClick={() => go(-1)}
                   aria-label="Previous testimonial"
-                  className="h-11 w-11 border border-line2 bg-transparent text-[14px] text-bone transition-colors hover:border-bone"
+                  className="flex h-11 w-11 items-center justify-center border border-line2 bg-transparent text-[14px] text-bone transition-colors hover:border-bone"
                 >
-                  ←
+                  <Arrow direction="left" />
                 </button>
                 <button
                   type="button"
                   onClick={() => go(1)}
                   aria-label="Next testimonial"
-                  className="h-11 w-11 border-0 bg-bone text-[14px] text-ink transition-colors hover:text-ember"
+                  className="flex h-11 w-11 items-center justify-center border-0 bg-bone text-[14px] text-ink transition-colors hover:text-ember"
                 >
-                  →
+                  <Arrow />
                 </button>
               </div>
             </div>

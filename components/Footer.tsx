@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { site } from "@/lib/site";
+import Arrow from "./Arrow";
 import { ContactButton } from "./ContactPanel";
 import { container } from "./styles";
 
@@ -40,7 +41,9 @@ export default function Footer() {
       </div>
       <div className={`${meta} flex flex-wrap justify-between gap-4 border-t border-line pt-5 text-smoke`}>
         <span>© {new Date().getFullYear()} TIM BROWN</span>
-        <a href="#top">BACK TO TOP ↑</a>
+        <a href="#top" className="inline-flex items-center gap-1">
+          BACK TO TOP <Arrow direction="up" />
+        </a>
       </div>
     </footer>
   );

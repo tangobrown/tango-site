@@ -13,6 +13,7 @@ import {
 import { useFormStatus } from "react-dom";
 import { submitContact, type ContactState } from "@/app/actions/contact";
 import { enquiryTypes, site } from "@/lib/site";
+import Arrow from "./Arrow";
 import { btnLight } from "./styles";
 
 // Slide-out contact panel. Every "contact" CTA on the page is a
@@ -97,7 +98,7 @@ function SubmitButton() {
   const { pending } = useFormStatus();
   return (
     <button type="submit" disabled={pending} className={`${btnLight} disabled:opacity-70`}>
-      {pending ? "SENDING…" : "SEND IT OVER →"}
+      {pending ? "SENDING…" : <>SEND IT OVER <Arrow /></>}
     </button>
   );
 }

@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Arrow from "./Arrow";
 import { ContactButton } from "./ContactPanel";
 import { container, eyebrow, leadIn, linkLabel } from "./styles";
 
@@ -59,7 +60,7 @@ export default function AboutMe() {
         <ContactButton
           className={`${linkLabel} self-start border-b border-bone pb-1.5 transition-colors hover:border-ember hover:text-ember`}
         >
-          LET&apos;S CONNECT →
+          LET&apos;S CONNECT <Arrow />
         </ContactButton>
       </div>
     </section>
