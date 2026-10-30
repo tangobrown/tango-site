@@ -7,12 +7,14 @@ export default function Hero() {
   return (
     <section id="top" className="relative h-screen min-h-[640px] overflow-hidden">
       <Image
-        src="/hero.jpg"
+        // Enlarged from the 1400px original so high-density screens aren't
+        // stretching it; replace with a larger original when there is one.
+        src="/tim-brown-hero.jpg"
         alt="Tim Brown sitting on steps in front of a painted mural"
         fill
         priority
         sizes="100vw"
-        quality={85}
+        quality={90}
         className="object-cover object-right-top"
       />
       <div
