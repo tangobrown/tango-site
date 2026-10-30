@@ -1,6 +1,17 @@
+import type { enquiryTypes } from "@/lib/site";
+import { ContactButton } from "./ContactPanel";
 import { container, displayWord, leadIn, linkLabel } from "./styles";
 
-const audiences = [
+const audiences: {
+  num: string;
+  title: string;
+  desc: string;
+  points: string[];
+  link: string;
+  /** Preselects "What are you after?" in the contact form. */
+  preset: (typeof enquiryTypes)[number];
+  stagger: string;
+}[] = [
   {
     num: "01.",
     title: "SERVICE BUSINESSES",
@@ -11,6 +22,7 @@ const audiences = [
       "Built to turn browsers into leads in your inbox",
     ],
     link: "WEBSITES FOR SERVICE BUSINESSES",
+    preset: "Quote for a website build",
     stagger: "",
   },
   {
@@ -23,6 +35,7 @@ const audiences = [
       "Optimised to bring more visitors to your store",
     ],
     link: "WEBSITES FOR ONLINE STORES",
+    preset: "Quote for a website build",
     stagger: "min-[1080px]:pt-24",
   },
   {
@@ -36,6 +49,7 @@ const audiences = [
       "Secure, private set-ups that protect your business data",
     ],
     link: "AI SERVICES",
+    preset: "Something else",
     stagger: "min-[1080px]:pt-48",
   },
 ];
@@ -64,9 +78,9 @@ export default function Build() {
                 </li>
               ))}
             </ul>
-            <a href="#contact" className={linkLabel}>
+            <ContactButton preset={a.preset} className={`${linkLabel} text-left transition-colors hover:text-ember`}>
               {a.link} →
-            </a>
+            </ContactButton>
           </div>
         ))}
       </div>

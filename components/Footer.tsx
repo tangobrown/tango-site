@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { site } from "@/lib/site";
+import { ContactButton } from "./ContactPanel";
 import { container } from "./styles";
 
 const meta = "font-display text-[11px] tracking-[0.16em]";
@@ -33,7 +34,7 @@ export default function Footer() {
           >
             <a href="#work">WORK</a>
             <a href="#about">ABOUT</a>
-            <a href="#contact">CONTACT</a>
+            <ContactButton className="transition-colors hover:text-ember">CONTACT</ContactButton>
           </nav>
         </div>
       </div>

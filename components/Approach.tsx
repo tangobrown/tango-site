@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { ContactButton } from "./ContactPanel";
 import { container, eyebrow, linkLabel, statement } from "./styles";
 
 // The approach: label + statement, then a photo beside a short paragraph.
@@ -32,9 +33,9 @@ export default function Approach() {
           brings in new leads or sales. You deal with me — not an account manager or an agency
           junior — and you don&apos;t pay agency fees.
         </p>
-        <a href="#contact" className={linkLabel}>
+        <ContactButton className={`${linkLabel} transition-colors hover:text-ember`}>
           LET&apos;S CONNECT →
-        </a>
+        </ContactButton>
       </div>
     </section>
   );

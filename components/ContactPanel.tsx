@@ -77,13 +77,21 @@ export function ContactPanelProvider({ children }: { children: ReactNode }) {
   return (
     <Ctx.Provider value={{ open, close }}>
       {children}
+      {/* Dimmed backdrop behind the panel; clicking it closes the panel. */}
+      <div
+        aria-hidden="true"
+        className={`fixed inset-0 z-40 bg-[rgba(17,15,13,0.7)] backdrop-blur-[2px] transition-opacity duration-[420ms] ${
+          isOpen ? "opacity-100" : "pointer-events-none opacity-0"
+        }`}
+      />
       <ContactPanel isOpen={isOpen} onClose={close} preset={preset} presetKey={presetKey} />
     </Ctx.Provider>
   );
 }
 
-const inputClass =
-  "w-full border border-line bg-transparent px-4 py-3.5 font-serif text-[18px] text-bone outline-none transition-colors placeholder:text-ash focus:border-ember";
+const inputBase =
+  "w-full border border-line bg-transparent px-4 py-3.5 font-serif text-[18px] outline-none transition-colors placeholder:text-ash focus:border-ember";
+const inputClass = `${inputBase} text-bone`;
 
 function SubmitButton() {
   const { pending } = useFormStatus();
@@ -275,7 +283,7 @@ export function ContactForm({
           required
           value={enquiryType}
           onChange={(e) => setEnquiryType(e.target.value)}
-          className={`${inputClass} cursor-pointer appearance-none pr-11 ${enquiryType ? "" : "text-ash"}`}
+          className={`${inputBase} cursor-pointer appearance-none pr-11 ${enquiryType ? "text-bone" : "text-ash"}`}
         >
           <option value="" disabled className="bg-ink">
             What are you after?

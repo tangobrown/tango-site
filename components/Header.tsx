@@ -1,19 +1,19 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { ContactButton } from "./ContactPanel";
+import { ContactButton, useContactPanel } from "./ContactPanel";
 
 const menuLinks = [
   { label: "ABOUT", href: "#about" },
   { label: "EXPERTISE", href: "#make" },
   { label: "WORK", href: "#work" },
-  { label: "CONTACT", href: "#contact" },
 ];
 
 // Floating nav pill at the top of the hero, with a burger that opens a
 // dropdown of in-page links. Closes on Escape, outside click or link click.
 export default function Header() {
   const [open, setOpen] = useState(false);
+  const contact = useContactPanel();
   const wrapRef = useRef<HTMLDivElement>(null);
   const burgerRef = useRef<HTMLButtonElement>(null);
 
@@ -79,6 +79,18 @@ export default function Header() {
             {l.label}
           </a>
         ))}
+        {/* Contact opens the slide-out panel rather than scrolling. */}
+        <button
+          type="button"
+          aria-haspopup="dialog"
+          onClick={() => {
+            setOpen(false);
+            contact.open();
+          }}
+          className="bg-transparent p-0 text-left font-display text-[32px] font-light leading-[1.2] text-bone transition-colors hover:text-ember"
+        >
+          CONTACT
+        </button>
       </nav>
     </div>
   );
